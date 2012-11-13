@@ -7,3 +7,9 @@
   pk: 2
   fields:
     name: 外部员工
+
+- model: devsupport.Project
+  pk: 1
+  fields:
+  	name: 项目1
+  	is_finished: True
