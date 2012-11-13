@@ -1,0 +1,266 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"a",
+				"anys_delta_total"
+			],
+			[
+				"tra",
+				"trade_direct"
+			],
+			[
+				"anys_",
+				"anys_delta_percent"
+			],
+			[
+				"trade",
+				"trade_amount"
+			],
+			[
+				"di",
+				"trade_direct"
+			],
+			[
+				"trade_a",
+				"trade_amount_100piece"
+			],
+			[
+				"bond",
+				"bond_name"
+			],
+			[
+				"Date",
+				"DateTime"
+			],
+			[
+				"o",
+				"order_by"
+			],
+			[
+				"c",
+				"count"
+			],
+			[
+				"b",
+				"bond_name"
+			],
+			[
+				"bo",
+				"bond_code"
+			],
+			[
+				"pri",
+				"primary_key"
+			],
+			[
+				"e",
+				"engine"
+			],
+			[
+				"trad",
+				"trader_name"
+			],
+			[
+				"__",
+				"__tablename__"
+			],
+			[
+				"sq",
+				"sqlite"
+			],
+			[
+				"Bond",
+				"Bond_Analysis"
+			],
+			[
+				"B",
+				"Base"
+			],
+			[
+				"de",
+				"declarative_base"
+			],
+			[
+				"d",
+				"def	Function"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"",
+				"Set Syntax: Haskell"
+			],
+			[
+				"Snippet: ",
+				"Snippet: method"
+			]
+		],
+		"width": 392.0
+	},
+	"console":
+	{
+		"height": 0.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Volumes/DATA/Documents/workspace/env4dev/env4dev/models.py",
+		"/Volumes/DATA/Documents/Dropbox/notebook/2.法/category_vs_tag.org",
+		"/Volumes/DATA/Downloads/pyqt/PyQt-mac-gpl-4.9.4/configure.py",
+		"/Volumes/DATA/Documents/workspace/env4dev/env4dev/app/resources/models.py",
+		"/Volumes/DATA/Downloads/workspace/mqdpcweb-plugin/src/com/apex/mqdpc/plugin/AbstractHandler.java",
+		"/Volumes/DATA/Downloads/workspace/mqdpcweb-plugin/src/com/apex/mqdpc/plugin/UserCheck.java",
+		"/Volumes/DATA/Documents/workspace/env4dev/env4dev.sublime-project",
+		"/Volumes/DATA/Downloads/workspace/mqdpc.sublime-project",
+		"/Users/holbrook/Library/Application Support/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/Volumes/DATA/Documents/Dropbox/xir_trd/main.py",
+		"/Volumes/DATA/Documents/Dropbox/xir_trd/models.py",
+		"/Volumes/DATA/Documents/Dropbox/xir_trd/anys_bond.py",
+		"/Volumes/DATA/Documents/Dropbox/xir_trd/test.py",
+		"/Volumes/DATA/Documents/Dropbox/xir_trd/testdbf.py",
+		"/Volumes/DATA/Documents/Dropbox/xir_trd/do_eval_income.py",
+		"/Volumes/DATA/Documents/Dropbox/xir_trd/anys3.py",
+		"/Volumes/DATA/Documents/Dropbox/xir_trd/anys2.py",
+		"/Volumes/DATA/Documents/Dropbox/xir_trd/anys4.py",
+		"/Users/holbrook/Library/Application Support/Sublime Text 2/Packages/Default/Default (OSX).sublime-keymap",
+		"/Volumes/DATA/Documents/Dropbox/xir_trd/xir_trd.sublime-project",
+		"/Volumes/DATA/Documents/Dropbox/xir_trd/data/result2.csv",
+		"/Users/holbrook/Desktop/tmp.xml",
+		"/Users/holbrook/Desktop/test.py",
+		"/Users/holbrook/Desktop/mqdpc/Test.java",
+		"/Volumes/DATA/Documents/svnroot/cas/docs/interface",
+		"/Users/holbrook/Desktop/mid/BlowFish.cpp",
+		"/Volumes/DATA/Documents/svnroot/cas/src/cas.client/src/main/java/com/hysec/utils/XmlDynaBean.java",
+		"/Volumes/DATA/Documents/svnroot/uas/docs/readme",
+		"/Users/holbrook/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"main(",
+			"x86_64",
+			"codecs",
+			"session",
+			"bond_name",
+			"models",
+			", ",
+			"ar",
+			"__init__",
+			" self",
+			"object",
+			"ot",
+			"Baseobject"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 254.0,
+	"status_bar_visible": true
+}
