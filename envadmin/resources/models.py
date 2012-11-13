@@ -23,6 +23,6 @@ class Resource(MPTTModel):
 	type = models.ForeignKey('ResourceType')
 	parent = models.ForeignKey("self", blank=True, null=True, related_name="children")
 
-	Subdomain = models.CharField(max_length=3, choices=SUBDOMAIN_CHOICES)
+	subdomain = models.CharField(max_length=3, choices=SUBDOMAIN_CHOICES)
 
 

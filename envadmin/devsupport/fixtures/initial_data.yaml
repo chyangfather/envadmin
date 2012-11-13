@@ -1,0 +1,9 @@
+- model: auth.Group
+  pk: 1
+  fields:
+    name: 内部员工
+
+- model: auth.Group
+  pk: 2
+  fields:
+    name: 外部员工
