@@ -1,0 +1,288 @@
+<html>
+<head>
+	<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" href="report.css" type="text/css"/>
+	<title>Class Diagram - djangoModel</title>
+	<script type="text/javascript" src="report.js"></script>
+	<script type="text/javascript" src="link_popup.js"></script>
+	<script type="text/javascript" src="tooltip.js"></script>
+</head>
+<body style="margin-left: 10px; margin-right: 10px; margin-top: 10px; margin-bottom: 10px;" onload="initPage();initDiagram()">
+	<div id="spotlight" style="position:absolute; width:100px; height:100px; z-index:2; visibility:hidden">
+		<table id="spotLightTable" onClick="updateCursorPos(event);adjustPopupPositionForSpotLightTable();clearSpotLight()" style="border-style:solid; border-width:3px; border-color:#FF0000" width="100%" cellpadding="0" border="0" cellspacing="0">
+			<tr>
+				<td id="spotLightCell">
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div id="spotLightResourcesTop" style="position:absolute; width:100px; height:100px; z-index:1; visibility:hidden">
+		<table cellpadding="0" border="0" cellspacing="0">
+			<tr>
+				<td>
+					<a href="#top">
+						<img style="border:none" src="../images/icons/BackToTop.gif" alt="Back to top"/></a>
+				</td>
+				<td>
+					<a href="javascript:clearSpotLightFromOpenSpecButton();">
+						<img style="border:none" src="../images/icons/OpenSpecification.gif" alt="Open specification"/></a>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div id="spotLightResourcesRight" style="position:absolute; width:100px; height:100px; z-index:1; visibility:hidden">
+		<table cellpadding="0" border="0" cellspacing="0">
+			<tr>
+				<td>
+					<a href="#top">
+						<img style="border:none" src="../images/icons/BackToTop.gif" alt="Back to top"/></a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="javascript:clearSpotLightFromOpenSpecButton();">
+						<img style="border:none" src="../images/icons/OpenSpecification.gif" alt="Open specification"/></a>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div id="linkPopupMenuLayer" style="position:absolute;z-index:2;visibility:hidden">
+		<table id="linkPopupMenuTable" style="border-style:solid; border-width:1px; border-color:#000000; background:#FFFFFF; width:250px" width="100%" border="0">
+		</table>
+	</div>
+	<div id="referenceIconLayer" style="position:absolute; z-index:1; visibility:hidden; ">
+		<table style="font-size:1;" width="100%" cellpadding="3" border="0" cellspacing="0">
+			<tr>
+				<td>
+					<img src="../images/icons/Ref.gif" style="border:none" onclick="movePopupPositionToReferenceIconPosition();resetPopupForReference();switchPopupShowHideStatus();" />				</td>
+			</tr>
+		</table>
+	</div>
+	<div id="subdiagramIconLayer" style="position:absolute; z-index:1; visibility:hidden">
+		<table width="100%" cellpadding="3" border="0" cellspacing="0">
+			<tr>
+				<td>
+					<img src="../images/icons/Subdiagram.gif" style="border:none" onclick="movePopupPositionToSubdiagramIconPosition();resetPopupForSubdiagram();switchPopupShowHideStatus();" />				</td>
+			</tr>
+		</table>
+	</div>
+	<div class="HeaderText">
+		envadmin Documentation	</div>
+	<table width="100%" cellpadding="0" border="0" cellspacing="0">
+		<tr>
+			<td class="HeaderLine1">
+			</td>
+		</tr>
+		<tr>
+			<td class="HeaderLine2">
+			</td>
+		</tr>
+		<tr>
+			<td class="HeaderLine3">
+			</td>
+		</tr>
+	</table>
+	<p>
+		<a target="_content_pane" class="PageParentTitle" href="Package_3mnK14yBkARmEjMY.html">
+djangoModel : 包</a>
+	</p>
+	<p class="PageTitle">
+		Class Diagram - djangoModel	</p>
+	<table width="100%" cellpadding="0" border="0" cellspacing="0">
+		<tr>
+			<td>
+<span class="TableContent">跳至︰</span>				<select id="SelectShape" class="TableContent" onChange="scrollWin(this.value);showSpotLight(this.value)">
+<option value="">Please select a model element</option>
+<option value="2.0|52.0|80.0|50.0|Class_J20a14yBkARmEj0n.html|Class_J20a14yBkARmEj0n.html|J20a14yBkARmEj0m" id="optionJ20a14yBkARmEj0m">ViewNode : Class</option>
+<option value="12.0|142.0|80.0|50.0|Class_Z3Ha14yBkARmEkkU.html|Class_Z3Ha14yBkARmEkkU.html|Z3Ha14yBkARmEkkT" id="optionZ3Ha14yBkARmEkkT">Graph : Class</option>
+<option value="282.0|232.0|80.0|40.0|Class_eJo614yBkARmElMA.html|Class_eJo614yBkARmElMA.html|uJo614yBkARmElL_" id="optionuJo614yBkARmElL_">Resource : Class</option>
+<option value="282.0|92.0|80.0|40.0|Class_z_B614yBkARmEne_.html|Class_z_B614yBkARmEne_.html|z.B614yBkARmEne9" id="optionz.B614yBkARmEne9">ResType : Class</option>
+<option value="92.0|232.0|80.0|40.0|Class_4bn614yBkARmEocA.html|Class_4bn614yBkARmEocA.html|4bn614yBkARmEob_" id="option4bn614yBkARmEob_">Use : Class</option>
+<option value="472.0|92.0|80.0|40.0|Class___9G14yBkARmEqdn.html|Class___9G14yBkARmEqdn.html|_.9G14yBkARmEqdm" id="option_.9G14yBkARmEqdm">Deployee : Class</option>
+<option value="582.0|2.0|80.0|40.0|NOTE_q0HG14yBkARmErJ7.html|NOTE_q0HG14yBkARmErJ7.html|q0HG14yBkARmErJ6" id="optionq0HG14yBkARmErJ6"> : Note</option>
+</select>			</td>
+		</tr>
+	</table>
+	<table width="100%" cellpadding="0" border="0" cellspacing="0">
+		<tr>
+			<td>
+				<img id = "diagram" src = "../images/djangoModel.png" usemap="#diagram_map" class="Image" width="666.0" height="293.0"/>				<map name = "diagram_map">
+<area docContent="<head>
+    
+  </head>
+  <body>
+    <p>
+      <font color=&quot;#000000&quot; face=&quot;Dialog&quot; size=&quot;11px&quot; style=&quot;font-size:11px&quot;>&#26242;&#32531;</font>
+    </p>
+  </body>" coords="582.0,2.0,662.0,42.0" coords2="582.0,2.0,662.0,42.0" shape="rect" alt="暂缓:Note" id="areaq0HG14yBkARmErJ6" href="NOTE_q0HG14yBkARmErJ7.html" onmouseover="showTooltip(this)" onmouseout="hideTooltip()"/>
+<area coords="472.0,92.0,552.0,132.0" coords2="472.0,92.0,552.0,132.0" shape="rect" alt="Deployee:Class" id="area_.9G14yBkARmEqdm" href="Class___9G14yBkARmEqdn.html"/>
+<area coords="92.0,232.0,172.0,272.0" coords2="92.0,232.0,172.0,272.0" shape="rect" alt="Use:Class" id="area4bn614yBkARmEob_" href="Class_4bn614yBkARmEocA.html"/>
+<area coords="282.0,92.0,362.0,132.0" coords2="282.0,92.0,362.0,132.0" shape="rect" alt="ResType:Class" id="areaz.B614yBkARmEne9" href="Class_z_B614yBkARmEne_.html"/>
+<area coords="282.0,232.0,362.0,272.0" coords2="282.0,232.0,362.0,272.0" shape="rect" alt="Resource:Class" id="areauJo614yBkARmElL_" href="Class_eJo614yBkARmElMA.html"/>
+<area coords="12.0,142.0,92.0,192.0" coords2="12.0,142.0,92.0,192.0" shape="rect" alt="Graph:Class" id="areaZ3Ha14yBkARmEkkT" href="Class_Z3Ha14yBkARmEkkU.html"/>
+<area coords="2.0,52.0,82.0,102.0" coords2="2.0,52.0,82.0,102.0" shape="rect" alt="ViewNode:Class" id="areaJ20a14yBkARmEj0m" href="Class_J20a14yBkARmEj0n.html"/></map>			</td>
+		</tr>
+	</table>
+	<p>
+	</p>
+	<table width="100%" cellpadding="0" border="0" cellspacing="0">
+		<tr>
+			<td class="Category">
+				Model Elements			</td>
+		</tr>
+		<tr>
+			<td style="height: 5px">
+			</td>
+		</tr>
+	</table>
+	<table width="100%" cellpadding="0" border="0" cellspacing="0">
+		<tr>
+			<td colSpan="4" class="TableHeaderLine">
+			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine1">
+			</td>
+		</tr>
+		<tr class="TableHeader">
+			<td class="TableCellSpaceHolder10Px">
+			</td>
+			<td width="30%">
+<span class="TableHeaderText">名称</span>			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td>
+<span class="TableHeaderText">文档</span>			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine2">
+			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="Class_J20a14yBkARmEj0n.html">ViewNode : 类</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="Class_Z3Ha14yBkARmEkkU.html">Graph : 类</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="Class_eJo614yBkARmElMA.html">Resource : 类</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="Class_z_B614yBkARmEne_.html">ResType : 类</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="Class_4bn614yBkARmEocA.html">Use : 类</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="Class___9G14yBkARmEqdn.html">Deployee : 类</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/NOTE.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/NOTE.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="NOTE_q0HG14yBkARmErJ7.html">N/A : 注解</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"><head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#000000" face="Dialog" size="11px" style="font-size:11px">&#26242;&#32531;</font>
+    </p>
+  </body></span>			</td>
+		</tr>
+	</table>
+	<table width="100%" cellpadding="0" border="0" cellspacing="0">
+		<tr>
+			<td class="TableCellSpaceHolder1PxTall">
+			</td>
+		</tr>
+		<tr>
+			<td class="TableFooter">
+			</td>
+		</tr>
+	</table>
+	<div style="height: 20px">
+	</div>
+	<table width="100%" cellpadding="0" border="0" cellspacing="0">
+		<tr>
+			<td class="FooterLine">
+			</td>
+		</tr>
+	</table>
+	<div class="HeaderText">
+		envadmin Documentation	</div>
+</body>
+</html>

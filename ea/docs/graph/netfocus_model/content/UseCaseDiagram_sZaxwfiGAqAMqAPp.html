@@ -1,0 +1,464 @@
+<html>
+<head>
+	<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" href="report.css" type="text/css"/>
+	<title>Use Case Diagram - 1.资源管理</title>
+	<script type="text/javascript" src="report.js"></script>
+	<script type="text/javascript" src="link_popup.js"></script>
+	<script type="text/javascript" src="tooltip.js"></script>
+</head>
+<body style="margin-left: 10px; margin-right: 10px; margin-top: 10px; margin-bottom: 10px;" onload="initPage();initDiagram();initGridDiagram();">
+	<div id="spotlight" style="position:absolute; width:100px; height:100px; z-index:2; visibility:hidden">
+		<table id="spotLightTable" onClick="updateCursorPos(event);adjustPopupPositionForSpotLightTable();clearSpotLight()" style="border-style:solid; border-width:3px; border-color:#FF0000" width="100%" cellpadding="0" border="0" cellspacing="0">
+			<tr>
+				<td id="spotLightCell">
+				</td>
+			</tr>
+		</table>
+	</div>
+	<canvas id="spotlight_c" height="100" style="position:absolute; z-index:2; visibility:hidden" width="100">
+	</canvas>
+	<div id="spotLightResourcesTop" style="position:absolute; width:100px; height:100px; z-index:1; visibility:hidden">
+		<table cellpadding="0" border="0" cellspacing="0">
+			<tr>
+				<td>
+					<a href="#top">
+						<img style="border:none" src="../images/icons/BackToTop.gif" alt="Back to top"/></a>
+				</td>
+				<td>
+					<a href="javascript:clearSpotLightFromOpenSpecButton();">
+						<img style="border:none" src="../images/icons/OpenSpecification.gif" alt="Open specification"/></a>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div id="spotLightResourcesRight" style="position:absolute; width:100px; height:100px; z-index:1; visibility:hidden">
+		<table cellpadding="0" border="0" cellspacing="0">
+			<tr>
+				<td>
+					<a href="#top">
+						<img style="border:none" src="../images/icons/BackToTop.gif" alt="Back to top"/></a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="javascript:clearSpotLightFromOpenSpecButton();">
+						<img style="border:none" src="../images/icons/OpenSpecification.gif" alt="Open specification"/></a>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div id="linkPopupMenuLayer" style="position:absolute;z-index:2;visibility:hidden">
+		<table id="linkPopupMenuTable" style="border-style:solid; border-width:1px; border-color:#000000; background:#FFFFFF; width:250px" width="100%" border="0">
+		</table>
+	</div>
+	<div id="referenceIconLayer" style="position:absolute; z-index:1; visibility:hidden; ">
+		<table style="font-size:1;" width="100%" cellpadding="3" border="0" cellspacing="0">
+			<tr>
+				<td>
+					<img src="../images/icons/Ref.gif" style="border:none" onclick="movePopupPositionToReferenceIconPosition();resetPopupForReference();switchPopupShowHideStatus();" />				</td>
+			</tr>
+		</table>
+	</div>
+	<div id="subdiagramIconLayer" style="position:absolute; z-index:1; visibility:hidden">
+		<table width="100%" cellpadding="3" border="0" cellspacing="0">
+			<tr>
+				<td>
+					<img src="../images/icons/Subdiagram.gif" style="border:none" onclick="movePopupPositionToSubdiagramIconPosition();resetPopupForSubdiagram();switchPopupShowHideStatus();" />				</td>
+			</tr>
+		</table>
+	</div>
+	<div id="transitorIconLayer" style="position:absolute; z-index:1; visibility:hidden">
+		<table width="100%" cellpadding="3" border="0" cellspacing="0">
+			<tr>
+				<td>
+					<img src="../images/icons/Transitor.gif" style="border:none" onclick="movePopupPositionToTransitorIconPosition();resetPopupForTransitor();switchPopupShowHideStatus();" />				</td>
+			</tr>
+		</table>
+	</div>
+	<div class="HeaderText">
+		netfocus Documentation	</div>
+	<table width="100%" cellpadding="0" border="0" cellspacing="0">
+		<tr>
+			<td class="HeaderLine1">
+			</td>
+		</tr>
+		<tr>
+			<td class="HeaderLine2">
+			</td>
+		</tr>
+		<tr>
+			<td class="HeaderLine3">
+			</td>
+		</tr>
+	</table>
+	<p>
+		<a target="_content_pane" class="PageParentTitle" href="Model_bxfUBPiGAqEIAQ56.html">
+1. requirement model : 模型</a>
+	</p>
+	<p class="PageTitle">
+		Use Case Diagram - 1.资源管理	</p>
+	<table width="100%" cellpadding="0" border="0" cellspacing="0">
+		<tr>
+			<td>
+<span class="TableContent">跳至︰</span>				<select id="SelectShape" class="TableContent" onChange="scrollWin(this.value);showSpotLight(this.value)">
+<option value="">Please select a model element</option>
+<option value="shape|30.0|60.0|30.0|60.0|Actor_0FeC4fiGAqAMqAV7.html|Actor_0FeC4fiGAqAMqAV7.html|0FeC4fiGAqAMqAV6" id="option0FeC4fiGAqAMqAV6">network administrator : Actor</option>
+<option value="shape|510.0|200.0|30.0|60.0|Actor__wzo7fiGAqAMsyYl.html|Actor__wzo7fiGAqAMsyYl.html|fwzo7fiGAqAMsyYk" id="optionfwzo7fiGAqAMsyYk">BSM系统 : Actor</option>
+<option value="shape|0.0|0.0|390.0|40.0|NOTE_uHzxwfiGAqAMqAPy.html|NOTE_uHzxwfiGAqAMqAPy.html|uHzxwfiGAqAMqAPx" id="optionuHzxwfiGAqAMqAPx">Unnamed Note : Note</option>
+<option value="shape|50.0|420.0|460.0|80.0|System_qeIM7fiGAqAMswmT.html|System_qeIM7fiGAqAMswmT.html|KeIM7fiGAqAMswmS" id="optionKeIM7fiGAqAMswmS">监控资源 : System</option>
+<option value="shape|160.0|310.0|80.0|40.0|UseCase_JTSM4fiGAqAMqAPH.html|UseCase_JTSM4fiGAqAMqAPH.html|xTSM4fiGAqAMqAPG" id="optionxTSM4fiGAqAMqAPG">资源一览 : Use Case</option>
+<option value="shape|60.0|450.0|80.0|40.0|UseCase_EZ6M4fiGAqAMqAPq.html|UseCase_EZ6M4fiGAqAMqAPq.html|EZ6M4fiGAqAMqAPp" id="optionEZ6M4fiGAqAMqAPp">IP - MAC : Use Case</option>
+<option value="shape|70.0|310.0|80.0|40.0|UseCase_zg2M4fiGAqAMqAQN.html|UseCase_zg2M4fiGAqAMqAQN.html|zg2M4fiGAqAMqAQM" id="optionzg2M4fiGAqAMqAQM">搜索 : Use Case</option>
+<option value="shape|240.0|450.0|80.0|40.0|UseCase_lJeM4fiGAqAMqAQw.html|UseCase_lJeM4fiGAqAMqAQw.html|lJeM4fiGAqAMqAQv" id="optionlJeM4fiGAqAMqAQv">工具 : Use Case</option>
+<option value="shape|330.0|450.0|80.0|40.0|UseCase_z_hM4fiGAqAMqART.html|UseCase_z_hM4fiGAqAMqART.html|z_hM4fiGAqAMqARS" id="optionz_hM4fiGAqAMqARS">背板 : Use Case</option>
+<option value="shape|230.0|220.0|80.0|40.0|UseCase_zFVM4fiGAqAMqAR2.html|UseCase_zFVM4fiGAqAMqAR2.html|TFVM4fiGAqAMqAR1" id="optionTFVM4fiGAqAMqAR1">发现资源 : Use Case</option>
+<option value="shape|150.0|450.0|80.0|40.0|UseCase_7OtM4fiGAqAMqASZ.html|UseCase_7OtM4fiGAqAMqASZ.html|7OtM4fiGAqAMqASY" id="option7OtM4fiGAqAMqASY">幻灯片 : Use Case</option>
+<option value="shape|420.0|450.0|80.0|40.0|UseCase_UljM4fiGAqAMqATf.html|UseCase_UljM4fiGAqAMqATf.html|UljM4fiGAqAMqATe" id="optionUljM4fiGAqAMqATe">拓扑展现 : Use Case</option>
+<option value="shape|10.0|220.0|80.0|40.0|UseCase_lSaC4fiGAqAMqAUp.html|UseCase_lSaC4fiGAqAMqAUp.html|lSaC4fiGAqAMqAUo" id="optionlSaC4fiGAqAMqAUo">维护设备型号 : Use Case</option>
+<option value="shape|210.0|50.0|181.0|84.0|UseCase__2PFbfiGAqAMswSw.html|UseCase__2PFbfiGAqAMswSw.html|.2PFbfiGAqAMswSv" id="option.2PFbfiGAqAMswSv">注册资源 : Use Case</option>
+<option value="shape|320.0|220.0|80.0|40.0|UseCase_xr207fiGAqAMswZB.html|UseCase_xr207fiGAqAMswZB.html|xr207fiGAqAMswZA" id="optionxr207fiGAqAMswZA">加入监控 : Use Case</option>
+<option value="shape|120.0|220.0|80.0|40.0|UseCase_q3qv8_iGAqAMlyNg.html|UseCase_q3qv8_iGAqAMlyNg.html|FSOv8_iGAqAMlyRy" id="optionFSOv8_iGAqAMlyRy">维护资源编目 : Use Case</option>
+<option value="shape|250.0|310.0|80.0|40.0|UseCase_s3n8C_iGAqAMl21n.html|UseCase_s3n8C_iGAqAMl21n.html|s3n8C_iGAqAMl21m" id="options3n8C_iGAqAMl21m">设备定位 : Use Case</option>
+</select>			</td>
+		</tr>
+	</table>
+	<table width="100%" cellpadding="0" border="0" cellspacing="0">
+		<tr>
+			<td>
+				<img id = "diagram" src = "../images/1.png" usemap="#diagram_map" class="Image" width="561.0" height="504.0"/>				<map name = "diagram_map">
+
+<area docContent="<head>
+    
+  </head>
+  <body>
+    <font color=&quot;#000000&quot; face=&quot;Dialog&quot; size=&quot;10px&quot; style=&quot;font-size:10px&quot;>&#25299;&#25169;&#31649;&#29702; 
+    &#36164;&#28304;&#31649;&#29702; &#30417;&#25511;&#31649;&#29702; &#25925;&#38556;&#31649;&#29702; &#25968;&#25454;&#20998;&#26512; &#32479;&#35745;&#25253;&#34920; &#31995;&#32479;&#31649;&#29702;</font>
+  </body>" coords="0.0, 0.0, 390.0, 40.0" coords2="0.0, 0.0, 390.0, 40.0" shape="rect" alt="拓扑管理 资源管理 监控管理 故障管理 数据分析 统计报表 系统管理:Note" id="areauHzxwfiGAqAMqAPx" href="NOTE_uHzxwfiGAqAMqAPy.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmouseout="hideTooltip()"/>
+<area coords="150.0, 450.0, 230.0, 490.0" coords2="150.0, 450.0, 230.0, 490.0" shape="rect" alt="幻灯片:Use Case" id="area7OtM4fiGAqAMqASY" href="UseCase_7OtM4fiGAqAMqASZ.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="420.0, 450.0, 500.0, 490.0" coords2="420.0, 450.0, 500.0, 490.0" shape="rect" alt="拓扑展现:Use Case" id="areaUljM4fiGAqAMqATe" href="UseCase_UljM4fiGAqAMqATf.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="330.0, 450.0, 410.0, 490.0" coords2="330.0, 450.0, 410.0, 490.0" shape="rect" alt="背板:Use Case" id="areaz_hM4fiGAqAMqARS" href="UseCase_z_hM4fiGAqAMqART.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="240.0, 450.0, 320.0, 490.0" coords2="240.0, 450.0, 320.0, 490.0" shape="rect" alt="工具:Use Case" id="arealJeM4fiGAqAMqAQv" href="UseCase_lJeM4fiGAqAMqAQw.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="60.0, 450.0, 140.0, 490.0" coords2="60.0, 450.0, 140.0, 490.0" shape="rect" alt="IP - MAC:Use Case" id="areaEZ6M4fiGAqAMqAPp" href="UseCase_EZ6M4fiGAqAMqAPq.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="250.0, 310.0, 330.0, 350.0" coords2="250.0, 310.0, 330.0, 350.0" shape="rect" alt="设备定位:Use Case" id="areas3n8C_iGAqAMl21m" href="UseCase_s3n8C_iGAqAMl21n.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="120.0, 220.0, 200.0, 260.0" coords2="120.0, 220.0, 200.0, 260.0" shape="rect" alt="维护资源编目:Use Case" id="areaFSOv8_iGAqAMlyRy" href="UseCase_q3qv8_iGAqAMlyNg.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="160.0, 310.0, 240.0, 350.0" coords2="160.0, 310.0, 240.0, 350.0" shape="rect" alt="资源一览:Use Case" id="areaxTSM4fiGAqAMqAPG" href="UseCase_JTSM4fiGAqAMqAPH.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="50.0, 420.0, 510.0, 500.0" coords2="50.0, 420.0, 510.0, 500.0" shape="rect" alt="监控资源:System" id="areaKeIM7fiGAqAMswmS" href="System_qeIM7fiGAqAMswmT.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="320.0, 220.0, 400.0, 260.0" coords2="320.0, 220.0, 400.0, 260.0" shape="rect" alt="加入监控:Use Case" id="areaxr207fiGAqAMswZA" href="UseCase_xr207fiGAqAMswZB.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="510.0, 200.0, 540.0, 260.0" coords2="510.0, 200.0, 540.0, 260.0" shape="rect" alt="BSM系统:Actor" id="areafwzo7fiGAqAMsyYk" href="Actor__wzo7fiGAqAMsyYl.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="210.0, 50.0, 391.0, 134.0" coords2="210.0, 50.0, 391.0, 134.0" shape="rect" alt="注册资源:Use Case" id="area.2PFbfiGAqAMswSv" href="UseCase__2PFbfiGAqAMswSw.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="30.0, 60.0, 60.0, 120.0" coords2="30.0, 60.0, 60.0, 120.0" shape="rect" alt="network administrator:Actor" id="area0FeC4fiGAqAMqAV6" href="Actor_0FeC4fiGAqAMqAV7.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="10.0, 220.0, 90.0, 260.0" coords2="10.0, 220.0, 90.0, 260.0" shape="rect" alt="维护设备型号:Use Case" id="arealSaC4fiGAqAMqAUo" href="UseCase_lSaC4fiGAqAMqAUp.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="230.0, 220.0, 310.0, 260.0" coords2="230.0, 220.0, 310.0, 260.0" shape="rect" alt="发现资源:Use Case" id="areaTFVM4fiGAqAMqAR1" href="UseCase_zFVM4fiGAqAMqAR2.html" onmouseover="storeReferenceAndSubdiagramInfos(this.coords,new Array(),new Array(),new Array(),new Array(),new Array(),new Array('ActivityDiagram_knHPjfiGAqAMswxp.html/发现资源/ActivityDiagram'),new Array(),new Array(),new Array()),hideReferenceIcon(),showSubdiagramIcon(this.coords),hideTransitorIcon()"/>
+<area coords="70.0, 310.0, 150.0, 350.0" coords2="70.0, 310.0, 150.0, 350.0" shape="rect" alt="搜索:Use Case" id="areazg2M4fiGAqAMqAQM" href="UseCase_zg2M4fiGAqAMqAQN.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="263.0, 122.0, 263.0, 230.0, 277.0, 230.0, 277.0, 122.0" coords2="263.0, 122.0, 263.0, 230.0, 277.0, 230.0, 277.0, 122.0" shape="poly" alt="discovery:Extend" id="areaJxA07fiGAqAMswWg" href="Extend_uxA07fiGAqAMswWb.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="353.0, 114.0, 353.0, 230.0, 367.0, 230.0, 367.0, 114.0" coords2="353.0, 114.0, 353.0, 230.0, 367.0, 230.0, 367.0, 114.0" shape="poly" alt="add monitor:Extend" id="areaTPx07fiGAqAMswZn" href="Extend_TPx07fiGAqAMswZk.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="50.0, 83.0, 50.0, 97.0, 220.0, 97.0, 220.0, 83.0" coords2="50.0, 83.0, 50.0, 97.0, 220.0, 97.0, 220.0, 83.0" shape="poly" alt=":Association" id="areaT_r07fiGAqAMswgw" href="Association_T_r07fiGAqAMswgr.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="390.0, 233.0, 390.0, 247.0, 519.0, 247.0, 519.0, 233.0" coords2="390.0, 233.0, 390.0, 247.0, 519.0, 247.0, 519.0, 233.0" shape="poly" alt=":Dependency" id="areavKNO8_iGAqAMlxOf" href="Dependency_xKNO8_iGAqAMlxOe.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="43.0, 124.0, 43.0, 230.0, 57.0, 230.0, 57.0, 124.0" coords2="43.0, 124.0, 43.0, 230.0, 57.0, 230.0, 57.0, 124.0" shape="poly" alt=":Association" id="area1p1YC_iGAqAMl0uz" href="Association_lp1YC_iGAqAMl0uu.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="118.0, 124.0, 118.0, 240.0, 132.0, 240.0, 132.0, 124.0" coords2="118.0, 124.0, 118.0, 240.0, 132.0, 240.0, 132.0, 124.0" shape="poly" alt=":Association" id="areaHSNYC_iGAqAMl0u8" href="Association_HSNYC_iGAqAMl0u3.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+</map>			</td>
+		</tr>
+	</table>
+	<p>
+	</p>
+	<table width="100%" cellpadding="0" border="0" cellspacing="0">
+		<tr>
+			<td class="Category">
+				Model Elements			</td>
+		</tr>
+		<tr>
+			<td style="height: 5px">
+			</td>
+		</tr>
+	</table>
+	<table width="100%" cellpadding="0" border="0" cellspacing="0">
+		<tr>
+			<td colSpan="4" class="TableHeaderLine">
+			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine1">
+			</td>
+		</tr>
+		<tr class="TableHeader">
+			<td class="TableCellSpaceHolder10Px">
+			</td>
+			<td width="30%">
+<span class="TableHeaderText">名称</span>			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td>
+<span class="TableHeaderText">文档</span>			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine2">
+			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Actor.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Actor.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="Actor_0FeC4fiGAqAMqAV7.html">network administrator : 参与者</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Actor.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Actor.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="Actor__wzo7fiGAqAMsyYl.html">BSM系统 : 参与者</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/NOTE.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/NOTE.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="NOTE_uHzxwfiGAqAMqAPy.html">N/A : 注解</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"><head>
+    
+  </head>
+  <body>
+    <font color="#000000" face="Dialog" size="10px" style="font-size:10px">&#25299;&#25169;&#31649;&#29702; 
+    &#36164;&#28304;&#31649;&#29702; &#30417;&#25511;&#31649;&#29702; &#25925;&#38556;&#31649;&#29702; &#25968;&#25454;&#20998;&#26512; &#32479;&#35745;&#25253;&#34920; &#31995;&#32479;&#31649;&#29702;</font>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/System.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/System.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="System_qeIM7fiGAqAMswmT.html">监控资源 : 系统</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="UseCase_JTSM4fiGAqAMqAPH.html">资源一览 : 用例</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="UseCase_EZ6M4fiGAqAMqAPq.html">IP - MAC : 用例</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="UseCase_zg2M4fiGAqAMqAQN.html">搜索 : 用例</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="UseCase_lJeM4fiGAqAMqAQw.html">工具 : 用例</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="UseCase_z_hM4fiGAqAMqART.html">背板 : 用例</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="UseCase_zFVM4fiGAqAMqAR2.html">发现资源 : 用例</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="UseCase_7OtM4fiGAqAMqASZ.html">幻灯片 : 用例</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="UseCase_UljM4fiGAqAMqATf.html">拓扑展现 : 用例</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="UseCase_lSaC4fiGAqAMqAUp.html">维护设备型号 : 用例</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="UseCase__2PFbfiGAqAMswSw.html">注册资源 : 用例</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="UseCase_xr207fiGAqAMswZB.html">加入监控 : 用例</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="UseCase_q3qv8_iGAqAMlyNg.html">维护资源编目 : 用例</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="UseCase_s3n8C_iGAqAMl21n.html">设备定位 : 用例</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+	</table>
+	<table width="100%" cellpadding="0" border="0" cellspacing="0">
+		<tr>
+			<td class="TableCellSpaceHolder1PxTall">
+			</td>
+		</tr>
+		<tr>
+			<td class="TableFooter">
+			</td>
+		</tr>
+	</table>
+	<div style="height: 20px">
+	</div>
+	<table width="100%" cellpadding="0" border="0" cellspacing="0">
+		<tr>
+			<td class="FooterLine">
+			</td>
+		</tr>
+	</table>
+	<div class="HeaderText">
+		netfocus Documentation	</div>
+</body>
+</html>

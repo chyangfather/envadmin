@@ -1,0 +1,267 @@
+<html>
+<head>
+	<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" href="report.css" type="text/css"/>
+	<title>State Machine Diagram - 资源生命周期</title>
+	<script type="text/javascript" src="report.js"></script>
+	<script type="text/javascript" src="link_popup.js"></script>
+	<script type="text/javascript" src="tooltip.js"></script>
+</head>
+<body style="margin-left: 10px; margin-right: 10px; margin-top: 10px; margin-bottom: 10px;" onload="initPage();initDiagram();initGridDiagram();">
+	<div id="spotlight" style="position:absolute; width:100px; height:100px; z-index:2; visibility:hidden">
+		<table id="spotLightTable" onClick="updateCursorPos(event);adjustPopupPositionForSpotLightTable();clearSpotLight()" style="border-style:solid; border-width:3px; border-color:#FF0000" width="100%" cellpadding="0" border="0" cellspacing="0">
+			<tr>
+				<td id="spotLightCell">
+				</td>
+			</tr>
+		</table>
+	</div>
+	<canvas id="spotlight_c" height="100" style="position:absolute; z-index:2; visibility:hidden" width="100">
+	</canvas>
+	<div id="spotLightResourcesTop" style="position:absolute; width:100px; height:100px; z-index:1; visibility:hidden">
+		<table cellpadding="0" border="0" cellspacing="0">
+			<tr>
+				<td>
+					<a href="#top">
+						<img style="border:none" src="../images/icons/BackToTop.gif" alt="Back to top"/></a>
+				</td>
+				<td>
+					<a href="javascript:clearSpotLightFromOpenSpecButton();">
+						<img style="border:none" src="../images/icons/OpenSpecification.gif" alt="Open specification"/></a>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div id="spotLightResourcesRight" style="position:absolute; width:100px; height:100px; z-index:1; visibility:hidden">
+		<table cellpadding="0" border="0" cellspacing="0">
+			<tr>
+				<td>
+					<a href="#top">
+						<img style="border:none" src="../images/icons/BackToTop.gif" alt="Back to top"/></a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="javascript:clearSpotLightFromOpenSpecButton();">
+						<img style="border:none" src="../images/icons/OpenSpecification.gif" alt="Open specification"/></a>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div id="linkPopupMenuLayer" style="position:absolute;z-index:2;visibility:hidden">
+		<table id="linkPopupMenuTable" style="border-style:solid; border-width:1px; border-color:#000000; background:#FFFFFF; width:250px" width="100%" border="0">
+		</table>
+	</div>
+	<div id="referenceIconLayer" style="position:absolute; z-index:1; visibility:hidden; ">
+		<table style="font-size:1;" width="100%" cellpadding="3" border="0" cellspacing="0">
+			<tr>
+				<td>
+					<img src="../images/icons/Ref.gif" style="border:none" onclick="movePopupPositionToReferenceIconPosition();resetPopupForReference();switchPopupShowHideStatus();" />				</td>
+			</tr>
+		</table>
+	</div>
+	<div id="subdiagramIconLayer" style="position:absolute; z-index:1; visibility:hidden">
+		<table width="100%" cellpadding="3" border="0" cellspacing="0">
+			<tr>
+				<td>
+					<img src="../images/icons/Subdiagram.gif" style="border:none" onclick="movePopupPositionToSubdiagramIconPosition();resetPopupForSubdiagram();switchPopupShowHideStatus();" />				</td>
+			</tr>
+		</table>
+	</div>
+	<div id="transitorIconLayer" style="position:absolute; z-index:1; visibility:hidden">
+		<table width="100%" cellpadding="3" border="0" cellspacing="0">
+			<tr>
+				<td>
+					<img src="../images/icons/Transitor.gif" style="border:none" onclick="movePopupPositionToTransitorIconPosition();resetPopupForTransitor();switchPopupShowHideStatus();" />				</td>
+			</tr>
+		</table>
+	</div>
+	<div class="HeaderText">
+		netfocus Documentation	</div>
+	<table width="100%" cellpadding="0" border="0" cellspacing="0">
+		<tr>
+			<td class="HeaderLine1">
+			</td>
+		</tr>
+		<tr>
+			<td class="HeaderLine2">
+			</td>
+		</tr>
+		<tr>
+			<td class="HeaderLine3">
+			</td>
+		</tr>
+	</table>
+	<p>
+		<a target="_content_pane" class="PageParentTitle" href="ClassDiagram_I2eq4fiGAqAMqBFQ.html">
+Resource : 类</a>
+ (in 		<a target="_content_pane" class="PageParentTitle" href="ClassDiagram_I2eq4fiGAqAMqBFQ.html">
+1.resource</a>
+ / 		<a target="_content_pane" class="PageParentTitle" href="ClassDiagram_XUBREfiD_AAAARPj.html">
+2.Target</a>
+ / 		<a target="_content_pane" class="PageParentTitle" href="ClassDiagram_uo7_RfiGAqAMs1gD.html">
+0.resCategory</a>
+)	</p>
+	<p class="PageTitle">
+		State Machine Diagram - 资源生命周期	</p>
+	<table width="100%" cellpadding="0" border="0" cellspacing="0">
+		<tr>
+			<td>
+<span class="TableContent">跳至︰</span>				<select id="SelectShape" class="TableContent" onChange="scrollWin(this.value);showSpotLight(this.value)">
+<option value="">Please select a model element</option>
+<option value="shape|432.0|82.0|18.0|18.0|FinalState2_Rn0WSfiGAqAMqCUd.html|FinalState2_Rn0WSfiGAqAMqCUd.html|Rn0WSfiGAqAMqCUc" id="optionRn0WSfiGAqAMqCUc">终态 : Final State</option>
+<option value="shape|2.0|82.0|18.0|18.0|InitialPseudoState_nz16SfiGAqAMqBRo.html|InitialPseudoState_nz16SfiGAqAMqBRo.html|Hz16SfiGAqAMqBRn" id="optionHz16SfiGAqAMqBRn">初始 : Initial Pseudo State</option>
+<option value="shape|122.0|72.0|80.0|40.0|State2_it96SfiGAqAMqBS9.html|State2_it96SfiGAqAMqBS9.html|Ct96SfiGAqAMqBS8" id="optionCt96SfiGAqAMqBS8">初始 : State</option>
+<option value="shape|262.0|2.0|80.0|40.0|State2_qAT6SfiGAqAMqBU_.html|State2_qAT6SfiGAqAMqBU_.html|qAT6SfiGAqAMqBU9" id="optionqAT6SfiGAqAMqBU9">可管理 : State</option>
+<option value="shape|262.0|132.0|80.0|40.0|State2_VanmSfiGAqAMqCBS.html|State2_VanmSfiGAqAMqCBS.html|VanmSfiGAqAMqCBR" id="optionVanmSfiGAqAMqCBR">已监控 : State</option>
+</select>			</td>
+		</tr>
+	</table>
+	<table width="100%" cellpadding="0" border="0" cellspacing="0">
+		<tr>
+			<td>
+				<img id = "diagram" src = "../images/4.png" usemap="#diagram_map" class="Image" width="454.0" height="176.0"/>				<map name = "diagram_map">
+
+<area coords="432.0, 82.0, 450.0, 100.0" coords2="432.0, 82.0, 450.0, 100.0" shape="rect" alt="终态:Final State" id="areaRn0WSfiGAqAMqCUc" href="FinalState2_Rn0WSfiGAqAMqCUd.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="262.0, 132.0, 342.0, 172.0" coords2="262.0, 132.0, 342.0, 172.0" shape="rect" alt="已监控:State" id="areaVanmSfiGAqAMqCBR" href="State2_VanmSfiGAqAMqCBS.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="262.0, 2.0, 342.0, 42.0" coords2="262.0, 2.0, 342.0, 42.0" shape="rect" alt="可管理:State" id="areaqAT6SfiGAqAMqBU9" href="State2_qAT6SfiGAqAMqBU_.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="122.0, 72.0, 202.0, 112.0" coords2="122.0, 72.0, 202.0, 112.0" shape="rect" alt="初始:State" id="areaCt96SfiGAqAMqBS8" href="State2_it96SfiGAqAMqBS9.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="2.0, 82.0, 20.0, 100.0" coords2="2.0, 82.0, 20.0, 100.0" shape="rect" alt="初始:Initial Pseudo State" id="areaHz16SfiGAqAMqBRn" href="InitialPseudoState_nz16SfiGAqAMqBRo.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="8.0, 85.0, 8.0, 99.0, 131.0, 99.0, 131.0, 85.0" coords2="8.0, 85.0, 8.0, 99.0, 131.0, 99.0, 131.0, 85.0" shape="poly" alt="发现或手工添加:Transition" id="areaCzsmSfiGAqAMqBqd" href="Transition2_OtsmSfiGAqAMqBqc.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="268.0, 31.0, 190.0, 69.0, 195.0, 82.0, 273.0, 44.0, 268.0, 31.0" coords2="268.0, 31.0, 190.0, 69.0, 195.0, 82.0, 273.0, 44.0, 268.0, 31.0" shape="poly" alt="具备管理标识，
+如SNMP:IP+共同体名]:Transition" id="areaZ7RmSfiGAqAMqB0p" href="Transition2_Z7RmSfiGAqAMqB0o.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="285.0, 32.0, 285.0, 141.0, 299.0, 141.0, 299.0, 32.0" coords2="285.0, 32.0, 285.0, 141.0, 299.0, 141.0, 299.0, 32.0" shape="poly" alt="加入监控:Transition" id="areaU73mSfiGAqAMqCCZ" href="Transition2_U73mSfiGAqAMqCCY.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="315.0, 32.0, 315.0, 141.0, 329.0, 141.0, 329.0, 32.0" coords2="315.0, 32.0, 315.0, 141.0, 329.0, 141.0, 329.0, 32.0" shape="poly" alt="取消监控:Transition" id="areahf_mSfiGAqAMqCES" href="Transition2_hf_mSfiGAqAMqCER.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="335.0, 31.0, 330.0, 44.0, 439.0, 97.0, 444.0, 84.0, 335.0, 31.0" coords2="335.0, 31.0, 330.0, 44.0, 439.0, 97.0, 444.0, 84.0, 335.0, 31.0" shape="poly" alt="注销:Transition" id="areadycWSfiGAqAMqCVs" href="Transition2_dycWSfiGAqAMqCVr.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="439.0, 84.0, 330.0, 129.0, 335.0, 142.0, 444.0, 97.0, 439.0, 84.0" coords2="439.0, 84.0, 330.0, 129.0, 335.0, 142.0, 444.0, 97.0, 439.0, 84.0" shape="poly" alt="注销:Transition" id="areaIYiWSfiGAqAMqCYt" href="Transition2_IYiWSfiGAqAMqCYs.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+</map>			</td>
+		</tr>
+	</table>
+	<p>
+	</p>
+	<table width="100%" cellpadding="0" border="0" cellspacing="0">
+		<tr>
+			<td class="Category">
+				Model Elements			</td>
+		</tr>
+		<tr>
+			<td style="height: 5px">
+			</td>
+		</tr>
+	</table>
+	<table width="100%" cellpadding="0" border="0" cellspacing="0">
+		<tr>
+			<td colSpan="4" class="TableHeaderLine">
+			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine1">
+			</td>
+		</tr>
+		<tr class="TableHeader">
+			<td class="TableCellSpaceHolder10Px">
+			</td>
+			<td width="30%">
+<span class="TableHeaderText">名称</span>			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td>
+<span class="TableHeaderText">文档</span>			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine2">
+			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/FinalState2.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/FinalState2.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="FinalState2_Rn0WSfiGAqAMqCUd.html">终态 : 终态</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/InitialPseudoState.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/InitialPseudoState.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="InitialPseudoState_nz16SfiGAqAMqBRo.html">初始 : 初始伪状态</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/State2.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/State2.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="State2_it96SfiGAqAMqBS9.html">初始 : 状态</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/State2.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/State2.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="State2_qAT6SfiGAqAMqBU_.html">可管理 : 状态</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/State2.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/State2.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="State2_VanmSfiGAqAMqCBS.html">已监控 : 状态</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+	</table>
+	<table width="100%" cellpadding="0" border="0" cellspacing="0">
+		<tr>
+			<td class="TableCellSpaceHolder1PxTall">
+			</td>
+		</tr>
+		<tr>
+			<td class="TableFooter">
+			</td>
+		</tr>
+	</table>
+	<div style="height: 20px">
+	</div>
+	<table width="100%" cellpadding="0" border="0" cellspacing="0">
+		<tr>
+			<td class="FooterLine">
+			</td>
+		</tr>
+	</table>
+	<div class="HeaderText">
+		netfocus Documentation	</div>
+</body>
+</html>

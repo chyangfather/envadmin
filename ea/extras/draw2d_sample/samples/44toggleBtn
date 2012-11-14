@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/Strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de"><head>
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+  <title>FreeGroup Draw2D 0.9.26 :: ToggleButton and ToolPalette Demo</title>
+        <link type="text/css" rel="stylesheet" href="44toggleBtn_files/demo.css">
+
+    <!-- common, all times required, imports -->        <script src="44toggleBtn_files/wz_jsgraphics.js"></script>      <script src="44toggleBtn_files/mootools.js"></script>      <script src="44toggleBtn_files/moocanvas.js"></script>      <script src="44toggleBtn_files/draw2d.js"></script>
+
+
+        <!-- demo specific imports -->
+	<script src="44toggleBtn_files/MyPalette.js"></script>
+	<script src="44toggleBtn_files/ToolShowGrid.js"></script>
+</head>
+<body onselectstart="return false;" style="margin: 0px; padding: 0px;" onkeydown="">
+<div tabindex="0" class="Workflow" id="paintarea" style="position: absolute; left: 0px; top: 0px; width: 3000px; height: 3000px; cursor: default; background: none repeat scroll 0% 0% transparent;">
+    <!-- The information help text -->
+    <div class="stickyNote">
+    <center><b>Draw2D 0.9.26 - A simple diagram drawing demo<br>
+    by Andreas Herz (a.herz @ freegroup.de)
+    <br>
+    </b>
+    <br>
+    <div style="color:red;font-size:9pt"><u>Focus of this example:</u> How to use a ToggleButton.</div>
+    </center>
+    <br>
+    <center>See more on <a href="http://www.draw2d.org/">FreeGroup Draw2D 0.9.26</a></center>
+    </div>
+
+<div tabindex="0" class=" unselectable" style="position: absolute; left: 200px; top: 200px; height: 70px; width: 250px; margin: 0px; padding: 0px; outline: medium none; z-index: 100; color: rgb(0, 0, 0); background-color: rgb(241, 241, 121); font-size: 10pt; cursor: move;" id="aea0c933-d762-0422-993f-f11361739edd">NOTE: Press the button in the Toolbar to toggle the background grid.</div><div tabindex="0" class="WindowFigure" style="position: absolute; left: 400px; top: 10px; height: 60px; width: 300px; margin: 0px; padding: 0px; outline: medium none; z-index: 50000; border: 1px solid black; background-image: url(&quot;window_bg.png&quot;); box-shadow: 5px 5px 5px rgb(204, 204, 204); border-radius: 2px 2px 2px 2px;" id="987be577-0a20-f7f3-ca38-a8aeea531ed2"><div class="WindowFigure_titlebar unselectable" style="position: absolute; left: 0px; top: 0px; width: 300px; height: 15px; margin: 0px; padding: 0px; font: 10px verdana; background-color: blue; border-bottom: 2px solid gray; white-space: nowrap; text-align: center; background-image: url(&quot;window_toolbar.png&quot;); cursor: move;">Tools</div><div style="position: absolute; left: 0px; top: 15px; width: 300px; height: 45px; margin: 0px; padding: 0px; font: 10px verdana; border-bottom: 2px solid gray; white-space: nowrap; text-align: center; overflow: auto;"><div style="position: absolute; left: 10px; top: 10px; height: 24px; width: 24px; margin: 0px; padding: 0px; background-image: url(&quot;ToolShowGrid.png&quot;);" id="df51938f-28eb-175b-20c1-33a29efeda20"></div></div></div></div>
+<script>
+  var workflow  = new draw2d.Workflow("paintarea");
+  workflow.setBackgroundImage(null,false);
+
+  // Add a hint annotation to the workflow area
+  //
+  var annotation = new draw2d.Annotation("NOTE: Press the button in the Toolbar to toggle the background grid.");
+  annotation.setDimension(250,70);
+  workflow.addFigure(annotation,200,200);
+
+  var dialog = new draw2d.MyPalette();
+  workflow.showDialog(dialog,400,10);
+
+</script>
+
+
+</body></html>

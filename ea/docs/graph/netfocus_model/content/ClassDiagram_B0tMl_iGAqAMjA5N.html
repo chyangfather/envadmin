@@ -1,0 +1,359 @@
+<html>
+<head>
+	<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" href="report.css" type="text/css"/>
+	<title>Class Diagram - port&interface</title>
+	<script type="text/javascript" src="report.js"></script>
+	<script type="text/javascript" src="link_popup.js"></script>
+	<script type="text/javascript" src="tooltip.js"></script>
+</head>
+<body style="margin-left: 10px; margin-right: 10px; margin-top: 10px; margin-bottom: 10px;" onload="initPage();initDiagram();initGridDiagram();">
+	<div id="spotlight" style="position:absolute; width:100px; height:100px; z-index:2; visibility:hidden">
+		<table id="spotLightTable" onClick="updateCursorPos(event);adjustPopupPositionForSpotLightTable();clearSpotLight()" style="border-style:solid; border-width:3px; border-color:#FF0000" width="100%" cellpadding="0" border="0" cellspacing="0">
+			<tr>
+				<td id="spotLightCell">
+				</td>
+			</tr>
+		</table>
+	</div>
+	<canvas id="spotlight_c" height="100" style="position:absolute; z-index:2; visibility:hidden" width="100">
+	</canvas>
+	<div id="spotLightResourcesTop" style="position:absolute; width:100px; height:100px; z-index:1; visibility:hidden">
+		<table cellpadding="0" border="0" cellspacing="0">
+			<tr>
+				<td>
+					<a href="#top">
+						<img style="border:none" src="../images/icons/BackToTop.gif" alt="Back to top"/></a>
+				</td>
+				<td>
+					<a href="javascript:clearSpotLightFromOpenSpecButton();">
+						<img style="border:none" src="../images/icons/OpenSpecification.gif" alt="Open specification"/></a>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div id="spotLightResourcesRight" style="position:absolute; width:100px; height:100px; z-index:1; visibility:hidden">
+		<table cellpadding="0" border="0" cellspacing="0">
+			<tr>
+				<td>
+					<a href="#top">
+						<img style="border:none" src="../images/icons/BackToTop.gif" alt="Back to top"/></a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="javascript:clearSpotLightFromOpenSpecButton();">
+						<img style="border:none" src="../images/icons/OpenSpecification.gif" alt="Open specification"/></a>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div id="linkPopupMenuLayer" style="position:absolute;z-index:2;visibility:hidden">
+		<table id="linkPopupMenuTable" style="border-style:solid; border-width:1px; border-color:#000000; background:#FFFFFF; width:250px" width="100%" border="0">
+		</table>
+	</div>
+	<div id="referenceIconLayer" style="position:absolute; z-index:1; visibility:hidden; ">
+		<table style="font-size:1;" width="100%" cellpadding="3" border="0" cellspacing="0">
+			<tr>
+				<td>
+					<img src="../images/icons/Ref.gif" style="border:none" onclick="movePopupPositionToReferenceIconPosition();resetPopupForReference();switchPopupShowHideStatus();" />				</td>
+			</tr>
+		</table>
+	</div>
+	<div id="subdiagramIconLayer" style="position:absolute; z-index:1; visibility:hidden">
+		<table width="100%" cellpadding="3" border="0" cellspacing="0">
+			<tr>
+				<td>
+					<img src="../images/icons/Subdiagram.gif" style="border:none" onclick="movePopupPositionToSubdiagramIconPosition();resetPopupForSubdiagram();switchPopupShowHideStatus();" />				</td>
+			</tr>
+		</table>
+	</div>
+	<div id="transitorIconLayer" style="position:absolute; z-index:1; visibility:hidden">
+		<table width="100%" cellpadding="3" border="0" cellspacing="0">
+			<tr>
+				<td>
+					<img src="../images/icons/Transitor.gif" style="border:none" onclick="movePopupPositionToTransitorIconPosition();resetPopupForTransitor();switchPopupShowHideStatus();" />				</td>
+			</tr>
+		</table>
+	</div>
+	<div class="HeaderText">
+		netfocus Documentation	</div>
+	<table width="100%" cellpadding="0" border="0" cellspacing="0">
+		<tr>
+			<td class="HeaderLine1">
+			</td>
+		</tr>
+		<tr>
+			<td class="HeaderLine2">
+			</td>
+		</tr>
+		<tr>
+			<td class="HeaderLine3">
+			</td>
+		</tr>
+	</table>
+	<p>
+		<a target="_content_pane" class="PageParentTitle" href="ClassDiagram_skwpRfiGAqAMs2nd.html">
+port&interface : 包</a>
+	</p>
+	<p class="PageTitle">
+		Class Diagram - port&interface	</p>
+	<table width="100%" cellpadding="0" border="0" cellspacing="0">
+		<tr>
+			<td>
+<span class="TableContent">跳至︰</span>				<select id="SelectShape" class="TableContent" onChange="scrollWin(this.value);showSpotLight(this.value)">
+<option value="">Please select a model element</option>
+<option value="shape|42.0|292.0|80.0|40.0|Class_Sw9Ml_iGAqAMjA5U.html|Class_Sw9Ml_iGAqAMjA5U.html|Sw9Ml_iGAqAMjA5T" id="optionSw9Ml_iGAqAMjA5T">Port : Class</option>
+<option value="shape|42.0|182.0|80.0|40.0|Class_SojMl_iGAqAMjA6Z.html|Class_SojMl_iGAqAMjA6Z.html|SojMl_iGAqAMjA6Y" id="optionSojMl_iGAqAMjA6Y">Device : Class</option>
+<option value="shape|142.0|242.0|80.0|40.0|Class_iVXMl_iGAqAMjA84.html|Class_iVXMl_iGAqAMjA84.html|CVXMl_iGAqAMjA83" id="optionCVXMl_iGAqAMjA83">FDB : Class</option>
+<option value="shape|42.0|92.0|80.0|40.0|Class_GKYcl_iGAqAMjBEN.html|Class_GKYcl_iGAqAMjBEN.html|wv_sl_iGAqAMjBCn" id="optionwv_sl_iGAqAMjBCn">Interface : Class</option>
+<option value="shape|142.0|132.0|80.0|40.0|Class_SB0cl_iGAqAMjBGl.html|Class_SB0cl_iGAqAMjBGl.html|SB0cl_iGAqAMjBGk" id="optionSB0cl_iGAqAMjBGk">ARP(所有设备都有) : Class</option>
+<option value="shape|312.0|292.0|80.0|40.0|Class_8ru8l_iGAqAMjBNS.html|Class_8ru8l_iGAqAMjBNS.html|8ru8l_iGAqAMjBNR" id="option8ru8l_iGAqAMjBNR">Mac : Class</option>
+<option value="shape|282.0|82.0|80.0|40.0|Class_wv_sl_iGAqAMjBCo.html|Class_wv_sl_iGAqAMjBCo.html|CBMCl_iGAqAMjChL" id="optionCBMCl_iGAqAMjChL">IP : Class</option>
+<option value="shape|282.0|2.0|80.0|40.0|Class_V5bal_iGAqAMjErZ.html|Class_V5bal_iGAqAMjErZ.html|V5bal_iGAqAMjErY" id="optionV5bal_iGAqAMjErY">Subnet : Class</option>
+<option value="shape|122.0|42.0|90.0|40.0|Class_3QPal_iGAqAMjEs2.html|Class_3QPal_iGAqAMjEs2.html|3QPal_iGAqAMjEs1" id="option3QPal_iGAqAMjEs1">RouteTable : Class</option>
+<option value="shape|252.0|382.0|80.0|40.0|Class_YZJxyASGAqAMgQ8q.html|Class_YZJxyASGAqAMgQ8q.html|YZJxyASGAqAMgQ8p" id="optionYZJxyASGAqAMgQ8p">VLAN : Class</option>
+<option value="shape|2.0|32.0|240.0|320.0|Rectangle_s7gsl_iGAqAMjBBL.html|Rectangle_s7gsl_iGAqAMjBBL.html|s7gsl_iGAqAMjBBK" id="options7gsl_iGAqAMjBBK">Unnamed Rectangle : Rectangle</option>
+</select>			</td>
+		</tr>
+	</table>
+	<table width="100%" cellpadding="0" border="0" cellspacing="0">
+		<tr>
+			<td>
+				<img id = "diagram" src = "../images/portinterface.png" usemap="#diagram_map" class="Image" width="539.0" height="426.0"/>				<map name = "diagram_map">
+
+<area coords="252.0, 382.0, 332.0, 422.0" coords2="252.0, 382.0, 332.0, 422.0" shape="rect" alt="VLAN:Class" id="areaYZJxyASGAqAMgQ8p" href="Class_YZJxyASGAqAMgQ8q.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="42.0, 182.0, 122.0, 222.0" coords2="42.0, 182.0, 122.0, 222.0" shape="rect" alt="Device:Class" id="areaSojMl_iGAqAMjA6Y" href="Class_SojMl_iGAqAMjA6Z.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="122.0, 42.0, 212.0, 82.0" coords2="122.0, 42.0, 212.0, 82.0" shape="rect" alt="RouteTable:Class" id="area3QPal_iGAqAMjEs1" href="Class_3QPal_iGAqAMjEs2.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="282.0, 2.0, 362.0, 42.0" coords2="282.0, 2.0, 362.0, 42.0" shape="rect" alt="Subnet:Class" id="areaV5bal_iGAqAMjErY" href="Class_V5bal_iGAqAMjErZ.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="282.0, 82.0, 362.0, 122.0" coords2="282.0, 82.0, 362.0, 122.0" shape="rect" alt="IP:Class" id="areaCBMCl_iGAqAMjChL" href="Class_wv_sl_iGAqAMjBCo.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="312.0, 292.0, 392.0, 332.0" coords2="312.0, 292.0, 392.0, 332.0" shape="rect" alt="Mac:Class" id="area8ru8l_iGAqAMjBNR" href="Class_8ru8l_iGAqAMjBNS.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="142.0, 132.0, 222.0, 172.0" coords2="142.0, 132.0, 222.0, 172.0" shape="rect" alt="ARP(所有设备都有):Class" id="areaSB0cl_iGAqAMjBGk" href="Class_SB0cl_iGAqAMjBGl.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="42.0, 92.0, 122.0, 132.0" coords2="42.0, 92.0, 122.0, 132.0" shape="rect" alt="Interface:Class" id="areawv_sl_iGAqAMjBCn" href="Class_GKYcl_iGAqAMjBEN.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area docContent="<head>
+    
+  </head>
+  <body>
+    <p margin-top=&quot;0&quot;>
+      ju you er ceng jiao huan neng li de she bei you
+    </p>
+  </body>" coords="142.0, 242.0, 222.0, 282.0" coords2="142.0, 242.0, 222.0, 282.0" shape="rect" alt="FDB:Class" id="areaCVXMl_iGAqAMjA83" href="Class_iVXMl_iGAqAMjA84.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmouseout="hideTooltip()"/>
+<area coords="42.0, 292.0, 122.0, 332.0" coords2="42.0, 292.0, 122.0, 332.0" shape="rect" alt="Port:Class" id="areaSw9Ml_iGAqAMjA5T" href="Class_Sw9Ml_iGAqAMjA5U.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="2.0, 32.0, 242.0, 352.0" coords2="2.0, 32.0, 242.0, 352.0" shape="rect" alt=":Rectangle" id="areas7gsl_iGAqAMjBBK" href="Rectangle_s7gsl_iGAqAMjBBL.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="75.0, 212.0, 75.0, 301.0, 89.0, 301.0, 89.0, 212.0" coords2="75.0, 212.0, 75.0, 301.0, 89.0, 301.0, 89.0, 212.0" shape="poly" alt=":Association" id="areajUHMl_iGAqAMjA8i" href="Association_jUHMl_iGAqAMjA8d.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="75.0, 122.0, 75.0, 191.0, 89.0, 191.0, 89.0, 122.0" coords2="75.0, 122.0, 75.0, 191.0, 89.0, 191.0, 89.0, 122.0" shape="poly" alt=":Association" id="areauzscl_iGAqAMjBHu" href="Association_Ozscl_iGAqAMjBHp.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="112.0, 305.0, 112.0, 319.0, 321.0, 319.0, 321.0, 305.0" coords2="112.0, 305.0, 112.0, 319.0, 321.0, 319.0, 321.0, 305.0" shape="poly" alt="toMac:Association" id="areaWCB8l_iGAqAMjBPO" href="Association_KCB8l_iGAqAMjBPJ.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="218.0, 271.0, 210.0, 282.0, 247.375, 305.0, 172.0, 305.0, 172.0, 319.0, 270.125, 319.0, 275.0, 322.0, 277.18182, 319.0, 282.0, 319.0, 282.0, 312.375, 283.0, 311.0, 282.0, 310.3846, 282.0, 310.3846, 282.0, 305.0, 273.25, 305.0, 218.0, 271.0" coords2="218.0, 271.0, 210.0, 282.0, 247.375, 305.0, 172.0, 305.0, 172.0, 319.0, 270.125, 319.0, 275.0, 322.0, 277.18182, 319.0, 282.0, 319.0, 282.0, 312.375, 283.0, 311.0, 282.0, 310.3846, 282.0, 310.3846, 282.0, 305.0, 273.25, 305.0, 218.0, 271.0" shape="poly" alt="null:Association Class" id="areaXcZ8l_iGAqAMjBlg" href="AssociationClass_XcZ8l_iGAqAMjBlf.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="112.0, 95.0, 112.0, 109.0, 291.0, 109.0, 291.0, 95.0" coords2="112.0, 95.0, 112.0, 109.0, 291.0, 109.0, 291.0, 95.0" shape="poly" alt=":Association" id="areaZcFSl_iGAqAMjCy0" href="Association_ZcFSl_iGAqAMjCyv.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="315.0, 112.0, 315.0, 301.0, 329.0, 301.0, 329.0, 112.0" coords2="315.0, 112.0, 315.0, 301.0, 329.0, 301.0, 329.0, 112.0" shape="poly" alt=":Association" id="areabxwql_iGAqAMjEkr" href="Association_bxwql_iGAqAMjEkm.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="215.0, 162.0, 211.0, 176.0, 329.0, 221.0, 332.0, 207.0, 215.0, 162.0" coords2="215.0, 162.0, 211.0, 176.0, 329.0, 221.0, 332.0, 207.0, 215.0, 162.0" shape="poly" alt="null:Association Class" id="areaAJIql_iGAqAMjEk_" href="AssociationClass_vxIql_iGAqAMjEk_.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="355.0, 32.0, 355.0, 92.0, 369.0, 92.0, 369.0, 32.0" coords2="355.0, 32.0, 355.0, 92.0, 369.0, 92.0, 369.0, 32.0" shape="poly" alt=":Association" id="areaS2Hal_iGAqAMjEsi" href="Association_i2Hal_iGAqAMjEsd.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="205.0, 72.0, 205.0, 112.0, 219.0, 112.0, 219.0, 72.0" coords2="205.0, 72.0, 205.0, 112.0, 219.0, 112.0, 219.0, 72.0" shape="poly" alt=":Association Class" id="areaZL8xyASGAqAMgQxr" href="AssociationClass_pL8xyASGAqAMgQxq.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+</map>			</td>
+		</tr>
+	</table>
+	<p>
+	</p>
+	<table width="100%" cellpadding="0" border="0" cellspacing="0">
+		<tr>
+			<td class="Category">
+				Model Elements			</td>
+		</tr>
+		<tr>
+			<td style="height: 5px">
+			</td>
+		</tr>
+	</table>
+	<table width="100%" cellpadding="0" border="0" cellspacing="0">
+		<tr>
+			<td colSpan="4" class="TableHeaderLine">
+			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine1">
+			</td>
+		</tr>
+		<tr class="TableHeader">
+			<td class="TableCellSpaceHolder10Px">
+			</td>
+			<td width="30%">
+<span class="TableHeaderText">名称</span>			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td>
+<span class="TableHeaderText">文档</span>			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine2">
+			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="Class_Sw9Ml_iGAqAMjA5U.html">Port : 类</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="Class_SojMl_iGAqAMjA6Z.html">Device : 类</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="Class_iVXMl_iGAqAMjA84.html">FDB : 类</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"><head>
+    
+  </head>
+  <body>
+    <p margin-top="0">
+      ju you er ceng jiao huan neng li de she bei you
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="Class_GKYcl_iGAqAMjBEN.html">Interface : 类</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="Class_SB0cl_iGAqAMjBGl.html">ARP(所有设备都有) : 类</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="Class_8ru8l_iGAqAMjBNS.html">Mac : 类</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="Class_wv_sl_iGAqAMjBCo.html">IP : 类</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="Class_V5bal_iGAqAMjErZ.html">Subnet : 类</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="Class_3QPal_iGAqAMjEs2.html">RouteTable : 类</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="Class_YZJxyASGAqAMgQ8q.html">VLAN : 类</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+	</table>
+	<table width="100%" cellpadding="0" border="0" cellspacing="0">
+		<tr>
+			<td class="TableCellSpaceHolder1PxTall">
+			</td>
+		</tr>
+		<tr>
+			<td class="TableFooter">
+			</td>
+		</tr>
+	</table>
+	<div style="height: 20px">
+	</div>
+	<table width="100%" cellpadding="0" border="0" cellspacing="0">
+		<tr>
+			<td class="FooterLine">
+			</td>
+		</tr>
+	</table>
+	<div class="HeaderText">
+		netfocus Documentation	</div>
+</body>
+</html>

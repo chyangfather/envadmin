@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/Strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de"><head>
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+  <title>FreeGroup Draw2D 0.9.26 demo. How to serialize the document to XML</title>
+        <link type="text/css" rel="stylesheet" href="37toXML_files/demo.css">
+
+    <!-- common, all times required, imports -->        <script src="37toXML_files/wz_jsgraphics.js"></script>      <script src="37toXML_files/mootools.js"></script>      <script src="37toXML_files/moocanvas.js"></script>      <script src="37toXML_files/draw2d.js"></script>
+
+        <!-- example specific imports -->
+	<script src="37toXML_files/ToolInputBox.js"></script>
+	<script src="37toXML_files/ToolCheckBox.js"></script>
+	<script src="37toXML_files/ToolGroup.js"></script>
+	<script src="37toXML_files/ToolSave.js"></script>
+	<script src="37toXML_files/GUIPalette.js"></script>
+
+	<script src="37toXML_files/GroupFigure.js"></script>
+	<script src="37toXML_files/CheckBoxFigure.js"></script>
+	<script src="37toXML_files/InputBoxFigure.js"></script>
+
+	<script src="37toXML_files/XMLSerializer_01.js"></script>
+
+</head>
+<body onselectstart="return false;" style="margin: 0px; padding: 0px;" onkeydown="">
+<div tabindex="0" class="Workflow" id="paintarea" style="width: 3000px; height: 3000px; cursor: default; background-image: url(&quot;grid_10.png&quot;);">
+
+    <!-- The information help text -->
+    <div style="background-color:white;border:1px solid gray;width:400px;padding:10px;font-size:8pt;">
+    <center><b>Draw2D 0.9.26 - A FreeGroup Draw2D 0.9.26 demo<br>
+    by Andreas Herz (a.herz @ freegroup.de)
+    <br>
+    </b>
+    <br>
+    <div style="color:red;font-size:9pt"><u>Focus of this example</u>: How to serialize the document to XML</div>
+    </center>
+    <br>
+    <center>See more on <a href="http://www.draw2d.org/">FreeGroup Draw2D 0.9.26</a></center>
+    </div>
+
+<div tabindex="0" class=" unselectable" style="position: absolute; left: 450px; top: 10px; height: 70px; width: 250px; margin: 0px; padding: 0px; outline: medium none; z-index: 100; color: rgb(0, 0, 0); background-color: rgb(241, 241, 121); font-size: 10pt; cursor: move;" id="7d8ced77-93cb-3ee9-3a6d-acbae9b94e81">NOTE: Click on the disk icon to show the XML in an alert window. Now it is easy to push the document to a server (AJAX call).</div><div tabindex="0" class="WindowFigure" style="position: absolute; left: 20px; top: 140px; height: 400px; width: 75px; margin: 0px; padding: 0px; outline: medium none; z-index: 50000; border: 1px solid black; background-image: url(&quot;window_bg.png&quot;); box-shadow: 5px 5px 5px rgb(204, 204, 204); border-radius: 2px 2px 2px 2px;" id="1aedbb61-cf99-51ed-8090-fb871be6acdc"><div class="WindowFigure_titlebar unselectable" style="position: absolute; left: 0px; top: 0px; width: 75px; height: 15px; margin: 0px; padding: 0px; font: 10px verdana; background-color: blue; border-bottom: 2px solid gray; white-space: nowrap; text-align: center; background-image: url(&quot;window_toolbar.png&quot;); cursor: move;">Tools</div><div style="position: absolute; left: 0px; top: 15px; width: 75px; height: 385px; margin: 0px; padding: 0px; font: 10px verdana; border-bottom: 2px solid gray; white-space: nowrap; text-align: center; overflow: auto;"><div title="Form Group" style="position: absolute; left: 10px; top: 30px; height: 25px; width: 25px; margin: 0px; padding: 0px; background-image: url(&quot;ToolGroup.png&quot;);" id="undefined"></div><div title="" style="position: absolute; left: 10px; top: 70px; height: 25px; width: 25px; margin: 0px; padding: 0px; background-image: url(&quot;ToolInputBox.png&quot;);" id="undefined"></div><div title="" style="position: absolute; left: 10px; top: 110px; height: 25px; width: 25px; margin: 0px; padding: 0px; background-image: url(&quot;ToolCheckBox.png&quot;);" id="undefined"></div><div style="position: absolute; left: 10px; top: 180px; height: 25px; width: 25px; margin: 0px; padding: 0px; outline: medium none; background-image: url(&quot;ToolSave.png&quot;);" id="a941998f-9640-4f5c-fbef-034efa71d61d"></div></div></div><div tabindex="0" style="position: absolute; left: 200px; top: 200px; height: 200px; width: 300px; margin: 0px; padding: 0px; outline: medium none; z-index: 100; border: 1px solid black; font-size: 1px; cursor: move; background-color: rgb(230, 230, 250);" id="26adbea5-7310-cf93-3b3d-bf600de28f0f"><div style="position: absolute; left: 0px; top: 0px; width: 295px; height: 15px; margin: 0px; padding: 0px; font: 10px verdana; background-color: blue; border-bottom: 1px solid gray; border-left: 5px solid transparent; white-space: nowrap; text-align: left; background-image: url(&quot;window_toolbar.png&quot;);">FORM 1</div></div><div tabindex="0" style="position: absolute; left: 220px; top: 220px; height: 20px; width: 80px; margin: 0px; padding: 0px; outline: medium none; z-index: 1001; cursor: move;" id="c6fb5639-eb80-27bf-3092-b206942e0413"><input style="position: absolute; left: 0px; top: 0px; margin: 0px; padding: 0px; cursor: move;" type="checkbox"><div style="font-family: sans-serif; font-size: 8pt; position: absolute; left: 20px; top: 0px;">blabla</div></div><div tabindex="0" style="position: absolute; left: 550px; top: 200px; height: 200px; width: 300px; margin: 0px; padding: 0px; outline: medium none; z-index: 100; border: 1px solid black; font-size: 1px; cursor: move; background-color: rgb(230, 230, 250);" id="786bb074-e90b-f63b-c4b8-2c0e9388c54e"><div style="position: absolute; left: 0px; top: 0px; width: 295px; height: 15px; margin: 0px; padding: 0px; font: 10px verdana; background-color: blue; border-bottom: 1px solid gray; border-left: 5px solid transparent; white-space: nowrap; text-align: left; background-image: url(&quot;window_toolbar.png&quot;);">FORM 2</div></div></div>
+<script>
+  var workflow  = new draw2d.Workflow("paintarea");
+
+  // Add an annotation to the workflow area
+  //
+  var annotation = new draw2d.Annotation("NOTE: Click on the disk icon to show the XML in an alert window. Now it is easy to push the document to a server (AJAX call).");
+  annotation.setDimension(250,70);
+  workflow.addFigure(annotation,450,10);
+
+
+  // Add the Tool Window to the screen
+  //
+  var w = new draw2d.GUIPalette();
+  workflow.setToolWindow(w);
+
+  // move the tool palette out of the hint message
+  //
+  w.setPosition(20,140);
+
+
+  // Create a GUI Group (Form Element)
+  //
+  var group1 = new draw2d.GroupFigure("FORM 1");
+  group1.setDimension(300,200);
+  workflow.addFigure(group1,200,200);
+
+  // create a HTML check box figure
+  //
+  var box = new draw2d.CheckBoxFigure();
+  box.setDimension(80,20);
+  workflow.addFigure(box,220,220);
+
+  // assign the checkbox as a child of the group
+  //
+  group1.addChild(box);
+
+  // create a second group 
+  // Now you can drag&drop the input field or checkbox between the two groups.
+  //
+  var group2 = new draw2d.GroupFigure("FORM 2");
+  group2.setDimension(300,200);
+  workflow.addFigure(group2,550,200);
+
+  window.onscroll=function(){workflow.onScroll();};
+</script>
+
+
+</body></html>

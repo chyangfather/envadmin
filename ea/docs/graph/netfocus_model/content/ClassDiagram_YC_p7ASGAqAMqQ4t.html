@@ -1,0 +1,565 @@
+<html>
+<head>
+	<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" href="report.css" type="text/css"/>
+	<title>Class Diagram - graphedit</title>
+	<script type="text/javascript" src="report.js"></script>
+	<script type="text/javascript" src="link_popup.js"></script>
+	<script type="text/javascript" src="tooltip.js"></script>
+</head>
+<body style="margin-left: 10px; margin-right: 10px; margin-top: 10px; margin-bottom: 10px;" onload="initPage();initDiagram();initGridDiagram();">
+	<div id="spotlight" style="position:absolute; width:100px; height:100px; z-index:2; visibility:hidden">
+		<table id="spotLightTable" onClick="updateCursorPos(event);adjustPopupPositionForSpotLightTable();clearSpotLight()" style="border-style:solid; border-width:3px; border-color:#FF0000" width="100%" cellpadding="0" border="0" cellspacing="0">
+			<tr>
+				<td id="spotLightCell">
+				</td>
+			</tr>
+		</table>
+	</div>
+	<canvas id="spotlight_c" height="100" style="position:absolute; z-index:2; visibility:hidden" width="100">
+	</canvas>
+	<div id="spotLightResourcesTop" style="position:absolute; width:100px; height:100px; z-index:1; visibility:hidden">
+		<table cellpadding="0" border="0" cellspacing="0">
+			<tr>
+				<td>
+					<a href="#top">
+						<img style="border:none" src="../images/icons/BackToTop.gif" alt="Back to top"/></a>
+				</td>
+				<td>
+					<a href="javascript:clearSpotLightFromOpenSpecButton();">
+						<img style="border:none" src="../images/icons/OpenSpecification.gif" alt="Open specification"/></a>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div id="spotLightResourcesRight" style="position:absolute; width:100px; height:100px; z-index:1; visibility:hidden">
+		<table cellpadding="0" border="0" cellspacing="0">
+			<tr>
+				<td>
+					<a href="#top">
+						<img style="border:none" src="../images/icons/BackToTop.gif" alt="Back to top"/></a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="javascript:clearSpotLightFromOpenSpecButton();">
+						<img style="border:none" src="../images/icons/OpenSpecification.gif" alt="Open specification"/></a>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div id="linkPopupMenuLayer" style="position:absolute;z-index:2;visibility:hidden">
+		<table id="linkPopupMenuTable" style="border-style:solid; border-width:1px; border-color:#000000; background:#FFFFFF; width:250px" width="100%" border="0">
+		</table>
+	</div>
+	<div id="referenceIconLayer" style="position:absolute; z-index:1; visibility:hidden; ">
+		<table style="font-size:1;" width="100%" cellpadding="3" border="0" cellspacing="0">
+			<tr>
+				<td>
+					<img src="../images/icons/Ref.gif" style="border:none" onclick="movePopupPositionToReferenceIconPosition();resetPopupForReference();switchPopupShowHideStatus();" />				</td>
+			</tr>
+		</table>
+	</div>
+	<div id="subdiagramIconLayer" style="position:absolute; z-index:1; visibility:hidden">
+		<table width="100%" cellpadding="3" border="0" cellspacing="0">
+			<tr>
+				<td>
+					<img src="../images/icons/Subdiagram.gif" style="border:none" onclick="movePopupPositionToSubdiagramIconPosition();resetPopupForSubdiagram();switchPopupShowHideStatus();" />				</td>
+			</tr>
+		</table>
+	</div>
+	<div id="transitorIconLayer" style="position:absolute; z-index:1; visibility:hidden">
+		<table width="100%" cellpadding="3" border="0" cellspacing="0">
+			<tr>
+				<td>
+					<img src="../images/icons/Transitor.gif" style="border:none" onclick="movePopupPositionToTransitorIconPosition();resetPopupForTransitor();switchPopupShowHideStatus();" />				</td>
+			</tr>
+		</table>
+	</div>
+	<div class="HeaderText">
+		netfocus Documentation	</div>
+	<table width="100%" cellpadding="0" border="0" cellspacing="0">
+		<tr>
+			<td class="HeaderLine1">
+			</td>
+		</tr>
+		<tr>
+			<td class="HeaderLine2">
+			</td>
+		</tr>
+		<tr>
+			<td class="HeaderLine3">
+			</td>
+		</tr>
+	</table>
+	<p>
+		<a target="_content_pane" class="PageParentTitle" href="ClassDiagram_FK8dIQSGAqAMk0Ob.html">
+graphedit : 包</a>
+	</p>
+	<p class="PageTitle">
+		Class Diagram - graphedit	</p>
+	<table width="100%" cellpadding="0" border="0" cellspacing="0">
+		<tr>
+			<td>
+<span class="TableContent">跳至︰</span>				<select id="SelectShape" class="TableContent" onChange="scrollWin(this.value);showSpotLight(this.value)">
+<option value="">Please select a model element</option>
+<option value="shape|200.0|112.0|80.0|40.0|Class_2htZ7ASGAqAMqQ7P.html|Class_2htZ7ASGAqAMqQ7P.html|2htZ7ASGAqAMqQ7O" id="option2htZ7ASGAqAMqQ7O">Editpart : Class</option>
+<option value="shape|400.0|112.0|80.0|40.0|Class_Wu9Z7ASGAqAMqQ8U.html|Class_Wu9Z7ASGAqAMqQ8U.html|Wu9Z7ASGAqAMqQ8T" id="optionWu9Z7ASGAqAMqQ8T">Figure : Class</option>
+<option value="shape|480.0|222.0|80.0|40.0|Class_KITZ7ASGAqAMqQ_M.html|Class_KITZ7ASGAqAMqQ_M.html|KITZ7ASGAqAMqQ.L" id="optionKITZ7ASGAqAMqQ.L">Policy : Class</option>
+<option value="shape|180.0|2.0|110.0|40.0|Class_BCE57ASGAqAMqRZi.html|Class_BCE57ASGAqAMqRZi.html|BCE57ASGAqAMqRZh" id="optionBCE57ASGAqAMqRZh">EditpartFactory : Class</option>
+<option value="shape|200.0|212.0|80.0|40.0|Class_4nDV7ASGAqAMqSmQ.html|Class_4nDV7ASGAqAMqSmQ.html|4nDV7ASGAqAMqSmP" id="option4nDV7ASGAqAMqSmP">Request : Class</option>
+<option value="shape|680.0|122.0|120.0|40.0|Class_BOwt7ASGAqAMqSqy.html|Class_BOwt7ASGAqAMqSqy.html|BOwt7ASGAqAMqSqx" id="optionBOwt7ASGAqAMqSqx">GraphEditFacade : Class</option>
+<option value="shape|280.0|282.0|80.0|40.0|Class_G5br7ASGAqAMqTBo.html|Class_G5br7ASGAqAMqTBo.html|G5br7ASGAqAMqTBn" id="optionG5br7ASGAqAMqTBn">Command : Class</option>
+<option value="shape|480.0|302.0|280.0|140.0|Class_aW2pTASGAqAMqYwV.html|Class_aW2pTASGAqAMqYwV.html|9tIb7ASGAqAMqTRA" id="option9tIb7ASGAqAMqTRA">IGraphService : Class</option>
+<option value="shape|360.0|42.0|80.0|40.0|Class_TPqb7ASGAqAMqU_w.html|Class_TPqb7ASGAqAMqU_w.html|TPqb7ASGAqAMqU_v" id="optionTPqb7ASGAqAMqU_v">Role : Class</option>
+<option value="shape|120.0|272.0|80.0|40.0|Class_Bd_d3ASGAqAMqSMT.html|Class_Bd_d3ASGAqAMqSMT.html|Bd.d3ASGAqAMqSMS" id="optionBd.d3ASGAqAMqSMS">Viewer : Class</option>
+<option value="shape|50.0|112.0|80.0|40.0|Class_FGED3ASGAqAMqSzB.html|Class_FGED3ASGAqAMqSzB.html|5GED3ASGAqAMqSzA" id="option5GED3ASGAqAMqSzA">Model : Class</option>
+<option value="shape|500.0|2.0|80.0|40.0|Class_e9VCPASGAqAMqWnG.html|Class_e9VCPASGAqAMqWnG.html|u9VCPASGAqAMqWnF" id="optionu9VCPASGAqAMqWnF">Tool : Class</option>
+<option value="shape|500.0|92.0|80.0|40.0|Class_giNCPASGAqAMqWqi.html|Class_giNCPASGAqAMqWqi.html|giNCPASGAqAMqWqh" id="optiongiNCPASGAqAMqWqh">Tracker : Class</option>
+<option value="shape|0.0|392.0|480.0|130.0|NOTE_ub7Z7ASGAqAMqRG9.html|NOTE_ub7Z7ASGAqAMqRG9.html|ub7Z7ASGAqAMqRG8" id="optionub7Z7ASGAqAMqRG8">Unnamed Note : Note</option>
+<option value="shape|880.0|122.0|230.0|100.0|NOTE_OUyt7ASGAqAMqSwB.html|NOTE_OUyt7ASGAqAMqSwB.html|OUyt7ASGAqAMqSwA" id="optionOUyt7ASGAqAMqSwA">Unnamed Note : Note</option>
+<option value="shape|300.0|182.0|160.0|40.0|NOTE_zXB8PASGAqAMqUws.html|NOTE_zXB8PASGAqAMqUws.html|zXB8PASGAqAMqUwr" id="optionzXB8PASGAqAMqUwr">Unnamed Note : Note</option>
+</select>			</td>
+		</tr>
+	</table>
+	<table width="100%" cellpadding="0" border="0" cellspacing="0">
+		<tr>
+			<td>
+				<img id = "diagram" src = "../images/graphedit.png" usemap="#diagram_map" class="Image" width="1114.0" height="526.0"/>				<map name = "diagram_map">
+
+<area docContent="<head>
+    
+  </head>
+  <body>
+    <p margin-top=&quot;0&quot;>
+      &#22403;&#22334;&#25910;&#38598;&#22788;&#29702;&#24182;&#37325;&#26032;&#21019;&#24314;
+    </p>
+  </body>" coords="300.0, 182.0, 460.0, 222.0" coords2="300.0, 182.0, 460.0, 222.0" shape="rect" alt="垃圾收集处理并重新创建:Note" id="areazXB8PASGAqAMqUwr" href="NOTE_zXB8PASGAqAMqUws.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmouseout="hideTooltip()"/>
+<area docContent="<head>
+    
+  </head>
+  <body>
+    <p margin-top=&quot;0&quot;>
+      &#22270;&#24418;&#32534;&#36753;&#30340;&#32479;&#19968;&#20837;&#21475;&#65292;&#36991;&#20813;&#25509;&#35302;&#32454;&#33410;&#12290;
+    </p>
+    <p margin-top=&quot;0&quot;>
+      &#21253;&#35013;&#20102;Model, View&#21644;Controller
+    </p>
+    <p margin-top=&quot;0&quot;>
+      &#20351;&#29992;Singleton&#27169;&#24335;&#21019;&#24314;&#65292;
+    </p>
+    <p margin-top=&quot;0&quot;>
+      &#36127;&#36131;&#21021;&#22987;&#21270;&#22270;&#24418;&#26680;&#24515;&#23618;
+    </p>
+    <p margin-top=&quot;0&quot;>
+      ( Model , View&#21644; Controller),
+    </p>
+    <p margin-top=&quot;0&quot;>
+      &#24182;&#33021;&#35775;&#38382;&#23427;&#20204;&#30340; Public &#26041;&#27861;&#12290;
+    </p>
+  </body>" coords="880.0, 122.0, 1110.0, 222.0" coords2="880.0, 122.0, 1110.0, 222.0" shape="rect" alt="图形编辑的统一入口，避免接触细节。
+包装了Model, View和Controller
+使用Singleton模式创建，
+负责初始化图形核心层
+( Model , View和 Controller),
+并能访问它们的 Public 方法。:Note" id="areaOUyt7ASGAqAMqSwA" href="NOTE_OUyt7ASGAqAMqSwB.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmouseout="hideTooltip()"/>
+<area docContent="<head>
+    
+  </head>
+  <body>
+    <p margin-top=&quot;0&quot;>
+      as model
+    </p>
+    <p margin-top=&quot;0&quot;>
+      &#27169;&#22411;&#65309;&#29992;&#25143;&#27169;&#22411;&#65291;&#35270;&#22270;&#27169;&#22411;
+    </p>
+    <p margin-top=&quot;0&quot;>
+      &#29992;&#25143;&#27169;&#22411;&#21487;&#20197;&#26144;&#23556;&#21040;&#22810;&#20010;&#35270;&#22270;&#65292;
+    </p>
+    <p margin-top=&quot;0&quot;>
+      &#35270;&#22270;&#27169;&#22411;&#20013;&#21253;&#21547;&#20102;&#29305;&#23450;&#20110;&#22270;&#30340;&#20449;&#24687;&#65288;&#22914;&#22352;&#26631;&#20449;&#24687;&#65289;&#65292;&#36825;&#26679;&#21487;&#20197;&#20445;&#35777;&#29992;&#25143;&#27169;&#22411;&#30340;&#32431;&#31929;&#24615;&#12290;
+    </p>
+    <p margin-top=&quot;0&quot;>
+      &#29992;&#25143;&#27169;&#22411;&#21644;&#35270;&#22270;&#27169;&#22411;&#19968;&#36215;&#65292;&#20316;&#20026;GEF&#26694;&#26550;&#30340;Model&#12290;
+    </p>
+    <p margin-top=&quot;0&quot;>
+      GEF&#19981;&#20851;&#24515;Model&#20803;&#32032;&#26159;&#21542;&#23384;&#20648;&#22312;&#19981;&#21516;&#30340;&#22320;&#26041;&#12290;
+    </p>
+    <p margin-top=&quot;0&quot;>
+      &#23631;&#24149;&#19978;&#30340;&#19968;&#20010;&#23545;&#35937;&#21487;&#33021;&#23545;&#24212;&#20110;&#27169;&#22411;&#20013;&#30340;&#22810;&#20010;&#23545;&#35937;&#12290;
+    </p>
+    <p margin-top=&quot;0&quot;>
+      GEF &#26088;&#22312;&#20801;&#35768;&#24320;&#21457;&#20154;&#21592;&#26041;&#20415;&#22320;&#22788;&#29702;&#36825;&#31867;&#26144;&#23556;&#12290;
+    </p>
+  </body>" coords="0.0, 392.0, 480.0, 522.0" coords2="0.0, 392.0, 480.0, 522.0" shape="rect" alt="as model
+模型＝用户模型＋视图模型
+用户模型可以映射到多个视图，
+视图模型中包含了特定于图的信息（如坐标信息），这样可以保证用户模型的纯粹性。
+用户模型和视图模型一起，作为GEF框架的Model。
+GEF不关心Model元素是否存储在不同的地方。
+屏幕上的一个对象可能对应于模型中的多个对象。
+GEF 旨在允许开发人员方便地处理这类映射。:Note" id="areaub7Z7ASGAqAMqRG8" href="NOTE_ub7Z7ASGAqAMqRG9.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmouseout="hideTooltip()"/>
+<area coords="500.0, 92.0, 580.0, 132.0" coords2="500.0, 92.0, 580.0, 132.0" shape="rect" alt="Tracker:Class" id="areagiNCPASGAqAMqWqh" href="Class_giNCPASGAqAMqWqi.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="500.0, 2.0, 580.0, 42.0" coords2="500.0, 2.0, 580.0, 42.0" shape="rect" alt="Tool:Class" id="areau9VCPASGAqAMqWnF" href="Class_e9VCPASGAqAMqWnG.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="50.0, 112.0, 130.0, 152.0" coords2="50.0, 112.0, 130.0, 152.0" shape="rect" alt="Model:Class" id="area5GED3ASGAqAMqSzA" href="Class_FGED3ASGAqAMqSzB.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="120.0, 272.0, 200.0, 312.0" coords2="120.0, 272.0, 200.0, 312.0" shape="rect" alt="Viewer:Class" id="areaBd.d3ASGAqAMqSMS" href="Class_Bd_d3ASGAqAMqSMT.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="360.0, 42.0, 440.0, 82.0" coords2="360.0, 42.0, 440.0, 82.0" shape="rect" alt="Role:Class" id="areaTPqb7ASGAqAMqU_v" href="Class_TPqb7ASGAqAMqU_w.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="480.0, 302.0, 760.0, 442.0" coords2="480.0, 302.0, 760.0, 442.0" shape="rect" alt="IGraphService:Class" id="area9tIb7ASGAqAMqTRA" href="Class_aW2pTASGAqAMqYwV.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="280.0, 282.0, 360.0, 322.0" coords2="280.0, 282.0, 360.0, 322.0" shape="rect" alt="Command:Class" id="areaG5br7ASGAqAMqTBn" href="Class_G5br7ASGAqAMqTBo.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="680.0, 122.0, 800.0, 162.0" coords2="680.0, 122.0, 800.0, 162.0" shape="rect" alt="GraphEditFacade:Class" id="areaBOwt7ASGAqAMqSqx" href="Class_BOwt7ASGAqAMqSqy.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="200.0, 212.0, 280.0, 252.0" coords2="200.0, 212.0, 280.0, 252.0" shape="rect" alt="Request:Class" id="area4nDV7ASGAqAMqSmP" href="Class_4nDV7ASGAqAMqSmQ.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="180.0, 2.0, 290.0, 42.0" coords2="180.0, 2.0, 290.0, 42.0" shape="rect" alt="EditpartFactory:Class" id="areaBCE57ASGAqAMqRZh" href="Class_BCE57ASGAqAMqRZi.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="480.0, 222.0, 560.0, 262.0" coords2="480.0, 222.0, 560.0, 262.0" shape="rect" alt="Policy:Class" id="areaKITZ7ASGAqAMqQ.L" href="Class_KITZ7ASGAqAMqQ_M.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="400.0, 112.0, 480.0, 152.0" coords2="400.0, 112.0, 480.0, 152.0" shape="rect" alt="Figure:Class" id="areaWu9Z7ASGAqAMqQ8T" href="Class_Wu9Z7ASGAqAMqQ8U.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="200.0, 112.0, 280.0, 152.0" coords2="200.0, 112.0, 280.0, 152.0" shape="rect" alt="Editpart:Class" id="area2htZ7ASGAqAMqQ7O" href="Class_2htZ7ASGAqAMqQ7P.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="233.0, 32.0, 233.0, 121.0, 247.0, 121.0, 247.0, 32.0" coords2="233.0, 32.0, 233.0, 121.0, 247.0, 121.0, 247.0, 32.0" shape="poly" alt="create:Association" id="areaQ1S57ASGAqAMqR6o" href="Association_g1S57ASGAqAMqR6j.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="270.0, 125.0, 270.0, 139.0, 409.0, 139.0, 409.0, 125.0" coords2="270.0, 125.0, 270.0, 139.0, 409.0, 139.0, 409.0, 125.0" shape="poly" alt=":Association" id="area9Ah57ASGAqAMqSWb" href="Association_9Ah57ASGAqAMqSWW.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="790.0, 155.0, 790.0, 169.0, 889.0, 169.0, 889.0, 155.0" coords2="790.0, 155.0, 790.0, 169.0, 889.0, 169.0, 889.0, 155.0" shape="poly" alt=":Anchor" id="areaj8pt7ASGAqAMqS0g" href="Anchor_D8pt7ASGAqAMqS0f.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="350.0, 315.0, 350.0, 329.0, 489.0, 329.0, 489.0, 315.0" coords2="350.0, 315.0, 350.0, 329.0, 489.0, 329.0, 489.0, 315.0" shape="poly" alt="call:Association" id="areahgYb7ASGAqAMqT7e" href="Association_hgYb7ASGAqAMqT7Z.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="280.0, 140.0, 269.0, 148.0, 299.0, 193.0, 310.0, 185.0, 280.0, 140.0" coords2="280.0, 140.0, 269.0, 148.0, 299.0, 193.0, 310.0, 185.0, 280.0, 140.0" shape="poly" alt=":Anchor" id="areaetF8PASGAqAMqVFi" href="Anchor_etF8PASGAqAMqVFh.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="433.0, 142.0, 433.0, 191.0, 447.0, 191.0, 447.0, 142.0" coords2="433.0, 142.0, 433.0, 191.0, 447.0, 191.0, 447.0, 142.0" shape="poly" alt=":Anchor" id="areaa6l8PASGAqAMqVP6" href="Anchor_a6l8PASGAqAMqVP5.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="120.0, 125.0, 120.0, 139.0, 209.0, 139.0, 209.0, 125.0" coords2="120.0, 125.0, 120.0, 139.0, 209.0, 139.0, 209.0, 125.0" shape="poly" alt=":Association" id="areagyT8PASGAqAMqVn4" href="Association_AyT8PASGAqAMqVnz.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="83.0, 142.0, 83.0, 401.0, 97.0, 401.0, 97.0, 142.0" coords2="83.0, 142.0, 83.0, 401.0, 97.0, 401.0, 97.0, 142.0" shape="poly" alt=":Anchor" id="area9S78PASGAqAMqWHJ" href="Anchor_dS78PASGAqAMqWHI.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="533.0, 32.0, 533.0, 101.0, 547.0, 101.0, 547.0, 32.0" coords2="533.0, 32.0, 533.0, 101.0, 547.0, 101.0, 547.0, 32.0" shape="poly" alt=":Generalization" id="areaBodCPASGAqAMqW2I" href="Generalization_BodCPASGAqAMqW2H.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+</map>			</td>
+		</tr>
+	</table>
+	<p>
+	</p>
+	<table width="100%" cellpadding="0" border="0" cellspacing="0">
+		<tr>
+			<td class="Category">
+				Model Elements			</td>
+		</tr>
+		<tr>
+			<td style="height: 5px">
+			</td>
+		</tr>
+	</table>
+	<table width="100%" cellpadding="0" border="0" cellspacing="0">
+		<tr>
+			<td colSpan="4" class="TableHeaderLine">
+			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine1">
+			</td>
+		</tr>
+		<tr class="TableHeader">
+			<td class="TableCellSpaceHolder10Px">
+			</td>
+			<td width="30%">
+<span class="TableHeaderText">名称</span>			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td>
+<span class="TableHeaderText">文档</span>			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine2">
+			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="Class_2htZ7ASGAqAMqQ7P.html">Editpart : 类</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="Class_Wu9Z7ASGAqAMqQ8U.html">Figure : 类</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="Class_KITZ7ASGAqAMqQ_M.html">Policy : 类</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="Class_BCE57ASGAqAMqRZi.html">EditpartFactory : 类</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="Class_4nDV7ASGAqAMqSmQ.html">Request : 类</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="Class_BOwt7ASGAqAMqSqy.html">GraphEditFacade : 类</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="Class_G5br7ASGAqAMqTBo.html">Command : 类</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="Class_aW2pTASGAqAMqYwV.html">IGraphService : 类</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="Class_TPqb7ASGAqAMqU_w.html">Role : 类</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="Class_Bd_d3ASGAqAMqSMT.html">Viewer : 类</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="Class_FGED3ASGAqAMqSzB.html">Model : 类</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="Class_e9VCPASGAqAMqWnG.html">Tool : 类</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="Class_giNCPASGAqAMqWqi.html">Tracker : 类</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/NOTE.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/NOTE.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="NOTE_ub7Z7ASGAqAMqRG9.html">N/A : 注解</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"><head>
+    
+  </head>
+  <body>
+    <p margin-top="0">
+      as model
+    </p>
+    <p margin-top="0">
+      &#27169;&#22411;&#65309;&#29992;&#25143;&#27169;&#22411;&#65291;&#35270;&#22270;&#27169;&#22411;
+    </p>
+    <p margin-top="0">
+      &#29992;&#25143;&#27169;&#22411;&#21487;&#20197;&#26144;&#23556;&#21040;&#22810;&#20010;&#35270;&#22270;&#65292;
+    </p>
+    <p margin-top="0">
+      &#35270;&#22270;&#27169;&#22411;&#20013;&#21253;&#21547;&#20102;&#29305;&#23450;&#20110;&#22270;&#30340;&#20449;&#24687;&#65288;&#22914;&#22352;&#26631;&#20449;&#24687;&#65289;&#65292;&#36825;&#26679;&#21487;&#20197;&#20445;&#35777;&#29992;&#25143;&#27169;&#22411;&#30340;&#32431;&#31929;&#24615;&#12290;
+    </p>
+    <p margin-top="0">
+      &#29992;&#25143;&#27169;&#22411;&#21644;&#35270;&#22270;&#27169;&#22411;&#19968;&#36215;&#65292;&#20316;&#20026;GEF&#26694;&#26550;&#30340;Model&#12290;
+    </p>
+    <p margin-top="0">
+      GEF&#19981;&#20851;&#24515;Model&#20803;&#32032;&#26159;&#21542;&#23384;&#20648;&#22312;&#19981;&#21516;&#30340;&#22320;&#26041;&#12290;
+    </p>
+    <p margin-top="0">
+      &#23631;&#24149;&#19978;&#30340;&#19968;&#20010;&#23545;&#35937;&#21487;&#33021;&#23545;&#24212;&#20110;&#27169;&#22411;&#20013;&#30340;&#22810;&#20010;&#23545;&#35937;&#12290;
+    </p>
+    <p margin-top="0">
+      GEF &#26088;&#22312;&#20801;&#35768;&#24320;&#21457;&#20154;&#21592;&#26041;&#20415;&#22320;&#22788;&#29702;&#36825;&#31867;&#26144;&#23556;&#12290;
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/NOTE.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/NOTE.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="NOTE_OUyt7ASGAqAMqSwB.html">N/A : 注解</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"><head>
+    
+  </head>
+  <body>
+    <p margin-top="0">
+      &#22270;&#24418;&#32534;&#36753;&#30340;&#32479;&#19968;&#20837;&#21475;&#65292;&#36991;&#20813;&#25509;&#35302;&#32454;&#33410;&#12290;
+    </p>
+    <p margin-top="0">
+      &#21253;&#35013;&#20102;Model, View&#21644;Controller
+    </p>
+    <p margin-top="0">
+      &#20351;&#29992;Singleton&#27169;&#24335;&#21019;&#24314;&#65292;
+    </p>
+    <p margin-top="0">
+      &#36127;&#36131;&#21021;&#22987;&#21270;&#22270;&#24418;&#26680;&#24515;&#23618;
+    </p>
+    <p margin-top="0">
+      ( Model , View&#21644; Controller),
+    </p>
+    <p margin-top="0">
+      &#24182;&#33021;&#35775;&#38382;&#23427;&#20204;&#30340; Public &#26041;&#27861;&#12290;
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/NOTE.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/NOTE.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="NOTE_zXB8PASGAqAMqUws.html">N/A : 注解</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"><head>
+    
+  </head>
+  <body>
+    <p margin-top="0">
+      &#22403;&#22334;&#25910;&#38598;&#22788;&#29702;&#24182;&#37325;&#26032;&#21019;&#24314;
+    </p>
+  </body></span>			</td>
+		</tr>
+	</table>
+	<table width="100%" cellpadding="0" border="0" cellspacing="0">
+		<tr>
+			<td class="TableCellSpaceHolder1PxTall">
+			</td>
+		</tr>
+		<tr>
+			<td class="TableFooter">
+			</td>
+		</tr>
+	</table>
+	<div style="height: 20px">
+	</div>
+	<table width="100%" cellpadding="0" border="0" cellspacing="0">
+		<tr>
+			<td class="FooterLine">
+			</td>
+		</tr>
+	</table>
+	<div class="HeaderText">
+		netfocus Documentation	</div>
+</body>
+</html>

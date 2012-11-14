@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/Strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de"><head>
+  <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  
+  <title>Workflow Editor</title>
+        <link type="text/css" rel="stylesheet" href="14customPort_files/demo.css">
+
+    <!-- common, all times required, imports -->        <script src="14customPort_files/wz_jsgraphics.js"></script>      <script src="14customPort_files/mootools.js"></script>      <script src="14customPort_files/moocanvas.js"></script>      <script src="14customPort_files/draw2d.js"></script>
+
+
+        <!-- workflow specific imports -->
+	<script src="14customPort_files/Start.js"></script>
+	<script src="14customPort_files/End.js"></script>
+</head>
+<body onselectstart="return false;" style="margin: 0px; padding: 0px;" onkeydown="">
+<div tabindex="0" class="Workflow" id="paintarea" style="position: absolute; left: 0px; top: 0px; width: 3000px; height: 3000px; cursor: default; background-image: url(&quot;grid_10.png&quot;);">
+
+    <!-- The information help text -->
+    <div class="stickyNote">
+    <center><b>Draw2D 0.9.26 - A simple diagram drawing demo<br>
+    by Andreas Herz (a.herz @ freegroup.de)
+    <br>
+    </b>
+    <br>
+    <div style="color:red;font-size:9pt">Focus of this example: How to create my own port (<img src="14customPort_files/port1.png"> <img src="14customPort_files/port2.png">) representation.</div>
+    </center>
+    <br>
+    <center>See more on <a href="http://www.draw2d.org/">FreeGroup Draw2D 0.9.26</a></center>
+    </div>
+
+<div tabindex="0" class=" unselectable" style="position: absolute; left: 200px; top: 200px; height: 70px; width: 250px; margin: 0px; padding: 0px; outline: medium none; z-index: 100; color: rgb(0, 0, 0); background-color: rgb(241, 241, 121); font-size: 10pt; cursor: move;" id="4a1914ad-4c69-cf61-0c60-dea56d24e82d">NOTE: Drag&amp;Drop the port with the '1' or the '2' to the blue port to create a connector</div><div tabindex="0" style="position: absolute; left: 200px; top: 350px; height: 60px; width: 50px; margin: 0px; padding: 0px; outline: medium none; z-index: 100; border: 0px none; font-size: 1px; background-image: url(&quot;Start.png&quot;); cursor: move;" id="eb97f553-861c-e419-edf9-c22c230965ce"><div tabindex="0" style="position: absolute; left: 45px; top: 10px; height: 8px; width: 8px; margin: 0px; padding: 0px; outline: medium none; z-index: 5000; border: 10px none; font-size: 1px; line-height: 1px; cursor: move;" id="9fd27a4c-f3b7-d52b-fd82-f3c756acfcaf">&nbsp;<div style="position: absolute; left: 0px; top: 0px; height: 10px; width: 10px; margin: 0px; padding: 0px; outline: medium none; z-index: 100; border: 0px none; font-size: 1px; background-image: url(&quot;port1.png&quot;); cursor: move; background-color: rgb(100, 180, 100);" id="1edd85a2-34ab-5ca6-eec0-5eaf942cd1f5"></div></div><div tabindex="0" style="position: absolute; left: 45px; top: 40px; height: 8px; width: 8px; margin: 0px; padding: 0px; outline: medium none; z-index: 5000; border: 10px none; font-size: 1px; line-height: 1px; cursor: move;" id="3644e055-f03f-ee8e-4f96-8596ffa9e389">&nbsp;<div style="position: absolute; left: 0px; top: 0px; height: 10px; width: 10px; margin: 0px; padding: 0px; outline: medium none; z-index: 100; border: 0px none; font-size: 1px; background-image: url(&quot;port2.png&quot;); cursor: move; background-color: rgb(100, 180, 100);" id="7c9c99a7-0b8d-79da-a12b-5c9f865d3933"></div></div></div><div tabindex="0" style="position: absolute; left: 400px; top: 300px; height: 50px; width: 50px; margin: 0px; padding: 0px; outline: medium none; z-index: 100; border: 0px none; font-size: 1px; background-image: url(&quot;End.png&quot;); cursor: move;" id="efe9b3bd-b486-3b2b-63f9-565d7fa907d1"><div tabindex="0" style="position: absolute; left: -4px; top: 21px; height: 6px; width: 6px; margin: 0px; padding: 0px; outline: medium none; z-index: 5000; border: 10px none; font-size: 1px; line-height: 1px; cursor: move;" id="fe8860ff-9159-a358-f6d1-47cce11a4cc9">&nbsp;<div style="position: absolute; left: 0px; top: 0px; height: 8px; width: 8px; margin: 0px; padding: 0px; outline: medium none; z-index: 100; border: 0px none; font-size: 1px; background-color: transparent; cursor: move;" id="d079a397-3f08-2d63-0228-8615dcc21f76"><div style="font-size: 0pt;"><div style="position:absolute;left:2px;top:0px;width:3px;height:1px;clip:rect(0,3px,1px,0);background-color:rgb(115,115,245);overflow:hidden;"></div><div style="position:absolute;left:2px;top:6px;width:3px;height:1px;clip:rect(0,3px,1px,0);background-color:rgb(115,115,245);overflow:hidden;"></div><div style="position:absolute;left:1px;top:1px;width:5px;height:1px;clip:rect(0,5px,1px,0);background-color:rgb(115,115,245);overflow:hidden;"></div><div style="position:absolute;left:1px;top:5px;width:5px;height:1px;clip:rect(0,5px,1px,0);background-color:rgb(115,115,245);overflow:hidden;"></div><div style="position:absolute;left:0px;top:2px;width:7px;height:3px;clip:rect(0,7px,3px,0);background-color:rgb(115,115,245);overflow:hidden;"></div></div></div></div></div><div tabindex="0" style="position: absolute; left: 400px; top: 400px; height: 50px; width: 50px; margin: 0px; padding: 0px; outline: medium none; z-index: 100; border: 0px none; font-size: 1px; background-image: url(&quot;End.png&quot;); cursor: move;" id="5114e0ef-7ec4-ef55-c78d-8abeda6d4c3a"><div tabindex="0" style="position: absolute; left: -4px; top: 21px; height: 6px; width: 6px; margin: 0px; padding: 0px; outline: medium none; z-index: 5000; border: 10px none; font-size: 1px; line-height: 1px; cursor: move;" id="c486aff1-13e5-8355-588f-e9602a61b229">&nbsp;<div style="position: absolute; left: 0px; top: 0px; height: 8px; width: 8px; margin: 0px; padding: 0px; outline: medium none; z-index: 100; border: 0px none; font-size: 1px; background-color: transparent; cursor: move;" id="49f344d2-8a0d-92fa-97df-1ae0ec70b75c"><div style="font-size: 0pt;"><div style="position:absolute;left:2px;top:0px;width:3px;height:1px;clip:rect(0,3px,1px,0);background-color:rgb(115,115,245);overflow:hidden;"></div><div style="position:absolute;left:2px;top:6px;width:3px;height:1px;clip:rect(0,3px,1px,0);background-color:rgb(115,115,245);overflow:hidden;"></div><div style="position:absolute;left:1px;top:1px;width:5px;height:1px;clip:rect(0,5px,1px,0);background-color:rgb(115,115,245);overflow:hidden;"></div><div style="position:absolute;left:1px;top:5px;width:5px;height:1px;clip:rect(0,5px,1px,0);background-color:rgb(115,115,245);overflow:hidden;"></div><div style="position:absolute;left:0px;top:2px;width:7px;height:3px;clip:rect(0,7px,3px,0);background-color:rgb(115,115,245);overflow:hidden;"></div></div></div></div></div></div>
+<script>
+  var workflow  = new draw2d.Workflow("paintarea");
+
+
+  // Add s hint annotation to the workflow area
+  //
+  var annotation = new draw2d.Annotation("NOTE: Drag&Drop the port with the '1' or the '2' to the blue port to create a connector");
+  annotation.setDimension(250,70);
+  workflow.addFigure(annotation,200,200);
+
+  // Add the start node to the canvas
+  //
+  var startObj = new draw2d.Start();
+  workflow.addFigure(startObj, 200,350);
+
+  // Add the end node to the canvas
+  //
+  var endObj   = new draw2d.End();
+  workflow.addFigure(endObj, 400,300);
+
+  endObj   = new draw2d.End();
+  workflow.addFigure(endObj, 400,400);
+
+</script>
+
+
+</body></html>

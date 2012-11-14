@@ -1,0 +1,513 @@
+<html>
+<head>
+	<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" href="report.css" type="text/css"/>
+	<title>Activity Diagram - 关闭注册</title>
+	<script type="text/javascript" src="report.js"></script>
+	<script type="text/javascript" src="link_popup.js"></script>
+	<script type="text/javascript" src="tooltip.js"></script>
+</head>
+<body style="margin-left: 10px; margin-right: 10px; margin-top: 10px; margin-bottom: 10px;" onload="initPage();initDiagram();initGridDiagram();">
+	<div id="spotlight" style="position:absolute; width:100px; height:100px; z-index:2; visibility:hidden">
+		<table id="spotLightTable" onClick="updateCursorPos(event);adjustPopupPositionForSpotLightTable();clearSpotLight()" style="border-style:solid; border-width:3px; border-color:#FF0000" width="100%" cellpadding="0" border="0" cellspacing="0">
+			<tr>
+				<td id="spotLightCell">
+				</td>
+			</tr>
+		</table>
+	</div>
+	<canvas id="spotlight_c" height="100" style="position:absolute; z-index:2; visibility:hidden" width="100">
+	</canvas>
+	<div id="spotLightResourcesTop" style="position:absolute; width:100px; height:100px; z-index:1; visibility:hidden">
+		<table cellpadding="0" border="0" cellspacing="0">
+			<tr>
+				<td>
+					<a href="#top">
+						<img style="border:none" src="../images/icons/BackToTop.gif" alt="Back to top"/></a>
+				</td>
+				<td>
+					<a href="javascript:clearSpotLightFromOpenSpecButton();">
+						<img style="border:none" src="../images/icons/OpenSpecification.gif" alt="Open specification"/></a>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div id="spotLightResourcesRight" style="position:absolute; width:100px; height:100px; z-index:1; visibility:hidden">
+		<table cellpadding="0" border="0" cellspacing="0">
+			<tr>
+				<td>
+					<a href="#top">
+						<img style="border:none" src="../images/icons/BackToTop.gif" alt="Back to top"/></a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="javascript:clearSpotLightFromOpenSpecButton();">
+						<img style="border:none" src="../images/icons/OpenSpecification.gif" alt="Open specification"/></a>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div id="linkPopupMenuLayer" style="position:absolute;z-index:2;visibility:hidden">
+		<table id="linkPopupMenuTable" style="border-style:solid; border-width:1px; border-color:#000000; background:#FFFFFF; width:250px" width="100%" border="0">
+		</table>
+	</div>
+	<div id="referenceIconLayer" style="position:absolute; z-index:1; visibility:hidden; ">
+		<table style="font-size:1;" width="100%" cellpadding="3" border="0" cellspacing="0">
+			<tr>
+				<td>
+					<img src="../images/icons/Ref.gif" style="border:none" onclick="movePopupPositionToReferenceIconPosition();resetPopupForReference();switchPopupShowHideStatus();" />				</td>
+			</tr>
+		</table>
+	</div>
+	<div id="subdiagramIconLayer" style="position:absolute; z-index:1; visibility:hidden">
+		<table width="100%" cellpadding="3" border="0" cellspacing="0">
+			<tr>
+				<td>
+					<img src="../images/icons/Subdiagram.gif" style="border:none" onclick="movePopupPositionToSubdiagramIconPosition();resetPopupForSubdiagram();switchPopupShowHideStatus();" />				</td>
+			</tr>
+		</table>
+	</div>
+	<div id="transitorIconLayer" style="position:absolute; z-index:1; visibility:hidden">
+		<table width="100%" cellpadding="3" border="0" cellspacing="0">
+			<tr>
+				<td>
+					<img src="../images/icons/Transitor.gif" style="border:none" onclick="movePopupPositionToTransitorIconPosition();resetPopupForTransitor();switchPopupShowHideStatus();" />				</td>
+			</tr>
+		</table>
+	</div>
+	<div class="HeaderText">
+		netfocus Documentation	</div>
+	<table width="100%" cellpadding="0" border="0" cellspacing="0">
+		<tr>
+			<td class="HeaderLine1">
+			</td>
+		</tr>
+		<tr>
+			<td class="HeaderLine2">
+			</td>
+		</tr>
+		<tr>
+			<td class="HeaderLine3">
+			</td>
+		</tr>
+	</table>
+	<p>
+		<a target="_content_pane" class="PageParentTitle" href="UseCaseDiagram_pG5gTfiGAqAMsxXs.html">
+关闭注册 : 用例</a>
+	</p>
+	<p class="PageTitle">
+		Activity Diagram - 关闭注册	</p>
+	<table width="100%" cellpadding="0" border="0" cellspacing="0">
+		<tr>
+			<td>
+<span class="TableContent">跳至︰</span>				<select id="SelectShape" class="TableContent" onChange="scrollWin(this.value);showSpotLight(this.value)">
+<option value="">Please select a model element</option>
+<option value="shape|72.0|302.0|100.0|40.0|Activity_LVcvbfiGAqAMsw_S.html|Activity_LVcvbfiGAqAMsw_S.html|LVcvbfiGAqAMsw.R" id="optionLVcvbfiGAqAMsw.R">2.1关闭注册 : Activity</option>
+<option value="shape|272.0|172.0|140.0|40.0|Activity_XemfbfiGAqAMsxBY.html|Activity_XemfbfiGAqAMsxBY.html|XemfbfiGAqAMsxBX" id="optionXemfbfiGAqAMsxBX">2.2.2  取消提供课程 : Activity</option>
+<option value="shape|262.0|272.0|150.0|40.0|Activity_YrNg7fiGAqAMsxit.html|Activity_YrNg7fiGAqAMsxit.html|YrNg7fiGAqAMsxis" id="optionYrNg7fiGAqAMsxis"> 2.2.4 开票系统不可用 : Activity</option>
+<option value="shape|2.0|372.0|18.0|20.0|ActivityFinalNode_6XnPbfiGAqAMsw6f.html|ActivityFinalNode_6XnPbfiGAqAMsw6f.html|6XnPbfiGAqAMsw6e" id="option6XnPbfiGAqAMsw6e">终态 : Activity Final Node</option>
+<option value="shape|122.0|372.0|18.0|20.0|ActivityFinalNode_fbBvbfiGAqAMsxAT.html|ActivityFinalNode_fbBvbfiGAqAMsxAT.html|vbBvbfiGAqAMsxAS" id="optionvbBvbfiGAqAMsxAS">终态2 : Activity Final Node</option>
+<option value="shape|492.0|372.0|18.0|20.0|ActivityFinalNode_O_gQ7fiGAqAMsxst.html|ActivityFinalNode_O_gQ7fiGAqAMsxst.html|O_gQ7fiGAqAMsxss" id="optionO_gQ7fiGAqAMsxss">终态3 : Activity Final Node</option>
+<option value="shape|322.0|372.0|18.0|20.0|ActivityFinalNode_Q7IQ7fiGAqAMsxvv.html|ActivityFinalNode_Q7IQ7fiGAqAMsxvv.html|Q7IQ7fiGAqAMsxvu" id="optionQ7IQ7fiGAqAMsxvu">终态4 : Activity Final Node</option>
+<option value="shape|122.0|62.0|20.0|40.0|DecisionNode_bj1PbfiGAqAMsw4R.html|DecisionNode_bj1PbfiGAqAMsw4R.html|bj1PbfiGAqAMsw4Q" id="optionbj1PbfiGAqAMsw4Q">“注册”是否正在进行中 : Decision Node</option>
+<option value="shape|122.0|122.0|20.0|40.0|DecisionNode_2aGfbfiGAqAMsxA3.html|DecisionNode_2aGfbfiGAqAMsxA3.html|2aGfbfiGAqAMsxA2" id="option2aGfbfiGAqAMsxA2">决策节点 : Decision Node</option>
+<option value="shape|122.0|172.0|20.0|40.0|DecisionNode_qjv_bfiGAqAMsxNn.html|DecisionNode_qjv_bfiGAqAMsxNn.html|qjv_bfiGAqAMsxNm" id="optionqjv_bfiGAqAMsxNm">决策节点2 : Decision Node</option>
+<option value="shape|122.0|222.0|20.0|40.0|DecisionNode_rzxg7fiGAqAMsxhW.html|DecisionNode_rzxg7fiGAqAMsxhW.html|Lzxg7fiGAqAMsxhV" id="optionLzxg7fiGAqAMsxhV">决策节点3 : Decision Node</option>
+<option value="shape|122.0|2.0|20.0|18.0|InitialNode_KOKPbfiGAqAMsw1l.html|InitialNode_KOKPbfiGAqAMsw1l.html|KOKPbfiGAqAMsw1k" id="optionKOKPbfiGAqAMsw1k">初始状态 : Initial Node</option>
+</select>			</td>
+		</tr>
+	</table>
+	<table width="100%" cellpadding="0" border="0" cellspacing="0">
+		<tr>
+			<td>
+				<img id = "diagram" src = "../images/6.png" usemap="#diagram_map" class="Image" width="514.0" height="396.0"/>				<map name = "diagram_map">
+
+<area coords="322.0, 372.0, 340.0, 392.0" coords2="322.0, 372.0, 340.0, 392.0" shape="rect" alt="终态4:Activity Final Node" id="areaQ7IQ7fiGAqAMsxvu" href="ActivityFinalNode_Q7IQ7fiGAqAMsxvv.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="492.0, 372.0, 510.0, 392.0" coords2="492.0, 372.0, 510.0, 392.0" shape="rect" alt="终态3:Activity Final Node" id="areaO_gQ7fiGAqAMsxss" href="ActivityFinalNode_O_gQ7fiGAqAMsxst.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="262.0, 272.0, 412.0, 312.0" coords2="262.0, 272.0, 412.0, 312.0" shape="rect" alt=" 2.2.4 开票系统不可用:Activity" id="areaYrNg7fiGAqAMsxis" href="Activity_YrNg7fiGAqAMsxit.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area docContent="<head>
+    
+  </head>
+  <body>
+    <p margin-top=&quot;0&quot;>
+      2.2.4 &nbsp;&nbsp;&nbsp;&#24320;&#31080;&#31995;&#32479;&#19981;&#21487;&#29992;
+    </p>
+  </body>" coords="122.0, 222.0, 142.0, 262.0" coords2="122.0, 222.0, 142.0, 262.0" shape="rect" alt="决策节点3:Decision Node" id="areaLzxg7fiGAqAMsxhV" href="DecisionNode_rzxg7fiGAqAMsxhW.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmouseout="hideTooltip()"/>
+<area docContent="<head>
+    
+  </head>
+  <body>
+    <p margin-top=&quot;0&quot;>
+      2.2.3 &nbsp;&nbsp;&nbsp;&#25552;&#20379;&#35838;&#31243;&#27809;&#26377;&#25480;&#35838;&#25945;&#25480;
+    </p>
+    <p margin-top=&quot;0&quot;>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#22914;&#26524;&#22312;&#22522;&#26412;&#27969;&#20013;&#27809;&#26377;&#25945;&#25480;&#30331;&#35760;&#20026;&#25552;&#20379;&#35838;&#31243;&#25480;&#35838;&#65292;&#21017;&#31995;&#32479;&#23558;&#21462;&#28040;&#25552;&#20379;&#35838;&#31243;&#12290;&#27492;&#26102;&#23558;&#25191;&#34892;&#8220;&#21462;&#28040;&#25552;&#20379;&#35838;&#31243;&#8221;&#23376;&#27969;&#12290;
+    </p>
+  </body>" coords="122.0, 172.0, 142.0, 212.0" coords2="122.0, 172.0, 142.0, 212.0" shape="rect" alt="决策节点2:Decision Node" id="areaqjv_bfiGAqAMsxNm" href="DecisionNode_qjv_bfiGAqAMsxNn.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmouseout="hideTooltip()"/>
+<area docContent="<head>
+    
+  </head>
+  <body>
+    <p margin-top=&quot;0&quot;>
+      2.2.2 &nbsp;&nbsp;&nbsp;&#21462;&#28040;&#25552;&#20379;&#35838;&#31243;
+    </p>
+    <p margin-top=&quot;0&quot;>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#31995;&#32479;&#21462;&#28040;&#25552;&#20379;&#35838;&#31243;&#12290;&#23545;&#20110;&#34987;&#21462;&#28040;&#30340;&#25552;&#20379;&#35838;&#31243;&#20013;&#27599;&#20010;&#24050;&#27880;&#20876;&#23398;&#29983;&#65292;&#31995;&#32479;&#23558;&#20250;&#20462;&#25913;&#23398;&#29983;&#30340;&#35838;&#31243;&#23433;&#25490;&#12290;&#31995;&#32479;&#20250;&#20351;&#29992;&#31532;&#19968;&#20010;&#21487;&#29992;&#30340;&#22791;&#36873;&#35838;&#31243;&#26367;&#25442;&#34987;&#21462;&#28040;&#30340;&#25552;&#20379;&#35838;&#31243;&#12290;&#22914;&#26524;&#27809;&#26377;&#20219;&#20309;&#21487;&#29992;&#30340;&#22791;&#36873;&#35838;&#31243;&#65292;&#21017;&#19981;&#20250;&#36827;&#34892;&#26367;&#25442;&#12290;&#28982;&#21518;&#65292;&#25511;&#21046;&#36820;&#22238;&#21040;&#20027;&#27969;&#31243;&#65292;&#22788;&#29702;&#23398;&#26399;&#20013;&#30340;&#19979;&#19968;&#20010;&#25552;&#20379;&#35838;&#31243;&#12290;
+    </p>
+    <p margin-top=&quot;0&quot;>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#22788;&#29702;&#23436;&#24403;&#21069;&#23398;&#26399;&#30340;&#25152;&#26377;&#35838;&#31243;&#23433;&#25490;&#20043;&#21518;&#65292;&#31995;&#32479;&#23558;&#36890;&#36807;&#30005;&#23376;&#37038;&#20214;&#36890;&#30693;&#25152;&#26377;&#23398;&#29983;&#23545;&#20182;&#20204;&#30340;&#35838;&#31243;&#23433;&#25490;&#30340;&#25152;&#26377;&#21464;&#26356;&#65288;&#20363;&#22914;&#65292;&#21462;&#28040;&#25110;&#26367;&#25442;&#65289;&#12290;
+    </p>
+  </body>" coords="272.0, 172.0, 412.0, 212.0" coords2="272.0, 172.0, 412.0, 212.0" shape="rect" alt="2.2.2  取消提供课程:Activity" id="areaXemfbfiGAqAMsxBX" href="Activity_XemfbfiGAqAMsxBY.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmouseout="hideTooltip()"/>
+<area docContent="<head>
+    
+  </head>
+  <body>
+    <p margin-top=&quot;0&quot;>
+      2.2.1 &nbsp;&nbsp;&nbsp;&#25552;&#20379;&#35838;&#31243;&#20013;&#30340;&#23398;&#29983;&#23569;&#20110;&#19977;&#21517;
+    </p>
+    <p margin-top=&quot;0&quot;>
+      &#22914;&#26524;&#22312;&#22522;&#26412;&#27969;&#20013;&#27880;&#20876;&#25552;&#20379;&#35838;&#31243;&#30340;&#23398;&#29983;&#23569;&#20110;&#19977;&#21517;&#65292;&#21017;&#31995;&#32479;&#23558;&#21462;&#28040;&#25552;&#20379;&#35838;&#31243;&#12290;&#27492;&#26102;&#23558;&#25191;&#34892;&#8220;&#21462;&#28040;&#25552;&#20379;&#35838;&#31243;&#8221;&#23376;&#27969;&#12290;
+    </p>
+  </body>" coords="122.0, 122.0, 142.0, 162.0" coords2="122.0, 122.0, 142.0, 162.0" shape="rect" alt="决策节点:Decision Node" id="area2aGfbfiGAqAMsxA2" href="DecisionNode_2aGfbfiGAqAMsxA3.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmouseout="hideTooltip()"/>
+<area coords="122.0, 372.0, 140.0, 392.0" coords2="122.0, 372.0, 140.0, 392.0" shape="rect" alt="终态2:Activity Final Node" id="areavbBvbfiGAqAMsxAS" href="ActivityFinalNode_fbBvbfiGAqAMsxAT.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area docContent="<head>
+    
+  </head>
+  <body>
+    <p margin-top=&quot;0&quot;>
+      2.1 &nbsp;&nbsp;&nbsp;&#22522;&#26412;&#27969; &#65293; &#25104;&#21151;&#20851;&#38381;&#27880;&#20876;
+    </p>
+    <p margin-top=&quot;0&quot;>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#31995;&#32479;&#36827;&#34892;&#26816;&#26597;&#20197;&#26597;&#30475;&#8220;&#27880;&#20876;&#8221;&#26159;&#21542;&#27491;&#22312;&#36827;&#34892;&#20013;&#12290;&#22914;&#26524;&#26159;&#65292;&#21017;&#21521;&#27880;&#20876;&#21592;&#26174;&#31034;&#19968;&#26465;&#28040;&#24687;&#65292;&#24182;&#32456;&#27490;&#29992;&#20363;&#12290;&#8220;&#20851;&#38381;&#27880;&#20876;&#8221;&#22788;&#29702;&#26080;&#27861;&#22312;&#27880;&#20876;&#27491;&#22312;&#36827;&#34892;&#26102;&#25191;&#34892;&#12290;.
+    </p>
+    <p margin-top=&quot;0&quot;>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#23545;&#20110;&#27599;&#20010;&#24050;&#24320;&#35774;&#30340;&#25552;&#20379;&#35838;&#31243;&#65292;&#31995;&#32479;&#20250;&#26816;&#26597;&#26159;&#21542;&#24050;&#26377;&#19977;&#21517;&#23398;&#29983;&#27880;&#20876;&#21644;&#26377;&#19968;&#21517;&#25945;&#25480;&#30331;&#35760;&#20026;&#25552;&#20379;&#35838;&#31243;&#25480;&#35838;&#12290;&#22914;&#26524;&#26159;&#65292;&#21017;&#31995;&#32479;&#20851;&#38381;&#25552;&#20379;&#35838;&#31243;&#65292;&#24182;&#20026;&#25552;&#20379;&#35838;&#31243;&#20013;&#27880;&#20876;&#30340;&#27599;&#20010;&#23398;&#29983;&#21521;&#24320;&#31080;&#31995;&#32479;&#21457;&#36865;&#19968;&#20010;&#20107;&#21153;&#12290;
+    </p>
+  </body>" coords="72.0, 302.0, 172.0, 342.0" coords2="72.0, 302.0, 172.0, 342.0" shape="rect" alt="2.1关闭注册:Activity" id="areaLVcvbfiGAqAMsw.R" href="Activity_LVcvbfiGAqAMsw_S.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmouseout="hideTooltip()"/>
+<area coords="2.0, 372.0, 20.0, 392.0" coords2="2.0, 372.0, 20.0, 392.0" shape="rect" alt="终态:Activity Final Node" id="area6XnPbfiGAqAMsw6e" href="ActivityFinalNode_6XnPbfiGAqAMsw6f.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area docContent="<head>
+    
+  </head>
+  <body>
+    <p margin-top=&quot;0&quot;>
+      &#8220;&#27880;&#20876;&#8221;&#26159;&#21542;&#27491;&#22312;&#36827;&#34892;&#20013;
+    </p>
+  </body>" coords="122.0, 62.0, 142.0, 102.0" coords2="122.0, 62.0, 142.0, 102.0" shape="rect" alt="“注册”是否正在进行中:Decision Node" id="areabj1PbfiGAqAMsw4Q" href="DecisionNode_bj1PbfiGAqAMsw4R.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmouseout="hideTooltip()"/>
+<area docContent="<head>
+    
+  </head>
+  <body>
+    <p margin-top=&quot;0&quot;>
+      &#29992;&#20363;&#22312;&#27880;&#20876;&#21592;&#20174;&#8220;&#20027;&#34920;&#21333;&#8221;&#20013;&#36873;&#25321;&#8220;&#20851;&#38381;&#27880;&#20876;&#8221;&#27963;&#21160;&#26102;&#24320;&#22987;&#12290;
+    </p>
+  </body>" coords="122.0, 2.0, 142.0, 20.0" coords2="122.0, 2.0, 142.0, 20.0" shape="rect" alt="初始状态:Initial Node" id="areaKOKPbfiGAqAMsw1k" href="InitialNode_KOKPbfiGAqAMsw1l.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmouseout="hideTooltip()"/>
+<area coords="125.0, 9.0, 125.0, 79.0, 139.0, 79.0, 139.0, 9.0" coords2="125.0, 9.0, 125.0, 79.0, 139.0, 79.0, 139.0, 9.0" shape="poly" alt=":Control Flow" id="areaoJLPbfiGAqAMsw5." href="ControlFlow_gJLPbfiGAqAMsw59.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="5.0, 72.0, 5.0, 75.0, 2.0, 75.0, 2.0, 89.0, 5.0, 89.0, 5.0, 384.0, 19.0, 384.0, 19.0, 89.0, 135.0, 89.0, 135.0, 75.0, 19.0, 75.0, 19.0, 72.0" coords2="5.0, 72.0, 5.0, 75.0, 2.0, 75.0, 2.0, 89.0, 5.0, 89.0, 5.0, 384.0, 19.0, 384.0, 19.0, 89.0, 135.0, 89.0, 135.0, 75.0, 19.0, 75.0, 19.0, 72.0" shape="poly" alt="“注册”进行中:Control Flow" id="areauXnPbfiGAqAMsw6k" href="ControlFlow_uXnPbfiGAqAMsw6j.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="125.0, 331.0, 125.0, 384.0, 139.0, 384.0, 139.0, 331.0" coords2="125.0, 331.0, 125.0, 384.0, 139.0, 384.0, 139.0, 331.0" shape="poly" alt="null:Control Flow" id="areaU7BvbfiGAqAMsxAY" href="ControlFlow_U7BvbfiGAqAMsxAX.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="335.0, 132.0, 335.0, 135.0, 129.0, 135.0, 129.0, 149.0, 335.0, 149.0, 335.0, 182.0, 349.0, 182.0, 349.0, 149.0, 352.0, 149.0, 352.0, 135.0, 349.0, 135.0, 349.0, 132.0" coords2="335.0, 132.0, 335.0, 135.0, 129.0, 135.0, 129.0, 149.0, 335.0, 149.0, 335.0, 182.0, 349.0, 182.0, 349.0, 149.0, 352.0, 149.0, 352.0, 135.0, 349.0, 135.0, 349.0, 132.0" shape="poly" alt="2.2.1学生少于三名:Control Flow" id="areaQ.mfbfiGAqAMsxBd" href="ControlFlow_Q_mfbfiGAqAMsxBc.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="125.0, 84.0, 125.0, 139.0, 139.0, 139.0, 139.0, 84.0" coords2="125.0, 84.0, 125.0, 139.0, 139.0, 139.0, 139.0, 84.0" shape="poly" alt=":Control Flow" id="areafBxfbfiGAqAMsxFH" href="ControlFlow_fBxfbfiGAqAMsxFG.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="129.0, 185.0, 129.0, 199.0, 282.0, 199.0, 282.0, 185.0" coords2="129.0, 185.0, 129.0, 199.0, 282.0, 199.0, 282.0, 185.0" shape="poly" alt="2.2.3没有授课教授:Control Flow" id="areasfAA7fiGAqAMsxOG" href="ControlFlow_MfAA7fiGAqAMsxOF.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="125.0, 144.0, 125.0, 189.0, 139.0, 189.0, 139.0, 144.0" coords2="125.0, 144.0, 125.0, 189.0, 139.0, 189.0, 139.0, 144.0" shape="poly" alt=":Control Flow" id="area5DkA7fiGAqAMsxQ1" href="ControlFlow_pDkA7fiGAqAMsxQ0.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="125.0, 194.0, 125.0, 239.0, 139.0, 239.0, 139.0, 194.0" coords2="125.0, 194.0, 125.0, 239.0, 139.0, 239.0, 139.0, 194.0" shape="poly" alt=":Control Flow" id="area5N5g7fiGAqAMsxiM" href="ControlFlow_5N5g7fiGAqAMsxiL.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="335.0, 232.0, 335.0, 235.0, 129.0, 235.0, 129.0, 249.0, 335.0, 249.0, 335.0, 282.0, 349.0, 282.0, 349.0, 249.0, 352.0, 249.0, 352.0, 235.0, 349.0, 235.0, 349.0, 232.0" coords2="335.0, 232.0, 335.0, 235.0, 129.0, 235.0, 129.0, 249.0, 335.0, 249.0, 335.0, 282.0, 349.0, 282.0, 349.0, 249.0, 352.0, 249.0, 352.0, 235.0, 349.0, 235.0, 349.0, 232.0" shape="poly" alt=":Control Flow" id="areaKGDg7fiGAqAMsxji" href="ControlFlow_yGDg7fiGAqAMsxjh.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="138.0, 229.0, 127.0, 238.0, 172.0, 292.0, 172.0, 299.0, 177.83333, 299.0, 182.0, 304.0, 188.11111, 299.0, 272.0, 299.0, 272.0, 285.0, 184.66667, 285.0, 138.0, 229.0" coords2="138.0, 229.0, 127.0, 238.0, 172.0, 292.0, 172.0, 299.0, 177.83333, 299.0, 182.0, 304.0, 188.11111, 299.0, 272.0, 299.0, 272.0, 285.0, 184.66667, 285.0, 138.0, 229.0" shape="poly" alt=":Control Flow" id="areaxJjg7fiGAqAMsxjn" href="ControlFlow_xJjg7fiGAqAMsxjm.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="125.0, 244.0, 125.0, 312.0, 139.0, 312.0, 139.0, 244.0" coords2="125.0, 244.0, 125.0, 312.0, 139.0, 312.0, 139.0, 244.0" shape="poly" alt=":Control Flow" id="areaVLzg7fiGAqAMsxkc" href="ControlFlow_VLzg7fiGAqAMsxkb.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="495.0, 182.0, 495.0, 185.0, 401.0, 185.0, 401.0, 199.0, 495.0, 199.0, 495.0, 384.0, 509.0, 384.0, 509.0, 199.0, 512.0, 199.0, 512.0, 185.0, 509.0, 185.0, 509.0, 182.0" coords2="495.0, 182.0, 495.0, 185.0, 401.0, 185.0, 401.0, 199.0, 495.0, 199.0, 495.0, 384.0, 509.0, 384.0, 509.0, 199.0, 512.0, 199.0, 512.0, 185.0, 509.0, 185.0, 509.0, 182.0" shape="poly" alt="null:Control Flow" id="areah_gQ7fiGAqAMsxsy" href="ControlFlow_h_gQ7fiGAqAMsxsx.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="324.0, 301.0, 324.0, 384.0, 338.0, 384.0, 338.0, 301.0" coords2="324.0, 301.0, 324.0, 384.0, 338.0, 384.0, 338.0, 301.0" shape="poly" alt="null:Control Flow" id="areaU7IQ7fiGAqAMsxv0" href="ControlFlow_U7IQ7fiGAqAMsxvz.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+</map>			</td>
+		</tr>
+	</table>
+	<p>
+	</p>
+	<table width="100%" cellpadding="0" border="0" cellspacing="0">
+		<tr>
+			<td class="Category">
+				Model Elements			</td>
+		</tr>
+		<tr>
+			<td style="height: 5px">
+			</td>
+		</tr>
+	</table>
+	<table width="100%" cellpadding="0" border="0" cellspacing="0">
+		<tr>
+			<td colSpan="4" class="TableHeaderLine">
+			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine1">
+			</td>
+		</tr>
+		<tr class="TableHeader">
+			<td class="TableCellSpaceHolder10Px">
+			</td>
+			<td width="30%">
+<span class="TableHeaderText">名称</span>			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td>
+<span class="TableHeaderText">文档</span>			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine2">
+			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Activity.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Activity.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="Activity_LVcvbfiGAqAMsw_S.html">2.1关闭注册 : 活动</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"><head>
+    
+  </head>
+  <body>
+    <p margin-top="0">
+      2.1 &nbsp;&nbsp;&nbsp;&#22522;&#26412;&#27969; &#65293; &#25104;&#21151;&#20851;&#38381;&#27880;&#20876;
+    </p>
+    <p margin-top="0">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#31995;&#32479;&#36827;&#34892;&#26816;&#26597;&#20197;&#26597;&#30475;&#8220;&#27880;&#20876;&#8221;&#26159;&#21542;&#27491;&#22312;&#36827;&#34892;&#20013;&#12290;&#22914;&#26524;&#26159;&#65292;&#21017;&#21521;&#27880;&#20876;&#21592;&#26174;&#31034;&#19968;&#26465;&#28040;&#24687;&#65292;&#24182;&#32456;&#27490;&#29992;&#20363;&#12290;&#8220;&#20851;&#38381;&#27880;&#20876;&#8221;&#22788;&#29702;&#26080;&#27861;&#22312;&#27880;&#20876;&#27491;&#22312;&#36827;&#34892;&#26102;&#25191;&#34892;&#12290;.
+    </p>
+    <p margin-top="0">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#23545;&#20110;&#27599;&#20010;&#24050;&#24320;&#35774;&#30340;&#25552;&#20379;&#35838;&#31243;&#65292;&#31995;&#32479;&#20250;&#26816;&#26597;&#26159;&#21542;&#24050;&#26377;&#19977;&#21517;&#23398;&#29983;&#27880;&#20876;&#21644;&#26377;&#19968;&#21517;&#25945;&#25480;&#30331;&#35760;&#20026;&#25552;&#20379;&#35838;&#31243;&#25480;&#35838;&#12290;&#22914;&#26524;&#26159;&#65292;&#21017;&#31995;&#32479;&#20851;&#38381;&#25552;&#20379;&#35838;&#31243;&#65292;&#24182;&#20026;&#25552;&#20379;&#35838;&#31243;&#20013;&#27880;&#20876;&#30340;&#27599;&#20010;&#23398;&#29983;&#21521;&#24320;&#31080;&#31995;&#32479;&#21457;&#36865;&#19968;&#20010;&#20107;&#21153;&#12290;
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Activity.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Activity.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="Activity_XemfbfiGAqAMsxBY.html">2.2.2  取消提供课程 : 活动</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"><head>
+    
+  </head>
+  <body>
+    <p margin-top="0">
+      2.2.2 &nbsp;&nbsp;&nbsp;&#21462;&#28040;&#25552;&#20379;&#35838;&#31243;
+    </p>
+    <p margin-top="0">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#31995;&#32479;&#21462;&#28040;&#25552;&#20379;&#35838;&#31243;&#12290;&#23545;&#20110;&#34987;&#21462;&#28040;&#30340;&#25552;&#20379;&#35838;&#31243;&#20013;&#27599;&#20010;&#24050;&#27880;&#20876;&#23398;&#29983;&#65292;&#31995;&#32479;&#23558;&#20250;&#20462;&#25913;&#23398;&#29983;&#30340;&#35838;&#31243;&#23433;&#25490;&#12290;&#31995;&#32479;&#20250;&#20351;&#29992;&#31532;&#19968;&#20010;&#21487;&#29992;&#30340;&#22791;&#36873;&#35838;&#31243;&#26367;&#25442;&#34987;&#21462;&#28040;&#30340;&#25552;&#20379;&#35838;&#31243;&#12290;&#22914;&#26524;&#27809;&#26377;&#20219;&#20309;&#21487;&#29992;&#30340;&#22791;&#36873;&#35838;&#31243;&#65292;&#21017;&#19981;&#20250;&#36827;&#34892;&#26367;&#25442;&#12290;&#28982;&#21518;&#65292;&#25511;&#21046;&#36820;&#22238;&#21040;&#20027;&#27969;&#31243;&#65292;&#22788;&#29702;&#23398;&#26399;&#20013;&#30340;&#19979;&#19968;&#20010;&#25552;&#20379;&#35838;&#31243;&#12290;
+    </p>
+    <p margin-top="0">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#22788;&#29702;&#23436;&#24403;&#21069;&#23398;&#26399;&#30340;&#25152;&#26377;&#35838;&#31243;&#23433;&#25490;&#20043;&#21518;&#65292;&#31995;&#32479;&#23558;&#36890;&#36807;&#30005;&#23376;&#37038;&#20214;&#36890;&#30693;&#25152;&#26377;&#23398;&#29983;&#23545;&#20182;&#20204;&#30340;&#35838;&#31243;&#23433;&#25490;&#30340;&#25152;&#26377;&#21464;&#26356;&#65288;&#20363;&#22914;&#65292;&#21462;&#28040;&#25110;&#26367;&#25442;&#65289;&#12290;
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Activity.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Activity.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="Activity_YrNg7fiGAqAMsxit.html"> 2.2.4 开票系统不可用 : 活动</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/ActivityFinalNode.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/ActivityFinalNode.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="ActivityFinalNode_6XnPbfiGAqAMsw6f.html">终态 : 终态节点</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/ActivityFinalNode.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/ActivityFinalNode.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="ActivityFinalNode_fbBvbfiGAqAMsxAT.html">终态2 : 终态节点</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/ActivityFinalNode.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/ActivityFinalNode.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="ActivityFinalNode_O_gQ7fiGAqAMsxst.html">终态3 : 终态节点</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/ActivityFinalNode.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/ActivityFinalNode.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="ActivityFinalNode_Q7IQ7fiGAqAMsxvv.html">终态4 : 终态节点</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/DecisionNode.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/DecisionNode.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="DecisionNode_bj1PbfiGAqAMsw4R.html">“注册”是否正在进行中 : 决策节点</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"><head>
+    
+  </head>
+  <body>
+    <p margin-top="0">
+      &#8220;&#27880;&#20876;&#8221;&#26159;&#21542;&#27491;&#22312;&#36827;&#34892;&#20013;
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/DecisionNode.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/DecisionNode.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="DecisionNode_2aGfbfiGAqAMsxA3.html">决策节点 : 决策节点</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"><head>
+    
+  </head>
+  <body>
+    <p margin-top="0">
+      2.2.1 &nbsp;&nbsp;&nbsp;&#25552;&#20379;&#35838;&#31243;&#20013;&#30340;&#23398;&#29983;&#23569;&#20110;&#19977;&#21517;
+    </p>
+    <p margin-top="0">
+      &#22914;&#26524;&#22312;&#22522;&#26412;&#27969;&#20013;&#27880;&#20876;&#25552;&#20379;&#35838;&#31243;&#30340;&#23398;&#29983;&#23569;&#20110;&#19977;&#21517;&#65292;&#21017;&#31995;&#32479;&#23558;&#21462;&#28040;&#25552;&#20379;&#35838;&#31243;&#12290;&#27492;&#26102;&#23558;&#25191;&#34892;&#8220;&#21462;&#28040;&#25552;&#20379;&#35838;&#31243;&#8221;&#23376;&#27969;&#12290;
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/DecisionNode.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/DecisionNode.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="DecisionNode_qjv_bfiGAqAMsxNn.html">决策节点2 : 决策节点</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"><head>
+    
+  </head>
+  <body>
+    <p margin-top="0">
+      2.2.3 &nbsp;&nbsp;&nbsp;&#25552;&#20379;&#35838;&#31243;&#27809;&#26377;&#25480;&#35838;&#25945;&#25480;
+    </p>
+    <p margin-top="0">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#22914;&#26524;&#22312;&#22522;&#26412;&#27969;&#20013;&#27809;&#26377;&#25945;&#25480;&#30331;&#35760;&#20026;&#25552;&#20379;&#35838;&#31243;&#25480;&#35838;&#65292;&#21017;&#31995;&#32479;&#23558;&#21462;&#28040;&#25552;&#20379;&#35838;&#31243;&#12290;&#27492;&#26102;&#23558;&#25191;&#34892;&#8220;&#21462;&#28040;&#25552;&#20379;&#35838;&#31243;&#8221;&#23376;&#27969;&#12290;
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/DecisionNode.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/DecisionNode.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="DecisionNode_rzxg7fiGAqAMsxhW.html">决策节点3 : 决策节点</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"><head>
+    
+  </head>
+  <body>
+    <p margin-top="0">
+      2.2.4 &nbsp;&nbsp;&nbsp;&#24320;&#31080;&#31995;&#32479;&#19981;&#21487;&#29992;
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/InitialNode.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/InitialNode.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="InitialNode_KOKPbfiGAqAMsw1l.html">初始状态 : 初态</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"><head>
+    
+  </head>
+  <body>
+    <p margin-top="0">
+      &#29992;&#20363;&#22312;&#27880;&#20876;&#21592;&#20174;&#8220;&#20027;&#34920;&#21333;&#8221;&#20013;&#36873;&#25321;&#8220;&#20851;&#38381;&#27880;&#20876;&#8221;&#27963;&#21160;&#26102;&#24320;&#22987;&#12290;
+    </p>
+  </body></span>			</td>
+		</tr>
+	</table>
+	<table width="100%" cellpadding="0" border="0" cellspacing="0">
+		<tr>
+			<td class="TableCellSpaceHolder1PxTall">
+			</td>
+		</tr>
+		<tr>
+			<td class="TableFooter">
+			</td>
+		</tr>
+	</table>
+	<div style="height: 20px">
+	</div>
+	<table width="100%" cellpadding="0" border="0" cellspacing="0">
+		<tr>
+			<td class="FooterLine">
+			</td>
+		</tr>
+	</table>
+	<div class="HeaderText">
+		netfocus Documentation	</div>
+</body>
+</html>

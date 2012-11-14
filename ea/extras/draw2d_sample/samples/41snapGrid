@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/Strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de"><head>
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+  <title>FreeGroup Draw2D 0.9.26 :: ToggleButton and ToolPalette Demo</title>
+        <link type="text/css" rel="stylesheet" href="41snapGrid_files/demo.css">
+
+    <!-- common, all times required, imports -->        <script src="41snapGrid_files/wz_jsgraphics.js"></script>      <script src="41snapGrid_files/mootools.js"></script>      <script src="41snapGrid_files/moocanvas.js"></script>      <script src="41snapGrid_files/draw2d.js"></script>
+
+        <!-- demo specific imports -->
+	<script src="41snapGrid_files/MyPalette.js"></script>
+	<script src="41snapGrid_files/ToolUseGrid10.js"></script>
+	<script src="41snapGrid_files/ToolUseGrid20.js"></script>
+</head>
+<body onselectstart="return false;" style="margin: 0px; padding: 0px;" onkeydown="">
+<div tabindex="0" class="Workflow" id="paintarea" style="position: absolute; left: 0px; top: 0px; width: 3000px; height: 3000px; cursor: default; background: none repeat scroll 0% 0% transparent;">
+    <!-- The information help text -->
+    <div class="stickyNote">
+    <center><b>Draw2D 0.9.26 - A simple diagram drawing demo<br>
+    by Andreas Herz (a.herz @ freegroup.de)
+    <br>
+    </b>
+    <br>
+    <div style="color:red;font-size:9pt"><u>Focus of this example:</u> Show the SnapToGrid Feature.</div>
+    </center>
+    <br>
+    <center>See more on <a href="http://www.draw2d.org/">FreeGroup Draw2D 0.9.26</a></center>
+    </div>
+
+<div tabindex="0" class=" unselectable" style="position: absolute; left: 200px; top: 200px; height: 70px; width: 250px; margin: 0px; padding: 0px; outline: medium none; z-index: 100; color: rgb(0, 0, 0); background-color: rgb(241, 241, 121); font-size: 10pt; cursor: move;" id="678499ac-b056-207f-85e3-f2cae24a5082">NOTE: Press the button in the Toolbar to toggle the snapToGrid feature. Move the rectangle via Drag&amp;Drag.</div><div tabindex="0" class="WindowFigure" style="position: absolute; left: 400px; top: 10px; height: 60px; width: 300px; margin: 0px; padding: 0px; outline: medium none; z-index: 50000; border: 1px solid black; background-image: url(&quot;window_bg.png&quot;); box-shadow: 5px 5px 5px rgb(204, 204, 204); border-radius: 2px 2px 2px 2px;" id="bdb1269d-1d77-e147-a73e-b685b2bb280d"><div class="WindowFigure_titlebar unselectable" style="position: absolute; left: 0px; top: 0px; width: 300px; height: 15px; margin: 0px; padding: 0px; font: 10px verdana; background-color: blue; border-bottom: 2px solid gray; white-space: nowrap; text-align: center; background-image: url(&quot;window_toolbar.png&quot;); cursor: move;">Tools</div><div style="position: absolute; left: 0px; top: 15px; width: 300px; height: 45px; margin: 0px; padding: 0px; font: 10px verdana; border-bottom: 2px solid gray; white-space: nowrap; text-align: center; overflow: auto;"><div style="position: absolute; left: 10px; top: 10px; height: 24px; width: 24px; margin: 0px; padding: 0px; background-image: url(&quot;ToolUseGrid10.png&quot;);" id="fe7991c7-e755-9db1-d66c-5720b08bbc3c"></div><div style="position: absolute; left: 50px; top: 10px; height: 24px; width: 24px; margin: 0px; padding: 0px; background-image: url(&quot;ToolUseGrid20.png&quot;);" id="92358893-c9f7-5e14-f88c-6cdaef382c10"></div></div></div><div tabindex="0" style="position: absolute; left: 250px; top: 300px; height: 18px; width: 188px; margin: 0px; padding: 0px; outline: medium none; z-index: 100; border: 1px solid rgb(0, 0, 0); font-size: 1px; line-height: 1px; cursor: move;" id="7de21c16-0091-bd57-d506-b5ca9fb7db3b">&nbsp;</div><div tabindex="0" style="position: absolute; left: 350px; top: 320px; height: 10px; width: 180px; margin: 0px; padding: 0px; outline: medium none; z-index: 100; border: 5px solid rgb(0, 0, 0); font-size: 1px; line-height: 1px; cursor: move; background-color: rgb(255, 120, 0);" id="adfe4dde-f1eb-28dc-0a4b-8482324d5a23">&nbsp;</div></div>
+<script>
+  var workflow  = new draw2d.Workflow("paintarea");
+  workflow.setBackgroundImage(null,false);
+
+  // Add a hint annotation to the workflow area
+  //
+  var annotation = new draw2d.Annotation("NOTE: Press the button in the Toolbar to toggle the snapToGrid feature. Move the rectangle via Drag&Drag.");
+  annotation.setDimension(250,70);
+  workflow.addFigure(annotation,200,200);
+
+  var dialog = new draw2d.MyPalette();
+  workflow.showDialog(dialog,400,10);
+
+  // Add a Rectangle to the paint area
+  //
+  var rect = new draw2d.Rectangle();
+  rect.setDimension(190,20);
+  workflow.addFigure(rect,250,300);
+
+  // Add a Rectangle with lineWidth and fillColor/backgroundColor
+  //
+  var rect = new draw2d.Rectangle();
+  rect.setLineWidth(5);
+  rect.setBackgroundColor(new draw2d.Color(255,120,0));
+  rect.setDimension(190,20);
+  workflow.addFigure(rect,350,320);
+
+
+  window.onscroll=function(){workflow.onScroll();};
+</script>
+
+
+</body></html>

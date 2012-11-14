@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/Strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de"><head>
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+  <title>Workflow Editor</title>
+        <link type="text/css" rel="stylesheet" href="12addConn2_files/demo.css">
+
+    <!-- common, all times required, imports -->        <script src="12addConn2_files/wz_jsgraphics.js"></script>      <script src="12addConn2_files/mootools.js"></script>      <script src="12addConn2_files/moocanvas.js"></script>      <script src="12addConn2_files/draw2d.js"></script>
+
+
+        <!-- example specific imports -->
+	<script src="12addConn2_files/Start.js"></script>
+	<script src="12addConn2_files/End.js"></script>
+</head>
+<body onselectstart="return false;" style="margin: 0px; padding: 0px;" onkeydown="">
+<div tabindex="0" class="Workflow" id="paintarea" style="position: absolute; left: 0px; top: 0px; width: 3000px; height: 3000px; cursor: default; background-image: url(&quot;grid_10.png&quot;);">
+
+    <!-- The information help text -->
+    <div class="stickyNote">
+    <center><b>Draw2D 0.9.26 - A simple diagram drawing demo<br>
+    by Andreas Herz (a.herz @ freegroup.de)
+    <br>
+    </b>
+    <br>
+    <div style="color:red;font-size:9pt">Focus of this example: How to create a connection via API call.</div>
+    </center>
+    <br>
+    <center>See more on <a href="http://www.draw2d.org/">FreeGroup Draw2D 0.9.26</a></center>
+    </div>
+
+<div tabindex="0" style="position: absolute; left: 200px; top: 300px; height: 50px; width: 50px; margin: 0px; padding: 0px; outline: medium none; z-index: 100; border: 0px none; font-size: 1px; background-image: url(&quot;Start.png&quot;); cursor: move;" id="b45c7689-bb7a-6f26-5965-507edf8d71a8"><div tabindex="0" style="position: absolute; left: 46px; top: 21px; height: 6px; width: 6px; margin: 0px; padding: 0px; outline: medium none; z-index: 5000; border: 10px none; font-size: 1px; line-height: 1px; cursor: move;" id="9224f1c1-88e3-7071-8e9f-cdf489aacda3">&nbsp;<div style="position: absolute; left: 0px; top: 0px; height: 8px; width: 8px; margin: 0px; padding: 0px; outline: medium none; z-index: 100; border: 0px none; font-size: 1px; background-color: transparent; cursor: move;" id="c2048cac-d0af-f6e0-9aeb-d2e583596588"><div style="font-size: 0pt;"><div style="position:absolute;left:2px;top:0px;width:3px;height:1px;clip:rect(0,3px,1px,0);background-color:rgb(245,115,115);overflow:hidden;"></div><div style="position:absolute;left:2px;top:6px;width:3px;height:1px;clip:rect(0,3px,1px,0);background-color:rgb(245,115,115);overflow:hidden;"></div><div style="position:absolute;left:1px;top:1px;width:5px;height:1px;clip:rect(0,5px,1px,0);background-color:rgb(245,115,115);overflow:hidden;"></div><div style="position:absolute;left:1px;top:5px;width:5px;height:1px;clip:rect(0,5px,1px,0);background-color:rgb(245,115,115);overflow:hidden;"></div><div style="position:absolute;left:0px;top:2px;width:7px;height:3px;clip:rect(0,7px,3px,0);background-color:rgb(245,115,115);overflow:hidden;"></div><div style="position:absolute;left:3px;top:0px;width:2px;height:1px;clip:rect(0,2px,1px,0);background-color:rgb(90,150,90);overflow:hidden;"></div><div style="position:absolute;left:3px;top:7px;width:2px;height:1px;clip:rect(0,2px,1px,0);background-color:rgb(90,150,90);overflow:hidden;"></div><div style="position:absolute;left:5px;top:1px;width:1px;height:1px;clip:rect(0,1px,1px,0);background-color:rgb(90,150,90);overflow:hidden;"></div><div style="position:absolute;left:5px;top:6px;width:1px;height:1px;clip:rect(0,1px,1px,0);background-color:rgb(90,150,90);overflow:hidden;"></div><div style="position:absolute;left:2px;top:1px;width:1px;height:1px;clip:rect(0,1px,1px,0);background-color:rgb(90,150,90);overflow:hidden;"></div><div style="position:absolute;left:2px;top:6px;width:1px;height:1px;clip:rect(0,1px,1px,0);background-color:rgb(90,150,90);overflow:hidden;"></div><div style="position:absolute;left:6px;top:2px;width:1px;height:1px;clip:rect(0,1px,1px,0);background-color:rgb(90,150,90);overflow:hidden;"></div><div style="position:absolute;left:6px;top:5px;width:1px;height:1px;clip:rect(0,1px,1px,0);background-color:rgb(90,150,90);overflow:hidden;"></div><div style="position:absolute;left:1px;top:2px;width:1px;height:1px;clip:rect(0,1px,1px,0);background-color:rgb(90,150,90);overflow:hidden;"></div><div style="position:absolute;left:1px;top:5px;width:1px;height:1px;clip:rect(0,1px,1px,0);background-color:rgb(90,150,90);overflow:hidden;"></div><div style="position:absolute;left:0px;top:3px;width:1px;height:2px;clip:rect(0,1px,2px,0);background-color:rgb(90,150,90);overflow:hidden;"></div><div style="position:absolute;left:7px;top:3px;width:1px;height:2px;clip:rect(0,1px,2px,0);background-color:rgb(90,150,90);overflow:hidden;"></div></div></div></div></div><div tabindex="0" style="position: absolute; left: 400px; top: 250px; height: 50px; width: 50px; margin: 0px; padding: 0px; outline: medium none; z-index: 100; border: 0px none; font-size: 1px; background-image: url(&quot;End.png&quot;); cursor: move;" id="77d22f4d-5e41-3a97-a37c-ff973f83bed7"><div tabindex="0" style="position: absolute; left: -4px; top: 21px; height: 6px; width: 6px; margin: 0px; padding: 0px; outline: medium none; z-index: 5000; border: 10px none; font-size: 1px; line-height: 1px; cursor: move;" id="6295d0ac-1307-dd98-c09e-ca94dde72a06">&nbsp;<div style="position: absolute; left: 0px; top: 0px; height: 8px; width: 8px; margin: 0px; padding: 0px; outline: medium none; z-index: 100; border: 0px none; font-size: 1px; background-color: transparent; cursor: move;" id="071addb2-4a56-f84d-dc7d-db59b2542c5a"><div style="font-size: 0pt;"><div style="position:absolute;left:2px;top:0px;width:3px;height:1px;clip:rect(0,3px,1px,0);background-color:rgb(115,115,245);overflow:hidden;"></div><div style="position:absolute;left:2px;top:6px;width:3px;height:1px;clip:rect(0,3px,1px,0);background-color:rgb(115,115,245);overflow:hidden;"></div><div style="position:absolute;left:1px;top:1px;width:5px;height:1px;clip:rect(0,5px,1px,0);background-color:rgb(115,115,245);overflow:hidden;"></div><div style="position:absolute;left:1px;top:5px;width:5px;height:1px;clip:rect(0,5px,1px,0);background-color:rgb(115,115,245);overflow:hidden;"></div><div style="position:absolute;left:0px;top:2px;width:7px;height:3px;clip:rect(0,7px,3px,0);background-color:rgb(115,115,245);overflow:hidden;"></div></div></div></div></div><div tabindex="0" style="position: absolute; left: 400px; top: 350px; height: 50px; width: 50px; margin: 0px; padding: 0px; outline: medium none; z-index: 100; border: 0px none; font-size: 1px; background-image: url(&quot;End.png&quot;); cursor: move;" id="9500bd65-898a-4694-7197-3a8d651561a9"><div tabindex="0" style="position: absolute; left: -4px; top: 21px; height: 6px; width: 6px; margin: 0px; padding: 0px; outline: medium none; z-index: 5000; border: 10px none; font-size: 1px; line-height: 1px; cursor: move;" id="f119b594-1f09-ee5d-2ca3-db1fdbcb560e">&nbsp;<div style="position: absolute; left: 0px; top: 0px; height: 8px; width: 8px; margin: 0px; padding: 0px; outline: medium none; z-index: 100; border: 0px none; font-size: 1px; background-color: transparent; cursor: move;" id="cf226c78-7a2b-76b8-1e92-49673a65191f"><div style="font-size: 0pt;"><div style="position:absolute;left:2px;top:0px;width:3px;height:1px;clip:rect(0,3px,1px,0);background-color:rgb(115,115,245);overflow:hidden;"></div><div style="position:absolute;left:2px;top:6px;width:3px;height:1px;clip:rect(0,3px,1px,0);background-color:rgb(115,115,245);overflow:hidden;"></div><div style="position:absolute;left:1px;top:1px;width:5px;height:1px;clip:rect(0,5px,1px,0);background-color:rgb(115,115,245);overflow:hidden;"></div><div style="position:absolute;left:1px;top:5px;width:5px;height:1px;clip:rect(0,5px,1px,0);background-color:rgb(115,115,245);overflow:hidden;"></div><div style="position:absolute;left:0px;top:2px;width:7px;height:3px;clip:rect(0,7px,3px,0);background-color:rgb(115,115,245);overflow:hidden;"></div></div></div></div></div><div style="position: absolute; left: 0px; top: 0px; height: 0px; width: 0px; z-index: 200;" id="7b7a5266-ff83-30a5-1234-d0ccda4cb282"><div style="font-size: 0pt;"><div style="position:absolute;left:250px;top:325px;width:76px;height:1px;clip:rect(0,76px,1px,0);background-color:rgb(0,0,115);overflow:hidden;"></div><div style="position:absolute;left:325px;top:275px;width:1px;height:51px;clip:rect(0,1px,51px,0);background-color:rgb(0,0,115);overflow:hidden;"></div><div style="position:absolute;left:325px;top:275px;width:76px;height:1px;clip:rect(0,76px,1px,0);background-color:rgb(0,0,115);overflow:hidden;"></div></div></div><div style="position: absolute; left: 0px; top: 0px; height: 0px; width: 0px; z-index: 200;" id="6272f116-966f-6e20-14dc-37f59ccff94e"><div style="font-size: 0pt;"><div style="position:absolute;left:250px;top:325px;width:76px;height:1px;clip:rect(0,76px,1px,0);background-color:rgb(0,0,115);overflow:hidden;"></div><div style="position:absolute;left:325px;top:325px;width:1px;height:51px;clip:rect(0,1px,51px,0);background-color:rgb(0,0,115);overflow:hidden;"></div><div style="position:absolute;left:325px;top:375px;width:76px;height:1px;clip:rect(0,76px,1px,0);background-color:rgb(0,0,115);overflow:hidden;"></div></div></div></div>
+<script>
+  var workflow  = new draw2d.Workflow("paintarea");
+
+  // Add the start node to the canvas
+  //
+  var startObj = new draw2d.Start();
+  workflow.addFigure(startObj, 200,300);
+
+  // Add one end node to the canvas
+  //
+  var endObj1   = new draw2d.End();
+  workflow.addFigure(endObj1, 400,250);
+
+  // Add another end node to the canvas
+  //
+  var endObj2   = new draw2d.End();
+  workflow.addFigure(endObj2, 400,350);
+
+  // Create a Connection
+  var c = new draw2d.Connection();
+  c.setSource(startObj.getPort("output"));
+  c.setTarget(endObj1.getPort("input"));
+  workflow.addFigure(c);
+
+  // do it again......
+  c = new draw2d.Connection();
+  c.setSource(startObj.getPort("output"));
+  c.setTarget(endObj2.getPort("input"));
+  workflow.addFigure(c);
+
+</script>
+
+
+</body></html>

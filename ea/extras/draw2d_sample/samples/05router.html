@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/Strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de"><head>
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+  <title>Workflow Editor</title>
+        <link type="text/css" rel="stylesheet" href="05router_files/demo.css">
+
+    <!-- common, all times required, imports -->        <script src="05router_files/wz_jsgraphics.js"></script>      <script src="05router_files/mootools.js"></script>      <script src="05router_files/moocanvas.js"></script>      <script src="05router_files/draw2d.js"></script>
+
+
+        <!-- example specific imports -->
+	<script src="05router_files/Start.js"></script>
+	<script src="05router_files/End.js"></script>
+	<script src="05router_files/ToolUndo.js"></script>
+	<script src="05router_files/ToolRedo.js"></script>
+	<script src="05router_files/VectorPalette.js"></script>
+</head>
+<body onselectstart="return false;" style="margin: 0px; padding: 0px;" onkeydown="">
+<div tabindex="0" class="Workflow" id="paintarea" style="position: absolute; left: 0px; top: 0px; width: 3000px; height: 3000px; cursor: default; background-image: url(&quot;grid_10.png&quot;);">
+
+    <!-- The information help text -->
+    <div class="stickyNote">
+    <center><b>Draw2D 0.9.26 - A simple diagram drawing demo<br>
+    by Andreas Herz (a.herz @ freegroup.de)
+    <br>
+    </b>
+    <br>
+    <div style="color:red;font-size:9pt">Focus of this example: How to handle ports and Z connectors.</div>
+    </center>
+    <br>
+    <center>See more on <a href="http://www.draw2d.org/">FreeGroup Draw2D 0.9.26</a></center>
+    </div>
+
+<div tabindex="0" class=" unselectable" style="position: absolute; left: 200px; top: 200px; height: 70px; width: 250px; margin: 0px; padding: 0px; outline: medium none; z-index: 100; color: rgb(0, 0, 0); background-color: rgb(241, 241, 121); font-size: 10pt; cursor: move;" id="f9ba8be4-3fc2-8809-693f-022f89116163">NOTE: Drag&amp;Drop the red port to the blue port to create a 'Z' connector</div><div tabindex="0" class="WindowFigure" style="position: absolute; left: 20px; top: 140px; height: 53px; width: 170px; margin: 0px; padding: 0px; outline: medium none; z-index: 50000; border: 1px solid black; background-image: url(&quot;window_bg.png&quot;); box-shadow: 5px 5px 5px rgb(204, 204, 204); border-radius: 2px 2px 2px 2px;" id="83d6eee5-6af7-9b02-420b-c7cf9e876f05"><div class="WindowFigure_titlebar unselectable" style="position: absolute; left: 0px; top: 0px; width: 170px; height: 15px; margin: 0px; padding: 0px; font: 10px verdana; background-color: blue; border-bottom: 2px solid gray; white-space: nowrap; text-align: center; background-image: url(&quot;window_toolbar.png&quot;); cursor: move;">Tools</div><div style="position: absolute; left: 0px; top: 15px; width: 170px; height: 38px; margin: 0px; padding: 0px; font: 10px verdana; border-bottom: 2px solid gray; white-space: nowrap; text-align: center; overflow: auto;"><div style="position: absolute; left: 13px; top: 10px; height: 24px; width: 24px; margin: 0px; padding: 0px; outline: medium none; background-image: url(&quot;ToolUndo.png&quot;); opacity: 0.3;" id="e38bbfee-960f-9976-70ed-ee78c75b69c0"></div><div style="position: absolute; left: 43px; top: 10px; height: 24px; width: 24px; margin: 0px; padding: 0px; outline: medium none; background-image: url(&quot;ToolRedo.png&quot;); opacity: 0.3;" id="64de4eac-c77c-b941-97ba-cb4e725bee3d"></div></div></div><div tabindex="0" style="position: absolute; left: 200px; top: 300px; height: 50px; width: 50px; margin: 0px; padding: 0px; outline: medium none; z-index: 100; border: 0px none; font-size: 1px; background-image: url(&quot;Start.png&quot;); cursor: move;" id="36b55cd0-bc5b-110d-039a-16fe8a5fd107"><div tabindex="0" style="position: absolute; left: 46px; top: 21px; height: 6px; width: 6px; margin: 0px; padding: 0px; outline: medium none; z-index: 5000; border: 10px none; font-size: 1px; line-height: 1px; cursor: move;" id="3757a82e-c0ed-7bf9-ee4c-814b69bf0eda">&nbsp;<div style="position: absolute; left: 0px; top: 0px; height: 8px; width: 8px; margin: 0px; padding: 0px; outline: medium none; z-index: 100; border: 0px none; font-size: 1px; background-color: transparent; cursor: move;" id="ec87f827-d984-af1c-053b-fb41b412997f"><div style="font-size: 0pt;"><div style="position:absolute;left:2px;top:0px;width:3px;height:1px;clip:rect(0,3px,1px,0);background-color:rgb(245,115,115);overflow:hidden;"></div><div style="position:absolute;left:2px;top:6px;width:3px;height:1px;clip:rect(0,3px,1px,0);background-color:rgb(245,115,115);overflow:hidden;"></div><div style="position:absolute;left:1px;top:1px;width:5px;height:1px;clip:rect(0,5px,1px,0);background-color:rgb(245,115,115);overflow:hidden;"></div><div style="position:absolute;left:1px;top:5px;width:5px;height:1px;clip:rect(0,5px,1px,0);background-color:rgb(245,115,115);overflow:hidden;"></div><div style="position:absolute;left:0px;top:2px;width:7px;height:3px;clip:rect(0,7px,3px,0);background-color:rgb(245,115,115);overflow:hidden;"></div><div style="position:absolute;left:3px;top:0px;width:2px;height:1px;clip:rect(0,2px,1px,0);background-color:rgb(90,150,90);overflow:hidden;"></div><div style="position:absolute;left:3px;top:7px;width:2px;height:1px;clip:rect(0,2px,1px,0);background-color:rgb(90,150,90);overflow:hidden;"></div><div style="position:absolute;left:5px;top:1px;width:1px;height:1px;clip:rect(0,1px,1px,0);background-color:rgb(90,150,90);overflow:hidden;"></div><div style="position:absolute;left:5px;top:6px;width:1px;height:1px;clip:rect(0,1px,1px,0);background-color:rgb(90,150,90);overflow:hidden;"></div><div style="position:absolute;left:2px;top:1px;width:1px;height:1px;clip:rect(0,1px,1px,0);background-color:rgb(90,150,90);overflow:hidden;"></div><div style="position:absolute;left:2px;top:6px;width:1px;height:1px;clip:rect(0,1px,1px,0);background-color:rgb(90,150,90);overflow:hidden;"></div><div style="position:absolute;left:6px;top:2px;width:1px;height:1px;clip:rect(0,1px,1px,0);background-color:rgb(90,150,90);overflow:hidden;"></div><div style="position:absolute;left:6px;top:5px;width:1px;height:1px;clip:rect(0,1px,1px,0);background-color:rgb(90,150,90);overflow:hidden;"></div><div style="position:absolute;left:1px;top:2px;width:1px;height:1px;clip:rect(0,1px,1px,0);background-color:rgb(90,150,90);overflow:hidden;"></div><div style="position:absolute;left:1px;top:5px;width:1px;height:1px;clip:rect(0,1px,1px,0);background-color:rgb(90,150,90);overflow:hidden;"></div><div style="position:absolute;left:0px;top:3px;width:1px;height:2px;clip:rect(0,1px,2px,0);background-color:rgb(90,150,90);overflow:hidden;"></div><div style="position:absolute;left:7px;top:3px;width:1px;height:2px;clip:rect(0,1px,2px,0);background-color:rgb(90,150,90);overflow:hidden;"></div></div></div></div></div><div tabindex="0" style="position: absolute; left: 400px; top: 250px; height: 50px; width: 50px; margin: 0px; padding: 0px; outline: medium none; z-index: 100; border: 0px none; font-size: 1px; background-image: url(&quot;End.png&quot;); cursor: move;" id="a9307849-48fa-034e-ed4c-d18f1c4d266c"><div tabindex="0" style="position: absolute; left: -4px; top: 21px; height: 6px; width: 6px; margin: 0px; padding: 0px; outline: medium none; z-index: 5000; border: 10px none; font-size: 1px; line-height: 1px; cursor: move;" id="4b1f4ef8-d3f6-d603-7abc-9d3045225931">&nbsp;<div style="position: absolute; left: 0px; top: 0px; height: 8px; width: 8px; margin: 0px; padding: 0px; outline: medium none; z-index: 100; border: 0px none; font-size: 1px; background-color: transparent; cursor: move;" id="df0f52bc-e10b-0ed6-0981-bba31706bde6"><div style="font-size: 0pt;"><div style="position:absolute;left:2px;top:0px;width:3px;height:1px;clip:rect(0,3px,1px,0);background-color:rgb(115,115,245);overflow:hidden;"></div><div style="position:absolute;left:2px;top:6px;width:3px;height:1px;clip:rect(0,3px,1px,0);background-color:rgb(115,115,245);overflow:hidden;"></div><div style="position:absolute;left:1px;top:1px;width:5px;height:1px;clip:rect(0,5px,1px,0);background-color:rgb(115,115,245);overflow:hidden;"></div><div style="position:absolute;left:1px;top:5px;width:5px;height:1px;clip:rect(0,5px,1px,0);background-color:rgb(115,115,245);overflow:hidden;"></div><div style="position:absolute;left:0px;top:2px;width:7px;height:3px;clip:rect(0,7px,3px,0);background-color:rgb(115,115,245);overflow:hidden;"></div></div></div></div></div><div tabindex="0" style="position: absolute; left: 400px; top: 350px; height: 50px; width: 50px; margin: 0px; padding: 0px; outline: medium none; z-index: 100; border: 0px none; font-size: 1px; background-image: url(&quot;End.png&quot;); cursor: move;" id="c230d0a3-2e3d-b91c-cd0c-9913e07f5334"><div tabindex="0" style="position: absolute; left: -4px; top: 21px; height: 6px; width: 6px; margin: 0px; padding: 0px; outline: medium none; z-index: 5000; border: 10px none; font-size: 1px; line-height: 1px; cursor: move;" id="5dc83202-921e-86d4-c9b2-dcb1f1242209">&nbsp;<div style="position: absolute; left: 0px; top: 0px; height: 8px; width: 8px; margin: 0px; padding: 0px; outline: medium none; z-index: 100; border: 0px none; font-size: 1px; background-color: transparent; cursor: move;" id="0ff89e66-95c9-cb0d-855f-b5351ab930b3"><div style="font-size: 0pt;"><div style="position:absolute;left:2px;top:0px;width:3px;height:1px;clip:rect(0,3px,1px,0);background-color:rgb(115,115,245);overflow:hidden;"></div><div style="position:absolute;left:2px;top:6px;width:3px;height:1px;clip:rect(0,3px,1px,0);background-color:rgb(115,115,245);overflow:hidden;"></div><div style="position:absolute;left:1px;top:1px;width:5px;height:1px;clip:rect(0,5px,1px,0);background-color:rgb(115,115,245);overflow:hidden;"></div><div style="position:absolute;left:1px;top:5px;width:5px;height:1px;clip:rect(0,5px,1px,0);background-color:rgb(115,115,245);overflow:hidden;"></div><div style="position:absolute;left:0px;top:2px;width:7px;height:3px;clip:rect(0,7px,3px,0);background-color:rgb(115,115,245);overflow:hidden;"></div></div></div></div></div></div>
+<script>
+  var workflow  = new draw2d.Workflow("paintarea");
+
+
+  // Add an annotation to the workflow area
+  //
+  var annotation = new draw2d.Annotation("NOTE: Drag&Drop the red port to the blue port to create a 'Z' connector");
+  annotation.setDimension(250,70);
+  workflow.addFigure(annotation,200,200);
+
+  // Add the Tool Window to the screen
+  //
+  var w = new draw2d.VectorPalette();
+  workflow.setToolWindow(w);
+
+  // move the tool palette out of the hint message at the top left corner
+  //
+  w.setPosition(20,140);
+
+  // Add the start node to the canvas
+  //
+  var startObj = new draw2d.Start();
+  workflow.addFigure(startObj, 200,300);
+
+  // Add one end node to the canvas
+  //
+  var endObj   = new draw2d.End();
+  workflow.addFigure(endObj, 400,250);
+
+  // Add another end node to the canvas
+  //
+  endObj   = new draw2d.End();
+  workflow.addFigure(endObj, 400,350);
+</script>
+
+
+</body></html>

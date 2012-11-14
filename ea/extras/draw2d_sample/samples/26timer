@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/Strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de"><head>
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+  <title>Timer Example for FreeGroup Draw2D 0.9.26</title>
+        <link type="text/css" rel="stylesheet" href="26timer_files/demo.css">
+
+    <!-- common, all times required, imports -->        <script src="26timer_files/wz_jsgraphics.js"></script>      <script src="26timer_files/mootools.js"></script>      <script src="26timer_files/moocanvas.js"></script>      <script src="26timer_files/draw2d.js"></script>
+
+
+        <!-- workflow specific imports -->
+	<script src="26timer_files/MyTimerFigure.js"></script>
+</head>
+<body onselectstart="return false;" style="margin: 0px; padding: 0px;" onkeydown="">
+<div tabindex="0" class="Workflow" id="paintarea" style="position: absolute; left: 0px; top: 0px; width: 3000px; height: 3000px; cursor: default; background-image: url(&quot;grid_10.png&quot;);">
+    <!-- The information help text -->
+    <div class="stickyNote">
+    <center><b>Draw2D 0.9.26 - A simple diagram drawing demo<br>
+    by Andreas Herz (a.herz @ freegroup.de)
+    <br>
+    </b>
+    <br>
+    <div style="color:red;font-size:9pt">Focus of this example: How to implement a timer figure.</div>
+    </center>
+    <br>
+    <center>See more on <a href="http://www.draw2d.org/">FreeGroup Draw2D 0.9.26</a></center>
+    </div>
+
+<div tabindex="0" style="position: absolute; left: 200px; top: 300px; height: 48px; width: 48px; margin: 0px; padding: 0px; outline: medium none; z-index: 100; border: 1px solid rgb(0, 0, 0); font-size: 1px; line-height: 1px; cursor: move; background-color: rgb(115, 245, 115);" id="6906bdba-b0a0-de1e-f21c-c0180daf8c3b">&nbsp;</div><div tabindex="0" style="position: absolute; left: 230px; top: 350px; height: 48px; width: 48px; margin: 0px; padding: 0px; outline: medium none; z-index: 100; border: 1px solid rgb(0, 0, 0); font-size: 1px; line-height: 1px; cursor: move; background-color: rgb(245, 115, 115);" id="1101b0d4-6912-ab28-ec49-873f13ca68e0">&nbsp;</div><div tabindex="0" style="position: absolute; left: 300px; top: 300px; height: 48px; width: 48px; margin: 0px; padding: 0px; outline: medium none; z-index: 100; border: 1px solid rgb(0, 0, 0); font-size: 1px; line-height: 1px; cursor: move; background-color: rgb(115, 245, 115);" id="a6c89579-5ed6-dad6-c423-6c5e06dc4018">&nbsp;</div></div>
+<script>
+  var workflow  = new draw2d.Workflow("paintarea");
+
+
+  // Add my timer figure to the canvas.
+  //
+  var obj = new draw2d.MyTimerFigure(1000);
+  workflow.addFigure(obj, 200,300);
+
+  obj = new draw2d.MyTimerFigure(800);
+  workflow.addFigure(obj, 230,350);
+
+  obj = new draw2d.MyTimerFigure(1500);
+  workflow.addFigure(obj, 300,300);
+
+
+</script>
+
+
+</body></html>

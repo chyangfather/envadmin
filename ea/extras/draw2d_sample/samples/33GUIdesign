@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/Strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de"><head>
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+  <title>Very Simple GUI Painter</title>
+        <link type="text/css" rel="stylesheet" href="33GUIdesign_files/demo.css">
+
+    <!-- common, all times required, imports -->        <script src="33GUIdesign_files/wz_jsgraphics.js"></script>      <script src="33GUIdesign_files/mootools.js"></script>      <script src="33GUIdesign_files/moocanvas.js"></script>      <script src="33GUIdesign_files/draw2d.js"></script>
+
+        <!-- example specific imports -->
+	<script src="33GUIdesign_files/ToolInputBox.js"></script>
+	<script src="33GUIdesign_files/ToolCheckBox.js"></script>
+	<script src="33GUIdesign_files/ToolGroup.js"></script>
+	<script src="33GUIdesign_files/ToolUndo.js"></script>
+	<script src="33GUIdesign_files/ToolRedo.js"></script>
+	<script src="33GUIdesign_files/ToolClear.js"></script>
+	<script src="33GUIdesign_files/ToolFormButton.js"></script>
+	<script src="33GUIdesign_files/GUIPalette.js"></script>
+
+	<script src="33GUIdesign_files/GroupFigure.js"></script>
+	<script src="33GUIdesign_files/CheckBoxFigure.js"></script>
+	<script src="33GUIdesign_files/InputBoxFigure.js"></script>
+	<script src="33GUIdesign_files/ButtonFigure.js"></script>
+
+</head>
+<body onselectstart="return false;" style="margin: 0px; padding: 0px;" onkeydown="">
+<div tabindex="0" class="Workflow" id="paintarea" style="width: 3000px; height: 3000px; cursor: default; background-image: url(&quot;grid_10.png&quot;);">
+
+    <!-- The information help text -->
+    <div style="background-color:white;border:1px solid gray;width:400px;padding:10px;font-size:8pt;">
+    <center><b>Draw2D 0.9.26 - A very simple GUI painter demo<br>
+    by Andreas Herz (a.herz @ freegroup.de)
+    <br>
+    </b>
+    <br>
+    <div style="color:red;font-size:9pt"><u>Focus of this example</u>: How to implement a online GUI painter. This is only a <b><i>starter kit</i></b>. It's your turn to complete this very simple demo.</div>
+    </center>
+    <br>
+    <center>See more on <a href="http://www.draw2d.org/">FreeGroup Draw2D 0.9.26</a></center>
+    </div>
+
+<div tabindex="0" class="WindowFigure" style="position: absolute; left: 20px; top: 140px; height: 400px; width: 75px; margin: 0px; padding: 0px; outline: medium none; z-index: 50000; border: 1px solid black; background-image: url(&quot;window_bg.png&quot;); box-shadow: 5px 5px 5px rgb(204, 204, 204); border-radius: 2px 2px 2px 2px;" id="0a757a78-b57d-a082-8207-5d7d3a629e5d"><div class="WindowFigure_titlebar unselectable" style="position: absolute; left: 0px; top: 0px; width: 75px; height: 15px; margin: 0px; padding: 0px; font: 10px verdana; background-color: blue; border-bottom: 2px solid gray; white-space: nowrap; text-align: center; background-image: url(&quot;window_toolbar.png&quot;); cursor: move;">Tools</div><div style="position: absolute; left: 0px; top: 15px; width: 75px; height: 385px; margin: 0px; padding: 0px; font: 10px verdana; border-bottom: 2px solid gray; white-space: nowrap; text-align: center; overflow: auto;"><div title="Form Group" style="position: absolute; left: 10px; top: 30px; height: 25px; width: 25px; margin: 0px; padding: 0px; background-image: url(&quot;ToolGroup.png&quot;);" id="undefined"></div><div title="" style="position: absolute; left: 10px; top: 80px; height: 25px; width: 25px; margin: 0px; padding: 0px; background-image: url(&quot;ToolInputBox.png&quot;);" id="undefined"></div><div title="" style="position: absolute; left: 40px; top: 80px; height: 25px; width: 25px; margin: 0px; padding: 0px; background-image: url(&quot;ToolCheckBox.png&quot;);" id="undefined"></div><div title="" style="position: absolute; left: 10px; top: 130px; height: 25px; width: 25px; margin: 0px; padding: 0px; background-image: url(&quot;ToolFormButton.png&quot;);" id="undefined"></div><div style="position: absolute; left: 10px; top: 200px; height: 25px; width: 25px; margin: 0px; padding: 0px; outline: medium none; background-image: url(&quot;ToolUndo.png&quot;); opacity: 0.3;" id="1e05e6b6-6dfd-d026-bf8c-95f129cc056b"></div><div style="position: absolute; left: 40px; top: 200px; height: 25px; width: 25px; margin: 0px; padding: 0px; outline: medium none; background-image: url(&quot;ToolRedo.png&quot;); opacity: 0.3;" id="e288246a-7a2b-fe91-4572-01946f5593aa"></div><div style="position: absolute; left: 40px; top: 250px; height: 25px; width: 25px; margin: 0px; padding: 0px; outline: medium none; background-image: url(&quot;ToolClear.png&quot;); opacity: 1;" id="d4f29642-0208-0e8b-1d71-75062bea3a0f"></div></div></div><div tabindex="0" style="position: absolute; left: 200px; top: 200px; height: 200px; width: 300px; margin: 0px; padding: 0px; outline: medium none; z-index: 100; border: 1px solid black; font-size: 1px; cursor: move; background-color: rgb(230, 230, 250);" id="e41cdb2f-85c8-2c14-9671-20d78785de6a"><div style="position: absolute; left: 0px; top: 0px; width: 295px; height: 15px; margin: 0px; padding: 0px; font: 10px verdana; background-color: blue; border-bottom: 1px solid gray; border-left: 5px solid transparent; white-space: nowrap; text-align: left; background-image: url(&quot;window_toolbar.png&quot;);">FORM 1</div></div><div tabindex="0" style="position: absolute; left: 220px; top: 220px; height: 20px; width: 80px; margin: 0px; padding: 0px; outline: medium none; z-index: 1001; cursor: move;" id="a28b2bba-04e3-04c3-47dc-976d5e06d869"><input style="position: absolute; left: 0px; top: 0px; margin: 0px; padding: 0px; cursor: move;" type="checkbox"><div style="font-family: sans-serif; font-size: 8pt; position: absolute; left: 20px; top: 0px;">blabla</div></div><div tabindex="0" style="position: absolute; left: 550px; top: 200px; height: 200px; width: 300px; margin: 0px; padding: 0px; outline: medium none; z-index: 100; border: 1px solid black; font-size: 1px; cursor: move; background-color: rgb(230, 230, 250);" id="a610270a-0188-12af-8f35-a89a26d7b636"><div style="position: absolute; left: 0px; top: 0px; width: 295px; height: 15px; margin: 0px; padding: 0px; font: 10px verdana; background-color: blue; border-bottom: 1px solid gray; border-left: 5px solid transparent; white-space: nowrap; text-align: left; background-image: url(&quot;window_toolbar.png&quot;);">FORM 2</div></div></div>
+<script>
+  var workflow  = new draw2d.Workflow("paintarea");
+
+
+  // Add the Tool Window to the screen
+  //
+  var w = new draw2d.GUIPalette();
+  workflow.setToolWindow(w);
+
+  // move the tool palette out of the hint message
+  //
+  w.setPosition(20,140);
+
+
+  // Create a GUI Group (Form Element)
+  //
+  var group1 = new draw2d.GroupFigure("FORM 1");
+  group1.setDimension(300,200);
+  workflow.addFigure(group1,200,200);
+
+  // create a HTML check box figure
+  //
+  var box = new draw2d.CheckBoxFigure();
+  box.setDimension(80,20);
+  workflow.addFigure(box,220,220);
+
+  // assign the checkbox as a child of the group
+  //
+  group1.addChild(box);
+
+  // create a second group 
+  // Now you can drag&drop the input field or checkbox between the two groups.
+  //
+  var group2 = new draw2d.GroupFigure("FORM 2");
+  group2.setDimension(300,200);
+  workflow.addFigure(group2,550,200);
+
+  
+  window.onscroll=function(){workflow.onScroll();};
+</script>
+
+
+</body></html>

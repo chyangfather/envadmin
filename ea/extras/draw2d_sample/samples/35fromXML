@@ -1,0 +1,190 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/Strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de"><head>
+    <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+    <link type="text/css" rel="stylesheet" href="35fromXML_files/common.css">
+    <link type="text/css" rel="stylesheet" href="35fromXML_files/demo.css">
+
+    <!-- common, all times required, imports -->    <script src="35fromXML_files/wz_jsgraphics.js"></script>      <script src="35fromXML_files/mootools.js"></script>      <script src="35fromXML_files/moocanvas.js"></script>      <script src="35fromXML_files/draw2d.js"></script>
+
+    <script src="35fromXML_files/prototype.js"></script>
+    <script src="35fromXML_files/moo.js"></script>
+
+    <script src="35fromXML_files/Configuration.js"></script>
+    <script src="35fromXML_files/tools.js"></script>
+    
+    <script src="35fromXML_files/ModelXMLDeserializer.js"></script>
+    <script src="35fromXML_files/ModelXMLSerializer.js"></script>
+    
+    <script src="35fromXML_files/NetworkCloudGraphicalEditorFactory.js"></script>
+    <script src="35fromXML_files/NetworkCloudGraphicalEditor.js"></script>
+    
+    <script src="35fromXML_files/AbstractCloudNodeModel.js"></script>
+    <script src="35fromXML_files/RepresentationModel.js"></script>
+    <script src="35fromXML_files/VirtualNetworkCloudModel.js"></script>
+    <script src="35fromXML_files/ServerModel.js"></script>
+    <script src="35fromXML_files/ServerReferenceModel.js"></script>
+    <script src="35fromXML_files/SwitchModel.js"></script>
+    <script src="35fromXML_files/SwitchReferenceModel.js"></script>
+    <script src="35fromXML_files/StorageModel.js"></script>
+    <script src="35fromXML_files/StorageReferenceModel.js"></script>
+    <script src="35fromXML_files/ImageModel.js"></script>
+    <script src="35fromXML_files/ImagesModel.js"></script>
+    <script src="35fromXML_files/NicsModel.js"></script>
+    <script src="35fromXML_files/NicModel.js"></script>
+    <script src="35fromXML_files/NicReferenceModel.js"></script>
+    <script src="35fromXML_files/MountModel.js"></script>
+    <script src="35fromXML_files/NicConnectionModel.js"></script>
+    
+    <script src="35fromXML_files/MountInputPort.js"></script>
+    <script src="35fromXML_files/MountOutputPort.js"></script>
+    <script src="35fromXML_files/NicOutputPort.js"></script>
+    <script src="35fromXML_files/NicInputPort.js"></script>
+    <script src="35fromXML_files/AbstractCloudNodeFigure.js"></script>
+    <script src="35fromXML_files/ServerFigure.js"></script>
+    <script src="35fromXML_files/StorageFigure.js"></script>
+    <script src="35fromXML_files/SwitchFigure.js"></script>
+    <script src="35fromXML_files/MountFigure.js"></script>
+    <script src="35fromXML_files/NicConnectionFigure.js"></script>
+    
+    <script src="35fromXML_files/CommandAddSwitch.js"></script>
+    <script src="35fromXML_files/CommandAddServer.js"></script>
+    <script src="35fromXML_files/CommandAddStorage.js"></script>
+    <script src="35fromXML_files/CommandMoveCloudNode.js"></script>
+    <script src="35fromXML_files/CommandConnectMount.js"></script>
+    <script src="35fromXML_files/CommandDisconnectMount.js"></script>
+    <script src="35fromXML_files/CommandReconnectMount.js"></script>
+    <script src="35fromXML_files/CommandConnectNic.js"></script>
+    <script src="35fromXML_files/CommandDisconnectNic.js"></script>
+    <script src="35fromXML_files/CommandReconnectNic.js"></script>
+    <script src="35fromXML_files/CommandRemoveCloudNode.js"></script>
+    <script src="35fromXML_files/CommandChangeProperty.js"></script>
+    <script src="35fromXML_files/CommandAddImage.js"></script>
+    <script src="35fromXML_files/CommandRemoveImage.js"></script>
+
+    <script src="35fromXML_files/ServerPalettePart.js"></script>
+    <script src="35fromXML_files/SwitchPalettePart.js"></script>
+    <script src="35fromXML_files/StoragePalettePart.js"></script>
+
+    <script src="35fromXML_files/FormDialog.js"></script>
+    <script src="35fromXML_files/AddImageDialog.js"></script>
+
+    <script src="35fromXML_files/GenericButton.js"></script>
+    <script src="35fromXML_files/ButtonDelete.js"></script>
+    <script src="35fromXML_files/FlowMenu.js"></script>
+
+    <script src="35fromXML_files/Toolbar.js"></script>
+    <script src="35fromXML_files/AbstractToolbarButton.js"></script>
+    <script src="35fromXML_files/ToolbarButtonGroup.js"></script>
+    <script src="35fromXML_files/ToolbarButtonApply.js"></script>
+    <script src="35fromXML_files/ToolbarButtonSave.js"></script>
+    <script src="35fromXML_files/ToolbarButtonShowXML.js"></script>
+    <script src="35fromXML_files/ToolbarButtonUndo.js"></script>
+    <script src="35fromXML_files/ToolbarButtonRedo.js"></script>
+
+    <script src="35fromXML_files/PropertyPage.js"></script>
+    <script src="35fromXML_files/MountPropertyPage.js"></script>
+    <script src="35fromXML_files/NicPropertyPage.js"></script>
+    <script src="35fromXML_files/ServerPropertyPage.js"></script>
+    <script src="35fromXML_files/StoragePropertyPage.js"></script>
+    <script src="35fromXML_files/SwitchPropertyPage.js"></script>
+    <script src="35fromXML_files/DefaultPropertyPage.js"></script>
+    <script src="35fromXML_files/PropertyPanel.js"></script>
+</head>
+
+<body id="body" onresize="resize()" onselectstart="return false;" style="overflow: hidden; margin: 0px; padding: 0px;" onkeydown="">
+
+<div id="toolbar" style="position:absolute;top:0px;width:100%;">
+</div>
+
+<div id="property_panel" style="position: absolute; top: 236px; left: 0px;">
+</div>
+
+<div id="scrollarea" style="position: absolute; overflow: auto; width: 1030px; height: 444px; top: 36px; left: 252px;">
+   <div id="paintarea" style="position:absolute;left:0px;top:0px;width:3000px;height:3000px">
+   </div>
+</div>
+
+<div id="object_panel" style="position: absolute; width: 250px; height: 200px; top: 36px; left: 0px;">
+<div style="left: 0px; top: 0px; position: absolute;" class="panel_header">Network Object Palette</div>
+</div>
+
+
+
+<div>
+  <div class="draw2d_window" id="dialog_add_image" style="display:none;border:1px solid black;width:570px;">
+    <div class="jacob_window_middle">
+      <div id="dialog_select_image_header" class="dialog_header"></div>
+      <div id="dialog_select_image_images" class="dialog_content" style="height:300px;width:570px;overflow-y:scroll;">
+      </div>
+      <div class="dialog_buttonbar edit_buttonbar">
+         <button class="button_normal draw2d_window_button_ok">Select</button>
+         <button class="button_normal draw2d_window_button_cancel">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+
+  var browserId="";
+  
+  // retrieve the id of the document to load
+  var documentId = urlParam("xml");
+  var editor=null;
+
+  Event.observe(window, 'load', function()
+  {
+    draw2d.Drag.currentCompartment = null;
+    // @see: ./util/tools.js
+    loadDocument(documentId);
+  });
+
+function resize()
+{
+  var width = 0, height = 0;
+  if( typeof( window.innerWidth ) == 'number' ) 
+  {
+    //Non-IE
+    width = window.innerWidth;
+    height = window.innerHeight;
+  } 
+  else if( document.documentElement && ( document.documentElement.clientWidth || document.documentElement.clientHeight ) ) 
+  {
+    //IE 6+ in 'standards compliant mode'
+    width = document.documentElement.clientWidth;
+    height = document.documentElement.clientHeight;
+  } 
+  else if( document.body && ( document.body.clientWidth || document.body.clientHeight ) ) 
+  {
+    //IE 4 compatible
+    width = document.body.clientWidth;
+    height = document.body.clientHeight;
+  }
+
+  var toolbarPanel = $("toolbar");
+  var objectPanel = $("object_panel");
+  var propertyPanel = $("property_panel");
+  var editorPanel= $("scrollarea");
+  
+  var tool_height = toolbarPanel.getHeight();
+  var object_height = 200;
+  
+  editorPanel.style.width=Math.max(10,width-250)+"px";
+  editorPanel.style.height = Math.max(10,height-tool_height)+"px";
+  editorPanel.style.top = tool_height+"px";
+  editorPanel.style.left = "252px";
+
+  objectPanel.style.width="250px";
+  objectPanel.style.height = object_height+"px";
+  objectPanel.style.top = tool_height+"px";
+  objectPanel.style.left = "0px";
+
+  propertyPanel.style.top = (object_height+tool_height)+"px";
+  propertyPanel.style.left = "0px";
+  if(editor)
+     editor.propertyPanel.setDimension(250,Math.max(10,height-object_height-tool_height));
+}
+
+</script>
+
+</body></html>

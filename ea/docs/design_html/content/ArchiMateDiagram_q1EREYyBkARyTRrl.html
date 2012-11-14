@@ -1,0 +1,510 @@
+<html>
+<head>
+	<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" href="report.css" type="text/css"/>
+	<title>ArchiMate Diagram - JGXT Official</title>
+	<script type="text/javascript" src="report.js"></script>
+	<script type="text/javascript" src="link_popup.js"></script>
+	<script type="text/javascript" src="tooltip.js"></script>
+</head>
+<body style="margin-left: 10px; margin-right: 10px; margin-top: 10px; margin-bottom: 10px;" onload="initPage();initDiagram()">
+	<div id="spotlight" style="position:absolute; width:100px; height:100px; z-index:2; visibility:hidden">
+		<table id="spotLightTable" onClick="updateCursorPos(event);adjustPopupPositionForSpotLightTable();clearSpotLight()" style="border-style:solid; border-width:3px; border-color:#FF0000" width="100%" cellpadding="0" border="0" cellspacing="0">
+			<tr>
+				<td id="spotLightCell">
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div id="spotLightResourcesTop" style="position:absolute; width:100px; height:100px; z-index:1; visibility:hidden">
+		<table cellpadding="0" border="0" cellspacing="0">
+			<tr>
+				<td>
+					<a href="#top">
+						<img style="border:none" src="../images/icons/BackToTop.gif" alt="Back to top"/></a>
+				</td>
+				<td>
+					<a href="javascript:clearSpotLightFromOpenSpecButton();">
+						<img style="border:none" src="../images/icons/OpenSpecification.gif" alt="Open specification"/></a>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div id="spotLightResourcesRight" style="position:absolute; width:100px; height:100px; z-index:1; visibility:hidden">
+		<table cellpadding="0" border="0" cellspacing="0">
+			<tr>
+				<td>
+					<a href="#top">
+						<img style="border:none" src="../images/icons/BackToTop.gif" alt="Back to top"/></a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="javascript:clearSpotLightFromOpenSpecButton();">
+						<img style="border:none" src="../images/icons/OpenSpecification.gif" alt="Open specification"/></a>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div id="linkPopupMenuLayer" style="position:absolute;z-index:2;visibility:hidden">
+		<table id="linkPopupMenuTable" style="border-style:solid; border-width:1px; border-color:#000000; background:#FFFFFF; width:250px" width="100%" border="0">
+		</table>
+	</div>
+	<div id="referenceIconLayer" style="position:absolute; z-index:1; visibility:hidden; ">
+		<table style="font-size:1;" width="100%" cellpadding="3" border="0" cellspacing="0">
+			<tr>
+				<td>
+					<img src="../images/icons/Ref.gif" style="border:none" onclick="movePopupPositionToReferenceIconPosition();resetPopupForReference();switchPopupShowHideStatus();" />				</td>
+			</tr>
+		</table>
+	</div>
+	<div id="subdiagramIconLayer" style="position:absolute; z-index:1; visibility:hidden">
+		<table width="100%" cellpadding="3" border="0" cellspacing="0">
+			<tr>
+				<td>
+					<img src="../images/icons/Subdiagram.gif" style="border:none" onclick="movePopupPositionToSubdiagramIconPosition();resetPopupForSubdiagram();switchPopupShowHideStatus();" />				</td>
+			</tr>
+		</table>
+	</div>
+	<div class="HeaderText">
+		envadmin Documentation	</div>
+	<table width="100%" cellpadding="0" border="0" cellspacing="0">
+		<tr>
+			<td class="HeaderLine1">
+			</td>
+		</tr>
+		<tr>
+			<td class="HeaderLine2">
+			</td>
+		</tr>
+		<tr>
+			<td class="HeaderLine3">
+			</td>
+		</tr>
+	</table>
+	<p class="PageTitle">
+		ArchiMate Diagram - JGXT Official	</p>
+	<table width="100%" cellpadding="0" border="0" cellspacing="0">
+		<tr>
+			<td>
+<span class="TableContent">跳至︰</span>				<select id="SelectShape" class="TableContent" onChange="scrollWin(this.value);showSpotLight(this.value)">
+<option value="">Please select a model element</option>
+<option value="352.0|82.0|200.0|40.0|ArchiMateApplicationComponent_ng5z6YyBkARyTRo_.html|ArchiMateApplicationComponent_ng5z6YyBkARyTRo_.html|ng5z6YyBkARyTRo." id="optionng5z6YyBkARyTRo.">LivebosServer3.5.1(EntApp) : Application Component</option>
+<option value="702.0|422.0|120.0|40.0|ArchiMateApplicationComponent_oXfr6YyBkARyTSvc.html|ArchiMateApplicationComponent_oXfr6YyBkARyTSvc.html|oXfr6YyBkARyTSvb" id="optionoXfr6YyBkARyTSvb">Commit Assistant : Application Component</option>
+<option value="42.0|102.0|160.0|40.0|ArchiMateApplicationComponent_sAY05YyBkARyTSUD.html|ArchiMateApplicationComponent_sAY05YyBkARyTSUD.html|sAY05YyBkARyTSUC" id="optionsAY05YyBkARyTSUC">JGXT（orcl instance） : Application Component</option>
+<option value="592.0|422.0|100.0|40.0|ArchiMateApplicationComponent_kAS05YyBkARyTSZx.html|ArchiMateApplicationComponent_kAS05YyBkARyTSZx.html|kAS05YyBkARyTSZw" id="optionkAS05YyBkARyTSZw">LivebosStudio : Application Component</option>
+<option value="122.0|472.0|100.0|40.0|ArchiMateApplicationComponent_WEY85YyBkARyTTCM.html|ArchiMateApplicationComponent_WEY85YyBkARyTTCM.html|WEY85YyBkARyTTCL" id="optionWEY85YyBkARyTTCL">ApexETL : Application Component</option>
+<option value="362.0|422.0|100.0|40.0|ArchiMateApplicationComponent_nSnWFYyBkARyTTVo.html|ArchiMateApplicationComponent_nSnWFYyBkARyTTVo.html|nSnWFYyBkARyTTVn" id="optionnSnWFYyBkARyTTVn">CAS : Application Component</option>
+<option value="62.0|192.0|150.0|40.0|ArchiMateApplicationComponent_3Lc2FYyBkARyTTZE.html|ArchiMateApplicationComponent_3Lc2FYyBkARyTTZE.html|3Lc2FYyBkARyTTZD" id="option3Lc2FYyBkARyTTZD">AUIMS(orcl instance) : Application Component</option>
+<option value="222.0|312.0|20.0|20.0|ArchiMateApplicationInterface_yat05YyBkARyTSoh.html|ArchiMateApplicationInterface_yat05YyBkARyTSoh.html|yat05YyBkARyTSog" id="optionyat05YyBkARyTSog"> : Application Interface</option>
+<option value="342.0|282.0|20.0|20.0|ArchiMateApplicationInterface_Sqa2FYyBkARyTTbC.html|ArchiMateApplicationInterface_Sqa2FYyBkARyTTbC.html|Sqa2FYyBkARyTTbB" id="optionSqa2FYyBkARyTTbB"> : Application Interface</option>
+<option value="422.0|312.0|70.0|30.0|ArchiMateApplicationService_gIvg5YyBkARyTRFF.html|ArchiMateApplicationService_gIvg5YyBkARyTRFF.html|gIvg5YyBkARyTRFE" id="optiongIvg5YyBkARyTRFE">ServiceProcessor : Application Service</option>
+<option value="512.0|232.0|50.0|30.0|ArchiMateApplicationService_hWTU5YyBkARyTSRc.html|ArchiMateApplicationService_hWTU5YyBkARyTSRc.html|hWTU5YyBkARyTSRb" id="optionhWTU5YyBkARyTSRb">JGXT : Application Service</option>
+<option value="82.0|282.0|20.0|20.0|ArchiMateInfrastructureInterface_twvL6YyBkARyTR_Z.html|ArchiMateInfrastructureInterface_twvL6YyBkARyTR_Z.html|NwvL6YyBkARyTR_Y" id="optionNwvL6YyBkARyTR_Y">oracle db i : Infrastructure Interface</option>
+<option value="772.0|312.0|20.0|20.0|ArchiMateInfrastructureInterface_NTcr6YyBkARyTSE2.html|ArchiMateInfrastructureInterface_NTcr6YyBkARyTSE2.html|NTcr6YyBkARyTSE1" id="optionNTcr6YyBkARyTSE1">sqlplus : Infrastructure Interface</option>
+<option value="462.0|232.0|20.0|20.0|ArchiMateInfrastructureInterface_YOWg5YyBkARyTQ_E.html|ArchiMateInfrastructureInterface_YOWg5YyBkARyTQ_E.html|_2Wg5YyBkARyTQ_D" id="option_2Wg5YyBkARyTQ_D">web server : Infrastructure Interface</option>
+<option value="642.0|312.0|20.0|20.0|ArchiMateInfrastructureInterface_huUM5YyBkARyTSyW.html|ArchiMateInfrastructureInterface_huUM5YyBkARyTSyW.html|huUM5YyBkARyTSyV" id="optionhuUM5YyBkARyTSyV">ssh : Infrastructure Interface</option>
+<option value="2.0|2.0|310.0|250.0|ArchiMateNode_ef5j6YyBkARyTRCv.html|ArchiMateNode_ef5j6YyBkARyTRCv.html|ef5j6YyBkARyTRCu" id="optionef5j6YyBkARyTRCu">18.16.5.18RHEL 5.4 : Node</option>
+<option value="332.0|2.0|500.0|200.0|ArchiMateNode_Nc2z6YyBkARyTRmi.html|ArchiMateNode_Nc2z6YyBkARyTRmi.html|Nc2z6YyBkARyTRmh" id="optionNc2z6YyBkARyTRmh">50.2.62.101RHEL5.4 : Node</option>
+<option value="582.0|382.0|300.0|110.0|ArchiMateNode_qzbr6YyBkARyTSr_.html|ArchiMateNode_qzbr6YyBkARyTSr_.html|Kzbr6YyBkARyTSr." id="optionKzbr6YyBkARyTSr.">workstation : Node</option>
+<option value="12.0|402.0|320.0|180.0|ArchiMateNode_Wess5YyBkARyTTAZ.html|ArchiMateNode_Wess5YyBkARyTTAZ.html|Wess5YyBkARyTTAY" id="optionWess5YyBkARyTTAY">18.15.10.16（windows2003) : Node</option>
+<option value="22.0|52.0|230.0|190.0|ArchiMateSystemSoftware_RVlj6YyBkARyTREQ.html|ArchiMateSystemSoftware_RVlj6YyBkARyTREQ.html|hVlj6YyBkARyTREP" id="optionhVlj6YyBkARyTREP">Oracle10g : System Software</option>
+<option value="342.0|32.0|240.0|130.0|ArchiMateSystemSoftware_Qr7z6YyBkARyTRrc.html|ArchiMateSystemSoftware_Qr7z6YyBkARyTRrc.html|gr7z6YyBkARyTRrb" id="optiongr7z6YyBkARyTRrb">tomcat6.0 : System Software</option>
+<option value="612.0|42.0|180.0|70.0|ArchiMateSystemSoftware_D1Yr6YyBkARyTSCy.html|ArchiMateSystemSoftware_D1Yr6YyBkARyTSCy.html|D1Yr6YyBkARyTSCx" id="optionD1Yr6YyBkARyTSCx">oracle client : System Software</option>
+</select>			</td>
+		</tr>
+	</table>
+	<table width="100%" cellpadding="0" border="0" cellspacing="0">
+		<tr>
+			<td>
+				<img id = "diagram" src = "../images/JGXT_Official.png" usemap="#diagram_map" class="Image" width="886.0" height="586.0"/>				<map name = "diagram_map">
+<area coords="612.0,42.0,792.0,112.0" coords2="612.0,42.0,792.0,112.0" shape="rect" alt="oracle client:System Software" id="areaD1Yr6YyBkARyTSCx" href="ArchiMateSystemSoftware_D1Yr6YyBkARyTSCy.html"/>
+<area coords="22.0,52.0,252.0,242.0" coords2="22.0,52.0,252.0,242.0" shape="rect" alt="Oracle10g:System Software" id="areahVlj6YyBkARyTREP" href="ArchiMateSystemSoftware_RVlj6YyBkARyTREQ.html"/>
+<area coords="342.0,282.0,362.0,302.0" coords2="342.0,282.0,362.0,302.0" shape="rect" alt=":Application Interface" id="areaSqa2FYyBkARyTTbB" href="ArchiMateApplicationInterface_Sqa2FYyBkARyTTbC.html"/>
+<area coords="62.0,192.0,212.0,232.0" coords2="62.0,192.0,212.0,232.0" shape="rect" alt="AUIMS(orcl instance):Application Component" id="area3Lc2FYyBkARyTTZD" href="ArchiMateApplicationComponent_3Lc2FYyBkARyTTZE.html"/>
+<area coords="362.0,422.0,462.0,462.0" coords2="362.0,422.0,462.0,462.0" shape="rect" alt="CAS:Application Component" id="areanSnWFYyBkARyTTVn" href="ArchiMateApplicationComponent_nSnWFYyBkARyTTVo.html"/>
+<area coords="122.0,472.0,222.0,512.0" coords2="122.0,472.0,222.0,512.0" shape="rect" alt="ApexETL:Application Component" id="areaWEY85YyBkARyTTCL" href="ArchiMateApplicationComponent_WEY85YyBkARyTTCM.html"/>
+<area coords="12.0,402.0,332.0,582.0" coords2="12.0,402.0,332.0,582.0" shape="rect" alt="18.15.10.16（windows2003):Node" id="areaWess5YyBkARyTTAY" href="ArchiMateNode_Wess5YyBkARyTTAZ.html"/>
+<area coords="642.0,312.0,662.0,332.0" coords2="642.0,312.0,662.0,332.0" shape="rect" alt="ssh:Infrastructure Interface" id="areahuUM5YyBkARyTSyV" href="ArchiMateInfrastructureInterface_huUM5YyBkARyTSyW.html"/>
+<area coords="222.0,312.0,242.0,332.0" coords2="222.0,312.0,242.0,332.0" shape="rect" alt=":Application Interface" id="areayat05YyBkARyTSog" href="ArchiMateApplicationInterface_yat05YyBkARyTSoh.html"/>
+<area coords="592.0,422.0,692.0,462.0" coords2="592.0,422.0,692.0,462.0" shape="rect" alt="LivebosStudio:Application Component" id="areakAS05YyBkARyTSZw" href="ArchiMateApplicationComponent_kAS05YyBkARyTSZx.html"/>
+<area coords="42.0,102.0,202.0,142.0" coords2="42.0,102.0,202.0,142.0" shape="rect" alt="JGXT（orcl instance）:Application Component" id="areasAY05YyBkARyTSUC" href="ArchiMateApplicationComponent_sAY05YyBkARyTSUD.html"/>
+<area coords="512.0,232.0,562.0,262.0" coords2="512.0,232.0,562.0,262.0" shape="rect" alt="JGXT:Application Service" id="areahWTU5YyBkARyTSRb" href="ArchiMateApplicationService_hWTU5YyBkARyTSRc.html"/>
+<area coords="422.0,312.0,492.0,342.0" coords2="422.0,312.0,492.0,342.0" shape="rect" alt="ServiceProcessor:Application Service" id="areagIvg5YyBkARyTRFE" href="ArchiMateApplicationService_gIvg5YyBkARyTRFF.html"/>
+<area coords="462.0,232.0,482.0,252.0" coords2="462.0,232.0,482.0,252.0" shape="rect" alt="web server:Infrastructure Interface" id="area_2Wg5YyBkARyTQ_D" href="ArchiMateInfrastructureInterface_YOWg5YyBkARyTQ_E.html"/>
+<area coords="702.0,422.0,822.0,462.0" coords2="702.0,422.0,822.0,462.0" shape="rect" alt="Commit Assistant:Application Component" id="areaoXfr6YyBkARyTSvb" href="ArchiMateApplicationComponent_oXfr6YyBkARyTSvc.html"/>
+<area coords="582.0,382.0,882.0,492.0" coords2="582.0,382.0,882.0,492.0" shape="rect" alt="workstation:Node" id="areaKzbr6YyBkARyTSr." href="ArchiMateNode_qzbr6YyBkARyTSr_.html"/>
+<area coords="772.0,312.0,792.0,332.0" coords2="772.0,312.0,792.0,332.0" shape="rect" alt="sqlplus:Infrastructure Interface" id="areaNTcr6YyBkARyTSE1" href="ArchiMateInfrastructureInterface_NTcr6YyBkARyTSE2.html"/>
+<area coords="82.0,282.0,102.0,302.0" coords2="82.0,282.0,102.0,302.0" shape="rect" alt="oracle db i:Infrastructure Interface" id="areaNwvL6YyBkARyTR_Y" href="ArchiMateInfrastructureInterface_twvL6YyBkARyTR_Z.html"/>
+<area coords="352.0,82.0,552.0,122.0" coords2="352.0,82.0,552.0,122.0" shape="rect" alt="LivebosServer3.5.1(EntApp):Application Component" id="areang5z6YyBkARyTRo." href="ArchiMateApplicationComponent_ng5z6YyBkARyTRo_.html"/>
+<area coords="342.0,32.0,582.0,162.0" coords2="342.0,32.0,582.0,162.0" shape="rect" alt="tomcat6.0:System Software" id="areagr7z6YyBkARyTRrb" href="ArchiMateSystemSoftware_Qr7z6YyBkARyTRrc.html"/>
+<area coords="332.0,2.0,832.0,202.0" coords2="332.0,2.0,832.0,202.0" shape="rect" alt="50.2.62.101RHEL5.4:Node" id="areaNc2z6YyBkARyTRmh" href="ArchiMateNode_Nc2z6YyBkARyTRmi.html"/>
+<area coords="2.0,2.0,312.0,252.0" coords2="2.0,2.0,312.0,252.0" shape="rect" alt="18.16.5.18RHEL 5.4:Node" id="areaef5j6YyBkARyTRCu" href="ArchiMateNode_ef5j6YyBkARyTRCv.html"/></map>			</td>
+		</tr>
+	</table>
+	<p>
+	</p>
+	<table width="100%" cellpadding="0" border="0" cellspacing="0">
+		<tr>
+			<td class="Category">
+				Model Elements			</td>
+		</tr>
+		<tr>
+			<td style="height: 5px">
+			</td>
+		</tr>
+	</table>
+	<table width="100%" cellpadding="0" border="0" cellspacing="0">
+		<tr>
+			<td colSpan="4" class="TableHeaderLine">
+			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine1">
+			</td>
+		</tr>
+		<tr class="TableHeader">
+			<td class="TableCellSpaceHolder10Px">
+			</td>
+			<td width="30%">
+<span class="TableHeaderText">名称</span>			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td>
+<span class="TableHeaderText">文档</span>			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine2">
+			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/ArchiMateApplicationComponent.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/ArchiMateApplicationComponent.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="ArchiMateApplicationComponent_ng5z6YyBkARyTRo_.html">LivebosServer3.5.1(EntApp) : Application Component</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/ArchiMateApplicationComponent.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/ArchiMateApplicationComponent.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="ArchiMateApplicationComponent_oXfr6YyBkARyTSvc.html">Commit Assistant : Application Component</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/ArchiMateApplicationComponent.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/ArchiMateApplicationComponent.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="ArchiMateApplicationComponent_sAY05YyBkARyTSUD.html">JGXT（orcl instance） : Application Component</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/ArchiMateApplicationComponent.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/ArchiMateApplicationComponent.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="ArchiMateApplicationComponent_kAS05YyBkARyTSZx.html">LivebosStudio : Application Component</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/ArchiMateApplicationComponent.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/ArchiMateApplicationComponent.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="ArchiMateApplicationComponent_WEY85YyBkARyTTCM.html">ApexETL : Application Component</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/ArchiMateApplicationComponent.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/ArchiMateApplicationComponent.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="ArchiMateApplicationComponent_nSnWFYyBkARyTTVo.html">CAS : Application Component</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/ArchiMateApplicationComponent.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/ArchiMateApplicationComponent.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="ArchiMateApplicationComponent_3Lc2FYyBkARyTTZE.html">AUIMS(orcl instance) : Application Component</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/ArchiMateApplicationInterface.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/ArchiMateApplicationInterface.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="ArchiMateApplicationInterface_yat05YyBkARyTSoh.html">N/A : Application Interface</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/ArchiMateApplicationInterface.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/ArchiMateApplicationInterface.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="ArchiMateApplicationInterface_Sqa2FYyBkARyTTbC.html">N/A : Application Interface</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/ArchiMateApplicationService.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/ArchiMateApplicationService.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="ArchiMateApplicationService_gIvg5YyBkARyTRFF.html">ServiceProcessor : Application Service</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/ArchiMateApplicationService.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/ArchiMateApplicationService.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="ArchiMateApplicationService_hWTU5YyBkARyTSRc.html">JGXT : Application Service</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/ArchiMateInfrastructureInterface.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/ArchiMateInfrastructureInterface.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="ArchiMateInfrastructureInterface_twvL6YyBkARyTR_Z.html">oracle db i : Infrastructure Interface</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/ArchiMateInfrastructureInterface.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/ArchiMateInfrastructureInterface.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="ArchiMateInfrastructureInterface_NTcr6YyBkARyTSE2.html">sqlplus : Infrastructure Interface</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/ArchiMateInfrastructureInterface.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/ArchiMateInfrastructureInterface.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="ArchiMateInfrastructureInterface_YOWg5YyBkARyTQ_E.html">web server : Infrastructure Interface</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/ArchiMateInfrastructureInterface.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/ArchiMateInfrastructureInterface.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="ArchiMateInfrastructureInterface_huUM5YyBkARyTSyW.html">ssh : Infrastructure Interface</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/ArchiMateNode.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/ArchiMateNode.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="ArchiMateNode_ef5j6YyBkARyTRCv.html">18.16.5.18RHEL 5.4 : 节点</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/ArchiMateNode.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/ArchiMateNode.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="ArchiMateNode_Nc2z6YyBkARyTRmi.html">50.2.62.101RHEL5.4 : 节点</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/ArchiMateNode.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/ArchiMateNode.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="ArchiMateNode_qzbr6YyBkARyTSr_.html">workstation : 节点</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/ArchiMateNode.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/ArchiMateNode.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="ArchiMateNode_Wess5YyBkARyTTAZ.html">18.15.10.16（windows2003) : 节点</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/ArchiMateSystemSoftware.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/ArchiMateSystemSoftware.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="ArchiMateSystemSoftware_RVlj6YyBkARyTREQ.html">Oracle10g : System Software</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/ArchiMateSystemSoftware.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/ArchiMateSystemSoftware.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="ArchiMateSystemSoftware_Qr7z6YyBkARyTRrc.html">tomcat6.0 : System Software</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/ArchiMateSystemSoftware.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/ArchiMateSystemSoftware.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="ArchiMateSystemSoftware_D1Yr6YyBkARyTSCy.html">oracle client : System Software</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+	</table>
+	<table width="100%" cellpadding="0" border="0" cellspacing="0">
+		<tr>
+			<td class="TableCellSpaceHolder1PxTall">
+			</td>
+		</tr>
+		<tr>
+			<td class="TableFooter">
+			</td>
+		</tr>
+	</table>
+	<div style="height: 20px">
+	</div>
+	<table width="100%" cellpadding="0" border="0" cellspacing="0">
+		<tr>
+			<td class="FooterLine">
+			</td>
+		</tr>
+	</table>
+	<div class="HeaderText">
+		envadmin Documentation	</div>
+</body>
+</html>

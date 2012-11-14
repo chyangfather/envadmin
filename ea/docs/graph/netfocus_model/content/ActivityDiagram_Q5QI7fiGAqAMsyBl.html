@@ -1,0 +1,293 @@
+<html>
+<head>
+	<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" href="report.css" type="text/css"/>
+	<title>Activity Diagram - 登录</title>
+	<script type="text/javascript" src="report.js"></script>
+	<script type="text/javascript" src="link_popup.js"></script>
+	<script type="text/javascript" src="tooltip.js"></script>
+</head>
+<body style="margin-left: 10px; margin-right: 10px; margin-top: 10px; margin-bottom: 10px;" onload="initPage();initDiagram();initGridDiagram();">
+	<div id="spotlight" style="position:absolute; width:100px; height:100px; z-index:2; visibility:hidden">
+		<table id="spotLightTable" onClick="updateCursorPos(event);adjustPopupPositionForSpotLightTable();clearSpotLight()" style="border-style:solid; border-width:3px; border-color:#FF0000" width="100%" cellpadding="0" border="0" cellspacing="0">
+			<tr>
+				<td id="spotLightCell">
+				</td>
+			</tr>
+		</table>
+	</div>
+	<canvas id="spotlight_c" height="100" style="position:absolute; z-index:2; visibility:hidden" width="100">
+	</canvas>
+	<div id="spotLightResourcesTop" style="position:absolute; width:100px; height:100px; z-index:1; visibility:hidden">
+		<table cellpadding="0" border="0" cellspacing="0">
+			<tr>
+				<td>
+					<a href="#top">
+						<img style="border:none" src="../images/icons/BackToTop.gif" alt="Back to top"/></a>
+				</td>
+				<td>
+					<a href="javascript:clearSpotLightFromOpenSpecButton();">
+						<img style="border:none" src="../images/icons/OpenSpecification.gif" alt="Open specification"/></a>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div id="spotLightResourcesRight" style="position:absolute; width:100px; height:100px; z-index:1; visibility:hidden">
+		<table cellpadding="0" border="0" cellspacing="0">
+			<tr>
+				<td>
+					<a href="#top">
+						<img style="border:none" src="../images/icons/BackToTop.gif" alt="Back to top"/></a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="javascript:clearSpotLightFromOpenSpecButton();">
+						<img style="border:none" src="../images/icons/OpenSpecification.gif" alt="Open specification"/></a>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div id="linkPopupMenuLayer" style="position:absolute;z-index:2;visibility:hidden">
+		<table id="linkPopupMenuTable" style="border-style:solid; border-width:1px; border-color:#000000; background:#FFFFFF; width:250px" width="100%" border="0">
+		</table>
+	</div>
+	<div id="referenceIconLayer" style="position:absolute; z-index:1; visibility:hidden; ">
+		<table style="font-size:1;" width="100%" cellpadding="3" border="0" cellspacing="0">
+			<tr>
+				<td>
+					<img src="../images/icons/Ref.gif" style="border:none" onclick="movePopupPositionToReferenceIconPosition();resetPopupForReference();switchPopupShowHideStatus();" />				</td>
+			</tr>
+		</table>
+	</div>
+	<div id="subdiagramIconLayer" style="position:absolute; z-index:1; visibility:hidden">
+		<table width="100%" cellpadding="3" border="0" cellspacing="0">
+			<tr>
+				<td>
+					<img src="../images/icons/Subdiagram.gif" style="border:none" onclick="movePopupPositionToSubdiagramIconPosition();resetPopupForSubdiagram();switchPopupShowHideStatus();" />				</td>
+			</tr>
+		</table>
+	</div>
+	<div id="transitorIconLayer" style="position:absolute; z-index:1; visibility:hidden">
+		<table width="100%" cellpadding="3" border="0" cellspacing="0">
+			<tr>
+				<td>
+					<img src="../images/icons/Transitor.gif" style="border:none" onclick="movePopupPositionToTransitorIconPosition();resetPopupForTransitor();switchPopupShowHideStatus();" />				</td>
+			</tr>
+		</table>
+	</div>
+	<div class="HeaderText">
+		netfocus Documentation	</div>
+	<table width="100%" cellpadding="0" border="0" cellspacing="0">
+		<tr>
+			<td class="HeaderLine1">
+			</td>
+		</tr>
+		<tr>
+			<td class="HeaderLine2">
+			</td>
+		</tr>
+		<tr>
+			<td class="HeaderLine3">
+			</td>
+		</tr>
+	</table>
+	<p>
+		<a target="_content_pane" class="PageParentTitle" href="UseCaseDiagram_pG5gTfiGAqAMsxXs.html">
+登录 : 用例</a>
+	</p>
+	<p class="PageTitle">
+		Activity Diagram - 登录	</p>
+	<table width="100%" cellpadding="0" border="0" cellspacing="0">
+		<tr>
+			<td>
+<span class="TableContent">跳至︰</span>				<select id="SelectShape" class="TableContent" onChange="scrollWin(this.value);showSpotLight(this.value)">
+<option value="">Please select a model element</option>
+<option value="shape|2.0|92.0|80.0|40.0|Activity_TaMI7fiGAqAMsyDF.html|Activity_TaMI7fiGAqAMsyDF.html|TaMI7fiGAqAMsyDE" id="optionTaMI7fiGAqAMsyDE">输入用户密码 : Activity</option>
+<option value="shape|2.0|212.0|90.0|40.0|Activity_ddcI7fiGAqAMsyDi.html|Activity_ddcI7fiGAqAMsyDi.html|ddcI7fiGAqAMsyDh" id="optionddcI7fiGAqAMsyDh">显示主表单 : Activity</option>
+<option value="shape|172.0|152.0|100.0|40.0|Activity_P_oo7fiGAqAMsyGC.html|Activity_P_oo7fiGAqAMsyGC.html|P_oo7fiGAqAMsyGB" id="optionP_oo7fiGAqAMsyGB">显示错误信息 : Activity</option>
+<option value="shape|212.0|282.0|18.0|20.0|ActivityFinalNode_FHUo7fiGAqAMsyG8.html|ActivityFinalNode_FHUo7fiGAqAMsyG8.html|FHUo7fiGAqAMsyG7" id="optionFHUo7fiGAqAMsyG7">终态5 : Activity Final Node</option>
+<option value="shape|32.0|282.0|18.0|20.0|ActivityFinalNode_jEqo7fiGAqAMsyLQ.html|ActivityFinalNode_jEqo7fiGAqAMsyLQ.html|jEqo7fiGAqAMsyLP" id="optionjEqo7fiGAqAMsyLP">终态6 : Activity Final Node</option>
+<option value="shape|32.0|152.0|20.0|40.0|DecisionNode_Q2iI7fiGAqAMsyEX.html|DecisionNode_Q2iI7fiGAqAMsyEX.html|Q2iI7fiGAqAMsyEW" id="optionQ2iI7fiGAqAMsyEW">决策节点4 : Decision Node</option>
+<option value="shape|22.0|2.0|20.0|18.0|InitialNode_N9oI7fiGAqAMsyCo.html|InitialNode_N9oI7fiGAqAMsyCo.html|N9oI7fiGAqAMsyCn" id="optionN9oI7fiGAqAMsyCn">初始状态2 : Initial Node</option>
+</select>			</td>
+		</tr>
+	</table>
+	<table width="100%" cellpadding="0" border="0" cellspacing="0">
+		<tr>
+			<td>
+				<img id = "diagram" src = "../images/7.png" usemap="#diagram_map" class="Image" width="276.0" height="306.0"/>				<map name = "diagram_map">
+
+<area coords="32.0, 282.0, 50.0, 302.0" coords2="32.0, 282.0, 50.0, 302.0" shape="rect" alt="终态6:Activity Final Node" id="areajEqo7fiGAqAMsyLP" href="ActivityFinalNode_jEqo7fiGAqAMsyLQ.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="212.0, 282.0, 230.0, 302.0" coords2="212.0, 282.0, 230.0, 302.0" shape="rect" alt="终态5:Activity Final Node" id="areaFHUo7fiGAqAMsyG7" href="ActivityFinalNode_FHUo7fiGAqAMsyG8.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="172.0, 152.0, 272.0, 192.0" coords2="172.0, 152.0, 272.0, 192.0" shape="rect" alt="显示错误信息:Activity" id="areaP_oo7fiGAqAMsyGB" href="Activity_P_oo7fiGAqAMsyGC.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="32.0, 152.0, 52.0, 192.0" coords2="32.0, 152.0, 52.0, 192.0" shape="rect" alt="决策节点4:Decision Node" id="areaQ2iI7fiGAqAMsyEW" href="DecisionNode_Q2iI7fiGAqAMsyEX.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="2.0, 212.0, 92.0, 252.0" coords2="2.0, 212.0, 92.0, 252.0" shape="rect" alt="显示主表单:Activity" id="areaddcI7fiGAqAMsyDh" href="Activity_ddcI7fiGAqAMsyDi.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="2.0, 92.0, 82.0, 132.0" coords2="2.0, 92.0, 82.0, 132.0" shape="rect" alt="输入用户密码:Activity" id="areaTaMI7fiGAqAMsyDE" href="Activity_TaMI7fiGAqAMsyDF.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="22.0, 2.0, 42.0, 20.0" coords2="22.0, 2.0, 42.0, 20.0" shape="rect" alt="初始状态2:Initial Node" id="areaN9oI7fiGAqAMsyCn" href="InitialNode_N9oI7fiGAqAMsyCo.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="215.0, 102.0, 215.0, 105.0, 71.0, 105.0, 71.0, 119.0, 215.0, 119.0, 215.0, 162.0, 229.0, 162.0, 229.0, 119.0, 232.0, 119.0, 232.0, 105.0, 229.0, 105.0, 229.0, 102.0" coords2="215.0, 102.0, 215.0, 105.0, 71.0, 105.0, 71.0, 119.0, 215.0, 119.0, 215.0, 162.0, 229.0, 162.0, 229.0, 119.0, 232.0, 119.0, 232.0, 105.0, 229.0, 105.0, 229.0, 102.0" shape="poly" alt="重新输入:Control Flow" id="areapcUo7fiGAqAMsyG3" href="ControlFlow_JcUo7fiGAqAMsyG2.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="215.0, 181.0, 215.0, 294.0, 229.0, 294.0, 229.0, 181.0" coords2="215.0, 181.0, 215.0, 294.0, 229.0, 294.0, 229.0, 181.0" shape="poly" alt="取消:Control Flow" id="area910o7fiGAqAMsyHZ" href="ControlFlow_910o7fiGAqAMsyHY.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="26.0, 9.0, 26.0, 102.0, 40.0, 102.0, 40.0, 9.0" coords2="26.0, 9.0, 26.0, 102.0, 40.0, 102.0, 40.0, 9.0" shape="poly" alt=":Control Flow" id="areaO.so7fiGAqAMsyH2" href="ControlFlow_W_so7fiGAqAMsyH1.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="35.0, 121.0, 35.0, 169.0, 49.0, 169.0, 49.0, 121.0" coords2="35.0, 121.0, 35.0, 169.0, 49.0, 169.0, 49.0, 121.0" shape="poly" alt=":Control Flow" id="areaZHSo7fiGAqAMsyLB" href="ControlFlow_pHSo7fiGAqAMsyLA.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="35.0, 174.0, 35.0, 222.0, 49.0, 222.0, 49.0, 174.0" coords2="35.0, 174.0, 35.0, 222.0, 49.0, 222.0, 49.0, 174.0" shape="poly" alt=":Control Flow" id="areaI5yo7fiGAqAMsyLG" href="ControlFlow_w5yo7fiGAqAMsyLF.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="39.0, 165.0, 39.0, 179.0, 182.0, 179.0, 182.0, 165.0" coords2="39.0, 165.0, 39.0, 179.0, 182.0, 179.0, 182.0, 165.0" shape="poly" alt=":Control Flow" id="areaXuKo7fiGAqAMsyLL" href="ControlFlow_XuKo7fiGAqAMsyLK.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="35.0, 241.0, 35.0, 294.0, 49.0, 294.0, 49.0, 241.0" coords2="35.0, 241.0, 35.0, 294.0, 49.0, 294.0, 49.0, 241.0" shape="poly" alt=":Control Flow" id="areas7qo7fiGAqAMsyLt" href="ControlFlow_s7qo7fiGAqAMsyLs.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+</map>			</td>
+		</tr>
+	</table>
+	<p>
+	</p>
+	<table width="100%" cellpadding="0" border="0" cellspacing="0">
+		<tr>
+			<td class="Category">
+				Model Elements			</td>
+		</tr>
+		<tr>
+			<td style="height: 5px">
+			</td>
+		</tr>
+	</table>
+	<table width="100%" cellpadding="0" border="0" cellspacing="0">
+		<tr>
+			<td colSpan="4" class="TableHeaderLine">
+			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine1">
+			</td>
+		</tr>
+		<tr class="TableHeader">
+			<td class="TableCellSpaceHolder10Px">
+			</td>
+			<td width="30%">
+<span class="TableHeaderText">名称</span>			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td>
+<span class="TableHeaderText">文档</span>			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine2">
+			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Activity.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Activity.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="Activity_TaMI7fiGAqAMsyDF.html">输入用户密码 : 活动</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Activity.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Activity.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="Activity_ddcI7fiGAqAMsyDi.html">显示主表单 : 活动</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Activity.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Activity.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="Activity_P_oo7fiGAqAMsyGC.html">显示错误信息 : 活动</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/ActivityFinalNode.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/ActivityFinalNode.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="ActivityFinalNode_FHUo7fiGAqAMsyG8.html">终态5 : 终态节点</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/ActivityFinalNode.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/ActivityFinalNode.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="ActivityFinalNode_jEqo7fiGAqAMsyLQ.html">终态6 : 终态节点</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/DecisionNode.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/DecisionNode.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="DecisionNode_Q2iI7fiGAqAMsyEX.html">决策节点4 : 决策节点</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/InitialNode.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/InitialNode.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="InitialNode_N9oI7fiGAqAMsyCo.html">初始状态2 : 初态</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+	</table>
+	<table width="100%" cellpadding="0" border="0" cellspacing="0">
+		<tr>
+			<td class="TableCellSpaceHolder1PxTall">
+			</td>
+		</tr>
+		<tr>
+			<td class="TableFooter">
+			</td>
+		</tr>
+	</table>
+	<div style="height: 20px">
+	</div>
+	<table width="100%" cellpadding="0" border="0" cellspacing="0">
+		<tr>
+			<td class="FooterLine">
+			</td>
+		</tr>
+	</table>
+	<div class="HeaderText">
+		netfocus Documentation	</div>
+</body>
+</html>

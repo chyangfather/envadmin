@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/Strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de"><head>
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+  <title>A simple demonstartion for the FreeGroup Draw2D 0.9.26 "scrollTo" method</title>
+        <link type="text/css" rel="stylesheet" href="42scrollTO_files/demo.css">
+
+    <!-- common, all times required, imports -->        <script src="42scrollTO_files/wz_jsgraphics.js"></script>      <script src="42scrollTO_files/mootools.js"></script>      <script src="42scrollTO_files/moocanvas.js"></script>      <script src="42scrollTO_files/draw2d.js"></script>
+
+        <!-- workflow specific imports -->
+	<script src="42scrollTO_files/Server.js"></script>
+	<script src="42scrollTO_files/OverviewWindow.js"></script>
+</head>
+<body onselectstart="return false;" style="margin: 0px; padding: 0px;" onkeydown="">
+<div tabindex="0" class="Workflow" id="paintarea" style="position: absolute; left: 0px; top: 0px; width: 1800px; height: 2400px; cursor: default; background-image: url(&quot;grid_10.png&quot;);">
+    <!-- The information help text -->
+    <div class="stickyNote">
+    <center><b>FreeGroup Draw2D 0.9.26 0.7.1 - Simple demonstration of the FreeGroup Draw2D 0.9.26.<br>
+    by Andreas Herz (a.herz @ freegroup.de)
+    <br>
+    </b>
+    <br>
+    <div style="color:red;font-size:9pt">Focus of this example: Show the "scrollTo()" method of the canvas object.</div>
+    </center>
+    <br>
+    <center>See more on <a href="http://www.draw2d.org/">FreeGroup Draw2D 0.9.26</a></center>
+    </div>
+
+<div tabindex="0" class=" unselectable" style="position: absolute; left: 200px; top: 200px; height: 70px; width: 250px; margin: 0px; padding: 0px; outline: medium none; z-index: 100; color: rgb(0, 0, 0); background-color: rgb(241, 241, 121); font-size: 10pt; cursor: move;" id="e0febf9b-8743-23de-f01f-7f67f1be1f30">NOTE: Click on an entry in the overview window to scroll the window to the corresponding server icon</div><div tabindex="0" class=" unselectable" style="position: absolute; left: 200px; top: 280px; height: 70px; width: 250px; margin: 0px; padding: 0px; outline: medium none; z-index: 100; color: rgb(0, 0, 0); background-color: rgb(0, 255, 0); font-size: 10pt; cursor: move;" id="147abf92-7641-64ee-a16b-9133cb41acff">HINT: Show in the Server.js for backend AJAX communication.</div><div tabindex="0" class="WindowFigure" style="position: absolute; left: 10px; top: 150px; height: 150px; width: 180px; margin: 0px; padding: 0px; outline: medium none; z-index: 50000; border: 1px solid black; background-image: url(&quot;window_bg.png&quot;); box-shadow: 5px 5px 5px rgb(204, 204, 204); border-radius: 2px 2px 2px 2px;" id="923bec0a-8dee-6485-9bfb-9f36123261a0"><div class="WindowFigure_titlebar unselectable" style="position: absolute; left: 0px; top: 0px; width: 180px; height: 15px; margin: 0px; padding: 0px; font: 10px verdana; background-color: blue; border-bottom: 2px solid gray; white-space: nowrap; text-align: center; background-image: url(&quot;window_toolbar.png&quot;); cursor: move;">Overview Window</div><div style="position: absolute; left: 10px; top: 20px; overflow: auto; border: 1px solid black; font: 10px verdana; height: 120px; width: 160px;"><ul><li><a style="color: green;" href="javascript:draw2d.OverviewWindow.scrollTo('fc981137-fdc2-2885-f6d0-5ca5e365ff5a')">165.230.22.3</a></li><li><a style="color: red; font-weight: bold;" href="javascript:draw2d.OverviewWindow.scrollTo('47b178d9-e5bd-59f0-352b-bac299e56dd0')">www.google.de</a></li><li><a style="color: green;" href="javascript:draw2d.OverviewWindow.scrollTo('09264e4a-d861-d65a-28b1-67a7437d3896')">210.22.11.231</a></li><li><a style="color: green;" href="javascript:draw2d.OverviewWindow.scrollTo('af8a4bae-0f27-138e-10f9-06f2954a1499')">165.230.22.7</a></li><li><a style="color: green;" href="javascript:draw2d.OverviewWindow.scrollTo('f67d73bd-486c-fde0-1392-4bfb08ba3ef4')">165.230.22.9</a></li><li><a style="color: red; font-weight: bold;" href="javascript:draw2d.OverviewWindow.scrollTo('79f4f6ff-4eb1-f16a-f742-47150ac55e2f')">165.230.221.3</a></li><li><a style="color: green;" href="javascript:draw2d.OverviewWindow.scrollTo('89735915-bfdd-f34e-1f4d-f2cf6b31a383')">65.231.22.3</a></li><li><a style="color: green;" href="javascript:draw2d.OverviewWindow.scrollTo('3b4fd5ee-147e-2af4-c6ac-01340bd32c1b')">65.231.22.6</a></li><li><a style="color: red; font-weight: bold;" href="javascript:draw2d.OverviewWindow.scrollTo('bff1070f-e705-9b4d-7b52-e907cfcca24b')">65.231.22.21</a></li></ul></div></div><div tabindex="0" style="position: absolute; left: 400px; top: 500px; height: 60px; width: 54px; margin: 0px; padding: 0px; outline: medium none; z-index: 100; border: 0px none; font-size: 1px; background-image: url(&quot;Server_up.png&quot;); cursor: move;" id="fc981137-fdc2-2885-f6d0-5ca5e365ff5a"></div><div tabindex="0" class=" unselectable" style="position: absolute; left: 380px; top: 490px; height: auto; width: auto; margin: 0px; padding: 0px 3px; outline: medium none; z-index: 100; color: rgb(0, 0, 0); font-size: 10pt; text-align: center; -moz-user-select: none; background-color: rgb(255, 255, 255); border: 1px solid black;" id="6f6cade9-3cf0-a254-97b9-33efe7c6544e">165.230.22.3</div><div tabindex="0" style="position: absolute; left: 1200px; top: 300px; height: 60px; width: 54px; margin: 0px; padding: 0px; outline: medium none; z-index: 100; border: 0px none; font-size: 1px; background-image: url(&quot;Server_down.png&quot;); cursor: move;" id="47b178d9-e5bd-59f0-352b-bac299e56dd0"></div><div tabindex="0" class=" unselectable" style="position: absolute; left: 1180px; top: 290px; height: auto; width: auto; margin: 0px; padding: 0px 3px; outline: medium none; z-index: 100; color: rgb(0, 0, 0); font-size: 10pt; text-align: center; -moz-user-select: none; background-color: rgb(255, 255, 255); border: 1px solid black;" id="020b4a6a-6643-7829-6e52-30979706e6db">www.google.de</div><div tabindex="0" style="position: absolute; left: 1200px; top: 800px; height: 60px; width: 54px; margin: 0px; padding: 0px; outline: medium none; z-index: 100; border: 0px none; font-size: 1px; background-image: url(&quot;Server_up.png&quot;); cursor: move;" id="09264e4a-d861-d65a-28b1-67a7437d3896"></div><div tabindex="0" class=" unselectable" style="position: absolute; left: 1180px; top: 790px; height: auto; width: auto; margin: 0px; padding: 0px 3px; outline: medium none; z-index: 100; color: rgb(0, 0, 0); font-size: 10pt; text-align: center; -moz-user-select: none; background-color: rgb(255, 255, 255); border: 1px solid black;" id="4a25eb62-dc44-8b11-1528-084013b09098">210.22.11.231</div><div tabindex="0" style="position: absolute; left: 800px; top: 850px; height: 60px; width: 54px; margin: 0px; padding: 0px; outline: medium none; z-index: 100; border: 0px none; font-size: 1px; background-image: url(&quot;Server_up.png&quot;); cursor: move;" id="af8a4bae-0f27-138e-10f9-06f2954a1499"></div><div tabindex="0" class=" unselectable" style="position: absolute; left: 780px; top: 840px; height: auto; width: auto; margin: 0px; padding: 0px 3px; outline: medium none; z-index: 100; color: rgb(0, 0, 0); font-size: 10pt; text-align: center; -moz-user-select: none; background-color: rgb(255, 255, 255); border: 1px solid black;" id="fc868323-a6d4-10a9-9a13-9d2b23b2fe17">165.230.22.7</div><div tabindex="0" style="position: absolute; left: 550px; top: 1500px; height: 60px; width: 54px; margin: 0px; padding: 0px; outline: medium none; z-index: 100; border: 0px none; font-size: 1px; background-image: url(&quot;Server_up.png&quot;); cursor: move;" id="f67d73bd-486c-fde0-1392-4bfb08ba3ef4"></div><div tabindex="0" class=" unselectable" style="position: absolute; left: 530px; top: 1490px; height: auto; width: auto; margin: 0px; padding: 0px 3px; outline: medium none; z-index: 100; color: rgb(0, 0, 0); font-size: 10pt; text-align: center; -moz-user-select: none; background-color: rgb(255, 255, 255); border: 1px solid black;" id="08407541-e2e7-b8c3-5416-7002b7762dc8">165.230.22.9</div><div tabindex="0" style="position: absolute; left: 250px; top: 1000px; height: 60px; width: 54px; margin: 0px; padding: 0px; outline: medium none; z-index: 100; border: 0px none; font-size: 1px; background-image: url(&quot;Server_down.png&quot;); cursor: move;" id="79f4f6ff-4eb1-f16a-f742-47150ac55e2f"></div><div tabindex="0" class=" unselectable" style="position: absolute; left: 230px; top: 990px; height: auto; width: auto; margin: 0px; padding: 0px 3px; outline: medium none; z-index: 100; color: rgb(0, 0, 0); font-size: 10pt; text-align: center; -moz-user-select: none; background-color: rgb(255, 255, 255); border: 1px solid black;" id="d9e4abd4-f9ca-d6ab-4e9d-1d1dc924813c">165.230.221.3</div><div tabindex="0" style="position: absolute; left: 810px; top: 400px; height: 60px; width: 54px; margin: 0px; padding: 0px; outline: medium none; z-index: 100; border: 0px none; font-size: 1px; background-image: url(&quot;Server_up.png&quot;); cursor: move;" id="89735915-bfdd-f34e-1f4d-f2cf6b31a383"></div><div tabindex="0" class=" unselectable" style="position: absolute; left: 790px; top: 390px; height: auto; width: auto; margin: 0px; padding: 0px 3px; outline: medium none; z-index: 100; color: rgb(0, 0, 0); font-size: 10pt; text-align: center; -moz-user-select: none; background-color: rgb(255, 255, 255); border: 1px solid black;" id="dec3ecb6-185c-ca62-f4bc-19bd7be10e61">65.231.22.3</div><div tabindex="0" style="position: absolute; left: 550px; top: 1900px; height: 60px; width: 54px; margin: 0px; padding: 0px; outline: medium none; z-index: 100; border: 0px none; font-size: 1px; background-image: url(&quot;Server_up.png&quot;); cursor: move;" id="3b4fd5ee-147e-2af4-c6ac-01340bd32c1b"></div><div tabindex="0" class=" unselectable" style="position: absolute; left: 530px; top: 1890px; height: auto; width: auto; margin: 0px; padding: 0px 3px; outline: medium none; z-index: 100; color: rgb(0, 0, 0); font-size: 10pt; text-align: center; -moz-user-select: none; background-color: rgb(255, 255, 255); border: 1px solid black;" id="48316ec7-e652-a9e1-fc72-b1507b1130c7">65.231.22.6</div><div tabindex="0" style="position: absolute; left: 1100px; top: 2050px; height: 60px; width: 54px; margin: 0px; padding: 0px; outline: medium none; z-index: 100; border: 0px none; font-size: 1px; background-image: url(&quot;Server_down.png&quot;); cursor: move;" id="bff1070f-e705-9b4d-7b52-e907cfcca24b"></div><div tabindex="0" class=" unselectable" style="position: absolute; left: 1080px; top: 2040px; height: auto; width: auto; margin: 0px; padding: 0px 3px; outline: medium none; z-index: 100; color: rgb(0, 0, 0); font-size: 10pt; text-align: center; -moz-user-select: none; background-color: rgb(255, 255, 255); border: 1px solid black;" id="0ec4af27-7d77-2a58-91e6-42ad99925ada">65.231.22.21</div></div>
+<script>
+  var workflow  = new draw2d.Workflow("paintarea");
+
+
+  // Add an annotation to the workflow area
+  //
+  var annotation = new draw2d.Annotation("NOTE: Click on an entry in the overview window to scroll the window to the corresponding server icon");
+  annotation.setDimension(250,70);
+  workflow.addFigure(annotation,200,200);
+
+  var annotation = new draw2d.Annotation("HINT: Show in the Server.js for backend AJAX communication.");
+  annotation.setDimension(250,70);
+  annotation.setBackgroundColor(new draw2d.Color(0,255,0));
+  workflow.addFigure(annotation,200,280);
+
+
+  var overviewWindow = new draw2d.OverviewWindow("Overview");
+  workflow.addFigure(overviewWindow,10,150);
+
+  // Add some example figures to the canvas
+  //
+  var s1 = new draw2d.Server("any_pkey1","165.230.22.3","up");
+  workflow.addFigure(s1, 400,500);
+
+  var s2 = new draw2d.Server("any_pkey2","www.google.de","down");
+  workflow.addFigure(s2, 1200,300);
+
+  var s3 = new draw2d.Server("any_pkey3","210.22.11.231","up");
+  workflow.addFigure(s3, 1200,800);
+
+  var s4 = new draw2d.Server("any_pkey4","165.230.22.7","up");
+  workflow.addFigure(s4, 800,850);
+
+  var s5 = new draw2d.Server("any_pkey23","165.230.22.9","up");
+  workflow.addFigure(s5, 550,1500);
+
+  var s6 = new draw2d.Server("any_pkey3456","165.230.221.3","down");
+  workflow.addFigure(s6, 250,1000);
+
+  var s7 = new draw2d.Server("any_pkey13245","65.231.22.3","up");
+  workflow.addFigure(s7, 810,400);
+
+  var s8 = new draw2d.Server("any_pkey13245","65.231.22.6","up");
+  workflow.addFigure(s8, 550,1900);
+
+  var s9 = new draw2d.Server("any_pkey13245","65.231.22.21","down");
+  workflow.addFigure(s9, 1100,2050);
+
+  overviewWindow.addServer(s1);
+  overviewWindow.addServer(s2);
+  overviewWindow.addServer(s3);
+  overviewWindow.addServer(s4);
+  overviewWindow.addServer(s5);
+  overviewWindow.addServer(s6);
+  overviewWindow.addServer(s7);
+  overviewWindow.addServer(s8);
+  overviewWindow.addServer(s9);
+
+  
+  window.onscroll=function(){workflow.onScroll();};
+
+</script>
+
+
+</body></html>

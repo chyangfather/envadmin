@@ -1,0 +1,52 @@
+var flash = document["homeflash"];
+
+
+function callFlash(cmd,param)
+{
+    	flash.excuteCMD(cmd,param);
+}
+
+//下面这行是从控制台看到的命令，替换成你想要执行的
+callFlash('showTopo','011D8F8DCAC4-6B77-0118B76C');
+
+
+
+///////////////////////////////////////////////////////////////
+以下是调试参数
+callFlash('creatMapElement','element srcname="rounded rectangle.png" name="Rounded Rectangle" type="roundRect" url="res/img/rounded rectangle.png" surl="res/img/rounded rectangle.gif" exporttype="generaltool"');
+
+callFlash('topoposition','id#mocha#-958873119');
+callFlash('topoposition','id#mocha#242548543');
+callFlash('topoposition','id#mocha#310890526');
+
+
+e===1248315227====
+topoposition===id#mocha#-958873119   topoposition===id#mocha#242548543		topoposition===id#mocha#310890526
+011D8F8DCAC4-6B77-0118B76C
+creatMapElement===element srcname="rounded rectangle.png" name="Rounded Rectangle" type="roundRect" url="res/img/rounded rectangle.png" surl="res/img/rounded rectangle.gif" exporttype="generaltool"
+watchState===id#mocha#-1211871945state#mocha#notUnderBsmControl
+watchState=notUnderBsmControl==id#mocha#-1211871945&state#mocha#Gray&cpu#mocha#30&memory#mocha#30
+manaage			       id#mocha#-1211871945state#mocha#notUnderBsmControl
+reLayout===global	       id#mocha#-1211871945&state#mocha#notUnderBsmControl
+showTopo===twoglobal011D74F49194-EB0C-013F6C01		showTopo===twoglobal011D84FB2CDA-CCEC-01901A6C
+showTopo
+stateCount
+move
+mview
+reLayout
+refresh
+search        
+generatePathToCore===25117141,15505643
+setting
+fitwin
+mapSample res/img/bg/1.JPG
+stateCount
+newSubTopo===isAutoDisovery=true&mapId=twoglobal011CFF977755-3CC6-01CBB23F&parentId=twoglobal
+modifyMap===isAutoDisovery=true&mapId=twoglobal&name=Physical Network Topology
+topoposition===id#mocha#15505643
+stateCount===
+
+
+对于正则，请用Regxp
+不要用String中得match
+很垃圾，经常就是返回null

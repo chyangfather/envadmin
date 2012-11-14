@@ -1,0 +1,308 @@
+<html>
+<head>
+	<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" href="report.css" type="text/css"/>
+	<title>Component Diagram - Architect</title>
+	<script type="text/javascript" src="report.js"></script>
+	<script type="text/javascript" src="link_popup.js"></script>
+	<script type="text/javascript" src="tooltip.js"></script>
+</head>
+<body style="margin-left: 10px; margin-right: 10px; margin-top: 10px; margin-bottom: 10px;" onload="initPage();initDiagram();initGridDiagram();">
+	<div id="spotlight" style="position:absolute; width:100px; height:100px; z-index:2; visibility:hidden">
+		<table id="spotLightTable" onClick="updateCursorPos(event);adjustPopupPositionForSpotLightTable();clearSpotLight()" style="border-style:solid; border-width:3px; border-color:#FF0000" width="100%" cellpadding="0" border="0" cellspacing="0">
+			<tr>
+				<td id="spotLightCell">
+				</td>
+			</tr>
+		</table>
+	</div>
+	<canvas id="spotlight_c" height="100" style="position:absolute; z-index:2; visibility:hidden" width="100">
+	</canvas>
+	<div id="spotLightResourcesTop" style="position:absolute; width:100px; height:100px; z-index:1; visibility:hidden">
+		<table cellpadding="0" border="0" cellspacing="0">
+			<tr>
+				<td>
+					<a href="#top">
+						<img style="border:none" src="../images/icons/BackToTop.gif" alt="Back to top"/></a>
+				</td>
+				<td>
+					<a href="javascript:clearSpotLightFromOpenSpecButton();">
+						<img style="border:none" src="../images/icons/OpenSpecification.gif" alt="Open specification"/></a>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div id="spotLightResourcesRight" style="position:absolute; width:100px; height:100px; z-index:1; visibility:hidden">
+		<table cellpadding="0" border="0" cellspacing="0">
+			<tr>
+				<td>
+					<a href="#top">
+						<img style="border:none" src="../images/icons/BackToTop.gif" alt="Back to top"/></a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="javascript:clearSpotLightFromOpenSpecButton();">
+						<img style="border:none" src="../images/icons/OpenSpecification.gif" alt="Open specification"/></a>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div id="linkPopupMenuLayer" style="position:absolute;z-index:2;visibility:hidden">
+		<table id="linkPopupMenuTable" style="border-style:solid; border-width:1px; border-color:#000000; background:#FFFFFF; width:250px" width="100%" border="0">
+		</table>
+	</div>
+	<div id="referenceIconLayer" style="position:absolute; z-index:1; visibility:hidden; ">
+		<table style="font-size:1;" width="100%" cellpadding="3" border="0" cellspacing="0">
+			<tr>
+				<td>
+					<img src="../images/icons/Ref.gif" style="border:none" onclick="movePopupPositionToReferenceIconPosition();resetPopupForReference();switchPopupShowHideStatus();" />				</td>
+			</tr>
+		</table>
+	</div>
+	<div id="subdiagramIconLayer" style="position:absolute; z-index:1; visibility:hidden">
+		<table width="100%" cellpadding="3" border="0" cellspacing="0">
+			<tr>
+				<td>
+					<img src="../images/icons/Subdiagram.gif" style="border:none" onclick="movePopupPositionToSubdiagramIconPosition();resetPopupForSubdiagram();switchPopupShowHideStatus();" />				</td>
+			</tr>
+		</table>
+	</div>
+	<div id="transitorIconLayer" style="position:absolute; z-index:1; visibility:hidden">
+		<table width="100%" cellpadding="3" border="0" cellspacing="0">
+			<tr>
+				<td>
+					<img src="../images/icons/Transitor.gif" style="border:none" onclick="movePopupPositionToTransitorIconPosition();resetPopupForTransitor();switchPopupShowHideStatus();" />				</td>
+			</tr>
+		</table>
+	</div>
+	<div class="HeaderText">
+		netfocus Documentation	</div>
+	<table width="100%" cellpadding="0" border="0" cellspacing="0">
+		<tr>
+			<td class="HeaderLine1">
+			</td>
+		</tr>
+		<tr>
+			<td class="HeaderLine2">
+			</td>
+		</tr>
+		<tr>
+			<td class="HeaderLine3">
+			</td>
+		</tr>
+	</table>
+	<p>
+		<a target="_content_pane" class="PageParentTitle" href="Package__jIewfiGAqAMqFVs.html">
+Architect : 包</a>
+	</p>
+	<p class="PageTitle">
+		Component Diagram - Architect	</p>
+	<table width="100%" cellpadding="0" border="0" cellspacing="0">
+		<tr>
+			<td>
+<span class="TableContent">跳至︰</span>				<select id="SelectShape" class="TableContent" onChange="scrollWin(this.value);showSpotLight(this.value)">
+<option value="">Please select a model element</option>
+<option value="shape|2.0|272.0|150.0|40.0|Component_nXSewfiGAqAMqFa4.html|Component_nXSewfiGAqAMqFa4.html|HXSewfiGAqAMqFa3" id="optionHXSewfiGAqAMqFa3">Discovery : Component</option>
+<option value="shape|182.0|272.0|150.0|40.0|Component_iRqewfiGAqAMqFcK.html|Component_iRqewfiGAqAMqFcK.html|iRqewfiGAqAMqFcJ" id="optioniRqewfiGAqAMqFcJ">BSM API : Component</option>
+<option value="shape|182.0|152.0|150.0|40.0|Component_CK6ewfiGAqAMqFdc.html|Component_CK6ewfiGAqAMqFdc.html|CK6ewfiGAqAMqFdb" id="optionCK6ewfiGAqAMqFdb">BusinessService : Component</option>
+<option value="shape|372.0|272.0|150.0|40.0|Component_CamewfiGAqAMqFew.html|Component_CamewfiGAqAMqFew.html|CamewfiGAqAMqFev" id="optionCamewfiGAqAMqFev">Repository : Component</option>
+<option value="shape|182.0|72.0|150.0|40.0|Component_h1JewfiGAqAMqFme.html|Component_h1JewfiGAqAMqFme.html|h1JewfiGAqAMqFmd" id="optionh1JewfiGAqAMqFmd">HTTPWrapper : Component</option>
+<option value="shape|82.0|2.0|150.0|40.0|Component_UndewfiGAqAMqFnw.html|Component_UndewfiGAqAMqFnw.html|UndewfiGAqAMqFnv" id="optionUndewfiGAqAMqFnv">Flash : Component</option>
+<option value="shape|332.0|2.0|150.0|40.0|Component_dj9ewfiGAqAMqFod.html|Component_dj9ewfiGAqAMqFod.html|dj9ewfiGAqAMqFoc" id="optiondj9ewfiGAqAMqFoc">Ext : Component</option>
+<option value="shape|402.0|172.0|150.0|40.0|Component_Xwi_wfiGAqAMqFuf.html|Component_Xwi_wfiGAqAMqFuf.html|Xwi.wfiGAqAMqFue" id="optionXwi.wfiGAqAMqFue">DomainService : Component</option>
+</select>			</td>
+		</tr>
+	</table>
+	<table width="100%" cellpadding="0" border="0" cellspacing="0">
+		<tr>
+			<td>
+				<img id = "diagram" src = "../images/Architect.png" usemap="#diagram_map" class="Image" width="556.0" height="316.0"/>				<map name = "diagram_map">
+
+<area coords="402.0, 172.0, 552.0, 212.0" coords2="402.0, 172.0, 552.0, 212.0" shape="rect" alt="DomainService:Component" id="areaXwi.wfiGAqAMqFue" href="Component_Xwi_wfiGAqAMqFuf.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="332.0, 2.0, 482.0, 42.0" coords2="332.0, 2.0, 482.0, 42.0" shape="rect" alt="Ext:Component" id="areadj9ewfiGAqAMqFoc" href="Component_dj9ewfiGAqAMqFod.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="82.0, 2.0, 232.0, 42.0" coords2="82.0, 2.0, 232.0, 42.0" shape="rect" alt="Flash:Component" id="areaUndewfiGAqAMqFnv" href="Component_UndewfiGAqAMqFnw.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="182.0, 72.0, 332.0, 112.0" coords2="182.0, 72.0, 332.0, 112.0" shape="rect" alt="HTTPWrapper:Component" id="areah1JewfiGAqAMqFmd" href="Component_h1JewfiGAqAMqFme.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="372.0, 272.0, 522.0, 312.0" coords2="372.0, 272.0, 522.0, 312.0" shape="rect" alt="Repository:Component" id="areaCamewfiGAqAMqFev" href="Component_CamewfiGAqAMqFew.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="182.0, 152.0, 332.0, 192.0" coords2="182.0, 152.0, 332.0, 192.0" shape="rect" alt="BusinessService:Component" id="areaCK6ewfiGAqAMqFdb" href="Component_CK6ewfiGAqAMqFdc.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="182.0, 272.0, 332.0, 312.0" coords2="182.0, 272.0, 332.0, 312.0" shape="rect" alt="BSM API:Component" id="areaiRqewfiGAqAMqFcJ" href="Component_iRqewfiGAqAMqFcK.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="2.0, 272.0, 152.0, 312.0" coords2="2.0, 272.0, 152.0, 312.0" shape="rect" alt="Discovery:Component" id="areaHXSewfiGAqAMqFa3" href="Component_nXSewfiGAqAMqFa4.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="177.0, 181.0, 142.0, 279.0, 156.0, 282.0, 191.0, 185.0, 177.0, 181.0" coords2="177.0, 181.0, 142.0, 279.0, 156.0, 282.0, 191.0, 185.0, 177.0, 181.0" shape="poly" alt=":Association" id="areab0uewfiGAqAMqFhQ" href="Association_b0uewfiGAqAMqFhL.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="334.0, 180.0, 321.0, 185.0, 369.0, 283.0, 382.0, 278.0, 334.0, 180.0" coords2="334.0, 180.0, 321.0, 185.0, 369.0, 283.0, 382.0, 278.0, 334.0, 180.0" shape="poly" alt=":Usage" id="area.neewfiGAqAMqFhX" href="Usage_bHeewfiGAqAMqFhU.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="255.0, 182.0, 255.0, 281.0, 269.0, 281.0, 269.0, 182.0" coords2="255.0, 182.0, 255.0, 281.0, 269.0, 281.0, 269.0, 182.0" shape="poly" alt=":Usage" id="areanl.ewfiGAqAMqFhe" href="Usage_nl_ewfiGAqAMqFhc.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="225.0, 32.0, 225.0, 81.0, 239.0, 81.0, 239.0, 32.0" coords2="225.0, 32.0, 225.0, 81.0, 239.0, 81.0, 239.0, 32.0" shape="poly" alt=":Usage" id="areaWujewfiGAqAMqFpw" href="Usage_mujewfiGAqAMqFpu.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="325.0, 32.0, 325.0, 82.0, 339.0, 82.0, 339.0, 32.0" coords2="325.0, 32.0, 325.0, 82.0, 339.0, 82.0, 339.0, 32.0" shape="poly" alt=":Usage" id="areaI2TewfiGAqAMqFp3" href="Usage_w2TewfiGAqAMqFp1.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="250.0, 102.0, 250.0, 161.0, 264.0, 161.0, 264.0, 102.0" coords2="250.0, 102.0, 250.0, 161.0, 264.0, 161.0, 264.0, 102.0" shape="poly" alt=":Usage" id="areamSzewfiGAqAMqFp." href="Usage_mSzewfiGAqAMqFp8.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+</map>			</td>
+		</tr>
+	</table>
+	<p>
+	</p>
+	<table width="100%" cellpadding="0" border="0" cellspacing="0">
+		<tr>
+			<td class="Category">
+				Model Elements			</td>
+		</tr>
+		<tr>
+			<td style="height: 5px">
+			</td>
+		</tr>
+	</table>
+	<table width="100%" cellpadding="0" border="0" cellspacing="0">
+		<tr>
+			<td colSpan="4" class="TableHeaderLine">
+			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine1">
+			</td>
+		</tr>
+		<tr class="TableHeader">
+			<td class="TableCellSpaceHolder10Px">
+			</td>
+			<td width="30%">
+<span class="TableHeaderText">名称</span>			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td>
+<span class="TableHeaderText">文档</span>			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine2">
+			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Component.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Component.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="Component_nXSewfiGAqAMqFa4.html">Discovery : 组件</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Component.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Component.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="Component_iRqewfiGAqAMqFcK.html">BSM API : 组件</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Component.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Component.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="Component_CK6ewfiGAqAMqFdc.html">BusinessService : 组件</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Component.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Component.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="Component_CamewfiGAqAMqFew.html">Repository : 组件</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Component.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Component.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="Component_h1JewfiGAqAMqFme.html">HTTPWrapper : 组件</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Component.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Component.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="Component_UndewfiGAqAMqFnw.html">Flash : 组件</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Component.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Component.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="Component_dj9ewfiGAqAMqFod.html">Ext : 组件</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Component.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Component.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="Component_Xwi_wfiGAqAMqFuf.html">DomainService : 组件</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+	</table>
+	<table width="100%" cellpadding="0" border="0" cellspacing="0">
+		<tr>
+			<td class="TableCellSpaceHolder1PxTall">
+			</td>
+		</tr>
+		<tr>
+			<td class="TableFooter">
+			</td>
+		</tr>
+	</table>
+	<div style="height: 20px">
+	</div>
+	<table width="100%" cellpadding="0" border="0" cellspacing="0">
+		<tr>
+			<td class="FooterLine">
+			</td>
+		</tr>
+	</table>
+	<div class="HeaderText">
+		netfocus Documentation	</div>
+</body>
+</html>

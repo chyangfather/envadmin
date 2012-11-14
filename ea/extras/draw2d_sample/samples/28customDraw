@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/Strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de"><head>
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+  <title>FreeGroup Draw2D 0.9.26 :: Triangle</title>
+        <link type="text/css" rel="stylesheet" href="28customDraw_files/demo.css">
+
+    <!-- common, all times required, imports -->        <script src="28customDraw_files/wz_jsgraphics.js"></script>      <script src="28customDraw_files/mootools.js"></script>      <script src="28customDraw_files/moocanvas.js"></script>      <script src="28customDraw_files/draw2d.js"></script>
+
+    <!-- demo specific imports -->
+	<script src="28customDraw_files/Triangle.js"></script>
+	<script src="28customDraw_files/SVGTriangle.js"></script>
+</head>
+<body onselectstart="return false;" style="margin: 0px; padding: 0px;" onkeydown="">
+<div tabindex="0" class="Workflow" id="paintarea" style="position: absolute; left: 0px; top: 0px; width: 3000px; height: 3000px; cursor: default; background-image: url(&quot;grid_10.png&quot;);">
+
+<canvas tabindex="0" style="position: absolute; left: 300px; top: 300px; z-index: 100; width: 80px; height: 50px; cursor: move;" id="ba2ec6e8-6fe9-72d3-ecbd-b716f0cb6dbd" height="50" width="80"></canvas></div>
+<script>
+  var workflow  = new draw2d.Workflow("paintarea");
+
+
+  // Add my triangle figures to the canvas.
+  //
+//  var obj = new draw2d.Triangle(100,100);
+//  workflow.addFigure(obj, 200,150);
+
+
+//  obj = new draw2d.Triangle(50,50);
+//  obj.setBackgroundColor(new draw2d.Color(200,255,0));
+//  workflow.addFigure(obj, 230,350);
+
+
+  obj = new draw2d.SVGTriangle(80,50);
+  workflow.addFigure(obj, 300,300);
+
+
+</script>
+
+
+</body></html>

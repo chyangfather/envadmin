@@ -1,0 +1,471 @@
+<html>
+<head>
+	<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" href="report.css" type="text/css"/>
+	<title>EPC Diagram - epc</title>
+	<script type="text/javascript" src="report.js"></script>
+	<script type="text/javascript" src="link_popup.js"></script>
+	<script type="text/javascript" src="tooltip.js"></script>
+</head>
+<body style="margin-left: 10px; margin-right: 10px; margin-top: 10px; margin-bottom: 10px;" onload="initPage();initDiagram();initGridDiagram();">
+	<div id="spotlight" style="position:absolute; width:100px; height:100px; z-index:2; visibility:hidden">
+		<table id="spotLightTable" onClick="updateCursorPos(event);adjustPopupPositionForSpotLightTable();clearSpotLight()" style="border-style:solid; border-width:3px; border-color:#FF0000" width="100%" cellpadding="0" border="0" cellspacing="0">
+			<tr>
+				<td id="spotLightCell">
+				</td>
+			</tr>
+		</table>
+	</div>
+	<canvas id="spotlight_c" height="100" style="position:absolute; z-index:2; visibility:hidden" width="100">
+	</canvas>
+	<div id="spotLightResourcesTop" style="position:absolute; width:100px; height:100px; z-index:1; visibility:hidden">
+		<table cellpadding="0" border="0" cellspacing="0">
+			<tr>
+				<td>
+					<a href="#top">
+						<img style="border:none" src="../images/icons/BackToTop.gif" alt="Back to top"/></a>
+				</td>
+				<td>
+					<a href="javascript:clearSpotLightFromOpenSpecButton();">
+						<img style="border:none" src="../images/icons/OpenSpecification.gif" alt="Open specification"/></a>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div id="spotLightResourcesRight" style="position:absolute; width:100px; height:100px; z-index:1; visibility:hidden">
+		<table cellpadding="0" border="0" cellspacing="0">
+			<tr>
+				<td>
+					<a href="#top">
+						<img style="border:none" src="../images/icons/BackToTop.gif" alt="Back to top"/></a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="javascript:clearSpotLightFromOpenSpecButton();">
+						<img style="border:none" src="../images/icons/OpenSpecification.gif" alt="Open specification"/></a>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div id="linkPopupMenuLayer" style="position:absolute;z-index:2;visibility:hidden">
+		<table id="linkPopupMenuTable" style="border-style:solid; border-width:1px; border-color:#000000; background:#FFFFFF; width:250px" width="100%" border="0">
+		</table>
+	</div>
+	<div id="referenceIconLayer" style="position:absolute; z-index:1; visibility:hidden; ">
+		<table style="font-size:1;" width="100%" cellpadding="3" border="0" cellspacing="0">
+			<tr>
+				<td>
+					<img src="../images/icons/Ref.gif" style="border:none" onclick="movePopupPositionToReferenceIconPosition();resetPopupForReference();switchPopupShowHideStatus();" />				</td>
+			</tr>
+		</table>
+	</div>
+	<div id="subdiagramIconLayer" style="position:absolute; z-index:1; visibility:hidden">
+		<table width="100%" cellpadding="3" border="0" cellspacing="0">
+			<tr>
+				<td>
+					<img src="../images/icons/Subdiagram.gif" style="border:none" onclick="movePopupPositionToSubdiagramIconPosition();resetPopupForSubdiagram();switchPopupShowHideStatus();" />				</td>
+			</tr>
+		</table>
+	</div>
+	<div id="transitorIconLayer" style="position:absolute; z-index:1; visibility:hidden">
+		<table width="100%" cellpadding="3" border="0" cellspacing="0">
+			<tr>
+				<td>
+					<img src="../images/icons/Transitor.gif" style="border:none" onclick="movePopupPositionToTransitorIconPosition();resetPopupForTransitor();switchPopupShowHideStatus();" />				</td>
+			</tr>
+		</table>
+	</div>
+	<div class="HeaderText">
+		netfocus Documentation	</div>
+	<table width="100%" cellpadding="0" border="0" cellspacing="0">
+		<tr>
+			<td class="HeaderLine1">
+			</td>
+		</tr>
+		<tr>
+			<td class="HeaderLine2">
+			</td>
+		</tr>
+		<tr>
+			<td class="HeaderLine3">
+			</td>
+		</tr>
+	</table>
+	<p>
+		<a target="_content_pane" class="PageParentTitle" href="Package_BKVCwfiGAqAMqEJX.html">
+netfocus : 包</a>
+	</p>
+	<p class="PageTitle">
+		EPC Diagram - epc	</p>
+	<table width="100%" cellpadding="0" border="0" cellspacing="0">
+		<tr>
+			<td>
+<span class="TableContent">跳至︰</span>				<select id="SelectShape" class="TableContent" onChange="scrollWin(this.value);showSpotLight(this.value)">
+<option value="">Please select a model element</option>
+<option value="shape|0.0|202.0|80.0|40.0|EPCEvent_pPNiwfiGAqAMqEZp.html|EPCEvent_pPNiwfiGAqAMqEZp.html|JPNiwfiGAqAMqEZo" id="optionJPNiwfiGAqAMqEZo">变更设备 : Event</option>
+<option value="shape|20.0|362.0|80.0|40.0|EPCEvent_FEBdEfiD_AAAARgq.html|EPCEvent_FEBdEfiD_AAAARgq.html|FEBdEfiD.AAAARgp" id="optionFEBdEfiD.AAAARgp">Timer（5‘） : Event</option>
+<option value="shape|300.0|22.0|80.0|40.0|EPCEvent_ri3jEfiD_AAAARhW.html|EPCEvent_ri3jEfiD_AAAARhW.html|ri3jEfiD.AAAARhV" id="optionri3jEfiD.AAAARhV">事件 : Event</option>
+<option value="shape|280.0|342.0|80.0|40.0|EPCFunction_5vtiwfiGAqAMqEZ1.html|EPCFunction_5vtiwfiGAqAMqEZ1.html|5vtiwfiGAqAMqEZ0" id="option5vtiwfiGAqAMqEZ0">监控 : Function</option>
+<option value="shape|70.0|112.0|80.0|40.0|EPCFunction_D6OywfiGAqAMqEaL.html|EPCFunction_D6OywfiGAqAMqEaL.html|D6OywfiGAqAMqEaK" id="optionD6OywfiGAqAMqEaK">发现 : Function</option>
+<option value="shape|310.0|112.0|80.0|40.0|EPCFunction_IJBywfiGAqAMqEaX.html|EPCFunction_IJBywfiGAqAMqEaX.html|IJBywfiGAqAMqEaW" id="optionIJBywfiGAqAMqEaW">分析 : Function</option>
+<option value="shape|420.0|2.0|80.0|40.0|EPCFunction_QIjywfiGAqAMqEax.html|EPCFunction_QIjywfiGAqAMqEax.html|QIjywfiGAqAMqEaw" id="optionQIjywfiGAqAMqEaw">事件处理 : Function</option>
+<option value="shape|460.0|82.0|80.0|40.0|EPCFunction__H7ywfiGAqAMqEa9.html|EPCFunction__H7ywfiGAqAMqEa9.html|_H7ywfiGAqAMqEa8" id="option_H7ywfiGAqAMqEa8">展现 : Function</option>
+<option value="shape|550.0|82.0|80.0|40.0|EPCFunction_7AoKwfiGAqAMqEbZ.html|EPCFunction_7AoKwfiGAqAMqEbZ.html|7AoKwfiGAqAMqEbY" id="option7AoKwfiGAqAMqEbY">绘图 : Function</option>
+<option value="shape|160.0|342.0|90.0|40.0|EPCFunction_2TV5EfiD_AAAARd3.html|EPCFunction_2TV5EfiD_AAAARd3.html|2TV5EfiD.AAAARd2" id="option2TV5EfiD.AAAARd2">加入/取消监控 : Function</option>
+<option value="shape|380.0|342.0|90.0|40.0|EPCFunction_heFLEfiD_AAAARmb.html|EPCFunction_heFLEfiD_AAAARmb.html|heFLEfiD.AAAARma" id="optionheFLEfiD.AAAARma">厂家/型号管理 : Function</option>
+<option value="shape|270.0|212.0|80.0|40.0|EPCInformationResource_CtDzEfiD_AAAARig.html|EPCInformationResource_CtDzEfiD_AAAARig.html|CtDzEfiD.AAAARif" id="optionCtDzEfiD.AAAARif">指标库 : Information Resource</option>
+<option value="shape|380.0|212.0|80.0|40.0|EPCInformationResource_EtXzEfiD_AAAARjE.html|EPCInformationResource_EtXzEfiD_AAAARjE.html|EtXzEfiD.AAAARjD" id="optionEtXzEfiD.AAAARjD">视图库 : Information Resource</option>
+<option value="shape|160.0|202.0|80.0|40.0|EPCInformationResource_FplrEfiD_AAAARrm.html|EPCInformationResource_FplrEfiD_AAAARrm.html|FplrEfiD.AAAARrl" id="optionFplrEfiD.AAAARrl">资源库 : Information Resource</option>
+<option value="shape|150.0|302.0|330.0|100.0|Package_1_VrEfiD_AAAARru.html|Package_1_VrEfiD_AAAARru.html|1_VrEfiD.AAAARrt" id="option1_VrEfiD.AAAARrt">BSM接口 : Package</option>
+<option value="shape|150.0|162.0|340.0|100.0|Package_JsfrEfiD_AAAARxn.html|Package_JsfrEfiD_AAAARxn.html|xsfrEfiD.AAAARxm" id="optionxsfrEfiD.AAAARxm">Cache : Package</option>
+</select>			</td>
+		</tr>
+	</table>
+	<table width="100%" cellpadding="0" border="0" cellspacing="0">
+		<tr>
+			<td>
+				<img id = "diagram" src = "../images/epc.png" usemap="#diagram_map" class="Image" width="1984.0" height="466.0"/>				<map name = "diagram_map">
+
+<area coords="160.0, 202.0, 240.0, 242.0" coords2="160.0, 202.0, 240.0, 242.0" shape="rect" alt="资源库:Information Resource" id="areaFplrEfiD.AAAARrl" href="EPCInformationResource_FplrEfiD_AAAARrm.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="270.0, 212.0, 350.0, 252.0" coords2="270.0, 212.0, 350.0, 252.0" shape="rect" alt="指标库:Information Resource" id="areaCtDzEfiD.AAAARif" href="EPCInformationResource_CtDzEfiD_AAAARig.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="380.0, 212.0, 460.0, 252.0" coords2="380.0, 212.0, 460.0, 252.0" shape="rect" alt="视图库:Information Resource" id="areaEtXzEfiD.AAAARjD" href="EPCInformationResource_EtXzEfiD_AAAARjE.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="160.0, 342.0, 250.0, 382.0" coords2="160.0, 342.0, 250.0, 382.0" shape="rect" alt="加入/取消监控:Function" id="area2TV5EfiD.AAAARd2" href="EPCFunction_2TV5EfiD_AAAARd3.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="280.0, 342.0, 360.0, 382.0" coords2="280.0, 342.0, 360.0, 382.0" shape="rect" alt="监控:Function" id="area5vtiwfiGAqAMqEZ0" href="EPCFunction_5vtiwfiGAqAMqEZ1.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="380.0, 342.0, 470.0, 382.0" coords2="380.0, 342.0, 470.0, 382.0" shape="rect" alt="厂家/型号管理:Function" id="areaheFLEfiD.AAAARma" href="EPCFunction_heFLEfiD_AAAARmb.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="20.0, 362.0, 100.0, 402.0" coords2="20.0, 362.0, 100.0, 402.0" shape="rect" alt="Timer（5‘）:Event" id="areaFEBdEfiD.AAAARgp" href="EPCEvent_FEBdEfiD_AAAARgq.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="150.0, 162.0, 490.0, 262.0" coords2="150.0, 162.0, 490.0, 262.0" shape="rect" alt="Cache:Package" id="areaxsfrEfiD.AAAARxm" href="Package_JsfrEfiD_AAAARxn.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="150.0, 302.0, 480.0, 402.0" coords2="150.0, 302.0, 480.0, 402.0" shape="rect" alt="BSM接口:Package" id="area1_VrEfiD.AAAARrt" href="Package_1_VrEfiD_AAAARru.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area docContent="<head>
+    
+  </head>
+  <body>
+    <p margin-top=&quot;0&quot;>
+      &#24615;&#33021;&#20107;&#20214;
+    </p>
+    <p margin-top=&quot;0&quot;>
+      &#21487;&#29992;&#24615;&#20107;&#20214;
+    </p>
+  </body>" coords="300.0, 22.0, 380.0, 62.0" coords2="300.0, 22.0, 380.0, 62.0" shape="rect" alt="事件:Event" id="areari3jEfiD.AAAARhV" href="EPCEvent_ri3jEfiD_AAAARhW.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmouseout="hideTooltip()"/>
+<area coords="550.0, 82.0, 630.0, 122.0" coords2="550.0, 82.0, 630.0, 122.0" shape="rect" alt="绘图:Function" id="area7AoKwfiGAqAMqEbY" href="EPCFunction_7AoKwfiGAqAMqEbZ.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="460.0, 82.0, 540.0, 122.0" coords2="460.0, 82.0, 540.0, 122.0" shape="rect" alt="展现:Function" id="area_H7ywfiGAqAMqEa8" href="EPCFunction__H7ywfiGAqAMqEa9.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area docContent="<head>
+    
+  </head>
+  <body>
+    <p margin-top=&quot;0&quot;>
+      &#21578;&#35686;&#25110;&#19981;&#21578;&#35686;
+    </p>
+  </body>" coords="420.0, 2.0, 500.0, 42.0" coords2="420.0, 2.0, 500.0, 42.0" shape="rect" alt="事件处理:Function" id="areaQIjywfiGAqAMqEaw" href="EPCFunction_QIjywfiGAqAMqEax.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmouseout="hideTooltip()"/>
+<area coords="310.0, 112.0, 390.0, 152.0" coords2="310.0, 112.0, 390.0, 152.0" shape="rect" alt="分析:Function" id="areaIJBywfiGAqAMqEaW" href="EPCFunction_IJBywfiGAqAMqEaX.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="70.0, 112.0, 150.0, 152.0" coords2="70.0, 112.0, 150.0, 152.0" shape="rect" alt="发现:Function" id="areaD6OywfiGAqAMqEaK" href="EPCFunction_D6OywfiGAqAMqEaL.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="0.0, 202.0, 80.0, 242.0" coords2="0.0, 202.0, 80.0, 242.0" shape="rect" alt="变更设备:Event" id="areaJPNiwfiGAqAMqEZo" href="EPCEvent_pPNiwfiGAqAMqEZp.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="73.0, 142.0, 73.0, 212.0, 87.0, 212.0, 87.0, 142.0" coords2="73.0, 142.0, 73.0, 212.0, 87.0, 212.0, 87.0, 142.0" shape="poly" alt=":Control Flow" id="areaDbX5EfiD.AAAARfB" href="EPCControlFlow_9bX5EfiD_AAAARfA.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="74.0, 222.0, 63.0, 230.0, 159.0, 353.0, 170.0, 345.0, 74.0, 222.0" coords2="74.0, 222.0, 63.0, 230.0, 159.0, 353.0, 170.0, 345.0, 74.0, 222.0" shape="poly" alt=":Control Flow" id="areaox35EfiD.AAAARfF" href="EPCControlFlow_ox35EfiD_AAAARfE.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="80.0, 355.0, 80.0, 369.0, 289.0, 369.0, 289.0, 355.0" coords2="80.0, 355.0, 80.0, 369.0, 289.0, 369.0, 289.0, 355.0" shape="poly" alt=":Control Flow" id="area9eJdEfiD.AAAARg6" href="EPCControlFlow_9eJdEfiD_AAAARg5.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="343.0, 52.0, 343.0, 121.0, 357.0, 121.0, 357.0, 52.0" coords2="343.0, 52.0, 343.0, 121.0, 357.0, 121.0, 357.0, 52.0" shape="poly" alt=":Control Flow" id="area2LvjEfiD.AAAARhe" href="EPCControlFlow_2LvjEfiD_AAAARhd.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="360.0, 15.0, 360.0, 29.0, 429.0, 29.0, 429.0, 15.0" coords2="360.0, 15.0, 360.0, 29.0, 429.0, 29.0, 429.0, 15.0" shape="poly" alt=":Control Flow" id="areavy4TEfiD.AAAARh4" href="EPCControlFlow_vy4TEfiD_AAAARh3.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="283.0, 242.0, 283.0, 351.0, 297.0, 351.0, 297.0, 242.0" coords2="283.0, 242.0, 283.0, 351.0, 297.0, 351.0, 297.0, 242.0" shape="poly" alt=":Information Flow" id="areay.zzEfiD.AAAARio" href="EPCInformationFlow_y_zzEfiD_AAAARin.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="343.0, 142.0, 343.0, 222.0, 357.0, 222.0, 357.0, 142.0" coords2="343.0, 142.0, 343.0, 222.0, 357.0, 222.0, 357.0, 142.0" shape="poly" alt=":Information Flow" id="areaXMLzEfiD.AAAARis" href="EPCInformationFlow_nMLzEfiD_AAAARir.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+</map>			</td>
+		</tr>
+	</table>
+	<p>
+	</p>
+	<table width="100%" cellpadding="0" border="0" cellspacing="0">
+		<tr>
+			<td class="Category">
+				Model Elements			</td>
+		</tr>
+		<tr>
+			<td style="height: 5px">
+			</td>
+		</tr>
+	</table>
+	<table width="100%" cellpadding="0" border="0" cellspacing="0">
+		<tr>
+			<td colSpan="4" class="TableHeaderLine">
+			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine1">
+			</td>
+		</tr>
+		<tr class="TableHeader">
+			<td class="TableCellSpaceHolder10Px">
+			</td>
+			<td width="30%">
+<span class="TableHeaderText">名称</span>			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td>
+<span class="TableHeaderText">文档</span>			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine2">
+			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/EPCEvent.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/EPCEvent.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="EPCEvent_pPNiwfiGAqAMqEZp.html">变更设备 : {1} 事件</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/EPCEvent.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/EPCEvent.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="EPCEvent_FEBdEfiD_AAAARgq.html">Timer（5‘） : {1} 事件</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/EPCEvent.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/EPCEvent.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="EPCEvent_ri3jEfiD_AAAARhW.html">事件 : {1} 事件</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"><head>
+    
+  </head>
+  <body>
+    <p margin-top="0">
+      &#24615;&#33021;&#20107;&#20214;
+    </p>
+    <p margin-top="0">
+      &#21487;&#29992;&#24615;&#20107;&#20214;
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/EPCFunction.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/EPCFunction.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="EPCFunction_5vtiwfiGAqAMqEZ1.html">监控 : 功能</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/EPCFunction.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/EPCFunction.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="EPCFunction_D6OywfiGAqAMqEaL.html">发现 : 功能</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/EPCFunction.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/EPCFunction.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="EPCFunction_IJBywfiGAqAMqEaX.html">分析 : 功能</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/EPCFunction.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/EPCFunction.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="EPCFunction_QIjywfiGAqAMqEax.html">事件处理 : 功能</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"><head>
+    
+  </head>
+  <body>
+    <p margin-top="0">
+      &#21578;&#35686;&#25110;&#19981;&#21578;&#35686;
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/EPCFunction.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/EPCFunction.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="EPCFunction__H7ywfiGAqAMqEa9.html">展现 : 功能</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/EPCFunction.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/EPCFunction.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="EPCFunction_7AoKwfiGAqAMqEbZ.html">绘图 : 功能</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/EPCFunction.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/EPCFunction.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="EPCFunction_2TV5EfiD_AAAARd3.html">加入/取消监控 : 功能</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/EPCFunction.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/EPCFunction.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="EPCFunction_heFLEfiD_AAAARmb.html">厂家/型号管理 : 功能</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/EPCInformationResource.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/EPCInformationResource.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="EPCInformationResource_CtDzEfiD_AAAARig.html">指标库 : 资料来源</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/EPCInformationResource.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/EPCInformationResource.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="EPCInformationResource_EtXzEfiD_AAAARjE.html">视图库 : 资料来源</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/EPCInformationResource.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/EPCInformationResource.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="EPCInformationResource_FplrEfiD_AAAARrm.html">资源库 : 资料来源</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Package.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Package.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="Package_1_VrEfiD_AAAARru.html">BSM接口 : 包</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Package.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Package.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="Package_JsfrEfiD_AAAARxn.html">Cache : 包</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+	</table>
+	<table width="100%" cellpadding="0" border="0" cellspacing="0">
+		<tr>
+			<td class="TableCellSpaceHolder1PxTall">
+			</td>
+		</tr>
+		<tr>
+			<td class="TableFooter">
+			</td>
+		</tr>
+	</table>
+	<div style="height: 20px">
+	</div>
+	<table width="100%" cellpadding="0" border="0" cellspacing="0">
+		<tr>
+			<td class="FooterLine">
+			</td>
+		</tr>
+	</table>
+	<div class="HeaderText">
+		netfocus Documentation	</div>
+</body>
+</html>

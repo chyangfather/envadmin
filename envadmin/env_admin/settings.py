@@ -65,7 +65,7 @@ STATIC_ROOT = ''
 STATIC_URL = '/static/'
 
 
-HERE = os.path.dirname(__file__)
+HERE = os.getcwd()
 
 
 # Additional locations of static files
@@ -74,8 +74,8 @@ STATICFILES_DIRS = (
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
     
-    #HERE+STATIC_URL,
-    '/Users/holbrook/Documents/workspace/envadmin/envadmin/static/',
+    HERE+STATIC_URL,
+    #'/Users/holbrook/Documents/workspace/envadmin/envadmin/static/',
 )
 
 # List of finder classes that know how to find static files in
@@ -124,6 +124,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
+    'mptt',
     'devsupport',
     'subject',
     'resources',

@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/Strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de"><head>
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+  <title>Connection Example for FreeGroup Draw2D 0.9.26</title>
+        <link type="text/css" rel="stylesheet" href="07ctxmenuOnConn_files/demo.css">
+
+    <!-- common, all times required, imports -->        <script src="07ctxmenuOnConn_files/wz_jsgraphics.js"></script>      <script src="07ctxmenuOnConn_files/mootools.js"></script>      <script src="07ctxmenuOnConn_files/moocanvas.js"></script>      <script src="07ctxmenuOnConn_files/draw2d.js"></script>
+
+        <!-- example specific imports -->
+	<script src="07ctxmenuOnConn_files/Start.js"></script>
+	<script src="07ctxmenuOnConn_files/End.js"></script>
+	<script src="07ctxmenuOnConn_files/ContextmenuConnection.js"></script>
+	<script src="07ctxmenuOnConn_files/MyInputPort.js"></script>
+	<script src="07ctxmenuOnConn_files/MyOutputPort.js"></script>
+</head>
+<body onselectstart="return false;" style="margin: 0px; padding: 0px;" onkeydown="">
+<div tabindex="0" class="Workflow" id="paintarea" style="position: absolute; left: 0px; top: 0px; width: 3000px; height: 3000px; cursor: default; background-image: url(&quot;grid_10.png&quot;);">
+    <!-- The information help text -->
+    <div class="stickyNote">
+    <center><b>Draw2D 0.9.26 - A simple diagram drawing demo<br>
+    by Andreas Herz (a.herz @ freegroup.de)
+    <br>
+    </b>
+    <br>
+    <div style="color:red;font-size:9pt">Focus of this example: How to implement/use my own type of connection with context menu.</div>
+    </center>
+    <br>
+    <center>See more on <a href="http://www.draw2d.org/">FreeGroup Draw2D 0.9.26</a></center>
+    </div>
+
+<div tabindex="0" class=" unselectable" style="position: absolute; left: 100px; top: 200px; height: 70px; width: 300px; margin: 0px; padding: 0px; outline: medium none; z-index: 100; color: rgb(0, 0, 0); background-color: rgb(241, 241, 121); font-size: 10pt; cursor: move;" id="5fd6a58a-8716-1de8-4095-459c40917f69">NOTE: Drag&amp;Drop the red port to the blue port to create a connection with context menu.</div><div tabindex="0" class=" unselectable" style="position: absolute; left: 100px; top: 300px; height: 70px; width: 300px; margin: 0px; padding: 0px; outline: medium none; z-index: 100; color: rgb(0, 0, 0); background-color: rgb(241, 241, 121); font-size: 10pt; cursor: move;" id="d88d9ec2-7660-fd18-d399-fb88a9d0aaa5">NOTE: Inspect MyOutputPort.js, MyInputPort.js and ContextmenuConntextion.js to find the 'secret'.</div><div tabindex="0" style="position: absolute; left: 450px; top: 300px; height: 50px; width: 50px; margin: 0px; padding: 0px; outline: medium none; z-index: 100; border: 0px none; font-size: 1px; background-image: url(&quot;Start.png&quot;); cursor: move;" id="60dae6a2-0fb4-fbe1-15f5-0a6d1534d29b"><div tabindex="0" style="position: absolute; left: 46px; top: 21px; height: 6px; width: 6px; margin: 0px; padding: 0px; outline: medium none; z-index: 5000; border: 10px none; font-size: 1px; line-height: 1px; cursor: move;" id="5f1eb43a-55f5-365b-1b6b-81694726872b">&nbsp;<div style="position: absolute; left: 0px; top: 0px; height: 8px; width: 8px; margin: 0px; padding: 0px; outline: medium none; z-index: 100; border: 0px none; font-size: 1px; background-color: transparent; cursor: move;" id="61f287b7-5909-c92a-6068-ac726183d2ca"><div style="font-size: 0pt;"><div style="position:absolute;left:2px;top:0px;width:3px;height:1px;clip:rect(0,3px,1px,0);background-color:rgb(245,115,115);overflow:hidden;"></div><div style="position:absolute;left:2px;top:6px;width:3px;height:1px;clip:rect(0,3px,1px,0);background-color:rgb(245,115,115);overflow:hidden;"></div><div style="position:absolute;left:1px;top:1px;width:5px;height:1px;clip:rect(0,5px,1px,0);background-color:rgb(245,115,115);overflow:hidden;"></div><div style="position:absolute;left:1px;top:5px;width:5px;height:1px;clip:rect(0,5px,1px,0);background-color:rgb(245,115,115);overflow:hidden;"></div><div style="position:absolute;left:0px;top:2px;width:7px;height:3px;clip:rect(0,7px,3px,0);background-color:rgb(245,115,115);overflow:hidden;"></div><div style="position:absolute;left:3px;top:0px;width:2px;height:1px;clip:rect(0,2px,1px,0);background-color:rgb(90,150,90);overflow:hidden;"></div><div style="position:absolute;left:3px;top:7px;width:2px;height:1px;clip:rect(0,2px,1px,0);background-color:rgb(90,150,90);overflow:hidden;"></div><div style="position:absolute;left:5px;top:1px;width:1px;height:1px;clip:rect(0,1px,1px,0);background-color:rgb(90,150,90);overflow:hidden;"></div><div style="position:absolute;left:5px;top:6px;width:1px;height:1px;clip:rect(0,1px,1px,0);background-color:rgb(90,150,90);overflow:hidden;"></div><div style="position:absolute;left:2px;top:1px;width:1px;height:1px;clip:rect(0,1px,1px,0);background-color:rgb(90,150,90);overflow:hidden;"></div><div style="position:absolute;left:2px;top:6px;width:1px;height:1px;clip:rect(0,1px,1px,0);background-color:rgb(90,150,90);overflow:hidden;"></div><div style="position:absolute;left:6px;top:2px;width:1px;height:1px;clip:rect(0,1px,1px,0);background-color:rgb(90,150,90);overflow:hidden;"></div><div style="position:absolute;left:6px;top:5px;width:1px;height:1px;clip:rect(0,1px,1px,0);background-color:rgb(90,150,90);overflow:hidden;"></div><div style="position:absolute;left:1px;top:2px;width:1px;height:1px;clip:rect(0,1px,1px,0);background-color:rgb(90,150,90);overflow:hidden;"></div><div style="position:absolute;left:1px;top:5px;width:1px;height:1px;clip:rect(0,1px,1px,0);background-color:rgb(90,150,90);overflow:hidden;"></div><div style="position:absolute;left:0px;top:3px;width:1px;height:2px;clip:rect(0,1px,2px,0);background-color:rgb(90,150,90);overflow:hidden;"></div><div style="position:absolute;left:7px;top:3px;width:1px;height:2px;clip:rect(0,1px,2px,0);background-color:rgb(90,150,90);overflow:hidden;"></div></div></div></div></div><div tabindex="0" style="position: absolute; left: 600px; top: 350px; height: 50px; width: 50px; margin: 0px; padding: 0px; outline: medium none; z-index: 100; border: 0px none; font-size: 1px; background-image: url(&quot;End.png&quot;); cursor: move;" id="1343bbc4-4840-96fa-a384-18010e48d0d1"><div tabindex="0" style="position: absolute; left: -4px; top: 21px; height: 6px; width: 6px; margin: 0px; padding: 0px; outline: medium none; z-index: 5000; border: 10px none; font-size: 1px; line-height: 1px; cursor: move;" id="bf5d58e7-29bc-4e63-30aa-d555295f7090">&nbsp;<div style="position: absolute; left: 0px; top: 0px; height: 8px; width: 8px; margin: 0px; padding: 0px; outline: medium none; z-index: 100; border: 0px none; font-size: 1px; background-color: transparent; cursor: move;" id="2c8155cd-255e-3b04-5b61-27abd9b713d2"><div style="font-size: 0pt;"><div style="position:absolute;left:2px;top:0px;width:3px;height:1px;clip:rect(0,3px,1px,0);background-color:rgb(115,115,245);overflow:hidden;"></div><div style="position:absolute;left:2px;top:6px;width:3px;height:1px;clip:rect(0,3px,1px,0);background-color:rgb(115,115,245);overflow:hidden;"></div><div style="position:absolute;left:1px;top:1px;width:5px;height:1px;clip:rect(0,5px,1px,0);background-color:rgb(115,115,245);overflow:hidden;"></div><div style="position:absolute;left:1px;top:5px;width:5px;height:1px;clip:rect(0,5px,1px,0);background-color:rgb(115,115,245);overflow:hidden;"></div><div style="position:absolute;left:0px;top:2px;width:7px;height:3px;clip:rect(0,7px,3px,0);background-color:rgb(115,115,245);overflow:hidden;"></div><div style="position:absolute;left:3px;top:0px;width:2px;height:1px;clip:rect(0,2px,1px,0);background-color:rgb(90,150,90);overflow:hidden;"></div><div style="position:absolute;left:3px;top:7px;width:2px;height:1px;clip:rect(0,2px,1px,0);background-color:rgb(90,150,90);overflow:hidden;"></div><div style="position:absolute;left:5px;top:1px;width:1px;height:1px;clip:rect(0,1px,1px,0);background-color:rgb(90,150,90);overflow:hidden;"></div><div style="position:absolute;left:5px;top:6px;width:1px;height:1px;clip:rect(0,1px,1px,0);background-color:rgb(90,150,90);overflow:hidden;"></div><div style="position:absolute;left:2px;top:1px;width:1px;height:1px;clip:rect(0,1px,1px,0);background-color:rgb(90,150,90);overflow:hidden;"></div><div style="position:absolute;left:2px;top:6px;width:1px;height:1px;clip:rect(0,1px,1px,0);background-color:rgb(90,150,90);overflow:hidden;"></div><div style="position:absolute;left:6px;top:2px;width:1px;height:1px;clip:rect(0,1px,1px,0);background-color:rgb(90,150,90);overflow:hidden;"></div><div style="position:absolute;left:6px;top:5px;width:1px;height:1px;clip:rect(0,1px,1px,0);background-color:rgb(90,150,90);overflow:hidden;"></div><div style="position:absolute;left:1px;top:2px;width:1px;height:1px;clip:rect(0,1px,1px,0);background-color:rgb(90,150,90);overflow:hidden;"></div><div style="position:absolute;left:1px;top:5px;width:1px;height:1px;clip:rect(0,1px,1px,0);background-color:rgb(90,150,90);overflow:hidden;"></div><div style="position:absolute;left:0px;top:3px;width:1px;height:2px;clip:rect(0,1px,2px,0);background-color:rgb(90,150,90);overflow:hidden;"></div><div style="position:absolute;left:7px;top:3px;width:1px;height:2px;clip:rect(0,1px,2px,0);background-color:rgb(90,150,90);overflow:hidden;"></div></div></div></div></div></div>
+<script>
+  // Create an interactive Canvas
+  //
+  var workflow  = new draw2d.Workflow("paintarea");
+
+  // Add an simple annotation to the canvas
+  //
+  var annotation = new draw2d.Annotation("NOTE: Drag&Drop the red port to the blue port to create a connection with context menu.");
+  annotation.setDimension(300,70);
+  workflow.addFigure(annotation,100,200);
+
+  var annotation = new draw2d.Annotation("NOTE: Inspect MyOutputPort.js, MyInputPort.js and ContextmenuConntextion.js to find the 'secret'.");
+  annotation.setDimension(300,70);
+  workflow.addFigure(annotation,100,300);
+
+
+  // Add the start node to the canvas
+  //
+  var startObj = new draw2d.Start();
+  workflow.addFigure(startObj, 450,300);
+
+  // Add the end node to the canvas
+  //
+  var endObj   = new draw2d.End();
+  workflow.addFigure(endObj,600,350);
+
+
+</script>
+
+
+</body></html>
