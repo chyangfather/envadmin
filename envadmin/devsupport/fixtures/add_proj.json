@@ -1,0 +1,135 @@
+[
+  {
+    "model":"devsupport.Project",
+    "pk":1,
+    "fields":{ 
+        "name": "统一账户系统",
+        "plan_date": "2012-12-21",
+        "tag":31,
+        "state": 1
+    }
+  },
+
+  {
+    "model":"devsupport.Project",
+    "pk":2,
+    "fields":{ 
+        "name": "融资融券系统",
+        "plan_date": "2012-12-21",
+        "tag":31,
+        "state": 2
+    }
+  },
+
+  {
+    "model":"devsupport.Project",
+    "pk":3,
+    "fields":{ 
+        "name": "集中交易系统",
+        "plan_date": "2012-12-21",
+        "tag":31,
+        "state": 3
+    }
+  },
+
+  {
+    "model":"devsupport.Project",
+    "pk":4,
+    "fields":{ 
+        "name": "TA估值等其他交易相关系统",
+        "plan_date": "2012-12-21",
+        "tag":31,
+        "state": 4
+    }
+  },
+
+  {
+    "model":"devsupport.Project",
+    "pk":5,
+    "fields":{ 
+        "name": "投顾系统",
+        "plan_date": "2012-12-21",
+        "tag":32,
+        "state": 1
+    }
+  },
+
+  {
+    "model":"devsupport.Project",
+    "pk":6,
+    "fields":{ 
+        "name": "营销服务系统",
+        "plan_date": "2012-12-21",
+        "tag":32,
+        "state": 2
+    }
+   },
+
+    {
+    "model":"devsupport.Project",
+    "pk":7,
+    "fields":{ 
+        "name": "金融资讯数据中心",
+        "plan_date": "2012-12-21",
+        "tag":32,
+        "state": 3
+    }
+  },
+
+  {
+    "model":"devsupport.Project",
+    "pk":8,
+    "fields":{ 
+        "name": " livebos平台",
+        "plan_date": "2012-12-21",
+        "tag":34,
+        "state": 1
+    }
+  },
+
+  {
+    "model":"devsupport.Project",
+    "pk":9,
+    "fields":{ 
+        "name": "金融资讯数据中心",
+        "plan_date": "2012-12-21",
+        "tag":32,
+        "state": 2
+    }
+  },
+  
+  {
+    "model":"devsupport.Project",
+    "pk":10,
+    "fields":{ 
+        "name": "合规系统",
+        "plan_date": "2012-12-21",
+
+        "state": 1
+    }
+  },
+  
+  {
+    "model":"devsupport.Project",
+    "pk":11,
+    "fields":{ 
+        "name": "携宁知识管理平台",
+        "plan_date": "2012-12-21",
+
+        "state": 2
+    }
+  },
+  
+  {
+    "model":"devsupport.Project",
+    "pk":12,
+    "fields":{ 
+        "name": "研究所知识管理平台",
+        "plan_date": "2012-12-21",
+        "tag":32,
+        "state": 3
+    }
+  }
+  
+
+]

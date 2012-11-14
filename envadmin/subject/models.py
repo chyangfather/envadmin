@@ -18,3 +18,4 @@ class Person(Subject):
 
 class Organization(models.Model):
 	name = models.CharField(max_length=255)
+	full_name = models.CharField(max_length=255,null=True)

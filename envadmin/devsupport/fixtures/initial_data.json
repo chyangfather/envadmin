@@ -1,0 +1,125 @@
+[
+  {
+     "model":"devsupport.Dictionary",
+     "pk":1,
+     "fields":{ 
+       "dict_key": "PROJ_STATE",
+        "dict_value": "进行中"          
+      }
+  },
+
+  {
+      "model":"devsupport.Dictionary",
+      "pk":2,
+      "fields":{ 
+          "dict_key": "PROJ_STATE",
+          "dict_value": "延期中"
+      }
+  },
+
+  {
+      "model":"devsupport.Dictionary",
+      "pk":3,
+      "fields":{ 
+          "dict_key": "PROJ_STATE",
+          "dict_value": "已完成"
+      }
+  },
+
+  {
+      "model":"devsupport.Dictionary",
+      "pk":4,
+      "fields":{ 
+          "dict_key": "PROJ_STATE",
+          "dict_value": "已取消"
+      }
+  },
+
+
+  {
+      "model":"devsupport.Dictionary",
+      "pk":11,
+      "fields":{ 
+          "dict_key": "PROJ_ROLE",
+          "dict_value": "负责人"
+      }
+  },
+
+  {
+      "model":"devsupport.Dictionary",
+      "pk":12,
+      "fields":{ 
+          "dict_key": "PROJ_ROLE",
+          "dict_value": "开发人员"
+      }
+  },
+
+
+  {
+      "model":"devsupport.Dictionary",
+      "pk":21,
+      "fields":{ 
+          "dict_key": "SUBDOMAIN",
+          "dict_value": "开发环境"
+      }
+  },
+
+  {
+      "model":"devsupport.Dictionary",
+      "pk":22,
+      "fields":{ 
+          "dict_key": "SUBDOMAIN",
+          "dict_value": "UAT环境"
+      }
+  },
+
+  {
+      "model":"devsupport.Dictionary",
+      "pk":23,
+      "fields":{ 
+          "dict_key": "SUBDOMAIN",
+          "dict_value": "生产环境"
+      }
+  },
+
+
+  {
+      "model":"devsupport.Dictionary",
+      "pk":31,
+      "fields":{ 
+          "dict_key": "PROJ_TAG",
+          "dict_value": "交易支持"
+      }
+  },
+
+  {
+      "model":"devsupport.Dictionary",
+      "pk":32,
+      "fields":{ 
+          "dict_key": "PROJ_TAG",
+          "dict_value": "渠道支持"
+      }
+  },
+
+  {
+      "model":"devsupport.Dictionary",
+      "pk":33,
+      "fields":{ 
+          "dict_key": "PROJ_TAG",
+          "dict_value": "管理支持"
+      }
+  },
+
+  {
+      "model":"devsupport.Dictionary",
+      "pk":34,
+      "fields":{ 
+          "dict_key": "PROJ_TAG",
+          "dict_value": "基础设施"
+      }
+  }
+
+
+]   
+
+  	

@@ -1,0 +1,51 @@
+[
+	{
+	 "model":"devsupport.JoinProject",
+	 "pk":1,
+	 "fields":{ 
+	   "person":1,
+	   "project":1,
+	   "role":11
+	  }
+	},
+
+	{
+	 "model":"devsupport.JoinProject",
+	 "pk":2,
+	 "fields":{ 
+	   "person":2,
+	   "project":1,
+	   "role":11
+	  }
+	},
+
+	{
+	 "model":"devsupport.JoinProject",
+	 "pk":3,
+	 "fields":{ 
+	   "person":3,
+	   "project":1,
+	   "role":11
+	  }
+	},
+
+	{
+	 "model":"devsupport.JoinProject",
+	 "pk":4,
+	 "fields":{ 
+	   "person":4,
+	   "project":1,
+	   "role":11
+	  }
+	},
+
+	{
+	 "model":"devsupport.JoinProject",
+	 "pk":5,
+	 "fields":{ 
+	   "person":11,
+	   "project":1,
+	   "role":12
+	  }
+	}
+]
