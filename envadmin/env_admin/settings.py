@@ -111,7 +111,7 @@ ROOT_URLCONF = 'env_admin.urls'
 # Python dotted path to the WSGI application used by Django's runserver.
 WSGI_APPLICATION = 'env_admin.wsgi.application'
 
-TEMPLATE_DIRS = ('/Volumes/DATA/Documents/workspace/env_admin/templates',)
+TEMPLATE_DIRS = ('/Volumes/DATA/Documents/workspace/envadmin/envadmin/templates',)
 
 INSTALLED_APPS = (
     'django.contrib.auth',

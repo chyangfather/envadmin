@@ -12,6 +12,8 @@ urlpatterns = patterns('',
     # url(r'^env_admin/', include('env_admin.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
+    url(r'^$', index),
+    url(r'^projects/$', projects),
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
     # Uncomment the next line to enable the admin:

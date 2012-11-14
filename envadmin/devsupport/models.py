@@ -1,22 +1,28 @@
 # coding=utf-8
 from django.db import models
+from subject.models import Subject,Person
 #import subject
-# Create your models here.
-class Project(models.Model):
-	name = models.CharField(max_length=255)
-	plan_end = models.DateField(blank=True)
-	is_finished = models.BooleanField()
+
+class Dictionary(models.Model):
+	dict_key = models.CharField(max_length=255)
+	dict_value = models.CharField(max_length=255)
+		
+class Project(Subject):
+	plan_date = models.DateField()
+	finished_date = models.DateField(null=True,blank=True)
+	tag = models.ForeignKey('Dictionary',related_name='tag',null=True)
+	state = models.ForeignKey('Dictionary',related_name='state')
+	members = models.ManyToManyField(Person, through='JoinProject')
+	def managers(self):
+		return JoinProject.objects.filter(project=self,role=12)
+		
+
 	
 
 class JoinProject(models.Model):
-	ROLE_CHOICES = (  
-        (u'DEV', u'开发人员'),  
-        (u'USR', u'用户'),
-        (u'MGR', u'管理员'),  
-    )   
 	person = models.ForeignKey('subject.Person')
 	project = models.ForeignKey('Project')
-	role = models.CharField(max_length=3, choices=ROLE_CHOICES)
+	role = models.ForeignKey('Dictionary')
 	
 class ResManager(models.Model):
 	pass

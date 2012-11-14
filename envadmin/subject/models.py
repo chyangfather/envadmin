@@ -9,10 +9,12 @@ class Subject(models.Model):
 
 
 
-class Person(Subject):
+class Person(Subject):	
 	mail = models.EmailField()
 
-class Project(Subject):
-	pass
+	isInner = models.BooleanField()
 
+	company = models.ForeignKey("Organization",null=True)
 
+class Organization(models.Model):
+	name = models.CharField(max_length=255)
