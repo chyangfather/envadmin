@@ -24,5 +24,3 @@ class JoinProject(models.Model):
 	project = models.ForeignKey('Project')
 	role = models.ForeignKey('Dictionary')
 	
-class ResManager(models.Model):
-	pass
