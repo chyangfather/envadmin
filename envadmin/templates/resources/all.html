@@ -1,0 +1,56 @@
+{% extends "list.html" %}
+{% block css %}
+<link rel="stylesheet" href="/static/jquery.treeview/jquery.treeview.css" />
+{% endblock %}
+{% block sidebar %}
+	{% include "parts/sidebar_resources.html" %}
+{% endblock %}
+
+{% block main %}
+
+
+<table class="table table-hover">
+          <caption></caption>
+<thead>
+<tr>
+<th>#</th>
+<th>项目名称</th>
+<th>类别</th>
+<th>计划结束日期</th>
+<th>负责人</th>
+<th>成员</th>
+<th>状态</th>
+</tr>
+</thead>
+<tbody>
+{% for p in project_list %}
+<tr>
+<td>1</td>
+<td>{{p.name}}</td>
+<td>{{p.tag.dict_value}}</td>
+<td>{{p.plan_date}}</td>
+<td>
+{% for m in p.managers %}	
+{{m.person.name}}&nbsp;
+{% endfor %}
+</td>
+<td>
+{% for m in p.members.all %}
+{{m.name}}&nbsp;
+{% endfor %}
+</td>
+<td>{{p.state.dict_value}}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+{% endblock %}
+
+
+{% block js %}
+<script src="/static/jquery.treeview/jquery.treeview.js" type="text/javascript"></script>
+{% endblock %}
+
+{% block onreadyscript %}
+$("#restype").treeview();
+{% endblock %}

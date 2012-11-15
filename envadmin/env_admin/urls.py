@@ -4,6 +4,8 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
 from devsupport.views import *
+from subject.views import *
+from resources.views import *
 admin.autodiscover()
 
 urlpatterns = patterns('',
@@ -14,6 +16,8 @@ urlpatterns = patterns('',
     # Uncomment the admin/doc line below to enable admin documentation:
     url(r'^$', index),
     url(r'^projects/$', projects),
+    url(r'^partners/$', partners),
+    url(r'^resources/$', resources),
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
     # Uncomment the next line to enable the admin:

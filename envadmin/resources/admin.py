@@ -4,5 +4,6 @@ from models import *
 class ResourceTypeAdmin(admin.ModelAdmin):
 	pass
 
-admin.site.register(Resource, MPTTModelAdmin)
-admin.site.register(ResourceType, admin.ModelAdmin)
+admin.site.register(ResourceType, MPTTModelAdmin)
+admin.site.register(AttributeDef, admin.ModelAdmin)
+admin.site.register(Resource, admin.ModelAdmin)

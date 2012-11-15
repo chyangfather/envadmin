@@ -5,16 +5,31 @@ from mptt.models import MPTTModel
 
 # Create your models here.
 
-class ResourceType(models.Model):
+class ResourceType(MPTTModel):
 	name = models.CharField(max_length=100)
-	
-class  ResourceAssociationType(MPTTModel):
-	name = models.CharField(max_length=100)
-	
+	parent = models.ForeignKey("self", blank=True, null=True, related_name="children")
+
+	host = models.ForeignKey("self", blank=True, null=True, related_name="parts")
+
+	def __unicode__(self):
+		return self.name
+
 class AttributeDef(models.Model):
 	# acquire attr请求属性;  manage attr管理属性，; host attr宿主属性，用于创建密码
+	SCOPE_ACQUIRE = 'AQ'
+	SCOPE_MANAGEMENT = 'MG'
+	SCOPE_CREATE = 'CR'
+	SCOPE_CHOICES = (
+		(SCOPE_ACQUIRE, '请求'),
+		(SCOPE_MANAGEMENT,'管理'),
+		(SCOPE_CREATE,'创建'),
+	)
 	name = models.CharField(max_length=100)
-	res_type = models.ForeignKey('ResourceType')
+	ref = models.ForeignKey('ResourceType',blank=True, null=True)
+	res_type = models.ForeignKey('ResourceType',related_name='attributes')
+	scope = models.CharField(max_length=2, choices=SCOPE_CHOICES, default=SCOPE_ACQUIRE)
+	def __unicode__(self):
+		return self.name
 
 class Resource(MPTTModel):
 	name = models.CharField(max_length=100)	
