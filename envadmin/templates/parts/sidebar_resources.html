@@ -3,7 +3,7 @@
 {% recursetree nodes %}
 <li>
     {% if node.is_leaf_node %}
-    <span>{{ node.name }}</span>
+    <span><a href='#'>{{ node.name }}</a></span>
     {% else %}
         {{ node.name }}
         <ul>

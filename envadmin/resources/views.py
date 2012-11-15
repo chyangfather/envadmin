@@ -6,4 +6,4 @@ from models import *
 def resources(request):
 	#return HttpResponse("hello, index!")
 	nodes = ResourceType.tree.all()
-	return render_to_response('resources/all.html', {'nodes': nodes, "project_list":Resource.objects.all()})
+	return render_to_response('resources.html', {'nodes': nodes, "project_list":Resource.objects.all()})
