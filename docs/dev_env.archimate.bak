@@ -73,9 +73,7 @@
   </folder>
   <folder name="Motivation" id="b5a77a8f" type="motivation"/>
   <folder name="Implementation &amp; Migration" id="b099e746" type="implementation_migration"/>
-  <folder name="Connectors" id="23669666" type="connectors">
-    <element xsi:type="archimate:Junction" id="cc88f99a" name="Junction"/>
-  </folder>
+  <folder name="Connectors" id="23669666" type="connectors"/>
   <folder name="Relations" id="0deeb582" type="relations">
     <element xsi:type="archimate:SpecialisationRelationship" id="ebb1caf9" source="91f117bb" target="b8df22a2"/>
     <element xsi:type="archimate:AssignmentRelationship" id="52428ae6" source="a499149e" target="bc709196"/>
@@ -91,7 +89,6 @@
       <documentation>bb
 </documentation>
     </element>
-    <element xsi:type="archimate:AssociationRelationship" id="b7c381e9" source="02807203" target="d727673f"/>
   </folder>
   <folder name="Views" id="ee276f8d" type="diagrams">
     <folder name="1.分析模型" id="8dc1b181">
@@ -108,12 +105,12 @@
     <folder name="2.实现模型" id="5a9a1ae0">
       <folder name="model" id="43152665">
         <element xsi:type="archimate:ArchimateDiagramModel" id="4b108401" name="resource">
-          <child xsi:type="archimate:DiagramObject" id="0fc9cef9" textAlignment="2" targetConnections="7ec33765" archimateElement="d727673f">
+          <child xsi:type="archimate:DiagramObject" id="0fc9cef9" textAlignment="2" targetConnections="0693e3f2" archimateElement="d727673f">
             <bounds x="228" y="204" width="109" height="55"/>
           </child>
           <child xsi:type="archimate:DiagramObject" id="16824b38" textAlignment="2" archimateElement="02807203">
             <bounds x="228" y="312" width="109" height="55"/>
-            <sourceConnection xsi:type="archimate:Connection" id="7ec33765" source="16824b38" target="0fc9cef9" relationship="b7c381e9"/>
+            <sourceConnection xsi:type="archimate:Connection" id="0693e3f2" source="16824b38" target="0fc9cef9" relationship="d8009ddb"/>
           </child>
         </element>
       </folder>
