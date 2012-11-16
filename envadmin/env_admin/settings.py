@@ -128,6 +128,7 @@ INSTALLED_APPS = (
     'devsupport',
     'subject',
     'resources',
+    'djangorestframework',
 )
 
 # A sample logging configuration. The only tangible logging

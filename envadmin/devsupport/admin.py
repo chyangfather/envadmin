@@ -6,3 +6,4 @@ class DictionaryAdmin(admin.ModelAdmin):
 
 admin.site.register(Dictionary, DictionaryAdmin)
 admin.site.register(Project)
+admin.site.register(Acquire)

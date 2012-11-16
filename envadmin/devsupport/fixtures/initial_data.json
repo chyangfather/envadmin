@@ -1,42 +1,5 @@
 [
   {
-     "model":"devsupport.Dictionary",
-     "pk":1,
-     "fields":{ 
-       "dict_key": "PROJ_STATE",
-        "dict_value": "进行中"          
-      }
-  },
-
-  {
-      "model":"devsupport.Dictionary",
-      "pk":2,
-      "fields":{ 
-          "dict_key": "PROJ_STATE",
-          "dict_value": "延期中"
-      }
-  },
-
-  {
-      "model":"devsupport.Dictionary",
-      "pk":3,
-      "fields":{ 
-          "dict_key": "PROJ_STATE",
-          "dict_value": "已完成"
-      }
-  },
-
-  {
-      "model":"devsupport.Dictionary",
-      "pk":4,
-      "fields":{ 
-          "dict_key": "PROJ_STATE",
-          "dict_value": "已取消"
-      }
-  },
-
-
-  {
       "model":"devsupport.Dictionary",
       "pk":11,
       "fields":{ 
