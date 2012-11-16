@@ -8,7 +8,7 @@ class Subject(models.Model):
 	#	abstract = True
 	pass
 
-class Person(Subject):	
+class Person(Subject):	                          
 	name = models.CharField(max_length=255)
 	mail = models.EmailField()
 
