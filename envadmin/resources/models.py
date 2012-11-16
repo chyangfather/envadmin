@@ -10,7 +10,7 @@ class ResourceType(MPTTModel):
 	parent = models.ForeignKey("self", blank=True, null=True, related_name="children")
 
 	host = models.ForeignKey("self", blank=True, null=True, related_name="parts")
-
+	sort = models.IntegerField()
 	def __unicode__(self):
 		return self.name
 

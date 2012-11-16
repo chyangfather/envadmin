@@ -1,0 +1,318 @@
+<html>
+<head>
+	<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" href="report.css" type="text/css"/>
+	<title>Process Map Diagram - ITSM</title>
+	<script type="text/javascript" src="report.js"></script>
+	<script type="text/javascript" src="link_popup.js"></script>
+	<script type="text/javascript" src="tooltip.js"></script>
+</head>
+<body style="margin-left: 10px; margin-right: 10px; margin-top: 10px; margin-bottom: 10px;" onload="initPage();initDiagram();initGridDiagram();">
+	<div id="spotlight" style="position:absolute; width:100px; height:100px; z-index:2; visibility:hidden">
+		<table id="spotLightTable" onClick="updateCursorPos(event);adjustPopupPositionForSpotLightTable();clearSpotLight()" style="border-style:solid; border-width:3px; border-color:#FF0000" width="100%" cellpadding="0" border="0" cellspacing="0">
+			<tr>
+				<td id="spotLightCell">
+				</td>
+			</tr>
+		</table>
+	</div>
+	<canvas id="spotlight_c" height="100" style="position:absolute; z-index:2; visibility:hidden" width="100">
+	</canvas>
+	<div id="spotLightResourcesTop" style="position:absolute; width:100px; height:100px; z-index:1; visibility:hidden">
+		<table cellpadding="0" border="0" cellspacing="0">
+			<tr>
+				<td>
+					<a href="#top">
+						<img style="border:none" src="../images/icons/BackToTop.gif" alt="Back to top"/></a>
+				</td>
+				<td>
+					<a href="javascript:clearSpotLightFromOpenSpecButton();">
+						<img style="border:none" src="../images/icons/OpenSpecification.gif" alt="Open specification"/></a>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div id="spotLightResourcesRight" style="position:absolute; width:100px; height:100px; z-index:1; visibility:hidden">
+		<table cellpadding="0" border="0" cellspacing="0">
+			<tr>
+				<td>
+					<a href="#top">
+						<img style="border:none" src="../images/icons/BackToTop.gif" alt="Back to top"/></a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="javascript:clearSpotLightFromOpenSpecButton();">
+						<img style="border:none" src="../images/icons/OpenSpecification.gif" alt="Open specification"/></a>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div id="linkPopupMenuLayer" style="position:absolute;z-index:2;visibility:hidden">
+		<table id="linkPopupMenuTable" style="border-style:solid; border-width:1px; border-color:#000000; background:#FFFFFF; width:250px" width="100%" border="0">
+		</table>
+	</div>
+	<div id="referenceIconLayer" style="position:absolute; z-index:1; visibility:hidden; ">
+		<table style="font-size:1;" width="100%" cellpadding="3" border="0" cellspacing="0">
+			<tr>
+				<td>
+					<img src="../images/icons/Ref.gif" style="border:none" onclick="movePopupPositionToReferenceIconPosition();resetPopupForReference();switchPopupShowHideStatus();" />				</td>
+			</tr>
+		</table>
+	</div>
+	<div id="subdiagramIconLayer" style="position:absolute; z-index:1; visibility:hidden">
+		<table width="100%" cellpadding="3" border="0" cellspacing="0">
+			<tr>
+				<td>
+					<img src="../images/icons/Subdiagram.gif" style="border:none" onclick="movePopupPositionToSubdiagramIconPosition();resetPopupForSubdiagram();switchPopupShowHideStatus();" />				</td>
+			</tr>
+		</table>
+	</div>
+	<div id="transitorIconLayer" style="position:absolute; z-index:1; visibility:hidden">
+		<table width="100%" cellpadding="3" border="0" cellspacing="0">
+			<tr>
+				<td>
+					<img src="../images/icons/Transitor.gif" style="border:none" onclick="movePopupPositionToTransitorIconPosition();resetPopupForTransitor();switchPopupShowHideStatus();" />				</td>
+			</tr>
+		</table>
+	</div>
+	<div class="HeaderText">
+		netfocus Documentation	</div>
+	<table width="100%" cellpadding="0" border="0" cellspacing="0">
+		<tr>
+			<td class="HeaderLine1">
+			</td>
+		</tr>
+		<tr>
+			<td class="HeaderLine2">
+			</td>
+		</tr>
+		<tr>
+			<td class="HeaderLine3">
+			</td>
+		</tr>
+	</table>
+	<p>
+		<a target="_content_pane" class="PageParentTitle" href="Package_u67AwfiGAqAMqDJZ.html">
+ITSM : 包</a>
+	</p>
+	<p class="PageTitle">
+		Process Map Diagram - ITSM	</p>
+	<table width="100%" cellpadding="0" border="0" cellspacing="0">
+		<tr>
+			<td>
+<span class="TableContent">跳至︰</span>				<select id="SelectShape" class="TableContent" onChange="scrollWin(this.value);showSpotLight(this.value)">
+<option value="">Please select a model element</option>
+<option value="shape|2.0|2.0|90.0|40.0|PMProcess_fGG_QfiGAqAMqDEi.html|PMProcess_fGG_QfiGAqAMqDEi.html|fGG_QfiGAqAMqDEh" id="optionfGG_QfiGAqAMqDEh">服务级别管理 : Process</option>
+<option value="shape|62.0|162.0|100.0|40.0|PMProcess_g4e_QfiGAqAMqDE6.html|PMProcess_g4e_QfiGAqAMqDE6.html|A4e_QfiGAqAMqDE5" id="optionA4e_QfiGAqAMqDE5">It服务财务管理 : Process</option>
+<option value="shape|82.0|282.0|80.0|40.0|PMProcess_tAB_QfiGAqAMqDFG.html|PMProcess_tAB_QfiGAqAMqDFG.html|tAB_QfiGAqAMqDFF" id="optiontAB_QfiGAqAMqDFF">能力管理 : Process</option>
+<option value="shape|232.0|52.0|80.0|40.0|PMProcess_RAR_QfiGAqAMqDFS.html|PMProcess_RAR_QfiGAqAMqDFS.html|RAR_QfiGAqAMqDFR" id="optionRAR_QfiGAqAMqDFR">持续性管理 : Process</option>
+<option value="shape|292.0|142.0|80.0|40.0|PMProcess_yXx_QfiGAqAMqDFe.html|PMProcess_yXx_QfiGAqAMqDFe.html|yXx_QfiGAqAMqDFd" id="optionyXx_QfiGAqAMqDFd">可用性管理 : Process</option>
+<option value="shape|252.0|242.0|100.0|40.0|PMProcess_FoZ_QfiGAqAMqDFo.html|PMProcess_FoZ_QfiGAqAMqDFo.html|FoZ_QfiGAqAMqDFn" id="optionFoZ_QfiGAqAMqDFn">事件/问题管理 : Process</option>
+<option value="shape|372.0|292.0|80.0|40.0|PMProcess_gll_QfiGAqAMqDGA.html|PMProcess_gll_QfiGAqAMqDGA.html|gll_QfiGAqAMqDF_" id="optiongll_QfiGAqAMqDF_">配置管理 : Process</option>
+<option value="shape|482.0|272.0|80.0|40.0|PMProcess_zx1_QfiGAqAMqDGM.html|PMProcess_zx1_QfiGAqAMqDGM.html|zx1_QfiGAqAMqDGL" id="optionzx1_QfiGAqAMqDGL">变更管理 : Process</option>
+<option value="shape|482.0|342.0|80.0|40.0|PMProcess_9Ut_QfiGAqAMqDGY.html|PMProcess_9Ut_QfiGAqAMqDGY.html|9Ut_QfiGAqAMqDGX" id="option9Ut_QfiGAqAMqDGX">发布管理 : Process</option>
+</select>			</td>
+		</tr>
+	</table>
+	<table width="100%" cellpadding="0" border="0" cellspacing="0">
+		<tr>
+			<td>
+				<img id = "diagram" src = "../images/ITSM.png" usemap="#diagram_map" class="Image" width="566.0" height="386.0"/>				<map name = "diagram_map">
+
+<area coords="482.0, 342.0, 562.0, 382.0" coords2="482.0, 342.0, 562.0, 382.0" shape="rect" alt="发布管理:Process" id="area9Ut_QfiGAqAMqDGX" href="PMProcess_9Ut_QfiGAqAMqDGY.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="482.0, 272.0, 562.0, 312.0" coords2="482.0, 272.0, 562.0, 312.0" shape="rect" alt="变更管理:Process" id="areazx1_QfiGAqAMqDGL" href="PMProcess_zx1_QfiGAqAMqDGM.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="372.0, 292.0, 452.0, 332.0" coords2="372.0, 292.0, 452.0, 332.0" shape="rect" alt="配置管理:Process" id="areagll_QfiGAqAMqDF_" href="PMProcess_gll_QfiGAqAMqDGA.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="252.0, 242.0, 352.0, 282.0" coords2="252.0, 242.0, 352.0, 282.0" shape="rect" alt="事件/问题管理:Process" id="areaFoZ_QfiGAqAMqDFn" href="PMProcess_FoZ_QfiGAqAMqDFo.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="292.0, 142.0, 372.0, 182.0" coords2="292.0, 142.0, 372.0, 182.0" shape="rect" alt="可用性管理:Process" id="areayXx_QfiGAqAMqDFd" href="PMProcess_yXx_QfiGAqAMqDFe.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="232.0, 52.0, 312.0, 92.0" coords2="232.0, 52.0, 312.0, 92.0" shape="rect" alt="持续性管理:Process" id="areaRAR_QfiGAqAMqDFR" href="PMProcess_RAR_QfiGAqAMqDFS.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="82.0, 282.0, 162.0, 322.0" coords2="82.0, 282.0, 162.0, 322.0" shape="rect" alt="能力管理:Process" id="areatAB_QfiGAqAMqDFF" href="PMProcess_tAB_QfiGAqAMqDFG.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="62.0, 162.0, 162.0, 202.0" coords2="62.0, 162.0, 162.0, 202.0" shape="rect" alt="It服务财务管理:Process" id="areaA4e_QfiGAqAMqDE5" href="PMProcess_g4e_QfiGAqAMqDE6.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+<area coords="2.0, 2.0, 92.0, 42.0" coords2="2.0, 2.0, 92.0, 42.0" shape="rect" alt="服务级别管理:Process" id="areafGG_QfiGAqAMqDEh" href="PMProcess_fGG_QfiGAqAMqDEi.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()"/>
+</map>			</td>
+		</tr>
+	</table>
+	<p>
+	</p>
+	<table width="100%" cellpadding="0" border="0" cellspacing="0">
+		<tr>
+			<td class="Category">
+				Model Elements			</td>
+		</tr>
+		<tr>
+			<td style="height: 5px">
+			</td>
+		</tr>
+	</table>
+	<table width="100%" cellpadding="0" border="0" cellspacing="0">
+		<tr>
+			<td colSpan="4" class="TableHeaderLine">
+			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine1">
+			</td>
+		</tr>
+		<tr class="TableHeader">
+			<td class="TableCellSpaceHolder10Px">
+			</td>
+			<td width="30%">
+<span class="TableHeaderText">名称</span>			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td>
+<span class="TableHeaderText">文档</span>			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine2">
+			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/PMProcess.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/PMProcess.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="PMProcess_fGG_QfiGAqAMqDEi.html">服务级别管理 : 流程</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/PMProcess.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/PMProcess.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="PMProcess_g4e_QfiGAqAMqDE6.html">It服务财务管理 : 流程</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/PMProcess.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/PMProcess.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="PMProcess_tAB_QfiGAqAMqDFG.html">能力管理 : 流程</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/PMProcess.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/PMProcess.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="PMProcess_RAR_QfiGAqAMqDFS.html">持续性管理 : 流程</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/PMProcess.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/PMProcess.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="PMProcess_yXx_QfiGAqAMqDFe.html">可用性管理 : 流程</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/PMProcess.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/PMProcess.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="PMProcess_FoZ_QfiGAqAMqDFo.html">事件/问题管理 : 流程</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/PMProcess.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/PMProcess.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="PMProcess_gll_QfiGAqAMqDGA.html">配置管理 : 流程</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/PMProcess.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/PMProcess.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="PMProcess_zx1_QfiGAqAMqDGM.html">变更管理 : 流程</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/PMProcess.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/PMProcess.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="PMProcess_9Ut_QfiGAqAMqDGY.html">发布管理 : 流程</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+	</table>
+	<table width="100%" cellpadding="0" border="0" cellspacing="0">
+		<tr>
+			<td class="TableCellSpaceHolder1PxTall">
+			</td>
+		</tr>
+		<tr>
+			<td class="TableFooter">
+			</td>
+		</tr>
+	</table>
+	<div style="height: 20px">
+	</div>
+	<table width="100%" cellpadding="0" border="0" cellspacing="0">
+		<tr>
+			<td class="FooterLine">
+			</td>
+		</tr>
+	</table>
+	<div class="HeaderText">
+		netfocus Documentation	</div>
+</body>
+</html>
