@@ -38,6 +38,12 @@ class Acquire(models.Model):
 	res_type = models.ForeignKey('resources.ResourceType')
 	days_limit = models.IntegerField()
 	resource = models.ForeignKey('resources.Resource',null=True)
+
+class CompositeAcquireDef(models.Model):
+	pass
+class CompositeAcquire(models.Model):
+	#组合请求，比如人员入场，项目等
+	pass
 	
 
 

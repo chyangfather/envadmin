@@ -6,6 +6,7 @@ from django.contrib import admin
 from devsupport.views import *
 from subject.views import *
 from resources.views import *
+import resources
 admin.autodiscover()
 
 urlpatterns = patterns('',
@@ -18,13 +19,14 @@ urlpatterns = patterns('',
     url(r'^projects/$', projects),
     url(r'^projects/cards/$', project_cards),
     url(r'^partners/$', partners),
-    url(r'^resources/$', resources),
+    
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
 
     url(r'^hello/$', hello),
+    (r'^resources/', include('resources.urls')),
 )
 
 
