@@ -1,0 +1,68 @@
+{% extends "base/base.html" %}
+{% block css %}
+<link rel="stylesheet" href="/static/jquery.treeview/jquery.treeview.css" />
+{% endblock %}
+
+{% block content %}
+{% load mptt_tags %}
+<table id="addtree" class="table table-hover">
+	<tr>
+	<th>类别</th>
+	<th>数量</th>
+	<th>空闲</th>
+	<th>使用</th>
+	<th>超时</th>
+	<th>非法使用</th>
+	<th>停用</th>
+	</tr>
+
+{% recursetree nodes %}
+	<tr>
+		<td style="white-space:nowrap;">
+	
+    
+    <span style="margin-left:{% widthratio node.level 1 20 %}px;" class="
+    {% if node.is_leaf_node %}
+    icon-file
+    {% else %}	
+    icon-folder-open
+    {% endif %}
+    ">
+    	
+    	{% if node.is_abstract %}
+    	<span style="margin-left:20px;">
+    		{{ node.name }}
+    		</span></td>
+
+    	<td></td>
+    	<td></td>
+    	<td></td>
+    	<td></td>
+    	<td></td>
+    	<td></td>
+    	{% else %}
+    		<span style="margin-left:20px;"><a href='/resource/resources?type={{node.id}}'>{{ node.name }}</a>
+    			</span></td>
+
+    	<td><a href='/resource/resources?type={{node.id}}'>{{ node.resource_set.all|length }}</a></td>
+    	<td>123</td>
+    	<td>123</td>
+    	<td>123</td>
+    	<td>123</td>
+    	<td>123</td>
+    	{% endif %}
+    	
+    	
+    	</tr>
+ 
+    
+ 	{{ children }}
+    
+{% endrecursetree %}
+</table> 
+
+
+
+{% endblock %}
+
+

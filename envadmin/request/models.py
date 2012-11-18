@@ -35,9 +35,9 @@ class JoinProject(models.Model):
 
 class Acquire(models.Model):
 	subject = models.ForeignKey(Subject)
-	res_type = models.ForeignKey('resources.ResourceType')
+	res_type = models.ForeignKey('resource.ResourceType')
 	days_limit = models.IntegerField()
-	resource = models.ForeignKey('resources.Resource',null=True)
+	resource = models.ForeignKey('resource.Resource',null=True)
 
 class CompositeAcquireDef(models.Model):
 	pass

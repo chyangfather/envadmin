@@ -6,6 +6,7 @@ from models import *
 
 def projects(request):
 	#return HttpResponse("hello, index!")
+	print request.GET['mine']
 	return render_to_response('projects/all.html', {"project_list":Project.objects.all()})
 
 def project_cards(request):
