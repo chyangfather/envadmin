@@ -6,6 +6,7 @@ from django.contrib import admin
 from devsupport.views import *
 from subject.views import *
 from resources.views import *
+from views import *
 import resources
 admin.autodiscover()
 
