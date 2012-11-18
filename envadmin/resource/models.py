@@ -1,6 +1,6 @@
 # coding=utf-8
 from django.db import models
-from devsupport.models import Dictionary
+from request.models import Dictionary
 from mptt.models import MPTTModel
 
 # Create your models here.

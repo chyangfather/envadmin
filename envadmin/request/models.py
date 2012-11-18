@@ -1,7 +1,7 @@
 # coding=utf-8
 from django.db import models
 from subject.models import Subject,Person
-from resources.models import *
+from resource.models import *
 import datetime
 #import subject
 

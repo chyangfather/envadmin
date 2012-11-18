@@ -106,10 +106,10 @@ MIDDLEWARE_CLASSES = (
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'env_admin.urls'
+ROOT_URLCONF = 'webapp.urls'
 
 # Python dotted path to the WSGI application used by Django's runserver.
-WSGI_APPLICATION = 'env_admin.wsgi.application'
+WSGI_APPLICATION = 'webapp.wsgi.application'
 
 TEMPLATE_DIRS = ('/Volumes/DATA/Documents/workspace/envadmin/envadmin/templates',)
 
@@ -125,9 +125,9 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
     'mptt',
-    'devsupport',
+    'request',
     'subject',
-    'resources',
+    'resource',
     'rest_framework',
 )
 
