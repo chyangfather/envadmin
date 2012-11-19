@@ -34,18 +34,37 @@ class AttributeDef(models.Model):
 	def __unicode__(self):
 		return self.name
 
+def activate(*args, **kwargs):
+	pass
+def deactivate(*args, **kwargs):
+	pass
+def regist(*args, **kwargs):
+	pass
+def distribute(*args, **kwargs):
+	pass
+def release(*args, **kwargs):
+	pass
+def unregist(*args, **kwargs):
+	pass
+def discover(*args, **kwargs):
+	pass
 class Resource(MPTTModel):
 	STATE_ENABLE = 'ENB'
 	STATE_DISABLE = 'DIS'
-	STATE_USING = 'BSY'
+	STATE_USING = 'USE'
+	STATE_TIMEOUT = 'OUT'
+	STATE_ILLEGAL = 'UNR'
 	STATES = (
 		(STATE_ENABLE,'可用'),
 		(STATE_DISABLE,'停用'),
 		(STATE_USING,'使用中'),
+		(STATE_TIMEOUT,'超时'),
+		(STATE_ILLEGAL,'非法'),
 	)
 	TRANSITIONS = (
 		('','from','to'),
 	)
+	
 	name = models.CharField(max_length=100)	
 	res_type = models.ForeignKey('ResourceType')
 	parent = models.ForeignKey("self", blank=True, null=True, related_name="children")

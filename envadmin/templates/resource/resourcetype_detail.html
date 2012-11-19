@@ -1,5 +1,9 @@
 {% extends "base/list.html" %}
 
+{% block css %}
+<link href="/static/css/resource_state.css" rel="stylesheet" media="screen" />
+{% endblock %}
+
 {% block sidebar %}
 	{% include "parts/sidebar_resources.html" %}
 {% endblock %}
@@ -14,14 +18,12 @@ attr_count: {{resourcetype.attributes.all|length}}<br/>
 		<th>{{attr.name}}</th>
 		{% endfor %}
 	</tr>
-	{% for attr in resourcetype.resource_set.all %}
-		<tr>
-			{% for attr in resourcetype.attributes.all %}
-			<td>{{attr.name}}</td>
-			{% endfor %}
-		</tr>
-	{% endfor %}
+	
 </table>
 res_count:{{ resourcetype.resource_set.all|length }}<br/>
-
+<div class="row-fluid">
+{% for resource in resourcetype.resource_set.all %}
+	{% include "parts/resource_card.html" %}
+{% endfor %}
+</div>
 {% endblock %}
