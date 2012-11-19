@@ -8,7 +8,6 @@ urlpatterns = patterns('',
     # url(r'^env_admin/', include('env_admin.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
-    url('^resources$', ResourceListView.as_view(
-        #model=Resource,
-    )),
+    url('^catalogs/$', catalogs),
+    url('^catalogs/(?P<pk>\d+)/$',catalogs)
 )

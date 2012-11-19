@@ -6,4 +6,4 @@ class ResourceTypeAdmin(admin.ModelAdmin):
 
 admin.site.register(ResourceType, MPTTModelAdmin)
 admin.site.register(AttributeDef, admin.ModelAdmin)
-admin.site.register(Resource, admin.ModelAdmin)
+admin.site.register(Resource, MPTTModelAdmin)

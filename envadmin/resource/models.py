@@ -35,10 +35,21 @@ class AttributeDef(models.Model):
 		return self.name
 
 class Resource(MPTTModel):
+	STATE_ENABLE = 'ENB'
+	STATE_DISABLE = 'DIS'
+	STATE_USING = 'BSY'
+	STATES = (
+		(STATE_ENABLE,'可用'),
+		(STATE_DISABLE,'停用'),
+		(STATE_USING,'使用中'),
+	)
+	TRANSITIONS = (
+		('','from','to'),
+	)
 	name = models.CharField(max_length=100)	
 	res_type = models.ForeignKey('ResourceType')
 	parent = models.ForeignKey("self", blank=True, null=True, related_name="children")
-
+	state = models.CharField(max_length=3, choices=STATES, default=STATE_ENABLE)
 	#subdomain = models.ForeignKey('Dictionary')
 	def __unicode__(self):
 		return self.name
