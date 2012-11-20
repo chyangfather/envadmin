@@ -8,18 +8,32 @@
 	{% include "parts/sidebar_resources.html" %}
 {% endblock %}
 {% block main %}
-name:{{ resourcetype.name }}<br/>
-parent:{{ resourcetype.parent.name }}<br/>
-host:{{ resourcetype.host.name }}<br/>
-attr_count: {{resourcetype.attributes.all|length}}<br/>
-<table>
-	<tr>
-		{% for attr in resourcetype.attributes.all %}
-		<th>{{attr.name}}</th>
-		{% endfor %}
-	</tr>
-	
-</table>
+    <div class="navbar">
+    <div class="navbar-inner">
+    	<span class="brand">{{ resourcetype.name }}</span>
+    	
+    
+    	<button class="btn btn-primary">注册</button>
+  <button class="btn btn-danger">发现</button>
+  <button class="btn btn-danger">申请</button>
+  
+  <button class="btn">3</button>
+  <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+Action
+<span class="caret"></span>
+</a>
+
+
+    <form class="navbar-search">
+  <!--autocomplete-->
+  <input id="tags" type="text" class="search-query pull-right" style="" placeholder="Search" autocomplete="off"/>
+  <!--end autocomplete-->
+</form>
+
+    </div>
+
+    </div>
+
 res_count:{{ resourcetype.resource_set.all|length }}<br/>
 
 
@@ -27,7 +41,7 @@ res_count:{{ resourcetype.resource_set.all|length }}<br/>
 
 {% for host in hosts %}
 <div class="row-fluid">
-    name:{{ host.grouper }}<hr/>
+    <h4>{{ host.grouper }}</h4><hr/>
    
         {% for resource in host.list %}
           {% include "parts/resource_card.html" %}
@@ -37,4 +51,13 @@ res_count:{{ resourcetype.resource_set.all|length }}<br/>
 {% endfor %}
 
 
+{% endblock %}
+
+
+{% block onreadyscript %}
+// Autocomplete
+var availableTags = ["ActionScript", "AppleScript", "Asp", "BASIC", "C", "C++", "Clojure", "COBOL", "ColdFusion", "Erlang", "Fortran", "Groovy", "Haskell", "Java", "JavaScript", "Lisp", "Perl", "PHP", "Python", "Ruby", "Scala", "Scheme"];
+$("#tags").autocomplete({
+source: availableTags
+});
 {% endblock %}

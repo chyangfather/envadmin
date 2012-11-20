@@ -1,8 +1,24 @@
 
-<div class="span4 well {{resource.state}}">
-	<p><strong>{{resource.name}}</strong></p>
+<div class="span3 well resource {{resource.state}}" style="padding:10px;">
+	<div class="row-fluid">
+		<div class="span6">
+        <h4 style="margin:0px;">{{resource.name}}</h4>
+        
+        </div>
+        <div class="span6" style="text-align:end;">{{resource.state}}</div>
 
-	<p>{{resource.state}}</p>
-	<p>b</p>
+    </div>
+    <hr style="margin-top:0px;margin-bottom:0px;" />
+	使用者：<a>王海阔</a>
+	<ul>
+	{% for attr in resource.res_type.attributes.all %}
+		<li>{{attr.name}}:</li>
+		{% endfor %}
+	</ul>
+
+	
+	{% for part_type in resource.res_type.parts.all %}
+		21个{{part_type.name}},空闲：3
+	{% endfor %}
 	<p></p>
 </div>
