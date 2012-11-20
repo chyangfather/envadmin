@@ -7,7 +7,44 @@
 
 {% block content %}
 
+<div class="row">
+    <div class="span2">名称</div>
+    <div class="span5">使用情况</div>
+    <div class="span3">可用数</div>
+</div>
+{% recursetree nodes %}
+<div class="row">
+    <div class="span2">
+
+        {% if node.is_abstract %}
+            <span style="margin-left:20px;">{{ node.name }}</span>
+        {% else %}
+            <span style="margin-left:20px;">
+                <a href='{% url resource.views.catalogs node.id %}'>{{ node.name }}</a>
+            </span>
+        {% endif %}
+
+    </div>
+    <div class="span5 progress">
+        <div class="bar bar-success" style="width: 35%;"></div>
+        <div class="bar bar-warning" style="width: 20%;"></div>
+        <div class="bar bar-danger" style="width: 10%;"></div>
+    </div>
+
+    <div class="span1 progress">
+        <div class="bar bar-success" style="width: 35%;"></div>        
+    </div>
+</div>
+
+{{ children }}
+{% endrecursetree %}
+</ul>
+
+<span class="badge">1</span>
+
 <table id="addtree" class="table table-hover">
+    <caption>...</caption>
+    <thead>
 	<tr>
 	<th>类别</th>
 	<th>数量</th>
@@ -17,6 +54,7 @@
 	<th>非法使用</th>
 	<th>停用</th>
 	</tr>
+    </thead>
 
 {% recursetree nodes %}
 	<tr>
@@ -32,26 +70,24 @@
     ">
     	
     	{% if node.is_abstract %}
-    	<span style="margin-left:20px;">
-    		{{ node.name }}
-    		</span></td>
-
-    	<td></td>
-    	<td></td>
-    	<td></td>
-    	<td></td>
-    	<td></td>
-    	<td></td>
+    	   <span style="margin-left:20px;">{{ node.name }}</span>
     	{% else %}
-    		<span style="margin-left:20px;"><a href='{% url resource.views.catalogs node.id %}'>{{ node.name }}</a>
-    			</span></td>
+    		<span style="margin-left:20px;">
+                <a href='{% url resource.views.catalogs node.id %}'>{{ node.name }}</a>
+    		</span>
 
-    	<td><a href='{% url resource.views.catalogs node.id %}'>{{ node.resource_set.all|length }}</a></td>
+    	<td>
+    <div class="progress">
+    <div class="bar bar-success" style="width: 35%;"></div>
+    <div class="bar bar-warning" style="width: 20%;"></div>
+    <div class="bar bar-danger" style="width: 10%;"></div>
+    </div>
+            <a href='{% url resource.views.catalogs node.id %}'>{{ node.resource_set.all|length }}</a></td>
     	<td><a href='{% url resource.views.catalogs node.id %}?state=ENB'>{{ node.resource_set|filter_resource_state:"ENB"|length }}</a></td>
-    	<td><a href='/resource/resources?type={{node.id}}&state=USE'>{{ node.resource_set|filter_resource_state:"USE"|length }}</a></td>
-    	<td><a href='/resource/resources?type={{node.id}}&state=OUT'>{{ node.resource_set|filter_resource_state:"OUT"|length }}</a></td>
-    	<td><a href='/resource/resources?type={{node.id}}&state=WAN'>{{ node.resource_set|filter_resource_state:"WAN"|length }}</a></td>
-    	<td><a href='/resource/resources?type={{node.id}}&state=DIS'>{{ node.resource_set|filter_resource_state:"DIS"|length }}</a></td>
+    	<td><a href='{% url resource.views.catalogs node.id %}?state=USE'>{{ node.resource_set|filter_resource_state:"USE"|length }}</a></td>
+    	<td><a href='{% url resource.views.catalogs node.id %}?state=OUT'>{{ node.resource_set|filter_resource_state:"OUT"|length }}</a></td>
+    	<td><a href='{% url resource.views.catalogs node.id %}?state=WAN'>{{ node.resource_set|filter_resource_state:"WAN"|length }}</a></td>
+    	<td><a href='{% url resource.views.catalogs node.id %}?state=DIS'>{{ node.resource_set|filter_resource_state:"DIS"|length }}</a></td>
     	{% endif %}
     	
     	

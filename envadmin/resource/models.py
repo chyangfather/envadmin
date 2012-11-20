@@ -48,6 +48,8 @@ def unregist(*args, **kwargs):
 	pass
 def discover(*args, **kwargs):
 	pass
+
+	
 class Resource(MPTTModel):
 	STATE_ENABLE = 'ENB'
 	STATE_DISABLE = 'DIS'

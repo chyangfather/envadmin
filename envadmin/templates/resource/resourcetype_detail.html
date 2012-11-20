@@ -21,9 +21,20 @@ attr_count: {{resourcetype.attributes.all|length}}<br/>
 	
 </table>
 res_count:{{ resourcetype.resource_set.all|length }}<br/>
+
+
+{% regroup resourcetype.resource_set.all by parent as hosts %}
+
+{% for host in hosts %}
 <div class="row-fluid">
-{% for resource in resourcetype.resource_set.all %}
-	{% include "parts/resource_card.html" %}
-{% endfor %}
+    name:{{ host.grouper }}<hr/>
+   
+        {% for resource in host.list %}
+          {% include "parts/resource_card.html" %}
+        {% endfor %}
+    <br/>
 </div>
+{% endfor %}
+
+
 {% endblock %}

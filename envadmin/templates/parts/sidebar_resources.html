@@ -2,14 +2,20 @@
 <ul id="restype">
 {% recursetree nodes %}
 <li>
-    {% if node.is_leaf_node %}
-    <span><a href='#'>{{ node.name }}</a></span>
-    {% else %}
-        {{ node.name }}
+    {% if node.is_abstract %}
+            <span>{{ node.name }}</span>
+        {% else %}
+            <span>
+                <a href='{% url resource.views.catalogs node.id %}'>{{ node.name }}</a>
+            </span>
+        {% endif %}
+
         <ul>
             {{ children }}
         </ul>
-    {% endif %}
+    
 </li>
 {% endrecursetree %}
 </ul>
+
+
