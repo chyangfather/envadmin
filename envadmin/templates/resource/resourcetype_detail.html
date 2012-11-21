@@ -8,11 +8,21 @@
 	{% include "parts/sidebar_resources.html" %}
 {% endblock %}
 {% block main %}
+
+<h3>{{ resourcetype.name }}</h3>
+
+<form class="navbar-search">
     <div class="navbar">
+
     <div class="navbar-inner">
-    	<span class="brand">{{ resourcetype.name }}</span>
-    	
-    
+      
+  
+                <div id="radioset" class="btn-group">
+                  <input type="radio" name="radio" id="radio1" class="ui-helper-hidden-accessible"/><label for="radio1" class="ui-button ui-widget ui-state-default ui-button-text-only ui-corner-left" role="button" aria-disabled="false" aria-pressed="false"><span class="icon-th-large"/></label>
+                  <input type="radio" checked="checked" name="radio" id="radio2" class="ui-helper-hidden-accessible"/><label for="radio2" class="ui-button ui-widget ui-state-default ui-button-text-only" role="button" aria-disabled="false" aria-pressed="false"><span class="icon-list"/></label>
+                  <input type="radio" name="radio" id="radio3" class="ui-helper-hidden-accessible"/><label for="radio3" class="ui-button ui-widget ui-state-default ui-button-text-only ui-corner-right ui-state-active" role="button" aria-disabled="false" aria-pressed="true"><span class="icon-th"/></label>
+                </div>
+      
     	<button class="btn btn-primary">注册</button>
   <button class="btn btn-danger">发现</button>
   <button class="btn btn-danger">申请</button>
@@ -22,15 +32,20 @@
 Action
 <span class="caret"></span>
 </a>
+              <input id="tags" type="text" class="search-query pull-right" style="" placeholder="Search" autocomplete="off"/>
+            </div>
+    	        </form>
+    
+    	
 
 
-    <form class="navbar-search">
+    
   <!--autocomplete-->
-  <input id="tags" type="text" class="search-query pull-right" style="" placeholder="Search" autocomplete="off"/>
+  
   <!--end autocomplete-->
-</form>
 
-    </div>
+
+
 
     </div>
 
@@ -60,4 +75,7 @@ var availableTags = ["ActionScript", "AppleScript", "Asp", "BASIC", "C", "C++", 
 $("#tags").autocomplete({
 source: availableTags
 });
+
+// Buttonset
+$('#radioset').buttonset(); 
 {% endblock %}

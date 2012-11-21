@@ -78,4 +78,16 @@ class Resource(MPTTModel):
 class Attribute(models.Model):
 	pass
 
-
+class Display(models.Model):
+	VIEW_LIST = 'LIST'
+	VIEW_CARD = 'CARD'
+	VIEW_ICON = 'ICON'
+	VIEW_CHOICE = (
+		(VIEW_LIST, '列表'),
+		(VIEW_CARD, '卡片'),
+		(VIEW_ICON, '图标'),
+	)
+	view_type = models.CharField(max_length=4, choices=VIEW_CHOICE, default=VIEW_CARD)
+	regroup = models.BooleanField(default=True)
+	pagesize = models.IntegerField(default=20)
+	res_type = models.OneToOneField(ResourceType)
