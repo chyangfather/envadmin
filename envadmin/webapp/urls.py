@@ -29,6 +29,8 @@ urlpatterns = patterns('',
     url(r'^hello/$', hello),
     (r'^resource/', include('resource.urls')),
     (r'^request/', include('request.urls')),
+    url(r'^login/$', login_view),
+    url(r'^logout/$', logout_view),
 )
 
 
