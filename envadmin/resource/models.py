@@ -61,7 +61,7 @@ class Resource(MPTTModel):
 		(STATE_DISABLE,'停用'),
 		(STATE_USING,'使用中'),
 		(STATE_TIMEOUT,'超时'),
-		(STATE_ILLEGAL,'非法'),
+		(STATE_ILLEGAL,'未注册'),
 	)
 	TRANSITIONS = (
 		('','from','to'),
@@ -71,6 +71,8 @@ class Resource(MPTTModel):
 	res_type = models.ForeignKey('ResourceType')
 	parent = models.ForeignKey("self", blank=True, null=True, related_name="children")
 	state = models.CharField(max_length=3, choices=STATES, default=STATE_ENABLE)
+	scope = models.CharField(max_length=100,blank=True)
+	
 	#subdomain = models.ForeignKey('Dictionary')
 	def __unicode__(self):
 		return self.name

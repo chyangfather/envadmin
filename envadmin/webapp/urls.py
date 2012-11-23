@@ -7,6 +7,9 @@ from request.views import *
 from subject.views import *
 from resource.views import *
 from views import *
+from rest_framework.urlpatterns import format_suffix_patterns
+
+
 import resource
 admin.autodiscover()
 
@@ -31,9 +34,29 @@ urlpatterns = patterns('',
     (r'^request/', include('request.urls')),
     url(r'^login/$', login_view),
     url(r'^logout/$', logout_view),
+    url(r'^API-AUTH/', include('rest_framework.urls', namespace='rest_framework'))
 )
 
 
 # for development only
 # This will only work if DEBUG is True.
 urlpatterns += staticfiles_urlpatterns()
+
+
+
+
+urlpatterns += patterns('webapp.views',
+    url(r'^$', 'api_root'),
+    url(r'^users/$', UserList.as_view(), name='user-list'),
+    url(r'^users/(?P<pk>\d+)/$', UserDetail.as_view(), name='user-detail'),
+    url(r'^groups/$', GroupList.as_view(), name='group-list'),
+    url(r'^groups/(?P<pk>\d+)/$', GroupDetail.as_view(), name='group-detail'),
+)
+
+# Format suffixes
+#urlpatterns = format_suffix_patterns(urlpatterns, allowed=['json', 'api'])
+
+# Default login/logout views
+urlpatterns += patterns('',
+    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+)

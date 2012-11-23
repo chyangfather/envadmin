@@ -7,38 +7,6 @@
 
 {% block content %}
 
-<div class="row">
-    <div class="span2">名称</div>
-    <div class="span5">使用情况</div>
-    <div class="span3">可用数</div>
-</div>
-{% recursetree nodes %}
-<div class="row">
-    <div class="span2">
-
-        {% if node.is_abstract %}
-            <span style="margin-left:20px;">{{ node.name }}</span>
-        {% else %}
-            <span style="margin-left:20px;">
-                <a href='{% url resource.views.catalogs node.id %}'>{{ node.name }}</a>
-            </span>
-        {% endif %}
-
-    </div>
-    <div class="span5 progress">
-        <div class="bar bar-success" style="width: 35%;"></div>
-        <div class="bar bar-warning" style="width: 20%;"></div>
-        <div class="bar bar-danger" style="width: 10%;"></div>
-    </div>
-
-    <div class="span1 progress">
-        <div class="bar bar-success" style="width: 35%;"></div>        
-    </div>
-</div>
-
-{{ children }}
-{% endrecursetree %}
-</ul>
 
 <span class="badge">1</span>
 
@@ -47,48 +15,57 @@
     <thead>
 	<tr>
 	<th>类别</th>
-	<th>数量</th>
-	<th>空闲</th>
-	<th>使用</th>
-	<th>超时</th>
-	<th>非法使用</th>
-	<th>停用</th>
+	<th>使用状态<!--使用+超时+未注册+停用--></th>
+	<th>可用数<!--可用/总数--></th>	
+    <th width="200">操作</th>
 	</tr>
     </thead>
 
 {% recursetree nodes %}
 	<tr>
 		<td style="white-space:nowrap;">
-	
-    
-    <span style="margin-left:{% widthratio node.level 1 20 %}px;" class="
-    {% if node.is_leaf_node %}
-    icon-file
-    {% else %}	
-    icon-folder-open
-    {% endif %}
-    ">
+	       <span style="margin-left:{% widthratio node.level 1 20 %}px;" class="
+                {% if node.is_leaf_node %}
+                    icon-file
+                {% else %}	
+                    icon-folder-open
+                {% endif %}
+            ">
     	
-    	{% if node.is_abstract %}
+{% if node.is_abstract %}
     	   <span style="margin-left:20px;">{{ node.name }}</span>
-    	{% else %}
+        </td>
+        <td></td>
+        <td></td>
+        <td></td>
+{% else %}
     		<span style="margin-left:20px;">
                 <a href='{% url resource.views.catalogs node.id %}'>{{ node.name }}</a>
     		</span>
-
+        </td>
     	<td>
-    <div class="progress">
-    <div class="bar bar-success" style="width: 35%;"></div>
-    <div class="bar bar-warning" style="width: 20%;"></div>
-    <div class="bar bar-danger" style="width: 10%;"></div>
-    </div>
-            <a href='{% url resource.views.catalogs node.id %}'>{{ node.resource_set.all|length }}</a></td>
-    	<td><a href='{% url resource.views.catalogs node.id %}?state=ENB'>{{ node.resource_set|filter_resource_state:"ENB"|length }}</a></td>
-    	<td><a href='{% url resource.views.catalogs node.id %}?state=USE'>{{ node.resource_set|filter_resource_state:"USE"|length }}</a></td>
-    	<td><a href='{% url resource.views.catalogs node.id %}?state=OUT'>{{ node.resource_set|filter_resource_state:"OUT"|length }}</a></td>
-    	<td><a href='{% url resource.views.catalogs node.id %}?state=WAN'>{{ node.resource_set|filter_resource_state:"WAN"|length }}</a></td>
-    	<td><a href='{% url resource.views.catalogs node.id %}?state=DIS'>{{ node.resource_set|filter_resource_state:"DIS"|length }}</a></td>
-    	{% endif %}
+            <div class="progress" style="margin:0px;">
+            <div class="bar bar-primary" style="width: 5%;"></div>
+            <div class="bar bar-danger" style="width: 10%;"></div>
+            <div class="bar bar-warning" style="width: 6%;"></div>
+            <div class="bar" style="width: 8%;"></div>
+            </div>
+            {% restype_using_bar node 8 %}
+        </td>
+
+    	<td>{% restype_having_bar node %}
+        </td>
+    	<td>    
+            <button type="button" name="request" value="{{ node.id }}" class="btn btn-primary">申请</button>
+    <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+    管理
+    <span class="caret"></span>
+    </a>
+    <ul class="dropdown-menu">
+    <!-- dropdown menu links -->
+    </ul>
+    </td>
+{% endif %}
     	
     	
     	</tr>
@@ -99,8 +76,28 @@
 {% endrecursetree %}
 </table> 
 
-
+<div class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-draggable ui-resizable ui-dialog-buttons" style="outline: 0px none; z-index: 1009; position: absolute; height: auto; width: 574.8px; top: 885.867px; left: 342px; display: block;" tabindex="-1" role="dialog" aria-labelledby="ui-id-10"><div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix"><span id="ui-id-10" class="ui-dialog-title">Modal Dialog</span><a href="#" class="ui-dialog-titlebar-close ui-corner-all" role="button"><span class="ui-icon ui-icon-closethick">close</span></a></div><div id="dialog-message" class="ui-dialog-content ui-widget-content" style="width: auto; min-height: 0px; height: 145.8px;" scrolltop="0" scrollleft="0">
+            <p>
+              <span style="float:left; margin:0 7px 50px 0;" class="ui-icon ui-icon-circle-check"></span>
+              Your files have downloaded successfully into the My Downloads folder.
+            </p>
+            <p>
+              Currently using <b>36% of your storage space</b>.
+            </p>
+          </div><div class="ui-resizable-handle ui-resizable-n" style="z-index: 1000;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 1000;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 1000;"></div><div class="ui-resizable-handle ui-resizable-w" style="z-index: 1000;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se ui-icon-grip-diagonal-se" style="z-index: 1000;"></div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 1000;"></div><div class="ui-resizable-handle ui-resizable-ne" style="z-index: 1000;"></div><div class="ui-resizable-handle ui-resizable-nw" style="z-index: 1000;"></div><div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix"><div class="ui-dialog-buttonset"><button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" aria-disabled="false"><span class="ui-button-text">Ok</span></button></div></div></div>
 
 {% endblock %}
 
+{% block onreadyscript %}
+//Tooltip
+$( "#tooltip" ).tooltip(); 
 
+
+$('button[name="request"]').click(function(){
+    //alert($(this).val());
+
+    $('#dialog-message').dialog('open');
+    return false;
+}); 
+});
+{% endblock %}

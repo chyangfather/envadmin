@@ -33,11 +33,18 @@ class JoinProject(models.Model):
 	role = models.ForeignKey('Dictionary')
 
 
-class Acquire(models.Model):
+class Request(models.Model):
 	subject = models.ForeignKey(Subject)
 	res_type = models.ForeignKey('resource.ResourceType')
 	days_limit = models.IntegerField()
-	resource = models.ForeignKey('resource.Resource',null=True)
+	end_date = models.DateField()
+	comment = models.TextField()
+	
+class RequestFactor(models.Model):
+	request = models.ForeignKey(Request)
+	key = models.ForeignKey('resource.AttributeDef')
+	value = models.CharField(max_length=255)
+	reference = models.ForeignKey('resource.Resource',blank=True)
 
 class CompositeAcquireDef(models.Model):
 	pass
