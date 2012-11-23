@@ -219,7 +219,7 @@ $(function () {
     // Filament datepicker
     $('#rangeA').daterangepicker();
     $('#rangeBa, #rangeBb').daterangepicker();
-
+    $('#rangeC').daterangepicker({arrows: true});
 
     // Dynamic tabs
     var $tab_title_input = $("#tab_title"),
