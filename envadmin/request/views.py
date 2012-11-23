@@ -2,6 +2,13 @@
 from django.http import HttpResponse
 from django.shortcuts import render_to_response
 from models import *
+from resource.models import ResourceType
+
+def request_form_view(request):	
+	restype = None
+	if request.GET.has_key('type_id'):
+		restype= ResourceType.objects.get(id=request.GET['type_id'])
+	return render_to_response('parts/request_form.html', {"restype":restype})
 
 
 def projects(request):
