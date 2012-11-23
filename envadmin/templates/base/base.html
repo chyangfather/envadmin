@@ -46,6 +46,9 @@
 
 
 
+
+
+
     </style>
     <!-- Fav and touch icons -->
     <link rel="shortcut icon" href="/static/images/hysec.ico">
@@ -73,13 +76,33 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
      <script src="/static/js/jquery-1.8.2.min.js"></script>
+     <script src="/static/js/bootstrap.min.js"></script>
     <script src="/static/js/jquery-ui-1.9.0.custom.min.js"></script>
-    <script src="/static/js/bootstrap.min.js"></script>
+    
     {% block js %}{% endblock %}
 
     <script language="javascript">
     $(document).ready(function() {
+      // Dialogs
+$("#dialog-login").dialog({
+    autoOpen: false,
+    modal: true,
+    width: 500,
+    buttons: {
+        登录: function () {
+            $(this).dialog("close");
+        }
+    }
+});
 
+
+$('a#login').click(function(){
+    //alert($(this).val());
+
+    $('#dialog-login').dialog('open');
+    return false;
+
+});
     /*
     i put this part on top of each file, even if i don't need it right now,
     again, to keep everything consistent
@@ -88,6 +111,30 @@
       {% block onreadyscript %}{% endblock %}
     });
     </script>
+    <div id="dialog-login" title="登录">
+    <form class="form-horizontal">
+        <div class="control-group">
+            <label class="control-label" for="inputEmail">账号</label>
+            <div class="controls">
+                <input type="text" id="user" placeholder="账号">
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="inputPassword">密码</label>
+            <div class="controls">
+                <input type="password" id="password" placeholder="密码">
+            </div>
+        </div>
+        <div class="control-group">
+            <div class="controls">
+                <label class="checkbox">
+                    <input type="checkbox"> 记录密码
+                </label>
+                <!--button type="submit" class="btn">登录</button-->
+            </div>
+        </div>
+    </form>
+</div>
   </body>
 </html>
  {% endspaceless %}

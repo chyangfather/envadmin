@@ -1,6 +1,7 @@
 from django.conf.urls import patterns, include, url
 from models import *
 from views import *
+from rest_framework.generics import *
 
 urlpatterns = patterns('',
     # Examples:
@@ -9,4 +10,5 @@ urlpatterns = patterns('',
 
     # Uncomment the admin/doc line below to enable admin documentation:
     url('^projects$', projects),#ResourceListView.as_view(model=Resource,)),
+	url('^request/', CreateAPIView.as_view(model=Request))
 )

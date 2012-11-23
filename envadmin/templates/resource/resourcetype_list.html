@@ -3,6 +3,13 @@
 {% load resource_tags %}
 {% block css %}
 <link rel="stylesheet" href="/static/jquery.treeview/jquery.treeview.css" />
+<style type="text/css">
+.progress .bar-gray {
+    background-color: #aaaaaa;
+    background-image: linear-gradient(to bottom, #aaaaaa, #aaaaaa);
+    background-repeat: repeat-x;
+}
+</style>
 {% endblock %}
 
 {% block content %}
@@ -14,9 +21,9 @@
     <caption>...</caption>
     <thead>
 	<tr>
-	<th>类别</th>
-	<th>使用状态<!--使用+超时+未注册+停用--></th>
-	<th>可用数<!--可用/总数--></th>	
+	<th width="200">类别</th>
+	<th width="40%">使用状态<!--使用+超时+未注册+停用--></th>
+	<th>申请数及可用数<!--可用/总数--></th>	
     <th width="200">操作</th>
 	</tr>
     </thead>
@@ -44,20 +51,16 @@
     		</span>
         </td>
     	<td>
-            <div class="progress" style="margin:0px;">
-            <div class="bar bar-primary" style="width: 5%;"></div>
-            <div class="bar bar-danger" style="width: 10%;"></div>
-            <div class="bar bar-warning" style="width: 6%;"></div>
-            <div class="bar" style="width: 8%;"></div>
-            </div>
+            
             {% restype_using_bar node 8 %}
         </td>
 
     	<td>{% restype_having_bar node %}
         </td>
-    	<td>    
-            <button type="button" name="request" value="{{ node.id }}" class="btn btn-primary">申请</button>
-    <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+    	<td>
+            <a class="btn btn-primary btn-mini" name="request" value="{{ node.id }}">申请</a>    
+            
+    <a class="btn dropdown-toggle btn-mini" data-toggle="dropdown" href="#">
     管理
     <span class="caret"></span>
     </a>
@@ -76,15 +79,32 @@
 {% endrecursetree %}
 </table> 
 
-<div class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-draggable ui-resizable ui-dialog-buttons" style="outline: 0px none; z-index: 1009; position: absolute; height: auto; width: 574.8px; top: 885.867px; left: 342px; display: block;" tabindex="-1" role="dialog" aria-labelledby="ui-id-10"><div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix"><span id="ui-id-10" class="ui-dialog-title">Modal Dialog</span><a href="#" class="ui-dialog-titlebar-close ui-corner-all" role="button"><span class="ui-icon ui-icon-closethick">close</span></a></div><div id="dialog-message" class="ui-dialog-content ui-widget-content" style="width: auto; min-height: 0px; height: 145.8px;" scrolltop="0" scrollleft="0">
-            <p>
-              <span style="float:left; margin:0 7px 50px 0;" class="ui-icon ui-icon-circle-check"></span>
-              Your files have downloaded successfully into the My Downloads folder.
-            </p>
-            <p>
-              Currently using <b>36% of your storage space</b>.
-            </p>
-          </div><div class="ui-resizable-handle ui-resizable-n" style="z-index: 1000;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 1000;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 1000;"></div><div class="ui-resizable-handle ui-resizable-w" style="z-index: 1000;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se ui-icon-grip-diagonal-se" style="z-index: 1000;"></div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 1000;"></div><div class="ui-resizable-handle ui-resizable-ne" style="z-index: 1000;"></div><div class="ui-resizable-handle ui-resizable-nw" style="z-index: 1000;"></div><div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix"><div class="ui-dialog-buttonset"><button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" aria-disabled="false"><span class="ui-button-text">Ok</span></button></div></div></div>
+<!--static dialog-->
+<div id="dialog-message" title="申请资源">
+    <form class="form-horizontal">
+        <div class="control-group">
+            <label class="control-label" for="inputEmail">Email</label>
+            <div class="controls">
+                <input type="text" id="inputEmail" placeholder="Email">
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="inputPassword">Password</label>
+            <div class="controls">
+                <input type="password" id="inputPassword" placeholder="Password">
+            </div>
+        </div>
+        <div class="control-group">
+            <div class="controls">
+                <label class="checkbox">
+                    <input type="checkbox"> Remember me
+                </label>
+                <button type="submit" class="btn">Sign in</button>
+            </div>
+        </div>
+    </form>
+</div>
+        <!--end static dialog-->
 
 {% endblock %}
 
@@ -93,11 +113,25 @@
 $( "#tooltip" ).tooltip(); 
 
 
-$('button[name="request"]').click(function(){
+ 
+// Dialogs
+$("#dialog-message").dialog({
+    autoOpen: false,
+    modal: true,
+    width: 600,
+    buttons: {
+        Ok: function () {
+            $(this).dialog("close");
+        }
+    }
+});
+
+
+$('[name="request"]').click(function(){
     //alert($(this).val());
 
     $('#dialog-message').dialog('open');
     return false;
-}); 
+
 });
 {% endblock %}

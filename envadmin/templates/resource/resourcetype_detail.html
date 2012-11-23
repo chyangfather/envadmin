@@ -19,17 +19,20 @@
 	      
 	      
 	      <div class="nav-collapse collapse navbar-responsive-collapse">
-	        <div id="radioset" class="btn-group span3">
-                  <input type="radio" name="radio" id="radio1" class="ui-helper-hidden-accessible"/><label for="radio1" class="ui-button ui-widget ui-state-default ui-button-text-only ui-corner-left" role="button" aria-disabled="false" aria-pressed="false"><span class="icon-th-large"/></label>
-                  <input type="radio" checked="checked" name="radio" id="radio2" class="ui-helper-hidden-accessible"/><label for="radio2" class="ui-button ui-widget ui-state-default ui-button-text-only" role="button" aria-disabled="false" aria-pressed="false"><span class="icon-list"/></label>
-                  <input type="radio" name="radio" id="radio3" class="ui-helper-hidden-accessible"/><label for="radio3" class="ui-button ui-widget ui-state-default ui-button-text-only ui-corner-right ui-state-active" role="button" aria-disabled="false" aria-pressed="true"><span class="icon-th"/></label>
-            </div>
-            <div class="span4">
-            	<button class="btn btn-success">申请</button>&nbsp;
-                <button class="btn btn-primary">注册</button>&nbsp;
-  				<button class="btn btn-danger">发现</button>&nbsp;
-  				
-  			</div>
+          <div id="radioset" class="span3">
+                  <input type="radio" id="radio1" name="radio" />
+                  <label for="radio1"><span class="icon-th-large"/></label>
+                  <input type="radio" id="radio2" name="radio" checked="checked" />
+                  <label for="radio2"><span class="icon-list"/></label>
+                  <input type="radio" id="radio3" name="radio" /><label for="radio3"><span class="icon-th"/></label>
+          </div>
+
+	        
+          <div class="span4">
+            <button class="btn btn-success">申请</button>&nbsp;
+            <button class="btn btn-primary">注册</button>&nbsp;
+  				  <button class="btn btn-danger">发现</button>&nbsp;
+          </div>
   <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
 Action
 <span class="caret"></span>
@@ -65,7 +68,16 @@ Action
 </div>
 {% endfor %}
 
-
+    <div class="pagination">
+    <ul>
+    <li><a href="#">Prev</a></li>
+    <li><a href="#">1</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">4</a></li>
+    <li><a href="#">Next</a></li>
+    </ul>
+    </div>
 {% endblock %}
 
 

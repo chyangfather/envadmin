@@ -24,42 +24,40 @@ def restype_using_bar(resourcetype,min_percent=6):
 	out = len(resourcetype.resource_set.filter(state='OUT'))
 	unr = len(resourcetype.resource_set.filter(state='UNR'))
 	dis = len(resourcetype.resource_set.filter(state='DIS'))
-	total = use+out+unr+dis
-	using = [use,out,unr,dis]
+	enb = len(resourcetype.resource_set.filter(state='ENB'))
+
+	total = len(resourcetype.resource_set.all())
+	for item in resourcetype.resource_set.all():
+		print item.state
+	if total==0:
+		return '<div class="progress" style="margin:0px;"></div>'
+	using = [use,out,unr,dis,enb]
+
+	percents = [0,0,0,0,0]
+
+	for index in range(len(percents)):
+		percents[index] = using[index]*100/total
+
+	percents[4] = 100-percents[0]-percents[1]-percents[2]-percents[3]
+	print using,percents
 
 
+	format = '''<div class="progress" style="margin:0px;">
+	<div class="bar bar-primary" style="width: %f%%;">%d</div>
+	<div class="bar bar-danger" style="width: %f%%;">%d</div>
+	<div class="bar bar-warning" style="width: %f%%;">%d</div>
+	<div class="bar bar-gray" style="width:%f%%;">%d</div>
+	<div class="bar bar-success" style="width:%f%%;">%d</div>
+	</div>'''
 
+	return format % (percents[0],use,percents[1],out,percents[2],unr,percents[3],dis,percents[4],enb)
 
-	
-
-	return using
 
 @register.simple_tag
 def restype_having_bar(resourcetype,min_percent=10):
-	total = len(resourcetype.resource_set.all())
-	if total ==0:
-		return '<div class="progress" style="margin:0px;width:80%"></div>0/0'
-
 	enb = len(resourcetype.resource_set.filter(state='ENB'))
-
-	using = (total-enb)/total * 100
-
-	
-	if using<min_percent:
-		using = min_percent
-	
-	style = 'success'
-	if using>=90:
-		style = 'danger'
-
-	if using>80 and using<90:
-		style = 'warning'
-
-	width = using
-	if width<min_percent:
-		width = min_percent
-
-	format = '''<div id="tooltip" class="progress" style="margin:0px;width:80%%">
-				<div title="abcabc" class="bar bar-%s" style="width:%d%%;">%d %%</div>				
-			</div>%d / %d'''
-	return format % (style,width,using ,total-enb,total)
+	total = len(resourcetype.resource_set.all())
+	percent = 0
+	if total > 0 :
+		percent= enb*100/total
+	return "#red 可用数：%d/%d(%d%%)#red" % (enb,total,percent)

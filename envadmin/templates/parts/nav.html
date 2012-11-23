@@ -16,16 +16,16 @@
                 <button class="btn dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
                 <ul class="dropdown-menu">
                   
-                  <li><a href="#">我的申请</a></li>
-                  <li><a href="#">我的资源</a></li>
-                  <li><a href="#">我的项目</a></li>
+                  <li><a href="#">我的申请(2)</a></li>
+                  <li><a href="#">我的资源(3)</a></li>
+                  <li><a href="#">我的项目(2)</a></li>
+                  <li><a href="#">需要受理(16)</a></li>
                   <li class="divider"></li>
                   <li><a href="{% url webapp.views.logout_view %}">注销</a></li>
                 </ul>
         
             {% else %}
-              <a class="btn danger small" href="{% url webapp.views.logout_view %}">登录</a>          
-
+              <a id="login" href="{% url webapp.views.logout_view %}" class="btn btn-inverse btn-mini">登录</a>
             {% endif %}    
           </div><!-- /btn-group -->    
                     
