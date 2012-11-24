@@ -11,8 +11,9 @@
       <div class="nav-collapse collapse">
         
           <div class="pull-right btn-group">
-            {% if request.user.is_authenticated %}
-              <button class="btn ">{{user}}</button>
+            
+{% if request.user.is_authenticated %}
+              <button class="btn ">{{request.user}}</button>
                 <button class="btn dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
                 <ul class="dropdown-menu">
                   
@@ -24,9 +25,9 @@
                   <li><a href="{% url webapp.views.logout_view %}">注销</a></li>
                 </ul>
         
-            {% else %}
+{% else %}
               <a id="login" href="{% url webapp.views.logout_view %}" class="btn btn-inverse btn-mini">登录</a>
-            {% endif %}    
+{% endif %}    
           </div><!-- /btn-group -->    
                     
         <ul class="nav">

@@ -43,12 +43,6 @@
     position: relative;
     padding: 20px;
 }
-
-
-
-
-
-
     </style>
     <!-- Fav and touch icons -->
     <link rel="shortcut icon" href="/static/images/hysec.ico">
@@ -57,7 +51,11 @@
   <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="navbar-inner">
-        
+        {% if request.user.is_authenticated %}
+        {{request.user}}
+{% else %}
+        登录
+{% endif %}
         {% block navbar %}
         {% include "parts/nav.html" %}
         {% endblock %}
@@ -75,18 +73,9 @@
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-<<<<<<< HEAD
-<<<<<<< HEAD
+
      <script src="/static/js/jquery-1.8.2.min.js"></script>
      <script src="/static/js/bootstrap.min.js"></script>
-=======
-    <script src="/static/js/jquery-1.8.2.min.js"></script>
-    <script src="/static/js/bootstrap.min.js"></script>
->>>>>>> *)base
-=======
-     <script src="/static/js/jquery-1.8.2.min.js"></script>
-     <script src="/static/js/bootstrap.min.js"></script>
->>>>>>> *)merge
     <script src="/static/js/jquery-ui-1.9.0.custom.min.js"></script>
     
     {% block js %}{% endblock %}
@@ -104,19 +93,11 @@ $("#dialog-login").dialog({
         }
     }
 });
-<<<<<<< HEAD
 
-
-$('a#login').click(function(){
-    //alert($(this).val());
-
-=======
 
 
 $('a#login').click(function(){
     //alert($(this).val());
-
->>>>>>> *)merge
     $('#dialog-login').dialog('open');
     return false;
 
@@ -130,17 +111,18 @@ $('a#login').click(function(){
     });
     </script>
     <div id="dialog-login" title="登录">
-    <form class="form-horizontal">
+    <form class="form-horizontal" action="{% url webapp.views.login_view %}" method="post">
+      {% csrf_token %}
         <div class="control-group">
             <label class="control-label" for="inputEmail">账号</label>
             <div class="controls">
-                <input type="text" id="user" placeholder="账号">
+                <input type="text" id="username" name="username" placeholder="账号">
             </div>
         </div>
         <div class="control-group">
             <label class="control-label" for="inputPassword">密码</label>
             <div class="controls">
-                <input type="password" id="password" placeholder="密码">
+                <input type="password" id="password" name="password" placeholder="密码">
             </div>
         </div>
         <div class="control-group">
@@ -150,6 +132,7 @@ $('a#login').click(function(){
                 </label>
                 <!--button type="submit" class="btn">登录</button-->
             </div>
+            <input type="submit">submit</input>
         </div>
     </form>
 </div>
