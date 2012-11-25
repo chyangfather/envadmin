@@ -1,23 +1,27 @@
 申请{{restype.name}}
 
-<form class="form-horizontal">
+<form class="form-horizontal" action="">
+  <input type="text" id="res_type_id" value="1"/>
   <div class="control-group">
-    <label class="control-label" for="inputEmail">截止日期</label>
+    <label class="control-label" for="inputEmail">受理期限</label>
     <div class="controls">
-      <input type="text" value="2012-01-02" id="rangeC"/>
+      <input type="text" value="2012-01-02" id="range_accept"/>
     </div>
   </div>
   <div class="control-group">
-    <label class="control-label" for="inputPassword">Password</label>
+    <label class="control-label" for="inputEmail">使用期限</label>
     <div class="controls">
-      <input type="password" id="inputPassword" placeholder="Password">
+      <input type="text" value="2012-01-02" id="range_using"/>
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" for="inputPassword">备注</label>
+    <div class="controls">
+      <textarea></textarea>
     </div>
   </div>
   <div class="control-group">
     <div class="controls">
-      <label class="checkbox">
-        <input type="checkbox"> Remember me
-      </label>
       <button type="submit" class="btn">Sign in</button>
     </div>
   </div>

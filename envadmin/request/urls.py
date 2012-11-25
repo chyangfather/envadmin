@@ -11,5 +11,6 @@ urlpatterns = patterns('',
 
     # Uncomment the admin/doc line below to enable admin documentation:
     url('^projects$', projects),#ResourceListView.as_view(model=Resource,)),
-	url('^request/', request_form_view)
+	url('^request/', request_form_view),
+	url('^add_request/', ListCreateAPIView.as_view(model=Request)),
 )

@@ -9,6 +9,7 @@ def index(request):
 
 def login_view(request):    
     user = authenticate(username=request.POST['username'], password=request.POST['password'])
+    request.session['user']=user
     if user is not None:
         login(request, user)    
         print request.user    
@@ -16,6 +17,7 @@ def login_view(request):
     else:
         #验证失败，暂时不做处理
         return index(request)
+
 
 def logout_view(request):
     logout(request)

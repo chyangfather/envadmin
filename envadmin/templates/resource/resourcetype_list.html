@@ -16,8 +16,14 @@
 {% block content %}
 
 
-<span class="badge">1:{{request.user}}</span>
-
+<span class="badge">1:{{user}}</span>
+ <a href="{% url webapp.views.logout_view %}" class="btn btn-inverse btn-mini">
+{% if user.is_authenticated %}
+        {{user}}
+{% else %}
+        登录
+{% endif %}
+      </a>
 <table id="addtree" class="table table-hover">
     <caption>...</caption>
     <thead>

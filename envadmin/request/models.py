@@ -39,7 +39,10 @@ class Request(models.Model):
 	days_limit = models.IntegerField()
 	end_date = models.DateField()
 	comment = models.TextField()
-	
+
+	#def __unicode__(self):
+	#	return u"self.res_type.name"
+
 class RequestFactor(models.Model):
 	request = models.ForeignKey(Request)
 	key = models.ForeignKey('resource.AttributeDef')

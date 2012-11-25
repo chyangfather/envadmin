@@ -51,8 +51,8 @@
   <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="navbar-inner">
-        {% if request.user.is_authenticated %}
-        {{request.user}}
+        {% if user.is_authenticated %}
+        {{user}}
 {% else %}
         登录
 {% endif %}

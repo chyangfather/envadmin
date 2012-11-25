@@ -5,5 +5,5 @@ class DictionaryAdmin(admin.ModelAdmin):
     pass
 
 admin.site.register(Dictionary, DictionaryAdmin)
-admin.site.register(Project)
-#admin.site.register(Acquire)
+admin.site.register(Request)
+admin.site.register(RequestFactor)

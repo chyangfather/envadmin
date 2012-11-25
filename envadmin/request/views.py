@@ -3,6 +3,8 @@ from django.http import HttpResponse
 from django.shortcuts import render_to_response
 from models import *
 from resource.models import ResourceType
+from rest_framework import generics
+from serializers import *
 
 def request_form_view(request):	
 	restype = None
@@ -21,4 +23,5 @@ def project_cards(request):
 
 def hello(request):
     return HttpResponse("hello, Django!")
+
 
