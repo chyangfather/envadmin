@@ -25,16 +25,16 @@ def request_form_view(request):
 			'form': form,
 		})
 	elif request.method == 'POST':
-		print request.POST
+		#print request.POST
 		#return render_to_response('index.html', locals())
 		form = RequestForm(request.POST)
 		if form.is_valid(): # All validation rules pass
 			# Process the data in form.cleaned_data
 			# ...
 			form.save()
-			return render(request, 'parts/popup_form.html', {
-				'form': form,
-			})
+		return render(request, 'parts/popup_form.html', {
+			'form': form,
+		})
 	
 
 

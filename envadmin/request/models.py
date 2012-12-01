@@ -42,8 +42,9 @@ class Request(models.Model):
 	end_date = models.DateField()
 	comment = models.TextField()
 	#TODO:count?
-	#def __unicode__(self):
-	#	return u"self.res_type.name"
+	def __unicode__(self):
+		return self.subject.name+"---"+self.res_type.name
+
 
 class RequestFactor(models.Model):
 	request = models.ForeignKey(Request)

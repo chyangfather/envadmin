@@ -1,3 +1,4 @@
+# coding=utf-8
 #from django import forms
 
 #class RequestForm(forms.Form):
@@ -11,6 +12,9 @@ class RequestForm(ModelForm):
 	class Meta:
 		model = Request
 		#fields = ('days_limit', 'end_date', 'comment')
+		labels = {
+			'days_limit':'期限',
+		}
 		widgets = {
             'comment': Textarea(attrs={'cols': 120, 'rows': 8}),
         }

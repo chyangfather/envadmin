@@ -5,7 +5,10 @@
     {% endfor %}
     </ol>
 {% endif %}
-<form action="{% url request.views.request_form_view %}" method="post">{% csrf_token %}
+<form id="dome-form" action="/request/add_request/?format=json" method="post">{% csrf_token %}
 {{ form.as_p }}
 <input type="submit" value="Submit" />
 </form>
+<script type="text/javascript">
+
+</script>
