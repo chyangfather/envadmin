@@ -1,6 +1,8 @@
 申请{{restype.name}}
 
-<form class="form-horizontal" action="">
+<form class="form-horizontal" action="/request/add_request/" method="post">
+
+  {% csrf_token %}
   <input type="text" id="res_type_id" value="1"/>
   <div class="control-group">
     <label class="control-label" for="inputEmail">受理期限</label>

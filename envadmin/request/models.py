@@ -5,6 +5,8 @@ from resource.models import *
 import datetime
 #import subject
 
+
+
 class Dictionary(models.Model):
 	dict_key = models.CharField(max_length=255)
 	dict_value = models.CharField(max_length=255)
@@ -39,7 +41,7 @@ class Request(models.Model):
 	days_limit = models.IntegerField()
 	end_date = models.DateField()
 	comment = models.TextField()
-
+	#TODO:count?
 	#def __unicode__(self):
 	#	return u"self.res_type.name"
 

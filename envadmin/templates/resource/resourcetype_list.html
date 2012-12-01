@@ -65,7 +65,7 @@
     	<td>{% restype_having_bar node %}
         </td>
     	<td>
-            <button class="btn btn-primary btn-mini" name="request" value="{{ node.id }}">申请</button>    
+            <button class="btn btn-primary btn-mini" name="request" value="{{ node.id }}" title="{{node.name}}">申请</button>    
             
     <a class="btn dropdown-toggle btn-mini" data-toggle="dropdown" href="#">
     管理
@@ -126,6 +126,7 @@ $("#dialog-message").dialog({
     autoOpen: false,
     modal: true,
     width: 600,
+    title: 'abc',
 
     buttons: {
         Ok: function () {
@@ -137,6 +138,7 @@ $("#dialog-message").dialog({
 
 $('[name="request"]').click(function(){
     //alert($(this).val());
+
     $('#dialog-message').load('/request/request?type_id='+$(this).val());
     $('#dialog-message').dialog('open');
     return false;
