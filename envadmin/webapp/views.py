@@ -1,8 +1,32 @@
 # coding=utf-8
-from django.http import HttpResponse
-from django.shortcuts import render_to_response
+from django.shortcuts import render_to_response,render
 from django.contrib.auth import authenticate,login,logout
 
+def general_form(request,formClass):
+
+    if request.method == 'POST': # If the form has been submitted...
+        form = formClass(request.POST) # A form bound to the POST data
+        print form
+        if form.is_valid(): # All validation rules pass
+            # Process the data in form.cleaned_data
+            # ...
+            form.save(request=request)
+            #return HttpResponseRedirect('/thanks/') # Redirect after POST
+            return render(request, 'parts/popup_form.html', {
+                'form': form,
+                'path': request.path,
+                'global_errors': form.errors.get('__all__'),
+            })
+    else:
+        form = formClass() # An unbound form
+    
+
+    return render(request, 'parts/popup_form.html', {
+            'form': form,
+            'path': request.path,
+            'global_errors': form.errors.get('__all__'),
+        })
+   
 def index(request):
 	#return HttpResponse("hello, index!")
 	return render_to_response('index.html', locals())

@@ -1,14 +1,46 @@
-{% if form.subject.errors %}
-    <ol>
-    {% for error in form.subject.errors %}
-        <li><strong>{{ error|escape }}</strong></li>
-    {% endfor %}
-    </ol>
-{% endif %}
-<form id="dome-form" action="/request/add_request/?format=json" method="post">{% csrf_token %}
-{{ form.as_p }}
-<input type="submit" value="Submit" />
-</form>
-<script type="text/javascript">
+{% extends "base/base.html" %}
 
-</script>
+{% block content %}
+
+
+<form class="form-horizontal" action="{{path}}" method="post">{% csrf_token %}
+    {% if global_errors %}
+    <div class="control-group ">
+            <label class="control-label"></label>
+            <div class="controls">                
+                {% for error in global_errors %}
+        <span class="label label-important">{{ error }}</span>
+    {% endfor %}
+            </div>
+      </div>
+    
+{% endif %}
+    {# Include the hidden fields #}
+    {% for hidden in form.hidden_fields %}
+        {{ hidden }}
+    {% endfor %}
+    
+    {# Include the visible fields #}
+    {% for field in form.visible_fields %}
+        {% if field.errors %}
+        <div class="control-group error">
+            <label class="control-label">{{ field.label_tag }}</label>
+            <div class="controls">
+                
+                {{ field }}
+                <span class="help-inline">{{ field.errors }}</span>
+            </div>
+      </div>
+      {% else %}
+      <div class="control-group ">
+            <label class="control-label">{{ field.label_tag }}</label>
+            <div class="controls">                
+                {{ field }}
+            </div>
+      </div>
+      {% endif %}
+
+    {% endfor %}
+    <input type="submit" value="Submit" />
+</form>
+{% endblock %}

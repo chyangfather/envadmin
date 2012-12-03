@@ -11,6 +11,7 @@ from rest_framework.urlpatterns import format_suffix_patterns
 
 
 import resource
+import forms
 admin.autodiscover()
 
 urlpatterns = patterns('',
@@ -32,9 +33,11 @@ urlpatterns = patterns('',
     url(r'^hello/$', hello),
     (r'^resource/', include('resource.urls')),
     (r'^request/', include('request.urls')),
-    url(r'^login/$', login_view),
+    #url(r'^login/$', login_view),
+    url(r'^login/$', general_form,{'formClass':forms.LoginForm}),
     url(r'^logout/$', logout_view),
     url(r'^API-AUTH/', include('rest_framework.urls', namespace='rest_framework'))
+
 )
 
 
