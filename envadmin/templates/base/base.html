@@ -26,7 +26,11 @@
 
   <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
+<<<<<<< HEAD
       <div class="navbar-inner">        
+=======
+      <div class="navbar-inner">
+>>>>>>> *) brahch
         {% block navbar %}
             {% include "parts/nav.html" %}
         {% endblock %}
@@ -54,6 +58,7 @@
 <script type="text/javascript">
 $(document).ready(function() {
       // Dialogs
+<<<<<<< HEAD
     $('a#login').click(function(){
         $("#popup").dialog({
             autoOpen: false,
@@ -77,13 +82,34 @@ $(document).ready(function() {
                  
         });
             
+=======
+
+>>>>>>> *) brahch
 
         $('#popup').dialog('open');
 
         
 
+<<<<<<< HEAD
         
         return false;
+=======
+$('a#login').click(function(){
+    //alert($(this).val());
+    $("#popup-form").dialog({
+        autoOpen: false,
+        modal: true,
+        width: 500,
+        buttons: {
+            登录: function () {
+                $(this).dialog("close");
+            }
+        }
+    });
+
+    $('#popup-form').dialog('open');
+    return false;
+>>>>>>> *) brahch
 
 });
     /*
@@ -94,7 +120,37 @@ $(document).ready(function() {
       {% block onreadyscript %}{% endblock %}
     });
     </script>
+<<<<<<< HEAD
     <div id="popup" title="登录"></div>
+=======
+    <div id="dialog-login" title="登录">
+    <form class="form-horizontal" action="{% url webapp.views.login_view %}" method="post">
+      {% csrf_token %}
+        <div class="control-group">
+            <label class="control-label" for="inputEmail">账号</label>
+            <div class="controls">
+                <input type="text" id="username" name="username" placeholder="账号">
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="inputPassword">密码</label>
+            <div class="controls">
+                <input type="password" id="password" name="password" placeholder="密码">
+            </div>
+        </div>
+        <div class="control-group">
+            <div class="controls">
+                <label class="checkbox">
+                    <input type="checkbox"> 记录密码
+                </label>
+                <!--button type="submit" class="btn">登录</button-->
+            </div>
+            <input type="submit">submit</input>
+        </div>
+    </form>
+</div>
+<div id="popup-form"></div>
+>>>>>>> *) brahch
   </body>
 </html>
  {% endspaceless %}
