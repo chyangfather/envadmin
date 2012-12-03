@@ -1,22 +1,22 @@
 # coding=utf-8
 from django.shortcuts import render_to_response,render
 from django.contrib.auth import authenticate,login,logout
-
+from django.http import HttpResponse
 def general_form(request,formClass):
 
     if request.method == 'POST': # If the form has been submitted...
         form = formClass(request.POST) # A form bound to the POST data
         print form
+        print form.is_bound
         if form.is_valid(): # All validation rules pass
             # Process the data in form.cleaned_data
             # ...
+            #form = formClass({'username':form.cleaned_data['username'], 'password':form.cleaned_data['password']})
             form.save(request=request)
+            html = "<html><body>登录成功</body></html>"
+            return HttpResponse(html)
             #return HttpResponseRedirect('/thanks/') # Redirect after POST
-            return render(request, 'parts/popup_form.html', {
-                'form': form,
-                'path': request.path,
-                'global_errors': form.errors.get('__all__'),
-            })
+            
     else:
         form = formClass() # An unbound form
     
