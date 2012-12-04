@@ -17,7 +17,7 @@
       	<a href="//gathercontent.com/features">Features</a>
       	<a href="//gathercontent.com/signup">Get Started Now</a>
 
-       <a href="{% url webapp.views.logout_view %}" class="btn btn-inverse btn-mini">
+       <a id="login" href="#" class="btn btn-inverse btn-mini">
 {% if request.user.is_authenticated %}
         {{request.user}}
 {% else %}

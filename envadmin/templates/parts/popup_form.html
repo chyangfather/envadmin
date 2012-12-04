@@ -1,9 +1,4 @@
-{% extends "base/base.html" %}
-
-{% block content %}
-
-
-<form class="form-horizontal" action="{{path}}" method="post">{% csrf_token %}
+<form id="popupform" class="form-horizontal" action="{{path}}" method="post">{% csrf_token %}
     {% if global_errors %}
     <div class="control-group ">
             <label class="control-label"></label>
@@ -43,4 +38,4 @@
     {% endfor %}
     <input type="submit" value="Submit" />
 </form>
-{% endblock %}
+

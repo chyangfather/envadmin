@@ -13,51 +13,22 @@
     
     <link href="/static/css/bootstrap-responsive.min.css" rel="stylesheet">
     <link type="text/css" href="/static/css/custom-theme/jquery-ui-1.9.0.custom.css" rel="stylesheet" />
-    
+    <link href="/static/css/djquery.css" rel="stylesheet">
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     {% block css %}{% endblock %}
-    <style type="text/css">
-      body {
-        padding-top: 60px;
-        padding-bottom: 40px;
-        margin-left: 60px;
-        margin-right: 60px;
-        background-color: #F5F5F5;
-        color: #5a5a5a;
-
-      }
-      .sidebar-nav {
-        padding: 9px 0;
-      }
-
-      .well-white {
-    -moz-box-sizing: border-box;
-    background-color: #FFFFFF;
-    border: 1px solid #D5D5D5;
-    border-radius: 6px 6px 6px 6px;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.075);
-    margin-bottom: 20px;
-    position: relative;
-    padding: 20px;
-}
-    </style>
+    
     <!-- Fav and touch icons -->
     <link rel="shortcut icon" href="/static/images/hysec.ico">
   </head>
 
   <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="navbar-inner">
-        {% if user.is_authenticated %}
-        {{user}}
-{% else %}
-        登录
-{% endif %}
+      <div class="navbar-inner">        
         {% block navbar %}
-        {% include "parts/nav.html" %}
+            {% include "parts/nav.html" %}
         {% endblock %}
       </div>
     </div>
@@ -74,30 +45,44 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
 
-     <script src="/static/js/jquery-1.8.2.min.js"></script>
-     <script src="/static/js/bootstrap.min.js"></script>
-    <script src="/static/js/jquery-ui-1.9.0.custom.min.js"></script>
-    
-    {% block js %}{% endblock %}
-    <script type="text/javascript">
-    $(document).ready(function() {
+<script src="/static/js/jquery-1.8.2.min.js"></script>
+<script src="/static/js/bootstrap.min.js"></script>
+<script src="/static/js/jquery-ui-1.9.0.custom.min.js"></script>
+<script src="/static/js/form2json.js"></script>
+{% block js %}{% endblock %}
+
+<script type="text/javascript">
+$(document).ready(function() {
       // Dialogs
-$("#dialog-login").dialog({
-    autoOpen: false,
-    modal: true,
-    width: 500,
-    buttons: {
-        登录: function () {
-            $(this).dialog("close");
+    $('a#login').click(function(){
+    $("#popup").dialog({
+        autoOpen: false,
+        modal: true,
+        width: 500,
+        title: '登录',
+        buttons: {
+            登录: function () {
+                var action = "/login/";
+                var data=$("#popupform").serializeObjectForm('');
+
+                var x = $.post(action,data,function(result){
+                    $('#popup').html(result);
+                });
+                //$(this).dialog("close");
+            }
         }
-    }
-});
+    });
 
+    $('#popup').load('/login',function(){
+             
+    });
+        
 
+    $('#popup').dialog('open');
 
-$('a#login').click(function(){
-    //alert($(this).val());
-    $('#dialog-login').dialog('open');
+    
+
+    
     return false;
 
 });
@@ -109,32 +94,7 @@ $('a#login').click(function(){
       {% block onreadyscript %}{% endblock %}
     });
     </script>
-    <div id="dialog-login" title="登录">
-    <form class="form-horizontal" action="#" method="post">
-      {% csrf_token %}
-        <div class="control-group">
-            <label class="control-label" for="inputEmail">账号</label>
-            <div class="controls">
-                <input type="text" id="username" name="username" placeholder="账号">
-            </div>
-        </div>
-        <div class="control-group">
-            <label class="control-label" for="inputPassword">密码</label>
-            <div class="controls">
-                <input type="password" id="password" name="password" placeholder="密码">
-            </div>
-        </div>
-        <div class="control-group">
-            <div class="controls">
-                <label class="checkbox">
-                    <input type="checkbox"> 记录密码
-                </label>
-                <!--button type="submit" class="btn">登录</button-->
-            </div>
-            <input type="submit">submit</input>
-        </div>
-    </form>
-</div>
+    <div id="popup" title="登录"></div>
   </body>
 </html>
  {% endspaceless %}
