@@ -55,35 +55,35 @@
 $(document).ready(function() {
       // Dialogs
     $('a#login').click(function(){
-    $("#popup").dialog({
-        autoOpen: false,
-        modal: true,
-        width: 500,
-        title: '登录',
-        buttons: {
-            登录: function () {
-                var action = "/login/";
-                var data=$("#popupform").serializeObjectForm('');
+        $("#popup").dialog({
+            autoOpen: false,
+            modal: true,
+            width: 500,
+            title: '登录',
+            buttons: {
+                登录: function () {
+                    var action = "/login/";
+                    var data=$("#popupform").serializeObjectForm('');
 
-                var x = $.post(action,data,function(result){
-                    $('#popup').html(result);
-                });
-                //$(this).dialog("close");
+                    var x = $.post(action,data,function(result){
+                        $('#popup').html(result);
+                    });
+                    //$(this).dialog("close");
+                }
             }
-        }
-    });
+        });
 
-    $('#popup').load('/login',function(){
-             
-    });
+        $('#popup').load('/login',function(){
+                 
+        });
+            
+
+        $('#popup').dialog('open');
+
         
 
-    $('#popup').dialog('open');
-
-    
-
-    
-    return false;
+        
+        return false;
 
 });
     /*

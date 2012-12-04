@@ -13,7 +13,13 @@ def general_form(request,formClass):
             # ...
             #form = formClass({'username':form.cleaned_data['username'], 'password':form.cleaned_data['password']})
             form.save(request=request)
-            html = "<span class='label label-success'>登录成功!</span><script type='text/javascript'>$('#popup').dialog('close');</script>"
+            html = '''
+                <span class='label label-success'>登录成功!</span>
+                <script type='text/javascript'>
+                    setTimeout(function(){
+                        $('#popup').dialog('close');
+                    },5000);
+            </script>'''
             return HttpResponse(html)
             #return HttpResponseRedirect('/thanks/') # Redirect after POST
             

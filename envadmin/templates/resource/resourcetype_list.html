@@ -85,38 +85,10 @@
     
 {% endrecursetree %}
 </table> 
-
-<!--static dialog-->
-<div id="dialog-message" title="申请资源">
-    <form class="form-horizontal">
-        <div class="control-group">
-            <label class="control-label" for="inputEmail">Email</label>
-            <div class="controls">
-                <input type="text" id="inputEmail" placeholder="Email">
-            </div>
-        </div>
-        <div class="control-group">
-            <label class="control-label" for="inputPassword">Password</label>
-            <div class="controls">
-                <input type="password" id="inputPassword" placeholder="Password">
-            </div>
-        </div>
-        <div class="control-group">
-            <div class="controls">
-                <label class="checkbox">
-                    <input type="checkbox"> Remember me
-                </label>
-                <button type="submit" class="btn">Sign in</button>
-            </div>
-        </div>
-    </form>
-</div>
-        <!--end static dialog-->
-
 {% endblock %}
 
 {% block js %}
-<script src="/static/js/form2json.js"></script>
+
 {% endblock %}
 
 {% block onreadyscript %}
@@ -162,19 +134,41 @@ $("#dialog-message").dialog({
     }
 });
 
-$("button.ui-button.ui-widget").click(function(){
-    
-});
+
 
 
 
 
 $('[name="request"]').click(function(){
     //alert($(this).val());
+    var action = '/request/request/?type_id='+$(this).val();
+    
 
-    $('#dialog-message').load('/request/request?type_id='+$(this).val());
-    $('#dialog-message').dialog('open');
-    return false;
+    $("#popup").dialog({
+            autoOpen: false,
+            modal: true,
+            width: 800,
+            title: '申请xxx',
+            buttons: {
+                提交申请: function () {                    
+                    var data=$("#popupform").serializeObjectForm('');
+
+                    var x = $.post(action,data,function(result){
+                        $('#popup').html(result);
+                    });                    
+                }
+            }
+        });
+
+        $('#popup').load(action);
+            
+
+        $('#popup').dialog('open');
+
+        
+
+        
+        return false;
 
 });
 {% endblock %}

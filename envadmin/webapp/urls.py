@@ -20,7 +20,8 @@ urlpatterns = patterns('',
     # url(r'^env_admin/', include('env_admin.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
-    url(r'^$', index),
+    #url(r'^$', index),
+    url(r'^',include('djquery.urls')),
     #url(r'^projects/$', projects),
     #url(r'^projects/cards/$', project_cards),
     #url(r'^partners/$', partners),
