@@ -8,13 +8,16 @@
 #    cc_myself = forms.BooleanField(required=False)
 from models import *
 from django.forms import *
+from django_bootstrap.widgets import *
 class RequestForm(ModelForm):
+	days_limit = Spinner(label='期限',help_text='希望在几天内受理')
+	
+		
+		
 	class Meta:
 		model = Request
 		#fields = ('days_limit', 'end_date', 'comment')
-		labels = {
-			'days_limit':'期限',
-		}
 		widgets = {
             'comment': Textarea(attrs={'cols': 120, 'rows': 8}),
         }
+		

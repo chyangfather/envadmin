@@ -2,6 +2,8 @@ from django.conf.urls import patterns, include, url
 from django.views.generic import TemplateView
 from models import *
 from views import *
+from forms import *
+from webapp.views import *
 from rest_framework.generics import *
 
 urlpatterns = patterns('',
@@ -11,6 +13,6 @@ urlpatterns = patterns('',
 
     # Uncomment the admin/doc line below to enable admin documentation:
     url('^projects$', projects),#ResourceListView.as_view(model=Resource,)),
-	url('^request/', request_form_view),
-	url('^add_request/', ListCreateAPIView.as_view(model=Request)),
+	#url('^request/', request_form_view),
+	url('^request/', general_form,{'formClass':RequestForm}),	
 )

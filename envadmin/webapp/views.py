@@ -2,7 +2,7 @@
 from django.shortcuts import render_to_response,render
 from django.contrib.auth import authenticate,login,logout
 from django.http import HttpResponse
-def general_form(request,formClass):
+def general_form(request,formClass,instance=None):
 
     if request.method == 'POST': # If the form has been submitted...
         form = formClass(request.POST) # A form bound to the POST data
@@ -12,19 +12,19 @@ def general_form(request,formClass):
             # Process the data in form.cleaned_data
             # ...
             #form = formClass({'username':form.cleaned_data['username'], 'password':form.cleaned_data['password']})
-            form.save(request=request)
+            form.save()
             html = '''
                 <span class='label label-success'>登录成功!</span>
                 <script type='text/javascript'>
                     setTimeout(function(){
                         $('#popup').dialog('close');
-                    },5000);
+                    },3000);
             </script>'''
             return HttpResponse(html)
             #return HttpResponseRedirect('/thanks/') # Redirect after POST
             
     else:
-        form = formClass() # An unbound form
+        form = formClass(instance=instance) # An unbound form
     
 
     return render(request, 'parts/popup_form.html', {

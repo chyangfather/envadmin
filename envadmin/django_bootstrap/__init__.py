@@ -1,3 +1,7 @@
+__version__ = '0.0.1'
+
+VERSION = __version__  # synonym
+
 # ACTION_CHECKBOX_NAME is unused, but should stay since its import from here
 # has been referenced in documentation.
 from django.contrib.admin.helpers import ACTION_CHECKBOX_NAME

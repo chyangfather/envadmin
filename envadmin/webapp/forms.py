@@ -7,8 +7,10 @@ class LoginForm(forms.Form):
 	username = forms.CharField(label='用户名')
 	password = forms.CharField(label='密码',widget=forms.PasswordInput)
 
-	def save(self,request):
-		login(request, self.user)
+	def save(self):
+		user = authenticate(username=self.cleaned_data['username'], password=self.cleaned_data['password'])
+		return user
+		#login(request, self.user)
 		
 
 	def clean(self):

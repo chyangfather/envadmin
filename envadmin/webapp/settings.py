@@ -129,7 +129,7 @@ INSTALLED_APPS = (
     'subject',
     'resource',
     'rest_framework',
-    'djquery',
+    'django_bootstrap',
 )
 
 

@@ -14,6 +14,27 @@ from django.utils.translation import ugettext as _
 from django.utils.safestring import mark_safe
 from django.utils.encoding import force_unicode
 
+class Spinner(forms.CharField):
+    """
+
+    """
+
+    @property
+    def media(self):
+        #js = ["core.js", "SelectBox.js", "SelectFilter2.js"]
+        #return forms.Media(js=[static("admin/js/%s" % path) for path in js])
+        pass
+    def render(self, name, value, attrs=None, choices=()):
+        if attrs is None:
+            attrs = {}
+        #attrs['class'] = 'selectfilter'
+        #if self.is_stacked:
+        #    attrs['class'] += 'stacked'
+        output = [super(Spinner, self).render(name, value, attrs, choices)]
+        output.append(u'<script type="text/javascript">addEvent(window, "load", function(e) {')
+        output.append(u'$("#id_%s").spinner();});</script>\n'% name)
+        print output
+        return mark_safe(u''.join(output))
 
 class FilteredSelectMultiple(forms.SelectMultiple):
     """
