@@ -24,7 +24,9 @@ def general_form(request,formClass,instance=None):
             #return HttpResponseRedirect('/thanks/') # Redirect after POST
             
     else:
-        form = formClass(instance=instance) # An unbound form
+        print request.GET.dict()
+        obj = request.GET.dict()
+        form = formClass(initial=obj) # An unbound form
     
 
     return render(request, 'parts/popup_form.html', {

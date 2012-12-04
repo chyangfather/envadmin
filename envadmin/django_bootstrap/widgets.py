@@ -34,7 +34,7 @@ class Spinner(forms.TextInput):
         output.append(super(forms.TextInput,self).render(name, value, attrs))
         output.append(u'<script type="text/javascript">\n')
         output.append(u'$("#id_%s").spinner();</script>\n'% name)
-        print output
+        #print output
         return mark_safe(u''.join(output))
      
 
