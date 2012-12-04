@@ -1,5 +1,5 @@
 # coding=utf-8
-<<<<<<< HEAD
+
 from django import forms
 from django.contrib.auth import authenticate,login,logout
 
@@ -25,17 +25,4 @@ class LoginForm(forms.Form):
 			raise forms.ValidationError("错误的用户名或密码!")
 		
 		
-=======
-#from django import forms
 
-#class RequestForm(forms.Form):
-#    subject = forms.CharField(max_length=100)
-#    message = forms.CharField()
-#    sender = forms.EmailField()
-#    cc_myself = forms.BooleanField(required=False)
-from models import *
-from django.forms import *
-class LoginForm(Form):
-	username = forms.CharField()
-    password = forms.CharField()
->>>>>>> *) brahch
