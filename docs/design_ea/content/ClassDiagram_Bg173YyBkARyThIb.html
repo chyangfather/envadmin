@@ -1,0 +1,525 @@
+<html>
+<head>
+	<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" href="report.css" type="text/css"/>
+	<title>Class Diagram - resource</title>
+	<script type="text/javascript" src="report.js"></script>
+	<script type="text/javascript" src="link_popup.js"></script>
+	<script type="text/javascript" src="tooltip.js"></script>
+</head>
+<body style="margin-left: 10px; margin-right: 10px; margin-top: 10px; margin-bottom: 10px;" onload="initPage();initDiagram()">
+	<div id="spotlight" style="position:absolute; width:100px; height:100px; z-index:2; visibility:hidden">
+		<table id="spotLightTable" onClick="updateCursorPos(event);adjustPopupPositionForSpotLightTable();clearSpotLight()" style="border-style:solid; border-width:3px; border-color:#FF0000" width="100%" cellpadding="0" border="0" cellspacing="0">
+			<tr>
+				<td id="spotLightCell">
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div id="spotLightResourcesTop" style="position:absolute; width:100px; height:100px; z-index:1; visibility:hidden">
+		<table cellpadding="0" border="0" cellspacing="0">
+			<tr>
+				<td>
+					<a href="#top">
+						<img style="border:none" src="../images/icons/BackToTop.gif" alt="Back to top"/></a>
+				</td>
+				<td>
+					<a href="javascript:clearSpotLightFromOpenSpecButton();">
+						<img style="border:none" src="../images/icons/OpenSpecification.gif" alt="Open specification"/></a>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div id="spotLightResourcesRight" style="position:absolute; width:100px; height:100px; z-index:1; visibility:hidden">
+		<table cellpadding="0" border="0" cellspacing="0">
+			<tr>
+				<td>
+					<a href="#top">
+						<img style="border:none" src="../images/icons/BackToTop.gif" alt="Back to top"/></a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="javascript:clearSpotLightFromOpenSpecButton();">
+						<img style="border:none" src="../images/icons/OpenSpecification.gif" alt="Open specification"/></a>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div id="linkPopupMenuLayer" style="position:absolute;z-index:2;visibility:hidden">
+		<table id="linkPopupMenuTable" style="border-style:solid; border-width:1px; border-color:#000000; background:#FFFFFF; width:250px" width="100%" border="0">
+		</table>
+	</div>
+	<div id="referenceIconLayer" style="position:absolute; z-index:1; visibility:hidden; ">
+		<table style="font-size:1;" width="100%" cellpadding="3" border="0" cellspacing="0">
+			<tr>
+				<td>
+					<img src="../images/icons/Ref.gif" style="border:none" onclick="movePopupPositionToReferenceIconPosition();resetPopupForReference();switchPopupShowHideStatus();" />				</td>
+			</tr>
+		</table>
+	</div>
+	<div id="subdiagramIconLayer" style="position:absolute; z-index:1; visibility:hidden">
+		<table width="100%" cellpadding="3" border="0" cellspacing="0">
+			<tr>
+				<td>
+					<img src="../images/icons/Subdiagram.gif" style="border:none" onclick="movePopupPositionToSubdiagramIconPosition();resetPopupForSubdiagram();switchPopupShowHideStatus();" />				</td>
+			</tr>
+		</table>
+	</div>
+	<div class="HeaderText">
+		envadmin Documentation	</div>
+	<table width="100%" cellpadding="0" border="0" cellspacing="0">
+		<tr>
+			<td class="HeaderLine1">
+			</td>
+		</tr>
+		<tr>
+			<td class="HeaderLine2">
+			</td>
+		</tr>
+		<tr>
+			<td class="HeaderLine3">
+			</td>
+		</tr>
+	</table>
+	<p>
+		<a target="_content_pane" class="PageParentTitle" href="Package__oN73YyBkARyThIw.html">
+resource : 包</a>
+	</p>
+	<p class="PageTitle">
+		Class Diagram - resource	</p>
+	<table width="100%" cellpadding="0" border="0" cellspacing="0">
+		<tr>
+			<td>
+<span class="TableContent">跳至︰</span>				<select id="SelectShape" class="TableContent" onChange="scrollWin(this.value);showSpotLight(this.value)">
+<option value="">Please select a model element</option>
+<option value="390.0|330.0|110.0|100.0|Class_JLt73YyBkARyThI8.html|Class_JLt73YyBkARyThI8.html|.Lt73YyBkARyThI7" id="option.Lt73YyBkARyThI7">Resource : Class</option>
+<option value="380.0|220.0|100.0|40.0|Class_FZD73YyBkARyThKl.html|Class_FZD73YyBkARyThKl.html|FZD73YyBkARyThKk" id="optionFZD73YyBkARyThKk">ResourceType : Class</option>
+<option value="730.0|350.0|80.0|40.0|Class_cLcH3YyBkARyThSL.html|Class_cLcH3YyBkARyThSL.html|cLcH3YyBkARyThSK" id="optioncLcH3YyBkARyThSK">AttrDef : Class</option>
+<option value="220.0|220.0|80.0|40.0|Class_VapX3YyBkARyTiet.html|Class_VapX3YyBkARyTiet.html|VapX3YyBkARyTies" id="optionVapX3YyBkARyTies">Interface : Class</option>
+<option value="220.0|340.0|80.0|40.0|Class_EpdX3YyBkARyTjhl.html|Class_EpdX3YyBkARyTjhl.html|EpdX3YyBkARyTjhk" id="optionEpdX3YyBkARyTjhk">Account : Class</option>
+<option value="620.0|390.0|80.0|40.0|Class_uLoAPYyBkARyTp23.html|Class_uLoAPYyBkARyTp23.html|uLoAPYyBkARyTp22" id="optionuLoAPYyBkARyTp22">Usage : Class</option>
+<option value="10.0|310.0|80.0|40.0|Class_HNYoPYyBkARyTi1m.html|Class_HNYoPYyBkARyTi1m.html|HNYoPYyBkARyTi1l" id="optionHNYoPYyBkARyTi1l">Tool : Class</option>
+<option value="80.0|390.0|80.0|70.0|Class_raRoPYyBkARyTqnk.html|Class_raRoPYyBkARyTqnk.html|raRoPYyBkARyTqnj" id="optionraRoPYyBkARyTqnj">Step : Class</option>
+<option value="480.0|0.0|170.0|190.0|NOTE_37n73YyBkARyThNH.html|NOTE_37n73YyBkARyThNH.html|37n73YyBkARyThNG" id="option37n73YyBkARyThNG"> : Note</option>
+<option value="130.0|120.0|180.0|46.0|NOTE_aTN33YyBkARyTkqj.html|NOTE_aTN33YyBkARyTkqj.html|qTN33YyBkARyTkqi" id="optionqTN33YyBkARyTkqi"> : Note</option>
+<option value="0.0|500.0|210.0|59.0|NOTE_WbUoPYyBkARyTqjq.html|NOTE_WbUoPYyBkARyTqjq.html|WbUoPYyBkARyTqjp" id="optionWbUoPYyBkARyTqjp"> : Note</option>
+<option value="-14.0|266.0|240.0|326.0|ShapeEditorShape_aELoPYyBkARyTtLm.html|ShapeEditorShape_aELoPYyBkARyTtLm.html|aELoPYyBkARyTtLl" id="optionaELoPYyBkARyTtLl"> : Freehand Shape</option>
+</select>			</td>
+		</tr>
+	</table>
+	<table width="100%" cellpadding="0" border="0" cellspacing="0">
+		<tr>
+			<td>
+				<img id = "diagram" src = "../images/resource.png" usemap="#diagram_map" class="Image" width="814.0" height="596.0"/>				<map name = "diagram_map">
+<area docContent="<head>
+    
+  </head>
+  <body>
+    <p>
+      <font color=&quot;#000000&quot; face=&quot;Dialog&quot; size=&quot;11px&quot; style=&quot;font-size:11px&quot;>use 
+      script , finish some missions,</font>
+    </p>
+    <p>
+      <font color=&quot;#000000&quot; face=&quot;Dialog&quot; size=&quot;11px&quot; style=&quot;font-size:11px&quot;>such 
+      as deploy sub-resource</font>
+    </p>
+  </body>" coords="0.0,500.0,210.0,559.0" coords2="0.0,500.0,210.0,559.0" shape="rect" alt="use script , finish some missions,
+such as deploy sub-resource:Note" id="areaWbUoPYyBkARyTqjp" href="NOTE_WbUoPYyBkARyTqjq.html" onmouseover="showTooltip(this)" onmouseout="hideTooltip()"/>
+<area docContent="<head>
+    
+  </head>
+  <body>
+    <p>
+      <font color=&quot;#000000&quot; face=&quot;Dialog&quot; size=&quot;11px&quot; style=&quot;font-size:11px&quot;>include 
+      :</font>
+    </p>
+    <p>
+      <font color=&quot;#000000&quot; face=&quot;Dialog&quot; size=&quot;11px&quot; style=&quot;font-size:11px&quot;>&nbsp; 
+      &nbsp; &nbsp; &nbsp; deploy child resource</font>
+    </p>
+  </body>" coords="130.0,120.0,310.0,166.0" coords2="130.0,120.0,310.0,166.0" shape="rect" alt="include :
+        deploy child resource:Note" id="areaqTN33YyBkARyTkqi" href="NOTE_aTN33YyBkARyTkqj.html" onmouseover="showTooltip(this)" onmouseout="hideTooltip()"/>
+<area docContent="<head>
+    
+  </head>
+  <body>
+    <p>
+      <font color=&quot;#000000&quot; face=&quot;Dialog&quot; size=&quot;11px&quot; style=&quot;font-size:11px&quot;>Node(os,ip,etc...)</font>
+    </p>
+    <p>
+      <font color=&quot;#000000&quot; face=&quot;Dialog&quot; size=&quot;11px&quot; style=&quot;font-size:11px&quot;>Device</font>
+    </p>
+    <p>
+      <font color=&quot;#000000&quot; face=&quot;Dialog&quot; size=&quot;11px&quot; style=&quot;font-size:11px&quot;>&nbsp; 
+      &nbsp; &nbsp; &nbsp; switch, Router</font>
+    </p>
+    <p>
+      <font color=&quot;#000000&quot; face=&quot;Dialog&quot; size=&quot;11px&quot; style=&quot;font-size:11px&quot;>Network</font>
+    </p>
+    <p>
+      <font color=&quot;#000000&quot; face=&quot;Dialog&quot; size=&quot;11px&quot; style=&quot;font-size:11px&quot;>&nbsp; 
+      &nbsp; &nbsp; &nbsp; subnet</font>
+    </p>
+    <p>
+      <font color=&quot;#000000&quot; face=&quot;Dialog&quot; size=&quot;11px&quot; style=&quot;font-size:11px&quot;>&nbsp; 
+      &nbsp; &nbsp; &nbsp; ip</font>
+    </p>
+    <p>
+      <font color=&quot;#000000&quot; face=&quot;Dialog&quot; size=&quot;11px&quot; style=&quot;font-size:11px&quot;>
+</font>    </p>
+    <p>
+      <font color=&quot;#000000&quot; face=&quot;Dialog&quot; size=&quot;11px&quot; style=&quot;font-size:11px&quot;>SysSoftware</font>
+    </p>
+    <p>
+      <font color=&quot;#000000&quot; face=&quot;Dialog&quot; size=&quot;11px&quot; style=&quot;font-size:11px&quot;>&nbsp; 
+      &nbsp; &nbsp; &nbsp; AppServer,Database</font>
+    </p>
+    <p>
+      <font color=&quot;#000000&quot; face=&quot;Dialog&quot; size=&quot;11px&quot; style=&quot;font-size:11px&quot;>Service</font>
+    </p>
+    <p>
+      <font color=&quot;#000000&quot; face=&quot;Dialog&quot; size=&quot;11px&quot; style=&quot;font-size:11px&quot;>&nbsp; 
+      &nbsp; &nbsp; &nbsp; oracle instance</font>
+    </p>
+    <p>
+      <font color=&quot;#000000&quot; face=&quot;Dialog&quot; size=&quot;11px&quot; style=&quot;font-size:11px&quot;>&nbsp; 
+      &nbsp; &nbsp; &nbsp; livebos</font>
+    </p>
+    <p>
+      <font color=&quot;#000000&quot; face=&quot;Dialog&quot; size=&quot;11px&quot; style=&quot;font-size:11px&quot;>component&nbsp; 
+      &nbsp; &nbsp; &nbsp;</font>
+    </p>
+    <p>
+      <font color=&quot;#000000&quot; face=&quot;Dialog&quot; size=&quot;11px&quot; style=&quot;font-size:11px&quot;>&nbsp; 
+      &nbsp; &nbsp; &nbsp; jgxt &nbsp; &nbsp; &nbsp;</font>
+    </p>
+  </body>" coords="480.0,0.0,650.0,190.0" coords2="480.0,0.0,650.0,190.0" shape="rect" alt="Node(os,ip,etc...)
+Device
+        switch, Router
+Network
+        subnet
+        ip
+
+SysSoftware
+        AppServer,Database
+Service
+        oracle instance
+        livebos
+component       
+        jgxt      :Note" id="area37n73YyBkARyThNG" href="NOTE_37n73YyBkARyThNH.html" onmouseover="showTooltip(this)" onmouseout="hideTooltip()"/>
+<area coords="-14.0,266.0,226.0,592.0" coords2="-14.0,266.0,226.0,592.0" shape="rect" alt=":Freehand Shape" id="areaaELoPYyBkARyTtLl" href="ShapeEditorShape_aELoPYyBkARyTtLm.html"/>
+<area coords="80.0,390.0,160.0,460.0" coords2="80.0,390.0,160.0,460.0" shape="rect" alt="Step:Class" id="arearaRoPYyBkARyTqnj" href="Class_raRoPYyBkARyTqnk.html"/>
+<area coords="10.0,310.0,90.0,350.0" coords2="10.0,310.0,90.0,350.0" shape="rect" alt="Tool:Class" id="areaHNYoPYyBkARyTi1l" href="Class_HNYoPYyBkARyTi1m.html"/>
+<area coords="620.0,390.0,700.0,430.0" coords2="620.0,390.0,700.0,430.0" shape="rect" alt="Usage:Class" id="areauLoAPYyBkARyTp22" href="Class_uLoAPYyBkARyTp23.html"/>
+<area coords="220.0,340.0,300.0,380.0" coords2="220.0,340.0,300.0,380.0" shape="rect" alt="Account:Class" id="areaEpdX3YyBkARyTjhk" href="Class_EpdX3YyBkARyTjhl.html"/>
+<area coords="220.0,220.0,300.0,260.0" coords2="220.0,220.0,300.0,260.0" shape="rect" alt="Interface:Class" id="areaVapX3YyBkARyTies" href="Class_VapX3YyBkARyTiet.html"/>
+<area coords="730.0,350.0,810.0,390.0" coords2="730.0,350.0,810.0,390.0" shape="rect" alt="AttrDef:Class" id="areacLcH3YyBkARyThSK" href="Class_cLcH3YyBkARyThSL.html"/>
+<area coords="380.0,220.0,480.0,260.0" coords2="380.0,220.0,480.0,260.0" shape="rect" alt="ResourceType:Class" id="areaFZD73YyBkARyThKk" href="Class_FZD73YyBkARyThKl.html"/>
+<area coords="390.0,330.0,500.0,430.0" coords2="390.0,330.0,500.0,430.0" shape="rect" alt="Resource:Class" id="area.Lt73YyBkARyThI7" href="Class_JLt73YyBkARyThI8.html"/></map>			</td>
+		</tr>
+	</table>
+	<p>
+	</p>
+	<table width="100%" cellpadding="0" border="0" cellspacing="0">
+		<tr>
+			<td class="Category">
+				Model Elements			</td>
+		</tr>
+		<tr>
+			<td style="height: 5px">
+			</td>
+		</tr>
+	</table>
+	<table width="100%" cellpadding="0" border="0" cellspacing="0">
+		<tr>
+			<td colSpan="4" class="TableHeaderLine">
+			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine1">
+			</td>
+		</tr>
+		<tr class="TableHeader">
+			<td class="TableCellSpaceHolder10Px">
+			</td>
+			<td width="30%">
+<span class="TableHeaderText">名称</span>			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td>
+<span class="TableHeaderText">文档</span>			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine2">
+			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="Class_JLt73YyBkARyThI8.html">Resource : 类</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="Class_FZD73YyBkARyThKl.html">ResourceType : 类</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="Class_cLcH3YyBkARyThSL.html">AttrDef : 类</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="Class_VapX3YyBkARyTiet.html">Interface : 类</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="Class_EpdX3YyBkARyTjhl.html">Account : 类</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="Class_uLoAPYyBkARyTp23.html">Usage : 类</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="Class_HNYoPYyBkARyTi1m.html">Tool : 类</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="Class_raRoPYyBkARyTqnk.html">Step : 类</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/NOTE.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/NOTE.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="NOTE_37n73YyBkARyThNH.html">N/A : 注解</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"><head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#000000" face="Dialog" size="11px" style="font-size:11px">Node(os,ip,etc...)</font>
+    </p>
+    <p>
+      <font color="#000000" face="Dialog" size="11px" style="font-size:11px">Device</font>
+    </p>
+    <p>
+      <font color="#000000" face="Dialog" size="11px" style="font-size:11px">&nbsp; 
+      &nbsp; &nbsp; &nbsp; switch, Router</font>
+    </p>
+    <p>
+      <font color="#000000" face="Dialog" size="11px" style="font-size:11px">Network</font>
+    </p>
+    <p>
+      <font color="#000000" face="Dialog" size="11px" style="font-size:11px">&nbsp; 
+      &nbsp; &nbsp; &nbsp; subnet</font>
+    </p>
+    <p>
+      <font color="#000000" face="Dialog" size="11px" style="font-size:11px">&nbsp; 
+      &nbsp; &nbsp; &nbsp; ip</font>
+    </p>
+    <p>
+      <font color="#000000" face="Dialog" size="11px" style="font-size:11px">
+</font>    </p>
+    <p>
+      <font color="#000000" face="Dialog" size="11px" style="font-size:11px">SysSoftware</font>
+    </p>
+    <p>
+      <font color="#000000" face="Dialog" size="11px" style="font-size:11px">&nbsp; 
+      &nbsp; &nbsp; &nbsp; AppServer,Database</font>
+    </p>
+    <p>
+      <font color="#000000" face="Dialog" size="11px" style="font-size:11px">Service</font>
+    </p>
+    <p>
+      <font color="#000000" face="Dialog" size="11px" style="font-size:11px">&nbsp; 
+      &nbsp; &nbsp; &nbsp; oracle instance</font>
+    </p>
+    <p>
+      <font color="#000000" face="Dialog" size="11px" style="font-size:11px">&nbsp; 
+      &nbsp; &nbsp; &nbsp; livebos</font>
+    </p>
+    <p>
+      <font color="#000000" face="Dialog" size="11px" style="font-size:11px">component&nbsp; 
+      &nbsp; &nbsp; &nbsp;</font>
+    </p>
+    <p>
+      <font color="#000000" face="Dialog" size="11px" style="font-size:11px">&nbsp; 
+      &nbsp; &nbsp; &nbsp; jgxt &nbsp; &nbsp; &nbsp;</font>
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/NOTE.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/NOTE.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="NOTE_aTN33YyBkARyTkqj.html">N/A : 注解</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"><head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#000000" face="Dialog" size="11px" style="font-size:11px">include 
+      :</font>
+    </p>
+    <p>
+      <font color="#000000" face="Dialog" size="11px" style="font-size:11px">&nbsp; 
+      &nbsp; &nbsp; &nbsp; deploy child resource</font>
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/NOTE.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/NOTE.png');">
+					</div>
+					&nbsp; <a target="_content_pane" class="ItemLink" href="NOTE_WbUoPYyBkARyTqjq.html">N/A : 注解</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"><head>
+    
+  </head>
+  <body>
+    <p>
+      <font color="#000000" face="Dialog" size="11px" style="font-size:11px">use 
+      script , finish some missions,</font>
+    </p>
+    <p>
+      <font color="#000000" face="Dialog" size="11px" style="font-size:11px">such 
+      as deploy sub-resource</font>
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/ShapeEditorShape.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/ShapeEditorShape.png');">
+					</div>
+					&nbsp; <span class="TableContent">N/A : Freehand Shape</span>				</span>
+			</td>
+			<td>
+			</td>
+			<td>
+<span class="TableContent"></span>			</td>
+		</tr>
+	</table>
+	<table width="100%" cellpadding="0" border="0" cellspacing="0">
+		<tr>
+			<td class="TableCellSpaceHolder1PxTall">
+			</td>
+		</tr>
+		<tr>
+			<td class="TableFooter">
+			</td>
+		</tr>
+	</table>
+	<div style="height: 20px">
+	</div>
+	<table width="100%" cellpadding="0" border="0" cellspacing="0">
+		<tr>
+			<td class="FooterLine">
+			</td>
+		</tr>
+	</table>
+	<div class="HeaderText">
+		envadmin Documentation	</div>
+</body>
+</html>

@@ -1,0 +1,139 @@
+{\rtf1\ansi\ansicpg936\cocoartf1038\cocoasubrtf360
+{\fonttbl\f0\fnil\fcharset134 STHeitiSC-Light;}
+{\colortbl;\red255\green255\blue255;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww17480\viewh13780\viewkind0
+\deftab720
+\pard\pardeftab720\sl280\ql\qnatural
+
+\f0\fs24 \cf0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ql\qnatural\pardirnatural
+\cf0 ##################\
+\
+Action()\
+\{\
+\
+	lr_start_transaction("getschema");\
+\
+	lr_think_time(23);\
+\
+	web_url("ServiceProcessor_2", \
+		"URL=http://50.2.62.101/LiveBosStudioServer/ServiceProcessor?Action=LoadSchema", \
+		"Resource=0", \
+		"RecContentType=text/xml", \
+		"Referer=", \
+		"Snapshot=t17.inf", \
+		"Mode=HTML", \
+		LAST);\
+\
+	lr_end_transaction("getschema",LR_AUTO);\
+###############\
+\
+\
+		"Name=SYSTEM", "Value=SYSTEM.xml", "File=Yes", ENDITEM, \
+		"Name=menu", "Value=SYSTEM_menu.xml", "File=Yes", ENDITEM, \
+		\
+		\
+		\
+\
+\
+		"Name=describe", "Value=z7XNs8SsyM+3vbC4", ENDITEM, \
+		LAST);\
+\
+	lr_end_transaction("SYSTEM",LR_AUTO);\
+###############\
+\
+		"Name=UP131", "Value=UP131.xml", "File=Yes", ENDITEM, \
+		"Name=menu", "Value=UP131_menu.xml", "File=Yes", ENDITEM, \
+		\
+		\
+		\
+		\
+\
+\
+		"Name=describe", "Value=uczK1V/X27rP0+u53MDt1LE=", ENDITEM, \
+		LAST);\
+\
+	lr_end_transaction("UPxx",LR_AUTO);\
+###############\
+\
+###############\
+	lr_start_transaction("override");\
+\
+	lr_think_time(32);\
+\
+	web_submit_data("ServiceProcessor_13", \
+		"Action=http://50.1.57.22/LiveBosStudioServer/ServiceProcessor?Action=0&ABS_SchemeName=defaultScheme", \
+		"Method=POST", \
+		"EncType=multipart/form-data", \
+		"RecContentType=text/xml", \
+		"Referer=", \
+		"Snapshot=t28.inf", \
+		"Mode=HTML", \
+		ITEMDATA, \
+		"Name=tSSO_LOG.xml", "Value=tSSO_LOG.xml", "File=Yes", ENDITEM, \
+		\
+		\
+		\
+		"Name=OperateType", "Value=1", ENDITEM, \
+		"Name=operate", "Value=Create", ENDITEM, \
+		"Name=object", "Value=tSSO_LOG", ENDITEM, \
+		"Name=index", "Value=0", ENDITEM, \
+		"Name=object-id", "Value=-9d44f59:130b12f2837:-7fd7", ENDITEM, \
+		"Name=describe", "Value=c3NvyNXWvrHt", ENDITEM, \
+		"Name=package", "Value=U1NP", ENDITEM, \
+		LAST);\
+\
+	lr_end_transaction("override",LR_AUTO);\
+\
+	lr_start_transaction("refresh server");\
+\
+	lr_think_time(21);\
+\
+	web_submit_data("ServiceProcessor_14", \
+		"Action=http://50.1.57.22/LiveBosStudioServer/ServiceProcessor?Action=CreateStudio&ABS_SchemeName=defaultScheme", \
+		"Method=POST", \
+		"EncType=multipart/form-data", \
+		"Referer=", \
+		"Snapshot=t29.inf", \
+		"Mode=HTML", \
+		ITEMDATA, \
+		\
+		\
+		"Name=StudioOperateType", "Value=1", ENDITEM, \
+		"Name=operate", "Value=Get", ENDITEM, \
+		"Name=ABS_SchemeName", "Value=defaultScheme", ENDITEM, \
+		\
+		LAST);\
+\
+	lr_end_transaction("refresh server",LR_AUTO);\
+\
+	return 0;\
+\}\
+\
+\
+\
+\
+\
+lr.start_transaction("refresh");\
+\
+	\
+\
+	_webresult = lrapi.web.submit_data("ServiceProcessor", \
+		"Action=http://50.2.62.101/LiveBosStudioServer/ServiceProcessor?Action=CreateStudio&ABS_SchemeName=defaultScheme", new String[]\{ \
+		"Method=POST", \
+		"EncType=multipart/form-data", \
+		"Referer=", \
+		"Snapshot=t11.inf", \
+		"Mode=HTML", \
+		\}, new String[]\{ // ITEM DATA \
+		\
+		"Name=password", "Value=hy_jgxt_2011", ENDITEM, \
+		"Name=StudioOperateType", "Value=1", ENDITEM, \
+		"Name=operate", "Value=Get", ENDITEM, \
+		"Name=ABS_SchemeName", "Value=defaultScheme", ENDITEM, \
+		\
+		LAST\});\
+\
+	lr.end_transaction("refresh",lr.AUTO);\
+\
+}
